@@ -6,6 +6,4 @@
 /public/bundles/
 /config/packages/dev/
 /config/packages/test/
-/config/services.yaml
-/config/routes.yaml
 

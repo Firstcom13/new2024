@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Marketing de l'offre
+{% endblock %}
+
+{% block body %}
+
+	<section id="container3">
+		<div class="row align-items-center justify-content-center">
+			<div class="col-md-4 col-12">
+				<img class="image-principale" src="{{ asset('uploads/images/marketing.webp') }}">
+			</div>
+			<div class="col-md-4 col-12">
+				<div class="fil_ariane">
+					<a href="{{ path('app_home') }}">FIRSTCOM</a>
+					|
+					<a href="{{ path('app_conseil') }}">CONSEIL ET STRATÉGIE</a>
+					|
+					<span>MARKETING DE L'OFFRE</span>
+				</div>
+
+				<h1 class="card-title sous-titre black">NE SOYEZ PLUS SEUL À VOUS COMPRENDRE</h1>
+
+				<p class="texte-intro black">Proposer une offre fantastique c'est bien.</p>
+				<p class="texte-intro black">Mais proposer une offre fantastique et lisible, c’est mieux.</p>
+			</div>
+		</div>
+		<div></div>
+	</section>
+
+	<section class="mask_contact">
+		<img src="{{ asset('uploads/images/fl23.png') }}">
+	</section>
+
+	<div class="container-medium">
+		<div class="row">
+			<div class="col-sm-12 col-md-12 mb-4">
+				<p class="texte-intro-2 mt-2">Le nez dans le guidon, on rajoute des services, des gammes, des usages à une offre existante. On change de cible sans adapter sa proposition.</p>
+				<p class="texte-intro-2">On crée des offres qui se ressemblent trop ou qui répondent à tellement de besoins qu’elles en deviennent suspectes. </p>
+				<p class="texte-intro-2">On peut emballer notre offre dans les plus jolis nœuds rouges, si elle n’est pas lisible par sa cible, elle ne sera pas achetée.</p>
+				<p class="texte-intro-2 mt-2">Car une offre bien marketée, c’est une proposition claire, qui procure un bénéfice défini, adressée à une cible précise, par un canal déterminé.</p>
+				<p class="texte-intro-2">Point barre.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-sm-12 col-md-12 mb-5">
+				<h2>LE MARKETING DE L’OFFRE EST DONC A LA BASE DE LA BASE (DE LA BASE). </h2>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="background-lgtgreen">
+
+	<div class="row div-part borderSolid">
+		<div class="col-xs-12 col-md-3 contact_part1">
+			<p class="gros_chiffre">01</p>
+		</div>
+		<div class="col-xs-12 col-md-8">
+			<h4>ÉTUDE DE VOTRE BUSINESS MODEL</h4>
+			<p class="texte-courant">À travers des études préalables et des ateliers de travail, les équipes consulting de Firstcom plongent dans votre ADN, étalent sur la table l’étendu de vos propositions pour obtenir une vision d’ensemble de vos promesses.</p> 
+			<p class="texte-courant">Tour à tour Marie Kondo et tailleurs de diamant, nos équipes classent, trient, réorganisent, mais aussi taillent, coupent, aiguisent et affinent vos offres pour en tirer leur quintessence. Sans pitié mais avec bon sens et expertise.</p>
+		</div>
+	</div>
+	<div class="row div-part borderSolid">
+		<div class="col-xs-12 col-md-3 contact_part1">
+			<p class="gros_chiffre">02</p>
+		</div>
+		<div class="col-xs-12 col-md-8">
+			<h4>MODÉLISATION DE VOTRE OFFRE MARKETING</h4>
+			<p class="texte-courant">Une fois les offres définies, il s’agit de les mettre en mots et en images, et de bien savoir où et comment les vendre. De nouvelles étapes d’importances.</p>
+		</div>
+	</div>
+</div>
+
+<div class="container-medium">
+	<div class="row contact_page borderSolid">
+		<div class="col-sm-12 col-md-12 my-5">
+			<h4>ON ESSAYE D'Y VOIR PLUS CLAIR ?</h4>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,50 @@
+
+
+<IfModule mod_rewrite.c>
+    Options -MultiViews
+    RewriteEngine On
+
+    # Redirection spécifique
+    RewriteRule ^realisations/page/2/$ / [R=301,L]
+    RewriteRule ^firstcom/$ / [R=301,L]
+    RewriteRule ^competences/audiovisuel/$ / [R=301,L]
+    RewriteRule ^competences/edition/$ / [R=301,L]
+    RewriteRule ^competences/digital/$ / [R=301,L]
+    RewriteRule ^competences/relations-presse-et-public/$ / [R=301,L]
+    RewriteRule ^competences/creation/$ / [R=301,L]
+    RewriteRule ^lequipe/developpeurs/$ / [R=301,L]
+    RewriteRule ^competences/$ / [R=301,L]
+    RewriteRule ^lequipe/creatifs/$ / [R=301,L]
+    RewriteRule ^competences/conseil-et-strategie/$ / [R=301,L]
+    RewriteRule ^lequipe/$ / [R=301,L]
+    RewriteRule ^portfolio-items/jaguar-network-audiovisuel/$ / [R=301,L]
+    RewriteRule ^portfolio_tags/creation-identite-graphique/$ / [R=301,L]
+    RewriteRule ^ils-nous-ont-fait-confiance/$ / [R=301,L]
+    RewriteRule ^lequipe/chefs-de-projets/$ / [R=301,L]
+    RewriteRule ^portfolio-items/glastint-reseaux-sociaux/$ / [R=301,L]
+    RewriteRule ^portfolio-items/ecf/$ / [R=301,L]
+
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+    <IfModule mod_alias.c>
+        RedirectMatch 302 ^/$ /index.php/
+    </IfModule>
+</IfModule>
+
+
+
+<IfModule mod_rewrite.c>
+    Options -MultiViews
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>
+ 
+<IfModule !mod_rewrite.c>
+    <IfModule mod_alias.c>
+        RedirectMatch 302 ^/$ /index.php/
+    </IfModule>
+</IfModule>

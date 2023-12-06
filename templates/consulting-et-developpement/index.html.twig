@@ -1,0 +1,117 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Consulting et développement
+{% endblock %}
+
+{% block body %}
+
+	<section id="container3">
+		<div class="row contact_page">
+			<div class="col-md-4 col-12 contact_part1">
+				<img class="image_blondie" src="{{ asset('uploads/images/consulting.webp') }}">
+			</div>
+			<div class="col-md-4 col-12 contact_part2">
+				<div class="fil_ariane">
+					<a href="{{ path('app_home') }}">FIRSTCOM</a>
+					|
+					<a href="{{ path('app_conseil') }}">CONSEIL ET STRATÉGIE</a>
+					| 
+					<span>CONSULTING ET DÉVELOPPEMENT</span>
+				</div>
+
+				<h1 class="card-title sous-titre black">LE MONDE NE SUFFIT PAS</h1>
+
+				<p class="texte-intro black mt-1">Même si, à terme, le monde ne vous suffira probablement pas, il faut bien commencer quelque part.</p> 
+				<p class="texte-intro black mt-1">Définir son terrain de jeu pour les prochaines années.</p>				
+			</div>
+		</div>
+	</section>
+
+	<section class="mask_contact">
+		<img src="{{ asset('uploads/images/fl23.png') }}">
+	</section>
+
+	<div class="container-medium">
+		<div class="row">
+			<div class="col-sm-12 col-md-12 mb-5">
+			<h2>UN TERRAIN DE JEU SOUVENT DIGITAL ET PHYSIQUE</h2>
+			</div>
+		</div>
+	</div>
+	
+	<div class="background-lgtgreen row">
+		<div class="col-sm-12 col-lg-6 col-xl-6 borderFull py-3 px-5" style="text-decoration:none;">
+			<div class="row flex-end">
+				<div class="col-sm-9 col-12 mb-3">
+					<img class="fleche-down" src="{{ asset('uploads/images/fleche-down.webp') }}">
+				</div>
+				<div class="col-sm-9 col-12">
+					<h3 class="h3-micro">MAIS PAR OÙ COMMENCER ?</h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-12 col-lg-6 col-xl-6 borderFull py-3 px-5" style="text-decoration:none;">
+			<div class="row">
+				<div class="col-sm-9 col-12 mb-3">
+					<img class="fleche-down" src="{{ asset('uploads/images/fleche-down.webp') }}">
+				</div>
+				<div class="col-sm-9 col-12">
+					<h3 class="h3-micro">COMMENT POURSUIVRE ?
+					</h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-12 col-lg-6 col-xl-6 borderFull py-3 px-5" style="text-decoration:none;">
+			<div class="row flex-end">
+				<div class="col-sm-9 col-12 mb-3">
+					<img class="fleche-down" src="{{ asset('uploads/images/fleche-down.webp') }}">
+				</div>
+				<div class="col-sm-9 col-12">
+					<h3 class="h3-micro">OÙ ET COMBIEN INVESTIR ?</h3>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-sm-12 col-lg-6 col-xl-6 borderFull py-3 px-5" style="text-decoration:none;">
+			<div class="row">
+				<div class="col-sm-9 col-12 mb-3">
+					<img class="fleche-down" src="{{ asset('uploads/images/fleche-down.webp') }}">
+				</div>
+				<div class="col-sm-9 col-12">
+					<h3 class="h3-micro">DANS QUEL ORDRE, AVEC QUELLE MÉTHODE, POUR QUELLE AMBITION ?</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-medium">
+		<div class="row">
+			<div class="col-sm-12 col-md-12 pt-5">
+				<h3 class="mb-4">Bref, where to play, how to win?</h3>
+
+				<p class="mb-3">Quels que soit la maturité, le stade de progression, les canaux de vente (full digital, omnicanal, brick and mortar), ou les ambitions d’une entreprise, s’interroger régulièrement sur sa stratégie de développement est un élément clé de sa croissance.</p>
+				<p class="mb-3">Une modification d’algorithme, une hausse rapide du coût d’acquisition ou même de l’essence, bref, une innovation, une crise, sanitaire ou pas, et (paf) c’est tout un comportement d’achat qui évolue, et avec lui, la stratégie de développement de nombreuses entreprises.</p>
+				<p class="mb-3">D’où l’absolue nécessité de s’assurer encore et toujours que la stratégie de développement que l’on a envisagée tient toujours la route.</p>
+
+				<p>Firstcom et ses partenaires vous accompagnent dans cette réflexion à travers des ateliers de travail, et partagent avec vous :</p>
+				<ul>
+					<li>Leur capacité à vous faire prendre de la hauteur sur votre entreprise, son potentiel, son marché.</li>
+					<li>Leur connaissance pointue du business en général, qu’il soit physique ou online.</li>
+					<li>Leur expertise du développement d’entreprises physiques et digitales.</li>
+					<li>Leurs méthodes et outils de travail éprouvés (design thinking…) pour vous faire avancer.</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-medium">
+		<div class="row contact_page borderSolid">
+			<div class="col-sm-12 col-md-12 mt-2 mb-5">
+				<h4>VENEZ, ON DISCUTE DE VOS AMBITiONS !</h4>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

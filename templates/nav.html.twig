@@ -1,0 +1,106 @@
+<nav class="navbar fixed-top">
+	<div class="logo_nav">
+		<a href="{{ path('app_home') }}"><img class="logo" src="{{ asset('uploads/images/bzs0.png') }}"></a>
+	</div>
+
+		<div class="menu-wrap">
+		<input type="checkbox" class="toggler">
+		<div class="hamburger">
+			<div></div>
+		</div>
+		<div class="menu menu-scroll">
+			<div>
+				<div>
+					<ul>
+						<li class="rubrique-menu">
+							{# <a href="{{ path('app_conseil') }}">CONSEIL & STRATÉGIE</a> #}
+							<p class="cursor-pointer">CONSEIL & STRATÉGIE</p>
+							<ul class="sous-menu">
+								<li><a class="rubrique-sousmenu" href="{{ path('app_consulting_et_developpement') }}">Consulting & développement</a></li>
+								<li><a class="rubrique-sousmenu" href="{{ path('app_marketing_de_loffre') }}">Marketing de l'offre</a></li>
+								<li><a class="rubrique-sousmenu" href="{{ path('app_crise') }}">Communication de crise</a></li>
+							</ul>
+						</li>
+						<li class="rubrique-menu">
+							{# <a href="{{ path('app_croissance') }}">CROISSANCE & PERFORMANCE</a> #}
+							<p class="cursor-pointer">CROISSANCE & PERFORMANCE</p>
+                            <ul class="sous-menu">
+								<li><a class="rubrique-sousmenu" href="{{ path('app_referencement_naturel_seo') }}">Référencement naturel</a></li>
+								<li><a class="rubrique-sousmenu" href="{{ path('app_campagnes_digitales') }}">Campagnes payantes</a></li>
+								<li><a class="rubrique-sousmenu" href="{{ path('app_community_management') }}">Community management et RP</a></li>
+								<li><a class="rubrique-sousmenu" href="{{ path('app_data_analyse') }}">Data analyse</a></li>
+							</ul>
+						</li>
+						<li class="rubrique-menu">
+							{# <a href="{{ path('app_contenus') }}">CRÉATION DE CONTENU</a> #}
+							<p class="cursor-pointer">CRÉATION DE CONTENU</p>
+							<ul class="sous-menu">
+								<li><a class="rubrique-sousmenu" href="{{ path('app_creation_editoriale') }}">Création éditoriale & Story-telling</a></li>
+							</ul>
+						</li>
+						<li class="rubrique-menu">
+							<a href="{{ path('app_tech_digital') }}">TECH & DIGITAL</a>
+						</li>
+						{# <li class="rubrique-menu">
+							<a href="#">CASE STUDIES</a>
+						</li> #}
+						<li class="rubrique-menu">
+							<a href="{{ path('app_agence') }}">L'AGENCE</a>
+						</li>
+						{# <li class="rubrique-menu">
+							<a href="#">BLOG</a>
+						</li> #}
+						<li class="rubrique-menu">
+							<a href="{{ path('app_contact') }}">CONTACT</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>
+<script>
+document.addEventListener("DOMContentLoaded", (event) => {
+  
+	let toggler = document.querySelector('.toggler');
+	let logo = document.querySelector('.logo');
+
+	// NE PAS OUBLIER DE RETIRER OVERFLOW-X:HIDDEN DE HTML ET BODY DU SCSS !!!!!!!!!!!!!!!!!!!!
+	toggler.addEventListener('click', () => {
+		if (toggler.checked) {
+			document.body.classList.add('no-scroll');
+			logo.classList.add('no-filter');
+	 
+        } else {
+            document.body.classList.remove('no-scroll');
+			logo.classList.remove('no-filter');
+
+
+			// Fermer tous les sous-menus ouverts
+			document.querySelectorAll('.sous-menu.sous-menu-ouvert').forEach(function(openMenu) {
+				openMenu.classList.remove('sous-menu-ouvert');
+			});
+
+        }
+	});
+});
+
+document.querySelectorAll('.rubrique-menu').forEach(function(menu) {
+
+    menu.addEventListener('click', function(event) {
+
+        var sousMenuActuel = this.querySelector('.sous-menu');
+
+        // Fermer tous les sous-menus ouverts
+        document.querySelectorAll('.sous-menu.sous-menu-ouvert').forEach(function(openMenu) {
+            if (openMenu !== sousMenuActuel) {
+                openMenu.classList.remove('sous-menu-ouvert');
+			}
+        });
+
+        // Basculer l'état du sous-menu actuel
+        sousMenuActuel.classList.toggle('sous-menu-ouvert');
+
+    });
+});
+</script>

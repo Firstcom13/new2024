@@ -1,0 +1,93 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tech & Digital
+{% endblock %}
+
+{% block body %}
+
+	<section id="container6">
+		<div class="row contact_page">
+			<div class="col-md-4 col-12 contact_part1">
+				<img class="image-principale" src="{{ asset('uploads/images/firstcom-digital.webp') }}">
+			</div>
+			<div class="col-md-4 col-12 contact_part2">
+				<div class="fil_ariane">
+					<a href="{{ path('app_home') }}">FIRSTCOM</a>
+					|
+					<span>TECH & DIGITAL</span>
+				</div>
+
+				<h1 class="card-title sous-titre black">DE L’IMPORTANCE<br> D’ÊTRE BIEN OUTILLÉ</h1>
+
+				<p class="texte-intro black">On ne vous fera pas l’affront de vous expliquer à quel point tech et digital au sens large sont devenus incontournables pour toute organisation publique ou privée, même La Palice ne s’en remettrait pas.</p>
+				<p class="texte-intro black mt-1">Néanmoins, on vous affirme (en vous regardant droit dans les yeux) que créer un site web ou développer une techno ne se résume pas à un bel habillage graphique et un prix alléchant.</p>
+			</div>
+		</section>
+
+		<section class="mask_contact">
+			<img src="{{ asset('uploads/images/fl23.png') }}">
+		</section>
+
+		<div class="container-medium">
+			<div class="row">
+				<div class="col-sm-12 col-md-12 mb-4">
+					<p class="texte-intro-2 bold">Quel business échappe au digital ?</p>
+					<p class="texte-intro-2 bold">Qui peut se passer de la visibilité d’un Google, d’une plateforme d’achat en ligne, ou d’un lead via son site web ?</p>
+					<p class="texte-intro-2 bold mb-4">Qui préfère cumuler des tâches manuelles sans valeur ajoutée plutôt que les déléguer à un outil ou une techno dédiée ?</p>
+
+					<h2 class="mb-3">CHEZ FIRSTCOM, ON PREND LE DIGITAL ET LA TECH TRÈS AU SÉRIEUX.</h2>
+
+					<p class="texte-intro-2">Parce que nous sommes soucieux de la bonne tenue de nos clients sur le web, et garants de leurs performances digitales.</p>
+					<p class="texte-intro-2 mb-2">Rien que ça.</p>
+
+					<p class="texte-intro-2 mb-2">Nos équipes dédiées, composées de spécialistes (back-office, front-office, UX / UI designer, experts SEO, spécialiste en plan de taggage, webmaster, etc) sont rompues à la création de sites ou d’outils / plateformes pensés et réalisés sur mesure pour leurs clients.</p>
+					<p class="texte-intro-2 mb-2">Les besoins, impératifs, modes de fonctionnements et objectifs sont passés au crible pour bâtir l’outil le plus complet et précis, celui qui offrira la vitrine la plus fidèle et répondra aux plus hautes exigences de performance.</p>
+					<p class="texte-intro-2 mb-2">En mode orfèvre (team #Hermès plutôt que team #Shein), ils sculptent l’outil adéquat qui répondra au besoin précis de leur client, et pas de son voisin.</p>
+					<p class="texte-intro-2 mb-2">Et parce que nous ne sommes pas des marchands de vent, au démarrage de chaque projet, nous prenons toujours le temps d’étudier les solutions digitales existantes sur le marché qui pourraient être intégrées ou customisées, afin de proposer le budget le plus juste.</p>
+
+					<p class="texte-intro-2 bold">Créer un site ou une plateforme jolie, c’est simple et rapide.</p>
+					<p class="texte-intro-2 bold">Créer un site ou une plateforme fonctionnel, ergonomique, performant, sécurisé… c’est Firstcom.</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<h2 class="mt-3 mb-5">LE DIGITAL ET LA TECH CHEZ FIRSTCOM, CE SONT DEUX EXPERTISES DISTINCTES :</h2>
+			</div>
+		</div>
+
+		<div class="background-blue">
+			<a href="{{ path('app_contact') }}" class="row div-part borderSolid" style="text-decoration:none;">
+				<div class="col-xs-12 col-md-3 contact_part1">
+					<img class="image-bandeau img-fluid" src="{{ asset('uploads/images/digital-web-eshop.webp') }}">
+				</div>
+				<div class="col-xs-12 col-md-6">
+					<h3 class="h3-mini black">La création et la refonte de sites webvitrine et e-commerce</h3>
+					<p class="texte-courant black">Créer un site web, c’est une affaire d’objectifs, de CMS et de frameworks, de mécanique, de référencement naturel, d’engagement, d’UX, de RGPD, de sécurité, de contenus, d’image, de vitesse de chargement, de datas, de conversion, de charte graphique, de scalabilité... On continue ? Bref, c’est une affaire complexe, une affaire d’experts.</p>
+				</div>
+				<div class="col-xs-12 col-md-3 fleche-info ">
+					<p class="cartouche_info">On vous présente notre équipe ?</p>
+					<div class="fleche-info">
+						<img src="{{ asset('uploads/images/fleche-gris60.png') }}">
+					</div>
+				</div>
+			</a>
+
+			<a href="{{ path('app_contact') }}" class="row div-part" style="text-decoration:none;">
+				<div class="col-sm-12 col-md-3 contact_part1">
+					<img class="image-bandeau img-fluid" src="{{ asset('uploads/images/digital-digitalisation.webp') }}">
+				</div>
+				<div class="col-sm-12 col-md-6">
+					<h3 class="h3-mini black">La digitalisation de métiers et de process</h3>
+					<p class="texte-courant black">Intégrer de la tech dans la vie de son entreprise, c’est augmenter l’efficacité et la productivité de ses collaborateurs, réduire les coûts de production, améliorer la précision et la qualité des tâches, bref innover et devenir plus performant.</p>
+				</div>
+				<div class="col-sm-12 col-md-3 fleche-info">
+					<p class="cartouche_info">Même Lénine s'y intéresserait.<br>Et vous ?</p>
+					<div class="fleche-info">
+						<img src="{{ asset('uploads/images/fleche-gris60.png') }}">
+					</div>
+				</div>
+			</a>
+		</div>
+
+
+	{% endblock %}

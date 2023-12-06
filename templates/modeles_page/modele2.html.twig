@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}SEO
+{% endblock %}
+
+{% block body %}
+
+	<section id="container2">
+		<div class="row contact_page">
+			<div class="col-md-4 col-12 contact_part1">
+				<img class="image_blondie" src="/uploads/images/{{ mapage.backgroundImage }}">
+			</div>
+			<div class="col-md-4 col-12 contact_part2">
+				<div class="fil_ariane">
+					<a href="{{ path('app_home') }}">FIRSTCOM</a>
+					|
+					<a href="#">EXPERTISE</a>
+					| 
+					<a href="#">EXPERTISE CROISSANCE ET PERFORMANCE</a>
+					| 
+					<span>RÉFÉRENCEMENT NATUREL SEO</span>
+				</div>
+
+				<h1 class="card-title sous-titre black">{{ mapage.enteteH1 }}</h1>
+
+				<h2 class="texte-intro black">{{ mapage.enteteH2 }}</h2>
+								<p class="texte-intro black mt-1">{{ mapage.enteteP|nl2br }}</p>
+				
+			</div>
+		</div>
+		<div></div>
+	</section>
+
+	<section class="mask_contact">
+		<img class="" src="https://zupimages.net/up/23/23/fl23.png">
+	</section>
+
+	<div class="container-seo p-3">
+	<p class="card-text-mini-mask black mt-2 "> {{ mapage.enteteBisPMini|nl2br }}</p>
+				<p style="font-weight: bold" class=""> Bref, le SEO est une affaire d’experts.</p>
+	<div class="row contact_page borderSolid">
+		<div class="col-sm-12 col-md-12 mb-4">
+			<h3 class="title-croissance ">SEO : APPROCHE ET MÉTHODE FIRSTCOM</h3>
+		</div>
+
+		<div class="row croissance_page borderSolid">
+			<div class="col-8">
+				<p class="card-text-mask ">CHEZ FIRSTCOM, LE SEO EST UNE AFFAIRE SÉRIEUSE, QUI NE S’ENVISAGE PAS EN « ONE SHOT », MAIS SUR LE LONG TERME.</br>
+				NOUS PRIVILÉGIONS UNE APPROCHE GLOBALE QUI INCLUT L’AUDIT ET L’ANALYSE, LA STRATÉGIE, LA TECHNIQUE, LA RÉDACTION, ET L’UX.</p>
+			</div>
+		</div>
+        <div class="col-sm-12 col-md-12 mb-4">
+			<h3 class="title-mask ">LA MÉTHODE FIRSTCOM</h3>
+		</div>
+        <div class="col-sm-12 col-md-12 mb-4">
+			<h4 class="title-mini-mask " >AUDIT ET ANALYSE</h4>
+         <p class="card-text-mini-mask black ">Une fois vos objectifs (raisonnables et sérieux) définis, nous effectuons des audits et analyses de votre site web, de ses atouts, ses faiblesses et ses
+        performances à l’instant T, au regard de critères SEO. Nous examinons vos opportunités de marché. Nous étudions également votre concurrence
+        afin de déterminer leur stratégie, ses points forts et ses points faibles.</p>
+		</div>
+	</div>
+</div>
+
+	<div class="background-yellow">
+		<a href="{{ path('app_contact') }}" class="row div-part borderSolid" style="text-decoration:none;">
+			<div class="col-xs-12 col-md-3 contact_part1">
+			<p class="gros_chiffre"> 01 </p>
+			</div>
+			<div class="col-xs-12 col-md-6">
+				<h3 class="card-title-home">DÉFINITION D’UNE STRATÉGIE DE
+				RÉFÉRENCEMENT NATUREL</h3>
+								<p class="card-text-mini-mask black">Nous tirons des audits et analyses des univers sémantiques à forte valeur ajoutée sur lesquels vous positionner, ainsi que
+				les actions à entreprendre pour y parvenir : amélioration de l’Ux de votre site web, rédaction et intégration de nouveaux
+				contenus, rewriting ou restructuration de textes existants, maillage, indexation, etc.</p>
+			</div>
+			
+		</a>
+
+
+		<a href="{{ path('app_contact') }}" class="row div-part borderSolid" style="text-decoration:none;">
+			<div class="col-sm-12 col-md-3 contact_part1">
+				<p class="gros_chiffre"> 02 </p>
+			</div>
+			<div class="col-sm-12 col-md-6">
+				<h3 class="card-title-home">APPLICATION DES RECOMMANDATIONS</h3>
+				<p class="card-text-mini-mask black">Améliorer son référencement naturel est un travail du quotidien, qui nécessite une veille permanente et des optimisations
+				techniques et rédactionnelles régulières. C’est pourquoi, nous proposons à nos clients une collaboration annuelle sur une
+				base forfaitaire. Sur une année, nous effectuons plusieurs audits de votre site et de la concurrence, mais aussi des
+				analyses de positionnement mensuelles de vos requêtes. Nous corrigeons, testons, améliorons.</p>
+			</div>	
+		</a>
+	</div>
+
+		<div class="container">
+			<div class="row contact_page borderSolid">
+				<div class="col-sm-12 col-md-12 mb-4">
+					<p class="card-title-fini">ET QUAND C’EST FINI ? NOUS RECOMMENÇONS…</p>
+				</div>
+			</div>
+		</div>
+
+{% endblock %}

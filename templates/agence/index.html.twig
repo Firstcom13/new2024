@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}L'agence
+{% endblock %}
+
+{% block body %}
+
+	<section id="container1">
+		<div class="row align-items-center justify-content-center">
+			<div class="col-md-4 col-12">
+				<img class="image-principale" src="{{ asset('uploads/images/firstcom-agence.webp') }}">
+			</div>
+			<div class="col-md-4 col-12">
+				<div class="fil_ariane">
+					<a href="{{ path('app_home') }}">FIRSTCOM</a>
+					| 
+					<span>L'AGENCE</span>
+				</div>
+
+				<h1 class="card-title sous-titre writeWhite">FIRSTCOM : BORN IN<br> MARSEILLE, PLAYS ALL<br> OVER THE WORLD</h1>
+				<p class="texte-intro writeWhite mt-1">Firstcom est une agence born in Marseille, au temps où les fax sifflaient, les disquettes se perdaient et Séguéla portait une Rolex.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="mask_contact">
+		<img src="{{ asset('uploads/images/fl23.png') }}">
+	</section>
+
+	<div class="container-medium">
+		<div class="row borderSolid">
+			<div class="row borderSolid">
+				<div class="col-12">
+					<p class="mb-2">Firstcom a rapidement grimpé dans le train du digital pour ne jamais en redescendre, prenant clairement le virage des problématiques de croissance et de performance.</p>
+					<p class="mb-2">Firstcom se dope à l’actualité économique et aux avancées technologiques, n’hésite pas à se piquer à l’innovation, et n’envisage surtout pas la cure de désintoxication.</p>
+					<p class="mb-2">Firstcom, c’est deux dirigeants associés, une équipe de maîtres Jedi qui maitrisent la nature étrange de la force et du business, et de jeunes padawans avides de devenir chevaliers.</p>
+					<p class="mb-2">Firstcom revendique fièrement son attachement à Marseille, et puise sa créativité dans le scintillement de l’écume, le chant des cigales et l’odeur délicate des sardines.</p>
+					<p class="mb-2">Firstcom rayonne sur la France, avec des clients dans les 16 coins de l’hexagone, et s’envole parfois à l’international, entre Israël et Hong-Kong, en attendant un jour de régner sans partage sur le monde.</p>
+					<p class="mb-2">Firstcom a grandi dans une discrétion assumée, à l’ombre des sunlights mais sous le soleil de la croissance, en accord avec Jul, fameux poète local « Mets-toi en valeur, mais n’oublie pas tes valeurs** ».</p>
+					<pp><em>(** Album &laquo; Je tourne en rond &raquo; (2018)</em></pp>
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-12 mb-5 mt-5">
+				<h2>FIRSTCOM NE SE PREND PAS TROP AU SÉRIEUX, MAIS TRAITE LES DEMANDES DE SES CLIENTS AVEC LE PLUS GRAND SÉRIEUX<br>LA PREUVE ?</h2>
+			</div>
+		</div>
+	</div>
+
+	<div class="background-basic-green">
+		<a href="{{ path('app_contact') }}" class="row div-part borderSolid">
+			<div class="col-xs-12 col-md-3">
+				<img class="image-bandeau img-fluid" src="{{ asset('uploads/images/agence-methode.webp') }}">
+			</div>
+			<div class="col-xs-12 col-md-6">
+				<h3 class="h3-mini writeWhite">MÉTHODE ET PROCESS</h3>
+				<p class="texte-courant writeWhite uppercase bold">Pour chaque projet, Firstcom monte une équipe agile, avec les compétences clés, coordonnés par un chef de projet expérimenté.</p>
+			</div>
+			<div class="col-xs-12 col-md-3 fleche-info ">
+				<p class="cartouche_info">On vous raconte la méthode maison ?</p>
+				<div class="fleche-info">
+					<img src="{{ asset('uploads/images/fleche-gris60.png') }}">
+				</div>
+			</div>
+		</a>
+		<a href="{{ path('app_contact') }}" class="row div-part borderSolid">
+			<div class="col-xs-12 col-md-3">
+				<img class="image-bandeau img-fluid" src="{{ asset('uploads/images/agence-valeurs.webp') }}">
+			</div>
+			<div class="col-xs-12 col-md-6">
+				<h3 class="h3-mini writeWhite">NOS VALEURS</h3>
+				<p class="texte-courant writeWhite uppercase bold">Firstcom est attaché à des valeur de fiabilité, d’intégrité et de proximité. C’est même nos clients qui le disent.</p>
+			</div>
+			<div class="col-xs-12 col-md-3 fleche-info ">
+				<p class="cartouche_info">On vous explique ?</p>
+				<div class="fleche-info">
+					<img src="{{ asset('uploads/images/fleche-gris60.png') }}">
+				</div>
+			</div>
+		</a>
+	</div>
+
+
+{% endblock %}

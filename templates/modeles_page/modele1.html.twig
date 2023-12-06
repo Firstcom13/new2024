@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Croissance
+{% endblock %}
+
+{% block body %}
+
+	<section id="container2" style="background-image: url('/uploads/images/{{ mapage.backgroundImage }}">
+		<div class="row contact_page">
+			<div class="col-md-4 col-12 contact_part1">
+				{% if mapage.EnteteImage %}
+						<img class="image_blondie" src="/uploads/images/{{ mapage.EnteteImage }}">
+				{% else %}
+						<h1 class="card-title sous-titre black">{{ mapage.enteteH1 }} </h1>
+				{% endif %}
+			</div>
+			<div class="col-md-4 col-12 contact_part2">
+				<div class="fil_ariane">
+					<a href="{{ path('app_home') }}">FIRSTCOM</a>
+					|
+					<a href="#">EXPERTISEEE</a>
+					| 
+					<span>{{ mapage.titre }}</span>
+				</div>
+				{% if  mapage.EnteteImage %}
+					<h1 class="card-title sous-titre black">{{ mapage.enteteH1 }} </h1>
+				{% endif %}
+				<h2 class="texte-intro black">{{ mapage.enteteH2 }}</h2>
+				<p class="texte-intro-p black mt-2">{{ mapage.enteteP|nl2br }}</p>
+			</div>
+		</div>
+		<div></div>
+	</section>
+
+	<section class="mask_contact">
+		<img class="" src="{{ asset('build/images/fl23.png') }}">
+	</section>
+
+	<div class="container">
+		<div class="row di-part borderSolid">
+
+			<div class="col-sm-12 col-md-12 text-show"></div>
+
+			<div class="col-sm-12 col-md-12 mb-2">
+				<h3>{{ mapage.entetebisH3 }}</h3>
+			</div>
+
+			<div class="row croissance_page borderSolid">
+				<div class="col-12">
+					<p class="card-text-home">{{ mapage.enteteBisP|nl2br }}</p>
+					<p class="card-text-mini-home">{{ mapage.enteteBisPMini|nl2br }}</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+		{% for monbloc in mesblocs %}
+	<div style="background-color: {{ monbloc.blocColor }}">
+		
+				<a href="{{ monbloc.BlocLienUrl }}" class="row div-part borderSolid" style="text-decoration:none;">
+					{% if monbloc.BlocImage %}
+					<div class="col-xs-12 col-md-3 contact_part1">
+						<img class="image_croissance img-fluid" src="/uploads/images/{{ monbloc.BlocImage }}">
+					</div>
+					{% endif %}
+					<div class="col-xs-12 col-md-6">
+						<h3 class="card-title-home">{{ monbloc.BlocH3 }}</h3>
+						<p class="card-text-home">{{ monbloc.BlocP|nl2br }}</p>
+						<p class="card-text-mini-home">{{ monbloc.BlocPMini|nl2br }}</p>
+					</div>
+					{% if monbloc.BlocLienText %}
+					<div class="col-xs-12 col-md-3 fleche-info ">
+						<p class="cartouche_info">{{ monbloc.BlocLienText }}</p>
+						<div class="fleche-info">
+							<img src="{{ asset('build/images/vj4w.png') }}">
+						</div>
+					</div>
+					{% endif %}
+				</a>
+	</div>
+		{% endfor %}
+
+
+
+
+
+{% endblock %}

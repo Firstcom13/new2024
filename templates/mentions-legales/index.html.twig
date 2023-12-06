@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Mentions légales
+{% endblock %}
+
+{% block body %}
+	<section id="container1">
+		<div class="row align-items-center justify-content-center">
+			<div class="col-md-4 col-12">
+				<img class="image-principale" src="{{ asset('uploads/images/firstcom-confidentialite.webp') }}">
+			</div>
+			<div class="col-md-4 col-12">
+				<div class="fil_ariane">
+					<a href="{{ path('app_home') }}">FIRSTCOM</a>
+					| 
+					<span>MENTIONS LÉGALES</span>
+				</div>
+
+				<h1 class="card-title sous-titre writeWhite">MENTIONS LÉGALES</h1>
+			</div>
+		</div>
+	</section>
+
+	<section class="mask_contact">
+		<img src="{{ asset('uploads/images/fl23.png') }}">
+	</section>
+
+	<div class="container-medium pb-5">
+		<div class="row borderSolid">
+			<div class="row borderSolid">
+				<div class="col-12 mb-4">
+					<h3>EDITEUR ET RESPONSABLE DE PUBLICATION</h3>
+					<p class="texte-courant">Le site internet accessible à l’adresse www.firstcom.fr est édité par la SARL Firstcom, SARL au capital de 22 500 euros dont le siège social est situé 66 Rue Montgrand 13006 Marseille.</p>
+					<p class="texte-courant">R.C.S. Marseille 415038975</p>
+					<p class="texte-courant">APE : 7311Z</p>
+					<p class="texte-courant">N° Identifiant Européen : FR08415038975</p>
+					<p class="texte-courant">Numéro de déclaration de la CNIL : 1949154</p>
+				</div>
+				<div class="col-12 mb-4">
+					<h3>HÉBERGEUR</h3>
+					<p class="texte-courant">L’hébergement du Site est réalisé par la société OVH, domiciliée au 2 rue Kellermann 59100 ROUBAIX, joignable via le formulaire de contact suivant :</p>
+					<p class="texte-courant"><a href="https://www.ovhcloud.com/fr/contact/">https://www.ovhcloud.com/fr/contact/</a></p>
+				</div>
+				<div class="col-12 mb-4">
+					<h3>CRÉDITS</h3>
+					<p class="texte-courant">Conception technique du Site : Firstcom</p>
+					<p class="texte-courant">Conception graphique du Site : Firstcom</p>
+				</div>
+				<div class="col-12 mb-4">
+					<h3>PROTECTION DES DONNÉES PERSONNELLES</h3>
+					<p class="texte-courant">Conformément à la Loi Informatique et Liberté Nº 78-17 du 06 Janvier 1978, vous disposez d’un droit d’opposition, d’accès, de rectification, d’opposition et de suppression des informations nominatives vous concernant auprès de la SARL Firstcom – 66 Rue Montgrand 13006 Marseille – Tél. 04 91 09 14 00.</p>
+				</div>
+				<div class="col-12 mb-4">
+					<h3>DROITS DE PROPRIÉTÉ INTELLECTUELLE ATTACHÉS AU SITE</h3>
+					<p class="texte-courant">FIRSTCOM est titulaire du nom de domaine «firstcom.fr».</p>
+					<p class="texte-courant">Le Site est une oeuvre protégée par la législation relative à la propriété intellectuelle. Le Site et chacun des éléments qui le composent (tels que marques, logos, photographies, images, illustrations, textes, vidéos, logiciels, etc.) sont la propriété exclusive de la société FIRSTCOM seule habilitée à utiliser les droits de propriété intellectuelle et droits de la personnalité y afférents.</p>
+					<p class="texte-courant">Toute reproduction, représentation, utilisation intégrale ou partielle, du Site ou l’un des quelconques éléments qui le composent, sur quelque support que ce soit et sous quelque forme que ce soit, à d’autres fins et notamment commerciales, est expressément interdite.</p>
+				</div>
+				<div class="col-12 mb-4">
+					<h3>RESPONSABILITÉ</h3>
+					<p class="texte-courant">La société FIRSTCOM décline toute responsabilité en cas de survenance de bogues, ou de tout dommage résultant d’une intrusion frauduleuse d’un tiers ayant entraîné une modification des informations mentionnées sur le Site. La société FIRSTCOM ne peut être tenue pour responsable d’un quelconque dommage direct ou indirect quelle qu’en soit la cause, origine, nature ou conséquence qui pourrait être causé à la suite de l’accès, la consultation et / ou l’utilisation du Site.</p>
+				</div>
+				<div class="col-12 mb-4">
+					<h3>LIENS HYPERTEXTES</h3>
+					<p class="texte-courant">Les liens hypertextes mis en place sur le Site en direction d’autres ressources présentes sur le réseau Internet, ne sauraient engager la responsabilité de la société FIRSTCOM.</p>
+					<p class="texte-courant">L’Utilisateur n’est pas autorisé à mettre en place d’hyperlien en direction du Site sans l’autorisation expresse et préalable de la société FIRSTCOM.</p>
+				</div>
+				<div class="col-12">
+					<h3>DROIT APPLICABLE ET LITIGES</h3>
+					<p class="texte-courant">Le Site et les mentions légales sont soumis au droit français.</p>
+					<p class="texte-courant">Tout litige relatif au Site sera soumis à la compétence exclusive des tribunaux français.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

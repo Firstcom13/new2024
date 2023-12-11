@@ -1,8 +1,28 @@
 {% block body %}
 <script>
+    // Initialisation des deux cartes
     function initMap() {
+        initMap1();
+        initMap2();
+    }
+
+    // Carte 1 (Marseille)
+    function initMap1() {
         var location = {lat: {{ latitude|default('43.29123624641244') }}, lng: {{ longitude|default('5.375854608132841') }}};
-        var map = new google.maps.Map(document.getElementById('map'), {
+        var map = new google.maps.Map(document.getElementById('map1'), {
+            zoom: 15,
+            center: location
+        });
+        var marker = new google.maps.Marker({
+            position: location,
+            map: map
+        });
+    }
+
+    // Carte 2 (Paris)
+    function initMap2() {
+        var location = {lat: {{ latitude|default('48.8119292') }}, lng: {{ longitude|default('2.3265114') }}};
+        var map = new google.maps.Map(document.getElementById('map2'), {
             zoom: 15,
             center: location
         });

@@ -108,11 +108,31 @@
 		</div>
 		{{ form_end(formulaire) }}
 
-	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
 	</div>
 	<!-- // End #container -->
 	{% include "map.html.twig" %}
-	 <div id="map" style="width: 100%; height: 400px;"></div>
+
+	<div class="row">
+		<div class="col-12 col-lg-6 p-0 background-gray borderDashedTop borderDashedRight">
+			<div class="adresse-carte text-center p-4">
+				<p class="bold">FIRSTCOM Marseille</p>
+				<p>66 rue Mongrand</p>
+				<p>13006 Marseille</p>
+				<p>Tél. : 04 91 09 14 00</p>
+			</div>
+			<div id="map1" style="width: 100%; height: 400px;"></div>
+		</div>
+		<div class="col-12 col-lg-6 p-0 borderDashedTop">
+			<div class="adresse-carte text-center p-4">
+				<p class="bold">FIRSTCOM Paris</p>
+				<p>123, avenue Aristide Briand </p>
+				<p>92120 Montrouge</p>
+				<p>Tél. : 01 71 19 70 00</p>
+			</div>
+			<div id="map2" style="width: 100%; height: 400px;"></div>
+		</div>
+	</div>
 
 {% endblock %}

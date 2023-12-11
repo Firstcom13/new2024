@@ -725,6 +725,19 @@ ul > li {
     border-bottom: 1px dashed black;
 }
 
+.borderDashedTop {
+    border-top: 1px dashed black;
+}
+
+.borderDashedleft {
+    border-left: 1px dashed black;
+}
+
+.borderDashedRight {
+    border-right: 1px dashed black;
+}
+  
+
 .borderSolid {
     border-bottom: 2px solid #ffffff;
 }
@@ -1549,6 +1562,10 @@ input[type='text'] {
 
 .vignette-x:hover {
     background: rgba(255, 255, 244, 0.3);
+}
+
+.adresse-carte p:not(.bold) {
+    font-size: 12px;
 }
 
 

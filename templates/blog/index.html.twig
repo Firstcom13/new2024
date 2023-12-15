@@ -5,96 +5,11 @@
 
 {% block body %}
 
-	<section
-		class="blog-container">
+	<section class="blog-container">
 		{# Dernier article en vedette #}
 		{% if dernierArticle %}
-
-			<style>
-				.vedette-article {
-					height: 46vw;
-					background-image: url("{{ asset('uploads/images/' ~ dernierArticle.imgXL) }}");
-					background-repeat: no-repeat;
-					background-size: cover;
-					background-position: center;
-					display: flex;
-					justify-content: center;
-					align-items: center;
-				}
-
-				
-				{# /* Ajout d'un pseudo-élément ::after pour créer un filtre sombre */
-				.vedette-article::after {
-					content: ''; /* Nécessaire pour que le pseudo-élément s'affiche */
-					position: absolute;
-					height: 64.4vw;
-					top: 0;
-					right: 0;
-					bottom: 0;
-					left: 0;
-					background-color: rgba(0, 0, 0, 0.3); /* La couleur de fond semi-transparente */
-					z-index: 1; /* Place l'overlay sous le contenu textuel */	
-				} #}
-
-				.vedette-article h1 {
-					font-size: 40px;
-					font-weight: 800;
-					text-align: left;
-					width: 100%;
-					margin: 0;
-				}
-
-				.vedette-article-lancement,
-				.inside-autres-articles {
-					background-color: rgba(0, 0, 0, 0.4);
-					{# backdrop-filter: blur(4px);
-    				-webkit-backdrop-filter: blur(4px); #}
-				}
-
-				.vedette-article-lancement a,
-				.autres-articles-lancement a {
-					width: 10%;
-					background: #3C4141;
-					color: #FFFFFF;
-					text-decoration: none;
-					text-align: center;
-					font-weight: 500;
-					padding: 5px;
-				}
-
-				.autres-articles h2 {
-					font-size: 26px;
-					font-weight: 800;
-					text-align: left;
-					width: 100%;
-					margin: 0;
-				}
-
-				.infos span {
-					padding: 2px 5px;
-					color: #FFFFFF;
-					text-transform: uppercase;
-					text-align: center;
-					font-size: 12px;
-					font-weight: 500;
-				}
-				.infos span.date {
-					background: #96a596;
-				}
-				.infos span.categories {
-					background: #3C4141;
-				}
-
-				.texte-courant-mini {
-					font-family: Open Sans,sans-serif;
-					font-size: 16px;
-					font-weight: 400;
-					line-height: 1.6;
-					margin: 0;
-				}
-			</style>
-
-			<div class="vedette-article">
+		
+			<div class="vedette-article" style="background-image: url('{{ asset('uploads/images/' ~ dernierArticle.imgXL) }}');">
 				<div class="container-medium">
 					<div class="row">
 						<div class="col-sm-12 col-md-12 p-5 vedette-article-lancement">
@@ -112,6 +27,7 @@
 					</div>
 				</div>
 			</div>
+
 		{% endif %}
 
 	<div class="autres-articles">
@@ -146,21 +62,54 @@
 			</div>
 		</div>
 		{# Affichage des liens de pagination #}
+
+		<style>
+			.pagination {
+				padding: 20px 0 30px 0;
+			}
+
+			.pagination .pagination-pages {
+				margin: 0 auto;
+			}
+
+			.pagination .pagination-pages a {
+				padding: 4px 12px;
+				text-decoration: none;
+				font-size: 14px;
+				color: #000000;
+				font-weight: 600;
+			}
+
+			.pagination .pagination-pages a > img {
+				width: 20px;
+				position: relative;
+				bottom: 1px;
+			}
+
+			.pagination .pagination-pages a.active {
+				color: #96A596;
+				font-weight: bold;
+				border-bottom: 1px solid #96A596;
+			}
+		</style>
 		<div class="pagination">
-			{# Flèche pour aller à la page précédente #}
-			{% if pagination.currentPageNumber > 1 %}
-				<a href="{{ path('app_blog_paginated', {'page': pagination.currentPageNumber - 1}) }}">&laquo;</a>
-			{% endif %}
+			<div class="pagination-pages">
+				{# Flèche pour aller à la page précédente #}
+				{% if pagination.currentPageNumber > 1 %}
+					<a href="{{ path('app_blog_paginated', {'page': pagination.currentPageNumber - 1}) }}"><img src="{{ asset('uploads/images/fleche-left.svg') }}" alt="Flèche à gauche"></a></a>
+				{% endif %}
 
-			{# Lien vers les pages #}
-			{% for i in 1..pagination.pageCount %}
-				<a href="{{ path('app_blog_paginated', {'page': i}) }}">{{ i }}</a>
-			{% endfor %}
+				{# Lien vers les pages #}
+				{% for i in 1..pagination.pageCount %}
+					{# Application d'une classe différente si c'est la page actuelle #}
+					<a href="{{ path('app_blog_paginated', {'page': i}) }}" class="{{ i == pagination.currentPageNumber ? 'active' : '' }}">{{ i }}</a>
+				{% endfor %}
 
-			{# Flèche pour aller à la page suivante #}
-			{% if pagination.currentPageNumber < pagination.pageCount %}
-				<a href="{{ path('app_blog_paginated', {'page': pagination.currentPageNumber + 1}) }}">&raquo;</a>
-			{% endif %}
+				{# Flèche pour aller à la page suivante #}
+				{% if pagination.currentPageNumber < pagination.pageCount %}
+					<a href="{{ path('app_blog_paginated', {'page': pagination.currentPageNumber + 1}) }}"><img src="{{ asset('uploads/images/fleche-right.svg') }}" alt="Flèche à droite"></a>
+				{% endif %}
+			</div>
 		</div>
 	</div>
 

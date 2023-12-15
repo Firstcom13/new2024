@@ -34,6 +34,10 @@ class ArticlesBlogRepository extends ServiceEntityRepository
             // en ordre décroissant ('DESC'), ce qui signifie du plus récent au plus ancien.
             ->orderBy('a.date_creation', 'DESC')
 
+            // Ajout d'un critère de publication
+            ->where('a.publication = :isPublished')
+            ->setParameter('isPublished', true)
+
             // Limite le nombre de résultats à 1.
             // Puisque les résultats sont triés par date de façon décroissante,
             // cela retournera le dernier (le plus récent) article.
@@ -54,7 +58,9 @@ class ArticlesBlogRepository extends ServiceEntityRepository
     {
         $lastArticle = $this->findLastArticle();
 
-        $qb = $this->createQueryBuilder('a');
+        $qb = $this->createQueryBuilder('a')
+            ->where('a.publication = :isPublished')
+            ->setParameter('isPublished', true);
 
         if ($lastArticle) {
             $qb->andWhere('a.id != :lastArticleId')

@@ -29,9 +29,13 @@ class Categorie
     #[ORM\ManyToMany(targetEntity: Reference::class, mappedBy: 'categorie')]
     private Collection $reference;
 
+    #[ORM\ManyToMany(targetEntity: ArticlesBlog::class, mappedBy: 'categorie')]
+    private Collection $date_creation;
+
     public function __construct()
     {
         $this->reference = new ArrayCollection();
+        $this->date_creation = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -105,6 +109,25 @@ class Categorie
     public function __toString(): string
     {
         return $this->nom;
+    }
+
+    public function addDateCreation(ArticlesBlog $dateCreation): static
+    {
+        if (!$this->date_creation->contains($dateCreation)) {
+            $this->date_creation->add($dateCreation);
+            $dateCreation->addCategorie($this);
+        }
+
+        return $this;
+    }
+
+    public function removeDateCreation(ArticlesBlog $dateCreation): static
+    {
+        if ($this->date_creation->removeElement($dateCreation)) {
+            $dateCreation->removeCategorie($this);
+        }
+
+        return $this;
     }
     
 }

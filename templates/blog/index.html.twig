@@ -1,0 +1,177 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}blog
+{% endblock %}
+
+{% block body %}
+
+	<section
+		class="blog-container">
+		{# Dernier article en vedette #}
+		{% if dernierArticle %}
+
+			<style>
+				.vedette-article {
+					height: 46vw;
+					background-image: url("{{ asset('uploads/images/' ~ dernierArticle.imgXL) }}");
+					background-repeat: no-repeat;
+					background-size: cover;
+					background-position: center;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+
+				
+				{# /* Ajout d'un pseudo-élément ::after pour créer un filtre sombre */
+				.vedette-article::after {
+					content: ''; /* Nécessaire pour que le pseudo-élément s'affiche */
+					position: absolute;
+					height: 64.4vw;
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					background-color: rgba(0, 0, 0, 0.3); /* La couleur de fond semi-transparente */
+					z-index: 1; /* Place l'overlay sous le contenu textuel */	
+				} #}
+
+				.vedette-article h1 {
+					font-size: 40px;
+					font-weight: 800;
+					text-align: left;
+					width: 100%;
+					margin: 0;
+				}
+
+				.vedette-article-lancement,
+				.inside-autres-articles {
+					background-color: rgba(0, 0, 0, 0.4);
+					{# backdrop-filter: blur(4px);
+    				-webkit-backdrop-filter: blur(4px); #}
+				}
+
+				.vedette-article-lancement a,
+				.autres-articles-lancement a {
+					width: 10%;
+					background: #3C4141;
+					color: #FFFFFF;
+					text-decoration: none;
+					text-align: center;
+					font-weight: 500;
+					padding: 5px;
+				}
+
+				.autres-articles h2 {
+					font-size: 26px;
+					font-weight: 800;
+					text-align: left;
+					width: 100%;
+					margin: 0;
+				}
+
+				.infos span {
+					padding: 2px 5px;
+					color: #FFFFFF;
+					text-transform: uppercase;
+					text-align: center;
+					font-size: 12px;
+					font-weight: 500;
+				}
+				.infos span.date {
+					background: #96a596;
+				}
+				.infos span.categories {
+					background: #3C4141;
+				}
+
+				.texte-courant-mini {
+					font-family: Open Sans,sans-serif;
+					font-size: 16px;
+					font-weight: 400;
+					line-height: 1.6;
+					margin: 0;
+				}
+			</style>
+
+			<div class="vedette-article">
+				<div class="container-medium">
+					<div class="row">
+						<div class="col-sm-12 col-md-12 p-5 vedette-article-lancement">
+							<div class="infos mb-3">
+								<span class="date">{{ dernierArticle.dateCreation | date('d m Y') }}</span>
+								{% for categorie in dernierArticle.categorie %}
+									<span class="categories">{{ categorie.nom }}</span>
+								{% endfor %}
+							</div>
+							<h1 class="writeWhite mb-3">{{ dernierArticle.titre | raw}}</h1>
+							<div class="writeWhite texte-courant">{{ dernierArticle.descriptionCourte | raw}}</div>
+
+							<a href="#" class="d-block mt-4">LIRE</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endif %}
+
+	<div class="autres-articles">
+		<div class="container-fluid">
+			<div class="row">
+				{% for article in pagination %}
+					<div class="col-sm-6 col-md-6 p-5 autres-articles-lancement" style="background-image: url('{{ asset('uploads/images/' ~ article.imgS) }}'); background-repeat: no-repeat; background-size: cover; background-position: center; display: flex; justify-content: center; align-items: center;">
+
+						<div class="container-fluid">
+							<div class="inside-autres-articles row p-4">
+								<div class="col-12">
+									<div class="infos mb-3">
+										<span class="date">{{ article.dateCreation | date('d m Y') }}</span>
+										{% for categorie in article.categorie %}
+											<span class="categories">{{ categorie.nom }}</span>
+										{% endfor %}
+									</div>
+								</div>
+								<div class="col-12">
+									<h2 class="writeWhite mb-3">{{ article.titre | raw }}</h2>
+								</div>
+								<div class="col-12">
+									<div class="writeWhite texte-courant-mini">{{ article.descriptionCourte | raw }}</div>
+								</div>
+								<div class="col-12">
+									<a href="#" class="d-block mt-4">LIRE</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+		{# Affichage des liens de pagination #}
+		<div class="pagination">
+			{# Flèche pour aller à la page précédente #}
+			{% if pagination.currentPageNumber > 1 %}
+				<a href="{{ path('app_blog_paginated', {'page': pagination.currentPageNumber - 1}) }}">&laquo;</a>
+			{% endif %}
+
+			{# Lien vers les pages #}
+			{% for i in 1..pagination.pageCount %}
+				<a href="{{ path('app_blog_paginated', {'page': i}) }}">{{ i }}</a>
+			{% endfor %}
+
+			{# Flèche pour aller à la page suivante #}
+			{% if pagination.currentPageNumber < pagination.pageCount %}
+				<a href="{{ path('app_blog_paginated', {'page': pagination.currentPageNumber + 1}) }}">&raquo;</a>
+			{% endif %}
+		</div>
+	</div>
+
+	</section>
+
+
+	{# Autres articles #}
+	{# {% for article in articles %}
+						    <div class="article">
+						        <h2>{{ article.titre }}</h2>
+						    </div>
+						{% endfor %} #}
+
+{% endblock %}

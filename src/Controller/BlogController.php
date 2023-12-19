@@ -45,7 +45,7 @@ class BlogController extends AbstractController
         $pagination = $paginator->paginate(
             $queryAutresArticles, // la Query et non le résultat
             $page, // Numéro de la page actuelle, 1 si aucune n'est définie
-            2 // Nombre d'articles par page
+            4 // Nombre d'articles par page
         );
 
         return $this->render('blog/index.html.twig', [

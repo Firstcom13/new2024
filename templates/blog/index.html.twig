@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}blog
+{% block title %}Le Blog de FIRSTCOM
 {% endblock %}
 
 {% block body %}
@@ -22,7 +22,10 @@
 							<h1 class="writeWhite mb-3">{{ dernierArticle.titre | raw}}</h1>
 							<div class="writeWhite texte-courant">{{ dernierArticle.descriptionCourte | raw}}</div>
 
-							<a href="#" class="d-block mt-4">LIRE</a>
+							<a href="{{ path('app_article_show', {
+								'id': dernierArticle.id,
+								'slug': dernierArticle.titre | striptags | slug | lower
+							}) }}" class="d-block mt-4">LIRE</a>
 						</div>
 					</div>
 				</div>
@@ -53,7 +56,10 @@
 									<div class="writeWhite texte-courant-mini">{{ article.descriptionCourte | raw }}</div>
 								</div>
 								<div class="col-12">
-									<a href="#" class="d-block mt-4">LIRE</a>
+									<a href="{{ path('app_article_show', {
+										'id': article.id,
+										'slug': article.titre | striptags | slug | lower
+									}) }}" class="d-block mt-4">LIRE</a>
 								</div>
 							</div>
 						</div>

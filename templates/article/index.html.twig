@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Article FIRSTCOM
+{% endblock %}
+
+{% block body %}
+
+
+	<style>
+		.background-article {
+			height: 46vw;
+		}
+
+        .article-lancement {
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .article-lancement h1 {
+            font-size: 40px;
+            font-weight: 800;
+            margin: 0;
+            text-align: left;
+            width: 100%;
+        }
+	</style>
+	<div class="col-sm-12 col-md-12 p-5 background-article" style="background-image: url('{{ asset('uploads/images/' ~ article.imgXL) }}'); background-repeat: no-repeat; background-size: cover; background-position: center; display: flex; justify-content: center; align-items: center;">
+
+		<div class="container-medium">
+			<div class="row">
+				<div class="col-sm-12 col-md-12 p-5 article-lancement">
+					<h1 class="writeWhite mb-3">{{ article.titre | raw}}</h1>
+				</div>
+			</div>
+		</div>
+    </div>
+    <div class="col-sm-12 col-md-12 py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="infos mb-3">
+                        <span class="date">{{ article.dateCreation | date('d m Y') }}</span>
+                        {% for categorie in article.categorie %}
+                            <span class="categories">{{ categorie.nom }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="col-12">
+                    {{ article.Contenu | raw}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+	{% endblock %}

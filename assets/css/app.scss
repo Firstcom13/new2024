@@ -290,6 +290,14 @@ ul > li {
     cursor: pointer !important;
 }
 
+.container-medium-blog {
+    padding: 0 15%;
+
+    @media screen and (max-width: 991px) {
+        padding: 0 10%;
+    }
+}
+
 .container-medium {
     padding: 0 15%;
 
@@ -2004,7 +2012,7 @@ td {
 ██████╔╝███████╗╚██████╔╝╚██████╔╝
 */
 .vedette-article {
-    height: 46vw;
+    height: 98vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -2033,6 +2041,10 @@ td {
     text-align: left;
     width: 100%;
     margin: 0;
+
+    @media screen and (max-width: 499px) {
+        font-size: 30px;
+    }
 }
 
 .vedette-article-lancement,
@@ -2044,7 +2056,6 @@ td {
 
 .vedette-article-lancement a,
 .autres-articles-lancement a {
-    width: 10%;
     background: #3C4141;
     color: #FFFFFF;
     text-decoration: none;
@@ -2059,6 +2070,10 @@ td {
     text-align: left;
     width: 100%;
     margin: 0;
+
+    @media screen and (max-width: 499px) {
+        font-size: 18px;
+    }
 }
 
 .infos span {

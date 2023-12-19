@@ -10,9 +10,9 @@
 		{% if dernierArticle %}
 		
 			<div class="vedette-article" style="background-image: url('{{ asset('uploads/images/' ~ dernierArticle.imgXL) }}');">
-				<div class="container-medium">
+				<div class="container-medium-blog">
 					<div class="row">
-						<div class="col-sm-12 col-md-12 p-5 vedette-article-lancement">
+						<div class="col-sm-12 col-md-12 p-4 p-sm-5 vedette-article-lancement">
 							<div class="infos mb-3">
 								<span class="date">{{ dernierArticle.dateCreation | date('d m Y') }}</span>
 								{% for categorie in dernierArticle.categorie %}
@@ -22,10 +22,14 @@
 							<h1 class="writeWhite mb-3">{{ dernierArticle.titre | raw}}</h1>
 							<div class="writeWhite texte-courant">{{ dernierArticle.descriptionCourte | raw}}</div>
 
-							<a href="{{ path('app_article_show', {
-								'id': dernierArticle.id,
-								'slug': dernierArticle.titre | striptags | slug | lower
-							}) }}" class="d-block mt-4">LIRE</a>
+							<div class="row">
+								<div class="col-6 col-md-2 col-xl-2 col-xxl-1">
+									<a href="{{ path('app_article_show', {
+										'id': dernierArticle.id,
+										'slug': dernierArticle.titre | striptags | slug | lower
+									}) }}" class="d-block mt-4">LIRE</a>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -37,10 +41,10 @@
 		<div class="container-fluid">
 			<div class="row">
 				{% for article in pagination %}
-					<div class="col-sm-6 col-md-6 p-5 autres-articles-lancement" style="background-image: url('{{ asset('uploads/images/' ~ article.imgS) }}'); background-repeat: no-repeat; background-size: cover; background-position: center; display: flex; justify-content: center; align-items: center;">
+					<div class="col-sm-12 col-md-6 p-4 p-sm-5 autres-articles-lancement" style="background-image: url('{{ asset('uploads/images/' ~ article.imgS) }}'); background-repeat: no-repeat; background-size: cover; background-position: center; display: flex; justify-content: center; align-items: center;">
 
 						<div class="container-fluid">
-							<div class="inside-autres-articles row p-4">
+							<div class="inside-autres-articles row p-3 p-sm-4">
 								<div class="col-12">
 									<div class="infos mb-3">
 										<span class="date">{{ article.dateCreation | date('d m Y') }}</span>
@@ -55,7 +59,7 @@
 								<div class="col-12">
 									<div class="writeWhite texte-courant-mini">{{ article.descriptionCourte | raw }}</div>
 								</div>
-								<div class="col-12">
+								<div class="col-4 col-md-4 col-xl-3 col-xxl-2">
 									<a href="{{ path('app_article_show', {
 										'id': article.id,
 										'slug': article.titre | striptags | slug | lower

@@ -27,6 +27,9 @@ class ArticlesBlog
     #[ORM\Column(type: Types::TEXT)]
     private ?string $contenu = null;
 
+    #[ORM\Column(type: Types::TEXT)]
+    private ?string $meta_description = null;
+
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $img_s = null;
 
@@ -90,6 +93,18 @@ class ArticlesBlog
     public function setContenu(string $contenu): static
     {
         $this->contenu = $contenu;
+
+        return $this;
+    }
+
+    public function getMetaDescription(): ?string
+    {
+        return $this->meta_description;
+    }
+
+    public function setMetaDescription(string $meta_description): static
+    {
+        $this->meta_description = $meta_description;
 
         return $this;
     }

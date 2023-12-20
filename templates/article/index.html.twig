@@ -1,6 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Article FIRSTCOM
+{% block title %}{{ title }}{% endblock %}
+
+{% block meta_description %}
+    <meta name="description" content="{{ metaDescription }}">
 {% endblock %}
 
 {% block body %}
@@ -8,11 +11,27 @@
 
 	<style>
 		.background-article {
-			height: 46vw;
+			height: 98vh;
 		}
 
-        .article-lancement {
-            background-color: rgba(0, 0, 0, 0.4);
+        .background-article {
+            position: relative;
+        }
+
+        .background-article::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .background-article > * {
+            position: relative;
+            z-index: 2;
         }
 
         .article-lancement h1 {
@@ -22,12 +41,24 @@
             text-align: left;
             width: 100%;
         }
+
+        @media screen and (max-width: 991px) {
+            .article-lancement h1 {
+                font-size: 30px;
+            }
+        }
 	</style>
 	<div class="col-sm-12 col-md-12 p-5 background-article" style="background-image: url('{{ asset('uploads/images/' ~ article.imgXL) }}'); background-repeat: no-repeat; background-size: cover; background-position: center; display: flex; justify-content: center; align-items: center;">
-
 		<div class="container-medium">
 			<div class="row">
-				<div class="col-sm-12 col-md-12 p-5 article-lancement">
+				<div class="col-sm-12 col-md-12 p-4 p-sm-5 article-lancement">
+                    <div class="fil_ariane">
+                        <a href="{{ path('app_home') }}">FIRSTCOM</a>
+                        |
+                        <a href="{{ path('app_blog') }}">BLOG</a>
+                        |
+                        <span>ARTICLE EXCLUSIF</span>
+                    </div>
 					<h1 class="writeWhite mb-3">{{ article.titre | raw}}</h1>
 				</div>
 			</div>

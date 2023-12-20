@@ -45,6 +45,7 @@ class ArticlesBlogCrudController extends AbstractCrudController
                 TextEditorField::new('titre'),
                 TextEditorField::new('description_courte', 'Description Courte'),
                 TextEditorField::new('contenu'),
+                TextEditorField::new('meta_description', 'Méta Description'),
                 ImageField::new('img_s', 'Petite Image')
                     ->setBasePath('uploads/images')
                     ->setUploadDir('public/uploads/images'),

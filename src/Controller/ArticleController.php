@@ -20,22 +20,16 @@ class ArticleController extends AbstractController
             throw $this->createNotFoundException('L\'article demandé n\'existe pas.');
         }
 
-        // // Créer une instance de AsciiSlugger
-        // $slugger = new AsciiSlugger();
-        // // Génération du slug attendu à partir du titre de l'article
-        // $expectedSlug = $slugger->slug($article->getTitre())->lower();
+        // Supposons que $article->getTitre() renvoie le titre avec des balises <div>
+        $title = strip_tags($article->getTitre(), '<allowed><tags>');
+        $metaDescription = strip_tags($article->getMetaDescription(), '<allowed><tags>');
 
-        // Comparaison du slug attendu avec celui passé dans l'URL
-        // if ($slug !== $expectedSlug) {
-        //     // Si le slug ne correspond pas, redirigez vers l'URL correcte
-        //     return $this->redirectToRoute('app_article_show', [
-        //         'id' => $id,
-        //         'slug' => $expectedSlug,
-        //     ]);
-        // }
+        // dd($metaDescription);
 
         return $this->render('article/index.html.twig', [
             'article' => $article,
+            'title' => $title,
+            'metaDescription' => $metaDescription,
         ]);
     }
 }

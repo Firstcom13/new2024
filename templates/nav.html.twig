@@ -14,7 +14,7 @@
 					<ul>
 						<li class="rubrique-menu">
 							<a href="{{ path('app_conseil') }}" class="cursor-pointer">CONSEIL & STRATÉGIE</a>
-							<span class="icone-plus cursor-pointer"><img class="fleche-sous-menu" src="{{ asset('uploads/images/fleche-down-white.webp') }}"></span>
+							<span class="icone-plus cursor-pointer"><img class="fleche-sous-menu" src="{{ asset('uploads/images/chevron-down-white.svg') }}"></span>
 							<ul class="sous-menu">
 								<li><a class="rubrique-sousmenu" href="{{ path('app_consulting_et_developpement') }}">Consulting & développement</a></li>
 								<li><a class="rubrique-sousmenu" href="{{ path('app_marketing_de_loffre') }}">Marketing de l'offre</a></li>
@@ -23,7 +23,7 @@
 						</li>
 						<li class="rubrique-menu">
 							<a href="{{ path('app_croissance') }}" class="cursor-pointer">CROISSANCE & PERFORMANCE</a>
-							<span class="icone-plus cursor-pointer"><img class="fleche-sous-menu" src="{{ asset('uploads/images/fleche-down-white.webp') }}"></span>
+							<span class="icone-plus cursor-pointer"><img class="fleche-sous-menu" src="{{ asset('uploads/images/chevron-down-white.svg') }}"></span>
                             <ul class="sous-menu">
 								<li><a class="rubrique-sousmenu" href="{{ path('app_referencement_naturel_seo') }}">Référencement naturel</a></li>
 								<li><a class="rubrique-sousmenu" href="{{ path('app_campagnes_digitales') }}">Campagnes payantes</a></li>
@@ -33,7 +33,7 @@
 						</li>
 						<li class="rubrique-menu">
 							<a href="{{ path('app_contenus') }}" class="cursor-pointer">CRÉATION DE CONTENU</a>
-							<span class="icone-plus cursor-pointer"><img class="fleche-sous-menu" src="{{ asset('uploads/images/fleche-down-white.webp') }}"></span>
+							<span class="icone-plus cursor-pointer"><img class="fleche-sous-menu" src="{{ asset('uploads/images/chevron-down-white.svg') }}"></span>
 							<ul class="sous-menu">
 								<li><a class="rubrique-sousmenu" href="{{ path('app_creation_editoriale') }}">Création éditoriale & Story-telling</a></li>
 							</ul>
@@ -131,5 +131,37 @@ document.querySelectorAll('.icone-plus').forEach(function(iconPlus) {
         }
     });
 });
+
+{# // Sélection de tous les éléments avec la classe '.rubrique-menu'
+document.querySelectorAll('.rubrique-menu').forEach(function(rubriqueMenu) {
+    // Gérer l'ouverture du sous-menu au survol
+    rubriqueMenu.addEventListener('mouseover', function(event) {
+        var sousMenu = rubriqueMenu.querySelector('.sous-menu');
+        var icone = rubriqueMenu.querySelector('.icone-plus img');
+
+        // Fermer tous les sous-menus ouverts et réinitialiser les icônes
+        document.querySelectorAll('.sous-menu.sous-menu-ouvert').forEach(function(openMenu) {
+            openMenu.classList.remove('sous-menu-ouvert');
+            openMenu.previousElementSibling.querySelector('img').classList.remove('rotate-icon');
+            openMenu.previousElementSibling.querySelector('img').classList.add('rotate-icon-initial');
+        });
+
+        // Ouvrir le sous-menu actuel
+        sousMenu.classList.add('sous-menu-ouvert');
+        icone.classList.add('rotate-icon');
+        icone.classList.remove('rotate-icon-initial');
+    });
+
+    // Gérer la fermeture du sous-menu lors du retrait de la souris
+    rubriqueMenu.addEventListener('mouseout', function(event) {
+        var sousMenu = rubriqueMenu.querySelector('.sous-menu');
+        var icone = rubriqueMenu.querySelector('.icone-plus img');
+
+        sousMenu.classList.remove('sous-menu-ouvert');
+        icone.classList.remove('rotate-icon');
+        icone.classList.add('rotate-icon-initial');
+    });
+}); #}
+
 
 </script>

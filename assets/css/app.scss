@@ -1,6 +1,8 @@
 @import "~bootstrap/scss/bootstrap";
 @import "https://fonts.googleapis.com/css?family=Montserrat:400,700";
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&display=swap');
+@import '~@fortawesome/fontawesome-free/css/all.min.css';
+
 
 $couleur-titres : #3c4141;
 $couleur-textes : #3c4141;
@@ -1918,26 +1920,33 @@ td {
     }
 
     @media screen and (max-width: 499px) {
-        font-size: 20px;
+        font-size: 19px;
     }
 }
 
-.menu-wrap .menu .rubrique-menu p {
-    color: #fff;
-    font-size: 38px;
-    font-weight: 800;
-
-    &:hover {
-        color: #96a596;
-    }
+.fleche-sous-menu {
+    width: 40px;
+    position: relative;
+    bottom: 3px;
 
     @media screen and (max-width: 991px) {
-        font-size: 24px;
+        width: 30px;
     }
 
     @media screen and (max-width: 499px) {
-        font-size: 21px;
+        width: 24px;
+        bottom: 2px;
     }
+}
+
+.rotate-icon-initial {
+    transform: rotate(0deg);
+    transition: transform 0.3s ease; /* Animation douce de la rotation */
+}
+
+.rotate-icon {
+    transform: rotate(-180deg);
+    transition: transform 0.2s ease; /* Animation douce de la rotation */
 }
 
 .menu-wrap .menu .rubrique-sousmenu {

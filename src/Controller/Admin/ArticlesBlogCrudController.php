@@ -44,8 +44,19 @@ class ArticlesBlogCrudController extends AbstractCrudController
             return [
                 TextEditorField::new('titre'),
                 TextEditorField::new('description_courte', 'Description Courte'),
-                TextEditorField::new('contenu'),
-                TextEditorField::new('meta_description', 'Méta Description'),
+                TextEditorField::new('contenu')
+                    ->setTrixEditorConfig([
+                        'blockAttributes' => [
+                            'default' => ['tagName' => 'p'],
+                            'heading1' => ['tagName' => 'h1'],
+                            'heading2' => ['tagName' => 'h2'],
+                            'heading3' => ['tagName' => 'h3'],
+                            // ...ajoutez d'autres niveaux de titres si nécessaire
+                        ],
+                        'css' => [
+                            'attachment' => 'admin_file_field_attachment',
+                        ],
+                    ]),
                 ImageField::new('img_s', 'Petite Image')
                     ->setBasePath('uploads/images')
                     ->setUploadDir('public/uploads/images'),

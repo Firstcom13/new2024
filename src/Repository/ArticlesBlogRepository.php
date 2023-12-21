@@ -73,4 +73,33 @@ class ArticlesBlogRepository extends ServiceEntityRepository
         return $qb->getQuery();
     }
 
+    public function findAllCategories(): array
+    {
+        // Créer un objet QueryBuilder pour construire la requête.
+        // 'a' est un alias pour l'entité ArticlesBlog dans cette requête.
+        // 'c' sera un alias pour la jointure avec l'entité Catégorie.
+        $qb = $this->createQueryBuilder('a')
+            ->select('DISTINCT c.nom') // Sélectionne les noms de catégories distincts
+            ->innerJoin('a.categorie', 'c') // Effectue une jointure avec l'entité Catégorie
+            ->where('a.publication = :isPublished')
+            ->setParameter('isPublished', true)
+            ->orderBy('c.nom', 'ASC'); // Trie les catégories par nom dans l'ordre ascendant
+
+        // Convertit le QueryBuilder en une Query exécutable.
+        $query = $qb->getQuery();
+
+        // Exécute la requête et obtient les résultats.
+        // getResult() retourne un tableau des résultats de la requête.
+        return $query->getResult();
+    }
+
+    public function getArticlesByCategoryQuery(string $categoryName): Query
+    {
+        return $this->createQueryBuilder('a')
+            ->innerJoin('a.categorie', 'c') // Assurez-vous que 'categorie' est le nom correct de la propriété dans ArticlesBlog.
+            ->where('c.nom = :categoryName') // Remplacez 'nom' par le champ réel dans Categorie qui contient le nom.
+            ->setParameter('categoryName', $categoryName)
+            ->getQuery();
+    }
+
 }

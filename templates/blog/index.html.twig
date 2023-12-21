@@ -37,91 +37,136 @@
 
 		{% endif %}
 
-	<div class="autres-articles">
-		<div class="container-fluid">
-			<div class="row">
-				{% for article in pagination %}
-					<div class="col-sm-12 col-md-6 p-4 p-sm-5 autres-articles-lancement" style="background-image: url('{{ asset('uploads/images/' ~ article.imgS) }}'); background-repeat: no-repeat; background-size: cover; background-position: center; display: flex; justify-content: center; align-items: center;">
-
-						<div class="container-fluid">
-							<div class="inside-autres-articles row p-3 p-sm-4">
-								<div class="col-12">
-									<div class="infos mb-3">
-										<span class="date">{{ article.dateCreation | date('d m Y') }}</span>
-										{% for categorie in article.categorie %}
-											<span class="categories">{{ categorie.nom }}</span>
-										{% endfor %}
-									</div>
-								</div>
-								<div class="col-12">
-									<h2 class="writeWhite mb-3">{{ article.titre | raw }}</h2>
-								</div>
-								<div class="col-12">
-									<div class="writeWhite texte-courant-mini">{{ article.descriptionCourte | raw }}</div>
-								</div>
-								<div class="col-4 col-md-4 col-xl-3 col-xxl-2">
-									<a href="{{ path('app_article_show', {
-										'id': article.id,
-										'slug': article.titre | striptags | slug | lower
-									}) }}" class="d-block mt-4">LIRE</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				{% endfor %}
-			</div>
-		</div>
-		{# Affichage des liens de pagination #}
-
 		<style>
-			.pagination {
-				padding: 20px 0 30px 0;
+			.blog-categories {
+				background-color: #3C4141;
+				text-align: center;
+				padding: 6px;
 			}
 
-			.pagination .pagination-pages {
-				margin: 0 auto;
+			.blog-categories span {
+				font-size: 12px;
+				color: #FFFFFF;
+				font-weight: 500;
 			}
 
-			.pagination .pagination-pages a {
-				padding: 4px 12px;
+			.blog-categories a {
 				text-decoration: none;
-				font-size: 14px;
-				color: #000000;
-				font-weight: 600;
+				font-size: 12px;
+				color: #FFFFFF;
+				font-weight: 500;
 			}
 
-			.pagination .pagination-pages a > img {
+			.blog-categories a:hover {
+				color: #96A596;
+			}
+
+			.fleche-categories {
 				width: 20px;
+				margin: 0 10px;
 				position: relative;
 				bottom: 1px;
 			}
-
-			.pagination .pagination-pages a.active {
-				color: #96A596;
-				font-weight: bold;
-				border-bottom: 1px solid #96A596;
-			}
 		</style>
-		<div class="pagination">
-			<div class="pagination-pages">
-				{# Flèche pour aller à la page précédente #}
-				{% if pagination.currentPageNumber > 1 %}
-					<a href="{{ path('app_blog_paginated', {'page': pagination.currentPageNumber - 1}) }}"><img src="{{ asset('uploads/images/fleche-left.svg') }}" alt="Flèche à gauche"></a></a>
-				{% endif %}
-
-				{# Lien vers les pages #}
-				{% for i in 1..pagination.pageCount %}
-					{# Application d'une classe différente si c'est la page actuelle #}
-					<a href="{{ path('app_blog_paginated', {'page': i}) }}" class="{{ i == pagination.currentPageNumber ? 'active' : '' }}">{{ i }}</a>
+		<div class="container-meduim">
+			<div class="blog-categories">
+				<span>CATÉGORIES</span>
+				<span><img class="fleche-categories" src="{{ asset('uploads/images/fleche-right-white.webp') }}"></span>
+				<a href="{{ path('app_blog') }}">TOUT</a>
+				{% for categorie in categories %}
+					<span> | </span>
+					<a href="{{ path('blog_filter_by_category', {'categoryName': categorie.nom}) }}">
+						{{ categorie.nom | upper }}
+					</a>
 				{% endfor %}
-
-				{# Flèche pour aller à la page suivante #}
-				{% if pagination.currentPageNumber < pagination.pageCount %}
-					<a href="{{ path('app_blog_paginated', {'page': pagination.currentPageNumber + 1}) }}"><img src="{{ asset('uploads/images/fleche-right.svg') }}" alt="Flèche à droite"></a>
-				{% endif %}
 			</div>
 		</div>
-	</div>
+
+		<div class="autres-articles">
+			<div class="container-fluid">
+				<div class="row">
+					{% for article in pagination %}
+						<div class="col-sm-12 col-md-6 p-4 p-sm-5 autres-articles-lancement" style="background-image: url('{{ asset('uploads/images/' ~ article.imgS) }}'); background-repeat: no-repeat; background-size: cover; background-position: center; display: flex; justify-content: center; align-items: center;">
+
+							<div class="container-fluid">
+								<div class="inside-autres-articles row p-3 p-sm-4">
+									<div class="col-12">
+										<div class="infos mb-3">
+											<span class="date">{{ article.dateCreation | date('d m Y') }}</span>
+											{% for categorie in article.categorie %}
+												<span class="categories">{{ categorie.nom }}</span>
+											{% endfor %}
+										</div>
+									</div>
+									<div class="col-12">
+										<h2 class="writeWhite mb-3">{{ article.titre | raw }}</h2>
+									</div>
+									<div class="col-12">
+										<div class="writeWhite texte-courant-mini">{{ article.descriptionCourte | raw }}</div>
+									</div>
+									<div class="col-4 col-md-4 col-xl-3 col-xxl-2">
+										<a href="{{ path('app_article_show', {
+											'id': article.id,
+											'slug': article.titre | striptags | slug | lower
+										}) }}" class="d-block mt-4">LIRE</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+			{# Affichage des liens de pagination #}
+
+			<style>
+				.pagination {
+					padding: 20px 0 30px 0;
+				}
+
+				.pagination .pagination-pages {
+					margin: 0 auto;
+				}
+
+				.pagination .pagination-pages a {
+					padding: 4px 12px;
+					text-decoration: none;
+					font-size: 14px;
+					color: #000000;
+					font-weight: 600;
+				}
+
+				.pagination .pagination-pages a > img {
+					width: 20px;
+					position: relative;
+					bottom: 1px;
+				}
+
+				.pagination .pagination-pages a.active {
+					color: #96A596;
+					font-weight: bold;
+					border-bottom: 1px solid #96A596;
+				}
+			</style>
+			<div class="pagination">
+				<div class="pagination-pages">
+					{# Flèche pour aller à la page précédente #}
+					{% if pagination.currentPageNumber > 1 %}
+						<a href="{{ path('app_blog_paginated', {'page': pagination.currentPageNumber - 1}) }}"><img src="{{ asset('uploads/images/fleche-left.svg') }}" alt="Flèche à gauche"></a></a>
+					{% endif %}
+
+					{# Lien vers les pages #}
+					{% for i in 1..pagination.pageCount %}
+						{# Application d'une classe différente si c'est la page actuelle #}
+						<a href="{{ path('app_blog_paginated', {'page': i}) }}" class="{{ i == pagination.currentPageNumber ? 'active' : '' }}">{{ i }}</a>
+					{% endfor %}
+
+					{# Flèche pour aller à la page suivante #}
+					{% if pagination.currentPageNumber < pagination.pageCount %}
+						<a href="{{ path('app_blog_paginated', {'page': pagination.currentPageNumber + 1}) }}"><img src="{{ asset('uploads/images/fleche-right.svg') }}" alt="Flèche à droite"></a>
+					{% endif %}
+				</div>
+			</div>
+		</div>
 
 	</section>
 

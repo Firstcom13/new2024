@@ -2,12 +2,13 @@
 
 namespace App\Entity;
 
-use App\Repository\CategorieRepository;
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use DateTime;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-use DateTime;
+use App\Repository\CategorieRepository;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\String\Slugger\AsciiSlugger;
 
 #[ORM\Entity(repositoryClass: CategorieRepository::class)]
 class Categorie
@@ -32,6 +33,19 @@ class Categorie
     #[ORM\ManyToMany(targetEntity: ArticlesBlog::class, mappedBy: 'categorie')]
     private Collection $date_creation;
 
+    #[ORM\Column(type: 'string', length: 255, unique: true)]
+    private $slug = null;
+
+    #[ORM\PrePersist]
+    #[ORM\PreUpdate]
+    public function updateSlug(): void
+    {
+        if ($this->nom) {
+            $slugger = new AsciiSlugger();
+            $this->slug = $slugger->slug($this->nom)->lower();
+        }
+    }
+
     public function __construct()
     {
         $this->reference = new ArrayCollection();
@@ -51,6 +65,9 @@ class Categorie
     public function setNom(string $nom): static
     {
         $this->nom = $nom;
+
+        // Mettre à jour le slug chaque fois que le nom est modifié.
+        $this->updateSlug();
 
         return $this;
     }
@@ -126,6 +143,18 @@ class Categorie
         if ($this->date_creation->removeElement($dateCreation)) {
             $dateCreation->removeCategorie($this);
         }
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(?string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }

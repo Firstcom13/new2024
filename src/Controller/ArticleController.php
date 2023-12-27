@@ -5,13 +5,12 @@ namespace App\Controller;
 use App\Repository\ArticlesBlogRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use Symfony\Component\String\Slugger\AsciiSlugger;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ArticleController extends AbstractController
 {
     #[Route('/article/{id}/{slug}', name: 'app_article_show')]
-    public function show(int $id, string $slug, ArticlesBlogRepository $repository): Response
+    public function show(int $id, ArticlesBlogRepository $repository): Response
     {
         $article = $repository->find($id);
         // dd($article);

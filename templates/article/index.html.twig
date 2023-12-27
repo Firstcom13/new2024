@@ -64,19 +64,30 @@
 			</div>
 		</div>
     </div>
-    <div class="col-sm-12 col-md-12 py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="infos mb-3">
-                        <span class="date">{{ article.dateCreation | date('d m Y') }}</span>
-                        {% for categorie in article.categorie %}
-                            <span class="categories">{{ categorie.nom }}</span>
-                        {% endfor %}
+    <div class="row">
+        <div class="col-12 col-sm-8 col-md-8 py-5">
+            <div class="container-medium">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="infos mb-3">
+                            <span class="date">{{ article.dateCreation | date('d m Y') }}</span>
+                            {% for categorie in article.categorie %}
+                                <span class="categories">{{ categorie.nom }}</span>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        {{ article.Contenu | raw}}
                     </div>
                 </div>
-                <div class="col-12">
-                    {{ article.Contenu | raw}}
+            </div>
+        </div>
+        <div class="col-12 col-sm-4 col-md-4 py-5">
+            <div class="container-medium">
+                <div class="row">
+                    <div class="col-12">
+                        <p>Autres articles</p>
+                    </div>
                 </div>
             </div>
         </div>

@@ -6,38 +6,8 @@
 {% block body %}
 
 	<section class="blog-container">
-		{# Dernier article en vedette #}
-		{% if dernierArticle %}
 		
-			<div class="vedette-article" style="background-image: url('{{ asset('uploads/images/' ~ dernierArticle.imgXL) }}');">
-				<div class="container-medium-blog">
-					<div class="row">
-						<div class="col-sm-12 col-md-12 p-4 p-sm-5 vedette-article-lancement">
-							<div class="infos mb-3">
-								<span class="date">{{ dernierArticle.dateCreation | date('d m Y') }}</span>
-								{% for categorie in dernierArticle.categorie %}
-									<span class="categories">{{ categorie.nom }}</span>
-								{% endfor %}
-							</div>
-							<h1 class="writeWhite mb-3">{{ dernierArticle.titre | raw}}</h1>
-							<div class="writeWhite texte-courant">{{ dernierArticle.descriptionCourte | raw}}</div>
-
-							<div class="row">
-								<div class="col-6 col-md-2 col-xl-2 col-xxl-1">
-									<a href="{{ path('app_article_show', {
-										'id': dernierArticle.id,
-										'slug': dernierArticle.titre | striptags | slug | lower
-									}) }}" class="d-block mt-4">LIRE</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		{% endif %}
-
-		<style>
+        <style>
 			.blog-categories {
 				background-color: #3C4141;
 				text-align: center;
@@ -61,55 +31,6 @@
 				color: #96A596;
 			}
 
-			.blog-categories-mobile {
-				background-color: #3C4141;
-				text-align: center;
-				padding: 6px;
-			}
-
-			.blog-categories-mobile span {
-				font-size: 14px;
-				color: #FFFFFF;
-				font-weight: 500;
-			}
-
-			.blog-categories-mobile a {
-				display: block;
-				font-size: 12px;
-				color: #FFFFFF;
-				font-weight: 500;
-				text-decoration: none;
-				margin: 10px auto;
-			}
-
-			.blog-categories-mobile img {
-				width: 20px;
-				position: relative;
-    			bottom: 2px;
-			}
-
-			.target-cat-mobile {
-				cursor: pointer;
-			}
-
-			/* Style de base pour le menu déroulant */
-			.categories-mobile {
-				overflow: hidden;
-				transition: max-height 0.3s ease;
-				max-height: 0; /* Commence avec max-height à 0 */
-			}
-
-			/* Quand le menu est ouvert, max-height est augmenté pour permettre l'affichage du contenu */
-			.cat-mobile-ouvert {
-				max-height: 20em; /* Vous devrez ajuster cette valeur en fonction de votre contenu */
-			}
-
-			/* Quand le menu est fermé, max-height est réduit pour masquer le contenu */
-			.cat-mobile-ferme {
-				max-height: 0;
-			}
-
-
 			.fleche-categories {
 				width: 20px;
 				margin: 0 10px;
@@ -117,36 +38,45 @@
 				bottom: 1px;
 			}
 
-			.chevron-categories {
-			transition: transform 0.3s ease;
-			}
+            #container-category {
+                display: flex;
+                justify-content: center;
+                position: relative;
+                background-image: url("{{ asset('uploads/images/header-fonds-trame-hp.svg') }}");
+                background-color: #96a596;
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 60vh;
+                align-items: center;
+                padding-bottom: 30px;
+            }
 
-			/* Quand la classe .chevron-up est présente, l'icône pivote */
-			.chevron-categories.chevron-up {
-				transform: rotate(180deg);
-			}
+            @media screen and (max-width: 991px) {
+                #container-category {
+                    height: auto;
+                    padding: 100px 0 85px 0px;
+                }
+            }
 
 
 		</style>
-		<script>
-			document.addEventListener("DOMContentLoaded", (event) => {
-			
-				let target = document.querySelector('.target-cat-mobile');
-				let categories_mobile = document.querySelector('.categories-mobile');
 
-				target.addEventListener('click', () => {
-					// Basculer entre les classes pour ouvrir/fermer le menu
-					categories_mobile.classList.toggle('cat-mobile-ferme');
-					categories_mobile.classList.toggle('cat-mobile-ouvert');
+        <section id="container-category">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-12 col-12">
+                    <div class="fil_ariane">
+                        <a href="{{ path('app_home') }}">FIRSTCOM</a>
+                        | 
+                        <a href="{{ path('app_blog') }}">BLOG</a>
+                        | 
+                        <span>{{ currentCategory | upper }}</span>
+                    </div>
 
-					let chevron = target.querySelector('.chevron-categories');
-					if (chevron) {
-						chevron.classList.toggle('chevron-up');
-					
-					}
-				});
-			});
-		</script>
+                    <h1 class="card-title sous-titre writeWhite">{{ currentCategory }}</h1>
+                </div>
+            </div>
+        </section>
+
 		<div class="container-meduim">
 			<div class="blog-categories">
 				<span>CATÉGORIES</span>
@@ -158,23 +88,6 @@
 						{{ categorie.nom | upper }}
 					</a>
 				{% endfor %}
-			</div>
-		</div>
-
-		<div class="container-meduim">
-			<div class="blog-categories-mobile align-items-center justify-content-center">
-				<div class="target-cat-mobile">
-					<span>TOUTES LES CATÉGORIES</span>
-					<span><img class="chevron-categories" src="{{ asset('uploads/images/chevron-down-white.svg') }}"></span>
-				</div>
-
-				<div class="categories-mobile cat-mobile-ferme">
-					{% for categorie in categories %}
-						<a href="{{ path('blog_filter_by_category', {'categoryName': categorie.slug}) }}">
-							{{ categorie.nom | upper }}
-						</a>
-					{% endfor %}
-				</div>
 			</div>
 		</div>
 
@@ -265,13 +178,5 @@
 		</div>
 
 	</section>
-
-
-	{# Autres articles #}
-	{# {% for article in articles %}
-						    <div class="article">
-						        <h2>{{ article.titre }}</h2>
-						    </div>
-						{% endfor %} #}
-
+    
 {% endblock %}

@@ -10,14 +10,21 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ArticleController extends AbstractController
 {
     #[Route('/article/{id}/{slug}', name: 'app_article_show')]
-    public function show(int $id, ArticlesBlogRepository $repository): Response
+    public function show(int $id, ArticlesBlogRepository $articlesBlogRepository): Response
     {
-        $article = $repository->find($id);
-        // dd($article);
+        $article = $articlesBlogRepository->find($id);
 
         if (!$article) {
             throw $this->createNotFoundException('L\'article demandé n\'existe pas.');
         }
+
+        // Récupération des derniers articles sauf l'article en cours de consultation
+        $limit = 2; // Nombre d'articles à récupérer
+        $derniersArticles = $articlesBlogRepository->findLatestArticlesExceptCurrent($id, $limit);
+        // dd($derniersArticles);
+        
+        // Récupération de toutes les catégories
+        $categories = $articlesBlogRepository->findAllCategories();
 
         // Supposons que $article->getTitre() renvoie le titre avec des balises <div>
         $title = strip_tags($article->getTitre(), '<allowed><tags>');
@@ -29,6 +36,8 @@ class ArticleController extends AbstractController
             'article' => $article,
             'title' => $title,
             'metaDescription' => $metaDescription,
+            'derniersArticles' => $derniersArticles,
+            'categories' => $categories,
         ]);
     }
 }

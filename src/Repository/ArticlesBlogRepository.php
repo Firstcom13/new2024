@@ -107,4 +107,39 @@ class ArticlesBlogRepository extends ServiceEntityRepository
         return $qb->getQuery();
     }
 
+    public function findLatestArticlesExceptCurrent($currentArticleId, $limit = null): array
+    {
+        $qb = $this->createQueryBuilder('a')
+            ->innerJoin('a.categorie', 'c') // Effectue une jointure avec l'entité Catégorie
+            ->where('a.publication = :isPublished')
+            ->andWhere('a.id != :currentArticleId') // Exclut l'article actuel
+            ->setParameter('isPublished', true)
+            ->setParameter('currentArticleId', $currentArticleId)
+            ->orderBy('a.date_creation', 'DESC'); // Assurez-vous que 'dateCreation' est le bon nom du champ
+    
+
+        if ($limit) {
+            $qb->setMaxResults($limit);
+        }
+
+        return $qb->getQuery()->getResult();
+    }
+
+
+    public function findLastArticleFromCategory($categoryName)
+    {
+        $qb = $this->createQueryBuilder('a')
+            ->innerJoin('a.categorie', 'c')
+            ->where('c.slug = :categoryName')
+            ->andWhere('a.publication = :isPublished')
+            ->setParameter('categoryName', $categoryName)
+            ->setParameter('isPublished', true)
+            ->orderBy('a.date_creation', 'DESC')
+            ->setMaxResults(1); // Pour ne récupérer que le plus récent
+
+        return $qb->getQuery()->getOneOrNullResult();
+    }
+
+
+
 }

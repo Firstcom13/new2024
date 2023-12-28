@@ -1,9 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ title }}{% endblock %}
+{% block title %}
+	{{ title }}
+{% endblock %}
 
 {% block meta_description %}
-    <meta name="description" content="{{ metaDescription }}">
+	<meta name="description" content="{{ metaDescription }}">
 {% endblock %}
 
 {% block body %}
@@ -14,83 +16,147 @@
 			height: 98vh;
 		}
 
-        .background-article {
-            position: relative;
-        }
+		.background-article {
+			position: relative;
+		}
 
-        .background-article::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.3);
-            z-index: 1;
-        }
+		.background-article::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(0, 0, 0, 0.3);
+			z-index: 1;
+		}
 
-        .background-article > * {
-            position: relative;
-            z-index: 2;
-        }
+		.background-article > * {
+			position: relative;
+			z-index: 2;
+		}
 
-        .article-lancement h1 {
-            font-size: 40px;
-            font-weight: 800;
-            margin: 0;
-            text-align: left;
-            width: 100%;
-        }
+		.article-lancement h1 {
+			font-size: 40px;
+			font-weight: 800;
+			margin: 0;
+			text-align: left;
+			width: 100%;
+		}
 
-        @media screen and (max-width: 991px) {
-            .article-lancement h1 {
-                font-size: 30px;
-            }
-        }
+		@media screen and(max-width: 991px) {
+			.article-lancement h1 {
+				font-size: 30px;
+			}
+		}
+
+		.article-aside-img {
+			height: 15vh;
+		}
+
+		.article-aside h2 {
+			font-size: 18px;
+			font-weight: 700;
+		}
+
+		.article-aside h3 {
+			font-size: 16px;
+			font-weight: 700;
+		}
+
+		.categories-aside a {
+			display: block;
+			width: fit-content;
+			font-size: 14px;
+			font-weight: 700;
+			color: #FFFFFF;
+			text-decoration: none;
+			background-color: #96A596;
+			padding: 2px 10px;
+			margin-bottom: 6px;
+		}
+
+		.categories-aside a.toutes-categories {
+			background-color: #3C4141;
+		}
 	</style>
 	<div class="col-sm-12 col-md-12 p-5 background-article" style="background-image: url('{{ asset('uploads/images/' ~ article.imgXL) }}'); background-repeat: no-repeat; background-size: cover; background-position: center; display: flex; justify-content: center; align-items: center;">
 		<div class="container-medium">
 			<div class="row">
 				<div class="col-sm-12 col-md-12 p-4 p-sm-5 article-lancement">
-                    <div class="fil_ariane">
-                        <a href="{{ path('app_home') }}">FIRSTCOM</a>
-                        |
-                        <a href="{{ path('app_blog') }}">BLOG</a>
-                        |
-                        <span>ARTICLE EXCLUSIF</span>
-                    </div>
+					<div class="fil_ariane">
+						<a href="{{ path('app_home') }}">FIRSTCOM</a>
+						|
+						<a href="{{ path('app_blog') }}">BLOG</a>
+						|
+						<span>ARTICLE EXCLUSIF</span>
+					</div>
 					<h1 class="writeWhite mb-3">{{ article.titre | raw}}</h1>
 				</div>
 			</div>
 		</div>
-    </div>
-    <div class="row">
-        <div class="col-12 col-sm-8 col-md-8 py-5">
-            <div class="container-medium">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="infos mb-3">
-                            <span class="date">{{ article.dateCreation | date('d m Y') }}</span>
-                            {% for categorie in article.categorie %}
-                                <span class="categories">{{ categorie.nom }}</span>
-                            {% endfor %}
-                        </div>
-                    </div>
-                    <div class="col-12">
-                        {{ article.Contenu | raw}}
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-12 col-sm-4 col-md-4 py-5">
-            <div class="container-medium">
-                <div class="row">
-                    <div class="col-12">
-                        <p>Autres articles</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	</div>
 
-	{% endblock %}
+	<div class="container-medium">
+		<div class="row">
+			<div class="col-12 col-sm-8 col-md-8 py-5">
+				<div class="row">
+					<div class="col-12">
+						<div class="infos mb-3">
+							<span class="date">{{ article.dateCreation | date('d m Y') }}</span>
+							{% for categorie in article.categorie %}
+								<span class="categories">{{ categorie.nom }}</span>
+							{% endfor %}
+						</div>
+					</div>
+					<div class="col-12">
+						{{ article.Contenu | raw}}
+					</div>
+				</div>
+			</div>
+			<div class="article-aside col-12 col-sm-4 col-md-4 py-5">
+				<div class="row">
+
+					<div class="col-12">
+						<h2>ARTICLES RECENTS</h2>
+
+						{% for dernierArticle in derniersArticles %}
+							<a href="{{ path('app_article_show', {
+												'id': dernierArticle.id,
+												'slug': dernierArticle.titre | striptags | slug | lower
+											}) }}" class="text-decoration-none">
+								<div class="col-12 mt-3 mb-4">
+									<div class="article-aside-img" style="background-image: url('{{ asset('uploads/images/' ~ dernierArticle.imgS) }}'); background-repeat: no-repeat; background-size: cover; background-position: center; display: flex; justify-content: center; align-items: center;"></div>
+									<div class="infos mt-2">
+										<span class="date">{{ dernierArticle.dateCreation | date('d m Y') }}</span>
+										{% for categorie in dernierArticle.categorie %}
+											<span class="categories">{{ categorie.nom }}</span>
+										{% endfor %}
+									</div>
+									<div class="article-aside-titre mt-2">
+										<h3>{{ dernierArticle.titre | raw }}</h3>
+									</div>
+								</div>
+							</a>
+						{% endfor %}
+					</div>
+
+					<div class="col-12 border-top border-secondary"></div>
+
+					<div class="col-12">
+						<h2 class="mt-4 mb-3">CATÉGORIES</h2>
+						<div class="categories-aside">
+							<a href="{{ path('app_blog') }}" class="toutes-categories">TOUTES LES CATÉGORIES</a>
+
+							{% for categorie in categories %}
+								<a href="{{ path('blog_filter_by_category', {'categoryName': categorie.slug}) }}">{{ categorie.nom | upper }}</a>
+							{% endfor %}
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}

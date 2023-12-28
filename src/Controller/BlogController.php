@@ -64,7 +64,10 @@ class BlogController extends AbstractController
     #[Route('/blog/categorie/{categoryName}/{page<\d+>?1}', name: 'blog_filter_by_category')]
     public function filterByCategory(string $categoryName, int $page = 1, ArticlesBlogRepository $articlesBlogRepository, PaginatorInterface $paginator): Response
     {
-        
+        // Récupération du dernier article publié dans la catégorie spécifique
+        $dernierArticle = $articlesBlogRepository->findLastArticleFromCategory($categoryName);
+        // dd($dernierArticle);
+
         // Récupération d'une requête pour les articles d'une catégorie spécifique
         $queryArticlesByCategory = $articlesBlogRepository->getArticlesByCategoryQuery($categoryName);
 
@@ -83,6 +86,7 @@ class BlogController extends AbstractController
             'pagination' => $pagination,
             'currentCategory' => $categoryName,
             'categories' => $categories,
+            'dernierArticle' => $dernierArticle,
         ]);
     }
 }

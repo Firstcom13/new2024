@@ -44,6 +44,15 @@
 				padding: 6px;
 			}
 
+			@media screen and (max-width: 991px) {
+				.blog-categories {
+					display: none;
+				}
+				.blog-categories-mobile {
+					display: block;
+				}
+			}
+
 			.blog-categories span {
 				font-size: 12px;
 				color: #FFFFFF;
@@ -67,10 +76,23 @@
 				padding: 6px;
 			}
 
+			@media screen and (min-width: 991px) {
+				.blog-categories {
+					display: block;
+				}
+				.blog-categories-mobile {
+					display: none;
+				}
+			}
+
 			.blog-categories-mobile span {
-				font-size: 14px;
+				font-size: 16px;
 				color: #FFFFFF;
-				font-weight: 500;
+				font-weight: 700;
+			}
+
+			.blog-categories-mobile a:first-child {
+				margin-top: 20px;
 			}
 
 			.blog-categories-mobile a {
@@ -79,7 +101,7 @@
 				color: #FFFFFF;
 				font-weight: 500;
 				text-decoration: none;
-				margin: 10px auto;
+				margin: 15px auto;
 			}
 
 			.blog-categories-mobile img {
@@ -126,6 +148,10 @@
 				transform: rotate(180deg);
 			}
 
+			.active-category {
+				color: #96A596 !important;
+				font-weight: 500 !important;
+			}
 
 		</style>
 		<script>
@@ -151,7 +177,7 @@
 			<div class="blog-categories">
 				<span>CATÉGORIES</span>
 				<span><img class="fleche-categories" src="{{ asset('uploads/images/fleche-right-white.webp') }}"></span>
-				<a href="{{ path('app_blog') }}">TOUT</a>
+				<a href="{{ path('app_blog') }}" class="active-category">TOUT</a>
 				{% for categorie in categories %}
 					<span> | </span>
 					<a href="{{ path('blog_filter_by_category', {'categoryName': categorie.slug}) }}">
@@ -164,11 +190,12 @@
 		<div class="container-meduim">
 			<div class="blog-categories-mobile align-items-center justify-content-center">
 				<div class="target-cat-mobile">
-					<span>TOUTES LES CATÉGORIES</span>
+					<span>CATÉGORIES</span>
 					<span><img class="chevron-categories" src="{{ asset('uploads/images/chevron-down-white.svg') }}"></span>
 				</div>
 
 				<div class="categories-mobile cat-mobile-ferme">
+					<a href="{{ path('app_blog') }}" class="active-category">TOUT</a>
 					{% for categorie in categories %}
 						<a href="{{ path('blog_filter_by_category', {'categoryName': categorie.slug}) }}">
 							{{ categorie.nom | upper }}
@@ -265,13 +292,5 @@
 		</div>
 
 	</section>
-
-
-	{# Autres articles #}
-	{# {% for article in articles %}
-						    <div class="article">
-						        <h2>{{ article.titre }}</h2>
-						    </div>
-						{% endfor %} #}
 
 {% endblock %}

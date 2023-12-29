@@ -13,6 +13,7 @@ class ArticleController extends AbstractController
     public function show(int $id, ArticlesBlogRepository $articlesBlogRepository): Response
     {
         $article = $articlesBlogRepository->find($id);
+        // dd($article);
 
         if (!$article) {
             throw $this->createNotFoundException('L\'article demandé n\'existe pas.');

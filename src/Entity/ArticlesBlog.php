@@ -28,6 +28,9 @@ class ArticlesBlog
     private ?string $contenu = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    private ?string $contenu2 = null;
+
+    #[ORM\Column(type: Types::TEXT)]
     private ?string $meta_description = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -35,6 +38,9 @@ class ArticlesBlog
 
     #[ORM\Column(length: 255, nullable: true)]
     private ?string $img_xl = null;
+
+    #[ORM\Column(length: 255, nullable: true)]
+    private ?string $img_contenu = null;
 
     #[ORM\ManyToMany(targetEntity: Categorie::class, inversedBy: 'date_creation')]
     private Collection $categorie;
@@ -97,6 +103,18 @@ class ArticlesBlog
         return $this;
     }
 
+    public function getContenu2(): ?string
+    {
+        return $this->contenu2;
+    }
+
+    public function setContenu2(string $contenu2): static
+    {
+        $this->contenu2 = $contenu2;
+
+        return $this;
+    }
+
     public function getMetaDescription(): ?string
     {
         return $this->meta_description;
@@ -129,6 +147,18 @@ class ArticlesBlog
     public function setImgXl(?string $img_xl): static
     {
         $this->img_xl = $img_xl;
+
+        return $this;
+    }
+
+    public function getImgContenu(): ?string
+    {
+        return $this->img_contenu;
+    }
+
+    public function setImgContenu(?string $img_contenu): static
+    {
+        $this->img_contenu = $img_contenu;
 
         return $this;
     }

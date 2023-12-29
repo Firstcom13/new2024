@@ -44,7 +44,52 @@
 			width: 100%;
 		}
 
-		@media screen and(max-width: 991px) {
+		.article-contenu p {
+			font-size: 14px;
+		}
+
+		.article-contenu h2 {
+			font-size: 18px;
+			color: #96A596;
+			font-weight: 700;
+		}
+
+		.article-contenu h3 {
+			font-size: 16px;
+			font-weight: 700;
+		}
+
+		.article-fleche-contact {
+			width: 20px;
+			margin-right: 10px;
+			position: relative;
+			bottom: 1px;
+		}
+
+		a.article-contact {
+			display: block;
+    		width: fit-content;
+			text-decoration: none;
+			font-weight: 700;
+			color: #FFFFFF;
+			background-color: #96A596;
+			padding: 5px 10px;
+		}
+
+		.article-retour {
+			width: fit-content;
+			margin: 0 auto;
+		}
+
+		.article-retour a {
+			text-decoration: none;
+			font-weight: 700;
+			color: #FFFFFF;
+			background-color: #3C4141;
+			padding: 5px 10px;
+		}
+
+		@media screen and (max-width: 991px) {
 			.article-lancement h1 {
 				font-size: 30px;
 			}
@@ -99,7 +144,7 @@
 
 	<div class="container-medium">
 		<div class="row">
-			<div class="col-12 col-sm-8 col-md-8 py-5">
+			<div class="col-12 col-md-12 col-xl-8 pt-5 pb-2">
 				<div class="row">
 					<div class="col-12">
 						<div class="infos mb-3">
@@ -109,12 +154,23 @@
 							{% endfor %}
 						</div>
 					</div>
-					<div class="col-12">
+					<div class="col-12 article-contenu">
 						{{ article.Contenu | raw}}
+					</div>
+
+					<div class="col-12 mb-4">
+						<a href="{{ path('app_contact') }}" class="article-contact"><img class="article-fleche-contact" src="{{ asset('uploads/images/fleche-right-white.webp') }}">Contactez-nous pour une analyse et des recommandations sur mesure</a>
+					</div>
+					<div class="col-12 mt-5 mb-5">
+						<div class="article-retour">
+							<img class="article-fleche-contact" src="{{ asset('uploads/images/fleche-left.webp') }}">
+							<a href="{{ path('app_blog') }}" class="article-retour">TOUS LES ARTICLES</a>
+						</div>
 					</div>
 				</div>
 			</div>
-			<div class="article-aside col-12 col-sm-4 col-md-4 py-5">
+
+			<div class="article-aside col-12 col-md-12 col-xl-4 py-5">
 				<div class="row">
 
 					<div class="col-12">

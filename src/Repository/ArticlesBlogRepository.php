@@ -95,17 +95,32 @@ class ArticlesBlogRepository extends ServiceEntityRepository
 
     public function getArticlesByCategoryQuery(string $categoryName): Query
     {
-
+        // Sous-requête pour obtenir la date de création du dernier article publié dans la catégorie
+        $subQueryBuilder = $this->createQueryBuilder('sub')
+            ->select('MAX(sub.date_creation) as lastArticleDate')
+            ->innerJoin('sub.categorie', 'subC')
+            ->where('subC.slug = :categoryName')
+            ->setParameter('categoryName', $categoryName)
+            ->getQuery();
+    
+        $lastArticleDate = $subQueryBuilder->getSingleScalarResult();
+    
+        // Requête principale pour obtenir tous les articles sauf le plus récent
         $qb = $this->createQueryBuilder('a')
-            ->innerJoin('a.categorie', 'c') // 'categorie' est le nom correct de la propriété dans ArticlesBlog.
-            ->where('c.slug = :categoryName') 
+            ->innerJoin('a.categorie', 'c')
+            ->where('c.slug = :categoryName')
             ->setParameter('categoryName', $categoryName);
-
-        // Ajout d'un tri par date de création, dans l'ordre décroissant
+    
+        if ($lastArticleDate) {
+            $qb->andWhere('a.date_creation != :lastArticleDate')
+               ->setParameter('lastArticleDate', $lastArticleDate);
+        }
+    
         $qb->orderBy('a.date_creation', 'DESC');
-
+    
         return $qb->getQuery();
     }
+      
 
     public function findLatestArticlesExceptCurrent($currentArticleId, $limit = null): array
     {

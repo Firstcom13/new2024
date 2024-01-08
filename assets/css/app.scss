@@ -1926,7 +1926,17 @@ td {
     }
 
     @media screen and (max-width: 499px) {
-        font-size: 20px;
+        font-size: 19px;
+    }
+}
+
+.menu-wrap .menu .rubrique-menu .fleche-sous-menu {
+    width: 30px;
+    position: relative;
+    bottom: 2px;
+
+    @media screen and (max-width: 499px) {
+        width: 22px;
     }
 }
 

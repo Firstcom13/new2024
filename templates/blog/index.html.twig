@@ -31,13 +31,33 @@
 								</div>
 							</div>
 						</div>
+						<div class="col-12 vedette-article-fleche-suite">
+							<img src="{{ asset('uploads/images/fleche-up-white.webp') }}" alt="fleche-bas">
+						</div>
 					</div>
 				</div>
+
 			</div>
 
 		{% endif %}
 
 		<style>
+			.vedette-article-fleche-suite {
+				display: none;
+			}
+
+			.vedette-article-fleche-suite img {
+				display: block;
+				margin: 50px auto 0 auto;
+				transform: rotate(180deg);
+			}
+
+			@media screen and (max-width: 991px) {
+				.vedette-article-fleche-suite {
+					display: block;
+				}
+			}
+
 			.blog-categories {
 				background-color: #3C4141;
 				text-align: center;

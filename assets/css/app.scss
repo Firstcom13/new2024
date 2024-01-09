@@ -2029,8 +2029,11 @@ td {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 25%;
-    padding-bottom: 5%;
+
+    @media screen and (max-width: 499px) {
+        padding-top: 25%;
+        padding-bottom: 5%;
+    }
 }
 
 

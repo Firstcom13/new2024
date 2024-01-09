@@ -49,13 +49,15 @@ class ArticlesBlogCrudController extends AbstractCrudController
             return [
                 FormField::addColumn('col-12 col-lg-8'),
                 TextEditorField::new('titre'),
-                TextEditorField::new('description_courte', 'Description Courte'),
-                TextEditorField::new('meta_description'),
+                CodeEditorField::new('description_courte', 'Description Courte'),
+                TextEditorField::new('meta_description')
+                ->setRequired(false),
                 CodeEditorField::new('contenu'),
                 ImageField::new('img_contenu', 'Image du contenu de l\'article')
                 ->setBasePath('uploads/images')
                 ->setUploadDir('public/uploads/images'),
-                CodeEditorField::new('contenu2', 'Contenu 2'),
+                CodeEditorField::new('contenu2', 'Contenu 2')
+                ->setRequired(false),
 
 
                 FormField::addColumn('col-12 col-lg-4'),

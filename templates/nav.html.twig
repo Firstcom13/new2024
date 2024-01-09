@@ -13,8 +13,8 @@
 				<div>
 					<ul>
 						<li class="rubrique-menu">
-							{# <a href="{{ path('app_conseil') }}">CONSEIL & STRATÉGIE</a> #}
-							<p class="cursor-pointer">CONSEIL & STRATÉGIE</p>
+							<a href="{{ path('app_conseil') }}" class="cursor-pointer">CONSEIL & STRATÉGIE</a>
+							<span class="icone-plus cursor-pointer"><img class="fleche-sous-menu" src="{{ asset('uploads/images/chevron-down-white.svg') }}"></span>
 							<ul class="sous-menu">
 								<li><a class="rubrique-sousmenu" href="{{ path('app_consulting_et_developpement') }}">Consulting & développement</a></li>
 								<li><a class="rubrique-sousmenu" href="{{ path('app_marketing_de_loffre') }}">Marketing de l'offre</a></li>
@@ -22,8 +22,8 @@
 							</ul>
 						</li>
 						<li class="rubrique-menu">
-							{# <a href="{{ path('app_croissance') }}">CROISSANCE & PERFORMANCE</a> #}
-							<p class="cursor-pointer">CROISSANCE & PERFORMANCE</p>
+							<a href="{{ path('app_croissance') }}" class="cursor-pointer">CROISSANCE & PERFORMANCE</a>
+							<span class="icone-plus cursor-pointer"><img class="fleche-sous-menu" src="{{ asset('uploads/images/chevron-down-white.svg') }}"></span>
                             <ul class="sous-menu">
 								<li><a class="rubrique-sousmenu" href="{{ path('app_referencement_naturel_seo') }}">Référencement naturel</a></li>
 								<li><a class="rubrique-sousmenu" href="{{ path('app_campagnes_digitales') }}">Campagnes payantes</a></li>
@@ -32,8 +32,8 @@
 							</ul>
 						</li>
 						<li class="rubrique-menu">
-							{# <a href="{{ path('app_contenus') }}">CRÉATION DE CONTENU</a> #}
-							<p class="cursor-pointer">CRÉATION DE CONTENU</p>
+							<a href="{{ path('app_contenus') }}" class="cursor-pointer">CRÉATION DE CONTENU</a>
+							<span class="icone-plus cursor-pointer"><img class="fleche-sous-menu" src="{{ asset('uploads/images/chevron-down-white.svg') }}"></span>
 							<ul class="sous-menu">
 								<li><a class="rubrique-sousmenu" href="{{ path('app_creation_editoriale') }}">Création éditoriale & Story-telling</a></li>
 							</ul>
@@ -48,7 +48,7 @@
 							<a href="{{ path('app_agence') }}">L'AGENCE</a>
 						</li>
 						{# <li class="rubrique-menu">
-							<a href="#">BLOG</a>
+							<a href="{{ path('app_blog') }}">LE BLOG</a>
 						</li> #}
 						<li class="rubrique-menu">
 							<a href="{{ path('app_contact') }}">CONTACT</a>
@@ -70,6 +70,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
 		if (toggler.checked) {
 			document.body.classList.add('no-scroll');
 			logo.classList.add('no-filter');
+
+			iconPlus.querySelector('img').classList.remove('rotate-icon');
+			iconPlus.querySelector('img').classList.add('rotate-icon-initial');
 	 
         } else {
             document.body.classList.remove('no-scroll');
@@ -79,28 +82,86 @@ document.addEventListener("DOMContentLoaded", (event) => {
 			// Fermer tous les sous-menus ouverts
 			document.querySelectorAll('.sous-menu.sous-menu-ouvert').forEach(function(openMenu) {
 				openMenu.classList.remove('sous-menu-ouvert');
+				openMenu.previousElementSibling.querySelector('img').classList.remove('rotate-icon');
+                openMenu.previousElementSibling.querySelector('img').classList.add('rotate-icon-initial');
 			});
 
         }
 	});
 });
 
-document.querySelectorAll('.rubrique-menu').forEach(function(menu) {
+// Sélection de tous les éléments avec la classe '.icone-plus'
+document.querySelectorAll('.icone-plus').forEach(function(iconPlus) {
+    // Ajout d'un écouteur d'événements 'click' à chaque icône "+"
+    iconPlus.addEventListener('click', function(event) {
+        // Empêche la propagation de l'événement à des éléments parents
+        event.stopPropagation();
 
-    menu.addEventListener('click', function(event) {
+        // Sélection du sous-menu immédiatement après cette icône "+"
+        // 'nextElementSibling' renvoie l'élément suivant directement au même niveau
+        var sousMenuActuel = iconPlus.nextElementSibling;
 
-        var sousMenuActuel = this.querySelector('.sous-menu');
-
-        // Fermer tous les sous-menus ouverts
+        // Parcourir tous les sous-menus ouverts
         document.querySelectorAll('.sous-menu.sous-menu-ouvert').forEach(function(openMenu) {
+            // Si le sous-menu ouvert n'est pas le sous-menu actuel, le fermer
             if (openMenu !== sousMenuActuel) {
                 openMenu.classList.remove('sous-menu-ouvert');
-			}
+
+                // Réinitialiser l'icône (la faire tourner en arrière) pour chaque sous-menu fermé
+				document.querySelectorAll('.icone-plus img').forEach(function(img) {
+					img.classList.remove('rotate-icon');
+					img.classList.add('rotate-icon-initial');
+				});
+
+            }
         });
 
-        // Basculer l'état du sous-menu actuel
+        // Basculer l'état du sous-menu actuel (ouvert/fermé)
         sousMenuActuel.classList.toggle('sous-menu-ouvert');
 
+        // Appliquer ou retirer la rotation de l'icône
+        // Si le sous-menu est maintenant ouvert, ajouter la classe 'rotate-icon' pour tourner l'icône
+        if (sousMenuActuel.classList.contains('sous-menu-ouvert')) {
+            iconPlus.querySelector('img').classList.add('rotate-icon');
+            iconPlus.querySelector('img').classList.remove('rotate-icon-initial');
+        } else {
+            // Si le sous-menu est fermé, retirer la classe 'rotate-icon' pour remettre l'icône en position initiale
+            iconPlus.querySelector('img').classList.remove('rotate-icon');
+			iconPlus.querySelector('img').classList.add('rotate-icon-initial');
+        }
     });
 });
+
+{# // Sélection de tous les éléments avec la classe '.rubrique-menu'
+document.querySelectorAll('.rubrique-menu').forEach(function(rubriqueMenu) {
+    // Gérer l'ouverture du sous-menu au survol
+    rubriqueMenu.addEventListener('mouseover', function(event) {
+        var sousMenu = rubriqueMenu.querySelector('.sous-menu');
+        var icone = rubriqueMenu.querySelector('.icone-plus img');
+
+        // Fermer tous les sous-menus ouverts et réinitialiser les icônes
+        document.querySelectorAll('.sous-menu.sous-menu-ouvert').forEach(function(openMenu) {
+            openMenu.classList.remove('sous-menu-ouvert');
+            openMenu.previousElementSibling.querySelector('img').classList.remove('rotate-icon');
+            openMenu.previousElementSibling.querySelector('img').classList.add('rotate-icon-initial');
+        });
+
+        // Ouvrir le sous-menu actuel
+        sousMenu.classList.add('sous-menu-ouvert');
+        icone.classList.add('rotate-icon');
+        icone.classList.remove('rotate-icon-initial');
+    });
+
+    // Gérer la fermeture du sous-menu lors du retrait de la souris
+    rubriqueMenu.addEventListener('mouseout', function(event) {
+        var sousMenu = rubriqueMenu.querySelector('.sous-menu');
+        var icone = rubriqueMenu.querySelector('.icone-plus img');
+
+        sousMenu.classList.remove('sous-menu-ouvert');
+        icone.classList.remove('rotate-icon');
+        icone.classList.add('rotate-icon-initial');
+    });
+}); #}
+
+
 </script>

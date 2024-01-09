@@ -2031,13 +2031,15 @@ td {
 ██████╔╝███████╗╚██████╔╝╚██████╔╝
 */
 .vedette-article {
-    height: 96vh;
+    min-height: 96vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding-top: 25%;
+    padding-bottom: 5%;
 }
 
 

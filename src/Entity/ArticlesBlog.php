@@ -96,7 +96,7 @@ class ArticlesBlog
         return $this->contenu;
     }
 
-    public function setContenu(string $contenu): static
+    public function setContenu(?string $contenu): self
     {
         $this->contenu = $contenu;
 
@@ -108,7 +108,7 @@ class ArticlesBlog
         return $this->contenu2;
     }
 
-    public function setContenu2(string $contenu2): static
+    public function setContenu2(?string $contenu2): self
     {
         $this->contenu2 = $contenu2;
 
@@ -120,7 +120,7 @@ class ArticlesBlog
         return $this->meta_description;
     }
 
-    public function setMetaDescription(string $meta_description): static
+    public function setMetaDescription(?string $meta_description): self
     {
         $this->meta_description = $meta_description;
 

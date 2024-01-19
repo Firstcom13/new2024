@@ -50,6 +50,10 @@
 		border-right: 1px dashed #000000;
 	}
 
+	.border-dashed-desktopnone-mobilebottom {
+		border: none;
+	}
+
 	.article-home .article-home-img {
     	height: 250px;
 	}
@@ -117,43 +121,12 @@
 		transform: translateX(-50%);
 	} #}
 
-
-	/* CSS pour les écrans non mobiles (par exemple plus larges que 768px) */
-	@media screen and (min-width: 768px) {
-		.owl-carousel-2 .owl-stage {
-			/* Ajouter un espace supplémentaire à la fin pour permettre au quatrième élément de se positionner partiellement à droite */
-			margin-right: -25%; /* Ajustez cette valeur selon la largeur de vos éléments */
-		}
-
-		.owl-carousel-2 .owl-item {
-			/* Ajustez la largeur pour que quatre éléments remplissent l'espace de trois, rendant le quatrième partiellement visible */
-			width: 33.3333%; /* Dans un carousel où trois éléments doivent être affichés */
-		}
-
-		.owl-carousel-2 .owl-nav {
-			/* Ajustez le positionnement des boutons de navigation, si nécessaire */
-		}
-	}
-
-	/* CSS pour les écrans mobiles (par exemple moins larges que 768px) */
-	@media screen and (max-width: 767px) {
-		.owl-carousel-2 .owl-stage {
-			margin-right: 0; /* Pas d'espace supplémentaire nécessaire sur mobile */
-		}
-
-		.owl-carousel-2 .owl-item {
-			width: auto; /* Revenir à la largeur automatique pour le mobile */
-		}
-
-		.owl-carousel-2 .owl-nav {
-			/* Ajustez le positionnement des boutons de navigation, si nécessaire */
-		}
-	}
-
-
-
 	@media screen and (max-width: 991px) {
 		.border-dashed-desktopright-mobilebottom {
+			border: none;
+			border-bottom: 1px dashed #000000;
+		}
+		.border-dashed-desktopnone-mobilebottom {
 			border: none;
 			border-bottom: 1px dashed #000000;
 		}
@@ -253,7 +226,7 @@
 
 <div class="container-medium">
 	<div class="row">
-		<a href="{{ path('app_contact') }}" class="row text-decoration-none lien-actif-x">
+		<a href="{{ path('app_contact') }}" class="row text-decoration-none lien-actif-x border-dashed-desktopnone-mobilebottom ">
 			<div class="row py-5">
 				<div class="col-12 col-sm-11">
 					<h3 class="card-title-home-page">NOTRE APPROCHE</h3>
@@ -267,7 +240,7 @@
 			</div>
 		</a>
 
-		<a href="{{ path('app_agence') }}" class="row text-decoration-none lien-actif-x">
+		<a href="{{ path('app_agence') }}" class="row text-decoration-none lien-actif-x border-dashed-desktopnone-mobilebottom ">
 			<div class="row py-5">
 				<div class="col-12 col-sm-11">
 					<h3 class="card-title-home-page">ABOUT</h3>

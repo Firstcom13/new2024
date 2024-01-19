@@ -68,7 +68,7 @@ Encore
     //.enableIntegrityHashes(Encore.isProduction())
 
     // uncomment if you're having problems with a jQuery plugin
-    //.autoProvidejQuery()
+    .autoProvidejQuery()
 
     .copyFiles({
         from: './node_modules/@fortawesome/fontawesome-free/webfonts',

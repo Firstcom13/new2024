@@ -52,6 +52,24 @@ class ArticlesBlogRepository extends ServiceEntityRepository
     }
 
     /**
+     * Retourne tableau de tous les articles 
+     */
+    public function findAllArticles(): array
+    {
+
+        $qb = $this->createQueryBuilder('a')
+            ->where('a.publication = :isPublished')
+            ->setParameter('isPublished', true);
+
+        // Ajout d'un tri par date de création, dans l'ordre décroissant
+        $qb->orderBy('a.date_creation', 'DESC');
+
+        $query = $qb->getQuery();
+
+        return $query->getResult();
+    }
+
+    /**
      * Retourne une Query de tous les articles sauf le dernier pour la pagination
      */
     public function findAllExceptLastQuery(): Query

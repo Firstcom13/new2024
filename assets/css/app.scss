@@ -288,6 +288,10 @@ ul > li {
     font-weight: 700;
 }
 
+.text-decoration-none {
+    text-decoration: none;
+}
+
 .cursor-pointer {
     cursor: pointer !important;
 }
@@ -310,6 +314,14 @@ ul > li {
 
 .container-large {
     padding: 0 10%;
+
+    @media screen and (max-width: 991px) {
+        padding: 0 5%;
+    }
+}
+
+.container-large-plus {
+    padding: 0 6%;
 
     @media screen and (max-width: 991px) {
         padding: 0 5%;
@@ -661,7 +673,7 @@ ul > li {
 }
 
 
-.writeWhite{
+.writeWhite {
     color: #FFFFFF !important;
 }
 

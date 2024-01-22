@@ -277,7 +277,7 @@
 							'slug': article.titre | striptags | slug | lower
 						}) }}" class="article-home text-decoration-none mb-4">
 
-					<div class="article-home-img" style="background-image: url('{{ asset('uploads/images/' ~ article.imgS) }}'); background-repeat: no-repeat; background-size: cover; background-position: center; display: flex; justify-content: center; align-items: center;"></div>
+					<div class="article-home-img" style="background-image: url('{{ asset('uploads/images/' ~ article.imgS) }}'); background-repeat: no-repeat; background-size: cover; background-position: center; display: flex; justify-content: center; align-items: center; border: 8px solid #96A596;"></div>
 					<div class="infos mt-3">
 						<span class="date">{{ article.dateCreation | date('d m Y') }}</span>
 						{% for categorie in article.categorie %}

@@ -251,7 +251,7 @@
 										<h2 class="writeWhite mb-3">{{ article.titre | raw }}</h2>
 									</div>
 									<div class="col-12">
-										<div class="writeWhite texte-courant-mini">{{ article.descriptionCourte | raw }}</div>
+										<div class="writeWhite texte-courant-mini">{{ article.descriptionCourte | split(' ') | slice(0, 20) | join(' ') | raw }} ...</div>
 									</div>
 									<div class="col-4 col-md-4 col-xl-3 col-xxl-2">
 										<a href="{{ path('app_article_show', {

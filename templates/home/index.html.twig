@@ -19,9 +19,6 @@
 </section>
 
 <style>
-{# html {
-	background: red;
-} #}
 	.blocks-acceuil img {
 		margin: 20px auto 0 auto;
     	display: block;
@@ -46,6 +43,10 @@
 	.text-courant-mini {
 		font-size: 16px;
 		color: #3c4141;
+	}
+
+	.border-dashed-tablettebottom {
+		border: none;
 	}
 
 	.border-dashed-desktopright-mobilebottom {
@@ -106,12 +107,12 @@
 		right: -65px;
 	}
 
-	.owl-carousel .owl-nav,
+	.owl-carousel-1 .owl-nav,
 	.owl-carousel-2 .owl-nav {
 		height: 0;
 	}
 
-	.owl-carousel .owl-dots,
+	.owl-carousel-1 .owl-dots,
 	.owl-carousel-2 .owl-dots {
 		display: none;
 	} 
@@ -124,7 +125,19 @@
 		transform: translateX(-50%);
 	} #}
 
-	@media screen and (max-width: 991px) {
+	@media screen and (min-width: 767px) and (max-width: 991px) {
+
+		.border-dashed-tablettebottom {
+			border-bottom: 1px dashed #000000;
+		}
+
+		.border-right-none {
+			border-right: none;
+		}
+
+	}
+
+	@media screen and (max-width: 767px) {
 		.border-dashed-desktopright-mobilebottom {
 			border: none;
 			border-bottom: 1px dashed #000000;
@@ -146,25 +159,25 @@
 		<div class="col-sm-12 col-md-12 mb-4">
 			<h3 class="title-home-part1">FIRSTCOM, AU SERVICE DE LA PERFORMANCE DES MARQUES</h3>
 		</div>
-		<a href="{{ path('app_conseil') }}" class="col-12 col-xs-6 col-sm-3 p-4 border-dashed-desktopright-mobilebottom lien-actif-x">
+		<a href="{{ path('app_conseil') }}" class="col-12 col-sm-12 col-md-6 col-lg-3 p-4 border-dashed-desktopright-mobilebottom border-dashed-tablettebottom lien-actif-x">
 			<p class="cartouche-home">CONSEIL ET STRATÉGIE</p>
 			<p class="text-courant-mini">Prendre de la hauteur pour envisager sereinement son développement, clarifier son offre pour mieux la vendre, et garder la tête froide en temps de crise.</p>
 			<p class="card-text-home mt-2">ON N’EST PAS «EY» MAIS ON SE DÉBROUILLE.</p>
 			<img src="{{ asset('uploads/images/fleche-right.webp') }}" alt="Flèche pointant à droite" class="fleche">
 		</a>
-		<a href="{{ path('app_croissance') }}" class="col-12 col-xs-6 col-sm-3 p-4 border-dashed-desktopright-mobilebottom lien-actif-x">
+		<a href="{{ path('app_croissance') }}" class="col-12 col-sm-12 col-md-6 col-lg-3 p-4 border-dashed-desktopright-mobilebottom border-dashed-tablettebottom border-right-none lien-actif-x">
 			<p class="cartouche-home">CROISSANCE ET PERFORMANCE</p>
 			<p class="text-courant-mini">Connaitre tous les leviers de croissance sur le bout des doigts, même ceux qui n’existent pas encore, pour piloter votre performance digitale.</p>
 			<p class="card-text-home mt-2">QUI A DIT QUE LES ARBRES NE MONTAIENT PAS AU CIEL ?</p>
 			<img src="{{ asset('uploads/images/fleche-right.webp') }}" alt="Flèche pointant à droite" class="fleche">
 		</a>
-		<a href="{{ path('app_contenus') }}" class="col-12 col-xs-6 col-sm-3 p-4 border-dashed-desktopright-mobilebottom lien-actif-x">
+		<a href="{{ path('app_contenus') }}" class="col-12 col-sm-12 col-md-6 col-lg-3 p-4 border-dashed-desktopright-mobilebottom lien-actif-x">
 			<p class="cartouche-home">CRÉATION DE CONTENUS</p>
 			<p class="text-courant-mini">Raconter votre entreprise et vos produits avec un clavier ou une caméra, un appareil photo ou un stylo numérique pour un storytelling impactant.</p>
 			<p class="card-text-home mt-2">SOYEZ HONNÊTE, QUI AUTOUR DE VOUS SAIT (VRAIMENT) ÉCRIRE ?</p>
 			<img src="{{ asset('uploads/images/fleche-right.webp') }}" alt="Flèche pointant à droite" class="fleche">
 		</a>
-		<a href="{{ path('app_tech_digital') }}" class="col-12 col-xs-6 col-sm-3 p-4 lien-actif-x">
+		<a href="{{ path('app_tech_digital') }}" class="col-12 col-sm-12 col-md-6 col-lg-3 p-4 lien-actif-x">
 			<p class="cartouche-home">TECH & DIGITAL</p>
 			<p class="text-courant-mini">En plus de créer des sites web jolis et qui donnent envie de cliquer partout, on aime plus que tout s’attaquer à des développements complexes destinés à vous rendre la vie facile.</p>
 			<p class="card-text-home mt-2">ET CHEZ VOUS, Y A QUOI À DIGITALISER ?</p>

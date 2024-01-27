@@ -6,12 +6,12 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class DeclarationController extends AbstractController
+class EcoIndexController extends AbstractController
 {
-    #[Route('/declaration-environnementale', name: 'app_declaration_environnementale')]
+    #[Route('/ecoindex', name: 'app_ecoindex')]
     public function index(): Response
     {
-        return $this->render('declaration/index.html.twig', [
+        return $this->render('ecoindex/index.html.twig', [
             'controller_name' => 'HomeController',
         ]);
     }

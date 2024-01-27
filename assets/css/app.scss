@@ -230,6 +230,10 @@ ul > li {
     line-height: 1.6;
 }
 
+.text-decoration-none {
+    text-decoration: none !important;
+}
+
 .texte-intro {
     font-size: 20px;
     font-weight: 700;
@@ -453,7 +457,7 @@ ul > li {
     justify-content: center;
     position: relative;
     background-image: url('../../public/uploads/images/header-fonds-trame-croissance.svg');
-    background-color: #d7b95a; ;
+    background-color: #d7b95a;
     background-repeat: no-repeat;
     background-size: cover;
     height: 103vh;
@@ -471,7 +475,7 @@ ul > li {
     display: flex;
     justify-content: center;
     position: relative;
-    background-color: #e1dcb4 ;
+    background-color: #e1dcb4;
     background-image: url('../../public/uploads/images/header-fonds-trame-conseil.svg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -488,7 +492,7 @@ ul > li {
 #container4 {
     display: flex;
     position: relative;
-    background-color: #555f5a ;
+    background-color: #555f5a;
     background-image: url('../../public/uploads/images/header-fonds-trame-creation.svg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -505,7 +509,7 @@ ul > li {
 #container5 {
     display: flex;
     position: relative;
-    background-color: #d7b95a; ;
+    background-color: #d7b95a;
     background-repeat: no-repeat;
     background-size: cover;
     height: 103vh;
@@ -534,6 +538,26 @@ ul > li {
     }
 
 }
+
+
+#container-ecoindex {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background-image: url('../../public/uploads/images/header-fond-trame-ecoindex.svg');
+    background-color: #96a596;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 90vh;
+    align-items: center;
+
+    @media screen and (max-width: 991px) {
+        height: auto;
+        padding: 100px 0 85px 0px;
+    }
+
+}
+
 
 .div-start {
     display: flex;
@@ -748,6 +772,10 @@ ul > li {
 
 .borderFull {
     border: 2px solid #ffffff;
+}
+
+.border-dashed-bottom-white {
+    border-bottom: 1px dashed #FFFFFF;
 }
 
 .image-basic {

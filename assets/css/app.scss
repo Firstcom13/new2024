@@ -2024,7 +2024,30 @@ td {
     }
 }
 
+/*
+███████╗ ██████╗ ██████╗ ██╗███╗   ██╗██████╗ ███████╗██╗  ██╗
+██╔════╝██╔════╝██╔═══██╗██║████╗  ██║██╔══██╗██╔════╝╚██╗██╔╝
+█████╗  ██║     ██║   ██║██║██╔██╗ ██║██║  ██║█████╗   ╚███╔╝ 
+██╔══╝  ██║     ██║   ██║██║██║╚██╗██║██║  ██║██╔══╝   ██╔██╗ 
+███████╗╚██████╗╚██████╔╝██║██║ ╚████║██████╔╝███████╗██╔╝ ██╗
+╚══════╝ ╚═════╝ ╚═════╝ ╚═╝╚═╝  ╚═══╝╚═════╝ ╚══════╝╚═╝  ╚═╝
+*/
+.ecoindex-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.ecoindex-link a {
+    width: fit-content;
+    display: block;
+    font-size: 0.8rem;
+    color: #FFFFFF;
+    text-decoration: none;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    padding: 1px 5px;
+}
 
 
 .vedette-article-fleche-suite img {

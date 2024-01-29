@@ -267,6 +267,18 @@ ul > li {
     }
 }
 
+.texte-courant-mini {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0;
+    line-height: 1.6;
+
+    @media screen and (max-width: 991px) {
+        font-size: 14px;
+    }
+}
+
 .texte-intro-2 {
     font-family: 'Open Sans', sans-serif;
     font-size: 20px;
@@ -353,6 +365,10 @@ ul > li {
 
 .background-basic-green {
     background-color: #96a596;
+}
+
+.background-gray-green {
+    background-color: #ccd6cc;
 }
 
 .background-green {
@@ -548,7 +564,7 @@ ul > li {
     background-color: #96a596;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 90vh;
+    height: 103vh;
     align-items: center;
 
     @media screen and (max-width: 991px) {

@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\ArticlesBlog;
 use App\Entity\Reference;
 use App\Entity\Categorie;
 use App\Entity\User;
@@ -69,8 +70,22 @@ class DashboardController extends AbstractDashboardController
         if ($this->isGranted('ROLE_ADMIN')) {
             yield MenuItem::section('Utilisateurs');
             yield MenuItem::subMenu('Actions', 'fas fa-bar')->setSubItems([
-                MenuItem::linkToCrud('Création', 'fas fa-plus-circle', User::class)->setAction(Crud::PAGE_NEW),
-                MenuItem::linkToCrud('List', 'fas fa-eye', User::class),
+                MenuItem::linkToCrud('Créer', 'fas fa-plus-circle', User::class)->setAction(Crud::PAGE_NEW),
+                MenuItem::linkToCrud('Liste des utilisateurs', 'fas fa-eye', User::class),
+            ]);
+
+            yield MenuItem::section('Articles blog');
+
+            yield MenuItem::subMenu('Actions', 'fas fa-bar')->setSubItems([
+                MenuItem::linkToCrud('Créer', 'fas fa-plus-circle', ArticlesBlog::class)->setAction(Crud::PAGE_NEW),
+                MenuItem::linkToCrud('Liste des articles', 'fas fa-eye', ArticlesBlog::class),
+            ]);
+
+            yield MenuItem::section('Catégories');
+
+            yield MenuItem::subMenu('Actions', 'fas fa-bar')->setSubItems([
+                MenuItem::linkToCrud('Créer', 'fas fa-plus-circle', Categorie::class)->setAction(Crud::PAGE_NEW),
+                MenuItem::linkToCrud('Liste des catégories', 'fas fa-eye', Categorie::class),
             ]);
 
             yield MenuItem::section('Modèles Pages');
@@ -99,13 +114,6 @@ class DashboardController extends AbstractDashboardController
             yield MenuItem::subMenu('Actions', 'fas fa-bar')->setSubItems([
                 MenuItem::linkToCrud('Création', 'fas fa-plus-circle', Reference::class)->setAction(Crud::PAGE_NEW),
                 MenuItem::linkToCrud('List', 'fas fa-eye', Reference::class),
-            ]);
-
-            yield MenuItem::section('Catégories');
-
-            yield MenuItem::subMenu('Actions', 'fas fa-bar')->setSubItems([
-                MenuItem::linkToCrud('Création', 'fas fa-plus-circle', Categorie::class)->setAction(Crud::PAGE_NEW),
-                MenuItem::linkToCrud('List', 'fas fa-eye', Categorie::class),
             ]);
 
             yield MenuItem::section('Demandes de Contact');

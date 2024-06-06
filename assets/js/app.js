@@ -25,107 +25,6 @@ $(function () {
     });
 });
 
-// $(function () {
-//     $(".owl-carousel").owlCarousel({
-//         pullDrag: true,
-//         center: false,
-//         dots: false,
-//         loop: true,
-//         autoplay:true,
-//         autoplayTimeout: 4000,
-//         autoplayHoverPause: true,
-//         margin: 25,
-//         nav: true,
-//         navText: [
-//             '<img src="../../uploads/images/chevron-down-white.svg" alt="Left">',
-//             '<img src="../../uploads/images/chevron-up-white.svg" alt="Right">'
-//         ],
-//         responsiveClass: true,
-//         responsive: {
-//             0: {
-//                 items: 1,
-//                 dots: true
-//             },
-//             500: {
-//                 items: 2,
-//                 dots: true
-//             },
-//             700: {
-//                 items: 3,
-//                 dots: true
-//             },
-//             1000: {
-//                 items: 4,
-//                 dots: true
-//             },
-//             1200: {
-//                 items: 5,
-//                 dots: true
-//             },
-//             1300: {
-//                 items: 6,
-//                 dots: true
-//             },
-//             1800: {
-//                 items: 7,
-//                 dots: true
-//             }
-//         }
-//     });
-//     $(".owl-carousel").trigger('refresh.owl.carousel');
-
-//     $(".owl-carousel-2").owlCarousel({
-//         pullDrag: true,
-//         center: false,
-//         dots: false,
-//         loop: true,
-//         autoplay:true,
-//         autoplayTimeout: 4000,
-//         autoplayHoverPause: true,
-//         margin: 25,
-//         nav: true,
-//         navText: [
-//             '<img src="../../uploads/images/chevron-down-white.svg" alt="Left">',
-//             '<img src="../../uploads/images/chevron-up-white.svg" alt="Right">'
-//         ],
-//         responsiveClass: true,
-//         responsive: {
-//             0: {
-//                 items: 1,
-//                 dots: true
-//             },
-//             500: {
-//                 items: 2,
-//                 dots: true
-//             },
-//             700: {
-//                 items: 3,
-//                 dots: true
-//             },
-//             1000: {
-//                 items: 4,
-//                 dots: true
-//             },
-//             1200: {
-//                 items: 5,
-//                 dots: true
-//             },
-//             1300: {
-//                 items: 6,
-//                 dots: true
-//             },
-//             1800: {
-//                 items: 7,
-//                 dots: true
-//             }
-//         }
-//     });
-
-//     $(".owl-carousel-2").trigger('refresh.owl.carousel');
-
-    
-// });
-
 
 function initializeOwlCarousel(selector, responsiveConfig, navTextConfig) {
     $(selector).owlCarousel({
@@ -206,7 +105,7 @@ function erase() {
 }
 
 document.addEventListener("DOMContentLoaded", function () { // On DOM Load initiate the effect
-    if (textArray.length) setTimeout(type, newTextDelay + 250);
+    if (textArray.length) setTimeout(type, 300);
 });
 
 

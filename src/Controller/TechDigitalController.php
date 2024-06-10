@@ -12,7 +12,23 @@ class TechDigitalController extends AbstractController
     public function index(): Response
     {
         return $this->render('tech-et-digital/index.html.twig', [
-            'controller_name' => 'HomeController',
+            'controller_name' => 'TechDigitalController',
+        ]);
+    }
+
+    #[Route('/tech-et-digital/sites-web', name: 'app_tech_digital_sites_web')]
+    public function sites_web(): Response
+    {
+        return $this->render('tech-et-digital/sites-web.html.twig', [
+            'controller_name' => 'TechDigitalController',
+        ]);
+    }
+
+    #[Route('/tech-et-digital/digitalisation', name: 'app_tech_digital_digitalisation')]
+    public function digitalisation(): Response
+    {
+        return $this->render('tech-et-digital/digitalisation.html.twig', [
+            'controller_name' => 'TechDigitalController',
         ]);
     }
 }

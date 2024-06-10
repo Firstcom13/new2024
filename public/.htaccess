@@ -24,6 +24,80 @@
     RewriteRule ^portfolio-items/glastint-reseaux-sociaux/$ / [R=301,L]
     RewriteRule ^portfolio-items/ecf/$ / [R=301,L]
 
+    RewriteRule ^reference/$ / [R=301,L]
+    RewriteRule ^portfolio_tags/recommandation-strategique/$ / [R=301,L]
+    RewriteRule ^portfolio-items/ecf-strategie-de-developpement-du-reseau-decoles-de-conduite/$ / [R=301,L]
+    RewriteRule ^author/first_2017/$ / [R=301,L]
+    RewriteRule ^portfolio-items/interway/$ / [R=301,L]
+    RewriteRule ^portfolio-items/somei/$ / [R=301,L]
+    RewriteRule ^portfolio_tags/campagne-digitale-multicanal/$ / [R=301,L]
+    RewriteRule ^realisations/b-to-b-to-c/$ / [R=301,L]
+    RewriteRule ^lequipe/web-marketers/$ / [R=301,L]
+    
+    RewriteCond %{QUERY_STRING} ^ver=3.6.4$
+    RewriteRule ^firstcom-2017/wp-includes/js/dist/vendor/wp-polyfill-url.min.js$ /? [R=301,L]
+    
+    RewriteCond %{QUERY_STRING} ^ver=3.0.0$
+    RewriteRule ^firstcom-2017/wp-includes/js/dist/vendor/wp-polyfill-fetch.min.js$ /? [R=301,L]
+    
+    RewriteCond %{QUERY_STRING} ^ver=3.0.12$
+    RewriteRule ^firstcom-2017/wp-includes/js/dist/vendor/wp-polyfill-formdata.min.js$ /? [R=301,L]
+    
+    RewriteCond %{QUERY_STRING} ^ver=3.42.0$
+    RewriteRule ^firstcom-2017/wp-includes/js/dist/vendor/wp-polyfill-dom-rect.min.js$ /? [R=301,L]
+    
+    RewriteCond %{QUERY_STRING} ^ver=2.0.2$
+    RewriteRule ^firstcom-2017/wp-includes/js/dist/vendor/wp-polyfill-element-closest.min.js$ /? [R=301,L]
+    
+    RewriteRule ^wp-json/$ / [R=301,L]
+    RewriteRule ^firstcom-2017/wp-admin/admin-ajax.php$ / [R=301,L]
+    RewriteRule ^portfolio_tags/rp/$ / [R=301,L]
+    RewriteRule ^portfolio_tags/site-internet/$ / [R=301,L]
+    RewriteRule ^portfolio_category/b-to-c/$ / [R=301,L]
+    RewriteRule ^portfolio_category/b-to-b/$ / [R=301,L]
+    RewriteRule ^portfolio-items/traqueur/$ / [R=301,L]
+    RewriteRule ^firstcom-recrute/chef-de-projets-junior/$ / [R=301,L]
+    RewriteRule ^firstcom-recrute/developpeur-digital/$ / [R=301,L]
+    RewriteRule ^portfolio-items/sogima/$ / [R=301,L]
+    RewriteRule ^portfolio-items/marignan/$ / [R=301,L]
+    RewriteRule ^portfolio_category/b-to-b/page/2/$ / [R=301,L]
+    RewriteRule ^portfolio-items/initial_illumin/$ / [R=301,L]
+    RewriteRule ^contact/1000$ / [R=301,L]
+    RewriteRule ^portfolio_tags/motion-design/feed/$ / [R=301,L]
+    RewriteRule ^feed/$ / [R=301,L]
+    RewriteRule ^communication-crise$ / [R=301,L]
+    
+    RewriteCond %{QUERY_STRING} ^portfolioCats=39$
+    RewriteRule ^portfolio-items/interway-retail/$ /? [R=301,L]
+    
+    RewriteRule ^portfolio_tags/modelisation-offre-marketing/feed/$ / [R=301,L]
+    RewriteRule ^portfolio_tags/conseil-strategie/feed/$ / [R=301,L]
+    RewriteRule ^portfolio_tags/reseaux-sociaux/feed/$ / [R=301,L]
+    
+    RewriteCond %{QUERY_STRING} ^url=https://www.firstcom.fr/$
+    RewriteRule ^wp-json/oembed/1.0/embed$ /? [R=301,L]
+    
+    RewriteCond %{QUERY_STRING} ^url=https://www.firstcom.fr/&format=xml$
+    RewriteRule ^wp-json/oembed/1.0/embed$ /? [R=301,L]
+    
+    RewriteRule ^wp-json/wp/v2/pages/10868$ / [R=301,L]
+    
+    RewriteCond %{QUERY_STRING} ^portfolioCats=39$
+    RewriteRule ^portfolio-items/firstcom-signe-le-ton-de-communication-docean-en-2019/$ /? [R=301,L]
+    
+    RewriteCond %{QUERY_STRING} ^portfolioCats=40$
+    RewriteRule ^portfolio-items/mcdonalds/$ /? [R=301,L]
+    
+    RewriteRule ^accueil/feed/$ / [R=301,L]
+    RewriteRule ^contact/feed/$ / [R=301,L]
+    
+    RewriteCond %{QUERY_STRING} ^action=rest-nonce$
+    RewriteRule ^firstcom-2017/wp-admin/admin-ajax.php$ /? [R=301,L]
+    
+    RewriteRule ^portfolio-items/nice/feed/$ / [R=301,L]
+    RewriteRule ^portfolio_category/b-to-c/page/2/$ / [R=301,L]
+    
+
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^(.*)$ index.php [QSA,L]
 </IfModule>

@@ -60,7 +60,7 @@ class ContactController extends AbstractController
             $entityManager->flush();
 
             $emailObject = (new Email())
-                ->from('contact@firstcom.fr')
+                ->from('support@firstcom.fr')
                 ->to($email)
                 ->subject('FIRSTCOM - Votre demande de contact...')
                 ->text($message)
@@ -79,7 +79,7 @@ class ContactController extends AbstractController
             $managerEmail = "hamid@firstcom.fr"; 
 
             $managerEmailObject = (new Email())
-                ->from('contact@firstcom.fr')
+                ->from('support@firstcom.fr')
                 ->to($managerEmail)
                 ->subject('Une nouvelle demande de contact a été reçue')
                 ->text('Une nouvelle demande de contact a été reçue de ' . $email . '. Le message était : ' . $message)

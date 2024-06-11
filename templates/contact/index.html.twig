@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block meta_description %}
-    <meta name="description" content="Vous souhaitez optimiser votre présence sur le web, accroître vos performances ? Contactez-nous pour en discuter !">
+	<meta name="description" content="Vous souhaitez optimiser votre présence sur le web, accroître vos performances ? Contactez-nous pour en discuter !">
 {% endblock %}
 
 {% block title %}Firstcom, votre agence dédiée à la performance digitale des entreprises
@@ -9,7 +9,7 @@
 
 {% block body %}
 
-	<div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
+	{# <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
@@ -20,7 +20,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> #}
 	<section id="container1">
 		<div class="row align-items-center justify-content-center">
 			<div class="col-md-4 col-12">
@@ -54,39 +54,39 @@
 		{{ form_start(formulaire, {'attr': {'id': 'contact_form', 'method': 'post', 'action': path('app_contact')}}) }}
 		<div class="telephone">
 			{{ form_row(formulaire.name, {
-            'label': false,
-            'attr': {'id': 'name_input', 'placeholder': 'Nom*', 'required': true}
-        }) }}
+			'label': false,
+			'attr': {'id': 'name_input', 'placeholder': 'Nom*', 'required': true}
+		}) }}
 		</div>
 		<div class="telephone">
 			{{ form_row(formulaire.firstname, {
-            'label': false,
-            'attr': {'id': 'firstname_input', 'placeholder': 'Prénom*', 'required': true}
-        }) }}
+			'label': false,
+			'attr': {'id': 'firstname_input', 'placeholder': 'Prénom*', 'required': true}
+		}) }}
 		</div>
 		<div class="telephone">
 			{{ form_row(formulaire.society, {
-            'label': false,
-            'attr': {'id': 'society_input', 'placeholder': 'Société*', 'required': true}
-        }) }}
+			'label': false,
+			'attr': {'id': 'society_input', 'placeholder': 'Société*', 'required': true}
+		}) }}
 		</div>
 		<div class="telephone">
 			{{ form_row(formulaire.tel, {
-            'label': false,
-            'attr': {'id': 'telephone_input', 'placeholder': 'Téléphone*', 'required': true}
-        }) }}
+			'label': false,
+			'attr': {'id': 'telephone_input', 'placeholder': 'Téléphone*', 'required': true}
+		}) }}
 		</div>
 		<div class="telephone">
 			{{ form_row(formulaire.email, {
-            'label': false,
-            'attr': {'id': 'email_input', 'placeholder': 'E-mail*', 'required': true}
-        }) }}
+			'label': false,
+			'attr': {'id': 'email_input', 'placeholder': 'E-mail*', 'required': true}
+		}) }}
 		</div>
 		<div class="message">
 			{{ form_row(formulaire.message, {
-            'label': false,
-            'attr': {'id': 'message_input', 'placeholder': 'Message', 'required': true, 'cols': '30', 'rows': '5'}
-        }) }}
+			'label': false,
+			'attr': {'id': 'message_input', 'placeholder': 'Message', 'required': true, 'cols': '30', 'rows': '5'}
+		}) }}
 		</div>
 		<div class="form-group" style="margin-bottom:15px">
 			{{ form_widget(formulaire.agree, { 'id': 'agree' }) }}
@@ -97,7 +97,7 @@
 			<label for="autorisation">{{ form_label(formulaire.autorisation, 'Pour répondre à ma demande d’information, j’autorise Firstcom à stocker mes données renseignées dans ce formulaire.') }}</label>
 		</div>
 
-		<div class="g-recaptcha" data-sitekey="{{ google_recaptcha_site_key }}"></div>
+		<div class="h-captcha" data-sitekey="{{ hcaptcha_site_key }}" data-callback="onCaptchaSuccess"></div>
 
 		{% for message in app.flashes('error') %}
 			<div class="alert alert-danger">
@@ -105,16 +105,37 @@
 			</div>
 		{% endfor %}
 
+		{% for message in app.flashes('success') %}
+			<div class="alert alert-success">
+				{{ message }}
+			</div>
+		{% endfor %}
+
 		<div class="submit_firstcom">
 			{{ form_widget(formulaire.envoyer, {
-            'attr': {'id': 'form_button', 'value': 'Envoyer'}
-        }) }}
+			'attr': {'id': 'form_button', 'value': 'Envoyer'}
+		}) }}
 		</div>
 		{{ form_end(formulaire) }}
 
-		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+		<script src="https://hcaptcha.com/1/api.js" async defer></script>
+		<script>
+			let isCaptchaValidated = false;
 
+			function onCaptchaSuccess() {
+				isCaptchaValidated = true;
+			}
+
+			document.getElementById('contact_form').addEventListener('submit', function(event) {
+				if (!isCaptchaValidated) {
+					event.preventDefault();
+					alert('Veuillez valider le captcha.');
+				}
+			});
+		</script>
 	</div>
+
+
 	<!-- // End #container -->
 	{% include "map.html.twig" %}
 
@@ -131,7 +152,8 @@
 		<div class="col-12 col-lg-6 p-0 borderDashedTop">
 			<div class="adresse-carte text-center p-4">
 				<p class="bold">FIRSTCOM Paris</p>
-				<p>123, avenue Aristide Briand </p>
+				<p>123, avenue Aristide Briand
+				</p>
 				<p>92120 Montrouge</p>
 				<p>Tél. : 01 71 19 70 00</p>
 			</div>

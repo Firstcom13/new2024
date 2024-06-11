@@ -168,60 +168,60 @@ document.addEventListener('DOMContentLoaded', (event) => {
 // window.addEventListener('DOMContentLoaded', checkScreenSize);
 // window.addEventListener('resize', checkScreenSize);
 
-// FORMULAIRE
-// Récupérer le formulaire
-var form = document.getElementById('contact_form');
+// // FORMULAIRE
+// // Récupérer le formulaire
+// var form = document.getElementById('contact_form');
 
-if(form) {
-    // Ajouter un écouteur d'événements pour la soumission du formulaire
-    form.addEventListener('submit', function (event) {
+// if(form) {
+//     // Ajouter un écouteur d'événements pour la soumission du formulaire
+//     form.addEventListener('submit', function (event) {
     
-        // Vérifier que le captcha a été validé
-        if (grecaptcha.getResponse() === '') {
-            event.preventDefault();
-            alert('Veuillez valider le captcha.');
-            return;
-        }
+//         // Vérifier que le captcha a été validé
+//         if (grecaptcha.getResponse() === '') {
+//             event.preventDefault();
+//             alert('Veuillez valider le captcha.');
+//             return;
+//         }
     
-        // Si le captcha a été validé, continuer avec la soumission du formulaire...
+//         // Si le captcha a été validé, continuer avec la soumission du formulaire...
     
-        // Empêcher le comportement de soumission par défaut
-        event.preventDefault();
+//         // Empêcher le comportement de soumission par défaut
+//         event.preventDefault();
     
-        // Envoyer le formulaire au serveur
-        var formData = new FormData(form);
+//         // Envoyer le formulaire au serveur
+//         var formData = new FormData(form);
     
-        // Récupérer la réponse du captcha
-        var captchaResponse = grecaptcha.getResponse();
+//         // Récupérer la réponse du captcha
+//         var captchaResponse = grecaptcha.getResponse();
     
-        // Ajouter la réponse du captcha à FormData
-        formData.append('g-recaptcha-response', captchaResponse);
+//         // Ajouter la réponse du captcha à FormData
+//         formData.append('g-recaptcha-response', captchaResponse);
     
-        var request = new XMLHttpRequest();
-        request.open('POST', form.action);
+//         var request = new XMLHttpRequest();
+//         request.open('POST', form.action);
     
-        // Lorsque la requête est terminée
-        request.onload = function () {
+//         // Lorsque la requête est terminée
+//         request.onload = function () {
     
-            // console.log(request);
+//             // console.log(request);
     
-            if (request.status === 200) {
-                // Afficher le pop-up de succès uniquement si la requête a réussi
-                var successModal = new bootstrap.Modal(document.getElementById('successModal'));
-                successModal.show();
+//             if (request.status === 200) {
+//                 // Afficher le pop-up de succès uniquement si la requête a réussi
+//                 var successModal = new bootstrap.Modal(document.getElementById('successModal'));
+//                 successModal.show();
     
-                // Réinitialiser le formulaire (facultatif)
-                form.reset();
-            } else {
-                // Gérer les erreurs ou afficher un message d'erreur
-                alert('Une erreur s\'est produite lors de l\'enregistrement des données.');
-            }
-        };
+//                 // Réinitialiser le formulaire (facultatif)
+//                 form.reset();
+//             } else {
+//                 // Gérer les erreurs ou afficher un message d'erreur
+//                 alert('Une erreur s\'est produite lors de l\'enregistrement des données.');
+//             }
+//         };
     
-        // Envoyer la requête avec les données du formulaire
-        request.send(formData);
-    });
-}
+//         // Envoyer la requête avec les données du formulaire
+//         request.send(formData);
+//     });
+// }
 
 
 // COOKIES

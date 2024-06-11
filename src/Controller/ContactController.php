@@ -71,7 +71,7 @@ class ContactController extends AbstractController
                         <p>Firstcom.</p>');
 
             try {
-                $mailer->send($emailObject);
+                // $mailer->send($emailObject);
             } catch (\Symfony\Component\Mailer\Exception\TransportException $e) {
                 error_log($e->getMessage());
             }
@@ -89,7 +89,7 @@ class ContactController extends AbstractController
                             <p>' . $message . '</p>');
 
             try {
-                $mailer->send($managerEmailObject);
+                // $mailer->send($managerEmailObject);
             } catch (\Symfony\Component\Mailer\Exception\TransportException $e) {
                 error_log($e->getMessage());
             }

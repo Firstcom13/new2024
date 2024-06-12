@@ -76,7 +76,7 @@ class ContactController extends AbstractController
                 error_log($e->getMessage());
             }
 
-            $managerEmail = "hamid@firstcom.fr"; 
+            $managerEmail = "fabrice@firstcom.fr"; 
 
             $managerEmailObject = (new Email())
                 ->from('contact@firstcom.fr')

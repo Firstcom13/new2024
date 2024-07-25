@@ -1,0 +1,239 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Agence de référencement naturel (SEO) et contenu à Marseille {% endblock %}
+
+{% block meta_description %}{% endblock %}
+
+{% block body %}
+
+
+	<style>
+		.background-article {
+			height: 98vh;
+		}
+
+		.background-article {
+			position: relative;
+		}
+
+		.background-article::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(0, 0, 0, 0.3);
+			z-index: 1;
+		}
+
+		.background-article > * {
+			position: relative;
+			z-index: 2;
+		}
+
+		.article-lancement h1 {
+			font-size: 40px;
+			font-weight: 800;
+			margin: 0;
+			text-align: left;
+			width: 100%;
+		}
+
+		.article-contenu p {
+			font-size: 14px;
+		}
+
+		.article-contenu h2 {
+			font-size: 18px;
+			color: #96A596;
+			font-weight: 700;
+		}
+
+		.article-contenu h3 {
+			font-size: 16px;
+			font-weight: 700;
+		}
+
+		.article-img-contenu {
+			width: 100%;
+		}
+
+		.article-fleche-contact {
+			width: 20px;
+			margin-right: 10px;
+			position: relative;
+			bottom: 1px;
+		}
+
+		a.article-contact {
+			display: block;
+			width: fit-content;
+			text-decoration: none;
+			font-weight: 700;
+			color: #FFFFFF;
+			background-color: #96A596;
+			padding: 5px 12px;
+		}
+
+		.article-retour {
+			width: fit-content;
+			margin: 0 auto;
+		}
+
+		.article-retour a {
+			text-decoration: none;
+			font-weight: 700;
+			color: #FFFFFF;
+			background-color: #3C4141;
+			padding: 5px 10px;
+		}
+
+		@media screen and(max-width: 991px) {
+			.article-lancement h1 {
+				font-size: 30px;
+			}
+		}
+
+		.article-aside-img {
+			height: 15vh;
+		}
+
+		.article-aside h2 {
+			font-size: 18px;
+			font-weight: 700;
+		}
+
+		.article-aside h3 {
+			font-size: 16px;
+			font-weight: 700;
+		}
+
+		.categories-aside a {
+			display: block;
+			width: fit-content;
+			font-size: 14px;
+			font-weight: 700;
+			color: #FFFFFF;
+			text-decoration: none;
+			background-color: #96A596;
+			padding: 2px 10px;
+			margin-bottom: 6px;
+		}
+
+		.categories-aside a.toutes-categories {
+			background-color: #3C4141;
+		}
+	</style>
+
+
+	<div class="col-sm-12 col-md-12 p-5 background-article" style="background-image: url('{{ asset('uploads/images/referencement-seo.webp') }}'); background-repeat: no-repeat; background-size: cover; background-position: center; display: flex; justify-content: center; align-items: center;">
+		<div class="container-medium">
+			<div class="row">
+				<div class="col-sm-12 col-md-12 p-4 p-sm-5 article-lancement">
+					<div class="fil_ariane">
+						<a href="{{ path('app_home') }}">FIRSTCOM</a>
+						|						|
+						<span>REFERENCEMENT NATUREL</span>
+					</div>
+					<h1 class="writeWhite mb-3"> Agence de référencement naturel (SEO) et contenu à Marseille </h1>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-medium">
+		<div class="row">
+			<div>
+				<div class="mb-5 mt-5">
+                 <div>
+					<p class="mb-5 mt-5">Le référencement naturel (SEO) et la création de contenu sont deux piliers essentiels pour assurer la visibilité en ligne de votre entreprise à Marseille et partout en France. Dans un marché digital en constante transformation, il est crucial de s'associer à une agence digitale spécialisée comme Firstcom pour optimiser votre présence sur les moteurs de recherche et attirer un trafic qualifié vers votre site web.  </p>
+				</div>
+					<h1  style="font-size: 35px; font-weight: 700;">Agence conseil en référencement naturel (SEO) à Marseille | Firstcom </h1>
+                    
+                </div>
+            <div>
+                <h2 style="font-size: 18px; color: #96A596; font-weight: 700;">Expertise en référencement naturel</h2>
+					<p>Notre agence marseillaise propose une approche holistique du SEO, combinant techniques avancées et stratégies éprouvées : 
+                    <strong></br>Audit SEO approfondi :</strong> Analyse complète de votre site web pour identifier les opportunités d'amélioration et les optimisations techniques à réaliser. 
+                    <strong></br> Optimisation on-page : </strong>  Affinage des balises meta, de la structure des URL et du contenu pour cibler les mots-clés pertinents.
+
+                    <strong></br> Optimisation technique : </strong> Amélioration de la vitesse de chargement, de la structure du site et de l'expérience mobile pour répondre aux exigences des moteurs de recherche.
+                    
+                    <strong></br> Stratégie de mots-clés : </strong> Recherche et sélection des termes les plus pertinents pour votre activité et votre marché local marseillais, national ou international.
+
+                    <strong></br> Netlinking qualitatif :</strong>  Acquisition de backlinks provenant de sources fiables et pertinentes pour renforcer l'autorité de votre domaine.
+                    </p>
+				</div>
+            </div>
+				<div class="mb-5 mt-5">
+					<h2 style="font-size: 18px; color: #96A596; font-weight: 700;">Création de contenu stratégique</h2>
+
+					<p>Le contenu est au cœur d'une stratégie SEO efficace. Notre équipe de rédacteurs experts développe pour nos clients : 
+                    <strong></br>Contenu optimisé SEO : </strong>Articles de blog, pages de services et contenus multimédias conçus pour répondre aux requêtes des utilisateurs et aux critères des moteurs de recherche. 
+
+                    <strong></br> Contenu local : </strong> Création de contenus spécifiques à Marseille et sa région pour améliorer votre visibilité auprès de votre clientèle locale.
+
+                    <strong></br> Stratégie de content marketing :</strong>  Planification et production de contenus engageants pour fidéliser votre audience et générer des leads qualifiés. 
+                    
+                    <strong></br> Création de contenu humain Vs IA générative : </strong>Chez Firstcom, nous utilisons l’IA générative pour concevoir et créer certains contenus. L’IA est un outil et doit le rester. Elle nous sert à accompagner la création de contenu, mais en aucun cas elle ne peut se substituer à l’humain.
+                    </p>
+				
+				</div>
+
+                <div class="mb-5 mt-5">
+					<h2 style="font-size: 18px; color: #96A596; font-weight: 700;">Une méthodologie est axée sur les résultats</h2>
+
+					<p>Notre approche se distingue par une importante transparence et une analyse en temps réel de nos actions : 
+                    <strong></br>Analyse de données : </strong>Utilisation d'outils avancés pour suivre les performances et ajuster la stratégie SEO en temps réel. 
+
+                    <strong></br> Reporting transparent :  </strong> Rapports mensuels détaillés sur l'évolution de vos positions et du trafic organique. 
+
+                    <strong></br> Veille concurrentielle : </strong>Surveillance constante de vos concurrents pour identifier de nouvelles opportunités et analyser leur évolution stratégique en SEO. 
+                    
+                    <strong></br> Adaptabilité : </strong> Ajustement continu de la stratégie en fonction des mises à jour des algorithmes de Google et des tendances du marché. 
+                    </p>
+				
+				</div>
+
+                 <div class="mb-5 mt-5">
+					<h2 style="font-size: 18px; color: #96A596; font-weight: 700;">Expertise locale et vision globale</h2>
+
+					<p>En tant qu'agence basée à Marseille mais travaillant pour des clients nationaux et internationaux, nous comprenons les spécificités du marché local tout en appliquant les meilleures pratiques internationales des moteurs de recherches, et plus particulièrement de Google : 
+                    <strong></br>Connaissance du tissu économique marseillais et régional : </strong>Optimisation pour les recherches locales et ciblage par ville et quartiers clés.  
+
+                    <strong></br> SEO géolocalisé Vs national :  </strong>Firstcom accompagne de nombreux réseaux de points de vente avec de multiples implantations nationales et internationales. Nous avons développé des techniques permettant à ces réseaux de maximiser la visibilité de leurs points de vente dans chaque ville où ils sont présents, ainsi qu'au niveau national. 
+
+                    <strong></br> Veille internationale : </strong> Application des dernières innovations et contrainte SEO issues des marchés les plus avancés, notamment américains. Nous avons pris notamment en compte l’arrivé de l’IA dans Google avec Overviews depuis quelques mois et préparons son arrivée en Europe. 
+                    </p>
+				
+				</div>
+
+                  <div class="mb-5 mt-5">
+					<h2 style="font-size: 18px; color: #96A596; font-weight: 700;">Une approche sur mesure</h2>
+
+					<p>Chaque entreprise est unique, c'est pourquoi nous développons des stratégies personnalisées et adaptées à chaque entreprise : 
+                    <strong></br>Analyse approfondie de votre secteur : </strong> Étude de votre marché et de vos objectifs commerciaux pour aligner la stratégie SEO à vos besoins. 
+
+                    <strong></br> Flexibilité des prestations :  </strong> Des services à la carte ou des forfaits mensuels adaptés à vos besoins et votre budget. Nous nous adaptons à vos ressources internes pour réaliser tout ou partie des missions SEO. 
+
+                    <strong></br> Accompagnement personnalisé :  </strong> Nous mettons à la disposition de nos clients un chef de projet dédié pour vous guider et répondre à vos questions tout au long de la mission 
+                    </p>
+				
+				</div>
+
+				<div class="mb-5">
+					
+					<p> En choisissant notre agence de référencement naturel et de contenu à Marseille, vous optez pour un partenaire engagé dans votre réussite en ligne. Notre expertise combinée en SEO et en création de contenu vous permettra de vous démarquer dans un paysage digital compétitif, d'attirer un trafic qualifié et de convertir vos visiteurs en clients fidèles.
+
+ </p>
+				</div>
+
+			</div>
+
+
+		</div>
+	</div>
+
+{% endblock %}

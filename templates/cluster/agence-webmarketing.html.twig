@@ -1,0 +1,257 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+Agences de webmarketing à Marseille : Votre partenaire digital sur la Côte d'Azur {% endblock %}
+
+{% block meta_description %}{% endblock %}
+
+{% block body %}
+
+
+	<style>
+		.background-article {
+			height: 98vh;
+		}
+
+		.background-article {
+			position: relative;
+		}
+
+		.background-article::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(0, 0, 0, 0.3);
+			z-index: 1;
+		}
+
+		.background-article > * {
+			position: relative;
+			z-index: 2;
+		}
+
+		.article-lancement h1 {
+			font-size: 40px;
+			font-weight: 800;
+			margin: 0;
+			text-align: left;
+			width: 100%;
+		}
+
+		.article-contenu p {
+			font-size: 14px;
+		}
+
+		.article-contenu h2 {
+			font-size: 18px;
+			color: #96A596;
+			font-weight: 700;
+		}
+
+		.article-contenu h3 {
+			font-size: 16px;
+			font-weight: 700;
+		}
+
+		.article-img-contenu {
+			width: 100%;
+		}
+
+		.article-fleche-contact {
+			width: 20px;
+			margin-right: 10px;
+			position: relative;
+			bottom: 1px;
+		}
+
+		a.article-contact {
+			display: block;
+			width: fit-content;
+			text-decoration: none;
+			font-weight: 700;
+			color: #FFFFFF;
+			background-color: #96A596;
+			padding: 5px 12px;
+		}
+
+		.article-retour {
+			width: fit-content;
+			margin: 0 auto;
+		}
+
+		.article-retour a {
+			text-decoration: none;
+			font-weight: 700;
+			color: #FFFFFF;
+			background-color: #3C4141;
+			padding: 5px 10px;
+		}
+
+		@media screen and(max-width: 991px) {
+			.article-lancement h1 {
+				font-size: 30px;
+			}
+		}
+
+		.article-aside-img {
+			height: 15vh;
+		}
+
+		.article-aside h2 {
+			font-size: 18px;
+			font-weight: 700;
+		}
+
+		.article-aside h3 {
+			font-size: 16px;
+			font-weight: 700;
+		}
+
+		.categories-aside a {
+			display: block;
+			width: fit-content;
+			font-size: 14px;
+			font-weight: 700;
+			color: #FFFFFF;
+			text-decoration: none;
+			background-color: #96A596;
+			padding: 2px 10px;
+			margin-bottom: 6px;
+		}
+
+		.categories-aside a.toutes-categories {
+			background-color: #3C4141;
+		}
+	</style>
+
+
+	<div class="col-sm-12 col-md-12 p-5 background-article" style="background-image: url('{{ asset('uploads/images/webmarketing-digital.webp') }}'); background-repeat: no-repeat; background-size: cover; background-position: center; display: flex; justify-content: center; align-items: center;">
+		<div class="container-medium">
+			<div class="row">
+				<div class="col-sm-12 col-md-12 p-4 p-sm-5 article-lancement">
+					<div class="fil_ariane">
+						<a href="{{ path('app_home') }}">FIRSTCOM</a>
+						|						|
+						<span>WEBMARKETING</span>
+					</div>
+					<h1 class="writeWhite mb-3">Agences de webmarketing à Marseille : Votre partenaire digital sur la Côte d'Azur</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container-medium">
+		<div class="row">
+			<div>
+                <P class="mt-5">Dans la vibrante cité phocéenne, les agences de webmarketing jouent un rôle crucial pour aider les entreprises locales à prospérer dans l'ère numérique. Que vous soyez à la tête d’une startup ambitieuse ou d’une entreprise établie cherchant à renforcer sa présence en ligne, les agences de webmarketing marseillaises vous proposent une gamme complète de services pour propulser votre activité vers de nouveaux sommets. </P>
+				<div class="mb-5 mt-5">
+					<h1  style="font-size: 35px; font-weight: 700;">Agences conseil en webmarketing à Marseille | Firstcom  </h1>
+                </div>
+               
+            </div>
+				
+				<div class="">
+					<h2 style="font-size: 18px; color: #96A596; font-weight: 700;">Services proposés par les agences de webmarketing marseillaises </h2>
+                    <p style="font-size: 16px; font-weight: 400;">Les agences de webmarketing à Marseille proposent généralement une large palette de services pour répondre aux besoins variés des entreprises locales : <strong> </br> Stratégie digitale globale </strong>  </p>
+                    <ul class="list-blog">
+                    <li>Analyse de marché et de la concurrence</li>
+                    <li>Définition des objectifs et des KPIs</li>
+                    <li>Élaboration d'un plan d'action personnalisé</li>
+                    </ul>
+				</div>
+
+                <div class="">
+                    <p style="font-size: 16px; font-weight: 400;"> <strong> </br> Création et optimisation de sites web </strong>  </p>
+                    <ul class="list-blog">
+                    <li>Conception de sites vitrines et e-commerce</li>
+                    <li>Développement d'applications web sur mesure</li>
+                    <li>Optimisation de l'expérience utilisateur (UX/UI)</li>
+                    </ul>
+				</div>
+
+                 <div class="">
+                    <p style="font-size: 16px; font-weight: 400;"> <strong> </br> Référencement naturel (SEO) </strong>  </p>
+                    <ul class="list-blog">
+                    <li>Audit SEO approfondi</li>
+                    <li>Optimisation on-page et off-page</li>
+                    <li>Création de contenus optimisés pour les moteurs de recherche</li>
+                    </ul>
+				</div>
+
+                  <div class="">
+                    <p style="font-size: 16px; font-weight: 400;"> <strong> </br> Publicité en ligne (SEA)  </strong>  </p>
+                    <ul class="list-blog">
+                    <li>Gestion de campagnes Google Ads et Bing Ads</li>
+                    <li>Publicités sur les réseaux sociaux (Facebook Ads, Instagram Ads, etc.)</li>
+                    <li>Remarketing et retargeting</li>
+                    </ul>
+				</div>
+
+                  <div class="">
+                    <p style="font-size: 16px; font-weight: 400;"> <strong> </br> Marketing de contenu  </strong>  </p>
+                    <ul class="list-blog">
+                    <li>Rédaction d'articles de blog et de pages web</li>
+                    <li>Création de contenus visuels (infographies, vidéos)</li>
+                    <li>Gestion de newsletters et campagnes d'e-mailing</li>
+                    </ul>
+				</div>
+
+                <div class="">
+                    <p style="font-size: 16px; font-weight: 400;"> <strong> </br>Community management </strong>  </p>
+                    <ul class="list-blog">
+                    <li>Animation des réseaux sociaux</li>
+                    <li>Gestion de la réputation en ligne</li>
+                    <li>Création et gestion de campagnes d'influence</li>
+                    </ul>
+				</div>
+
+				<div class="mb-5 mt-5">
+					<h2 style="font-size: 18px; color: #96A596; font-weight: 700;"> Méthodologie des agences de webmarketing marseillaises </h2>
+					<p style="font-size: 16px; font-weight: 400;">Les agences de webmarketing à Marseille suivent généralement une approche structurée pour assurer le succès de leurs clients :  </p>
+					 <ul class="list-blog">
+                    <li> <strong>Analyse et découverte </strong> : Étude approfondie de votre entreprise, de vos objectifs et de votre marché cible. </li>
+                    <li> <strong>Élaboration de la stratégie </strong>: Définition d'un plan d'action personnalisé en fonction de vos besoins spécifiques et de votre budget.  </li>
+                    <li> <strong>Mise en œuvre </strong> : Déploiement des actions marketing choisies, que ce soit la création de contenu, le lancement de campagnes publicitaires ou l'optimisation de votre site web.  </li>
+                    <li> <strong>Suivi et optimisation  </strong>: Analyse continue des performances et ajustements réguliers pour maximiser les résultats.  </li>
+                    <li> <strong>Reporting</strong> : Rapports détaillés sur les performances de vos campagnes et recommandations pour l'amélioration continue.  </li>
+                    </ol>
+				</div>
+
+                <div class="mb-5">
+					<h2 style="font-size: 18px; color: #96A596; font-weight: 700;">Avantages de travailler avec une agence de webmarketing marseillaise</h2>
+					<p  style="font-size: 16px; font-weight: 400;">Choisir une agence locale à Marseille présente plusieurs avantages :  </p>
+					 <ul class="list-blog">
+                    <li><strong>Connaissance du marché local</strong> : Les agences marseillaises ont une compréhension approfondie du tissu économique local et des spécificités du marché méditerranéen. </li>
+                    <li><strong>Proximité et réactivité</strong> : La possibilité de rencontres en face à face facilite la communication et permet une plus grande réactivité. </li>
+                    <li><strong>Réseau local</strong> : Les agences marseillaises disposent souvent d'un solide réseau de partenaires locaux, ce qui peut être bénéfique pour votre entreprise. </li>
+                    <li><strong>Expertise diversifiée</strong> : Les agences de Marseille rassemblent des talents variés, vous offrant une expertise complète en un seul endroit. </li>
+                    </ul>
+				</div>
+
+                <div class="mb-5">
+					<h2 style="font-size: 18px; color: #96A596; font-weight: 700;">Comment choisir la bonne agence de webmarketing à Marseille ?</h2>
+					<p  style="font-size: 16px; font-weight: 400;">Pour sélectionner l'agence idéale pour votre projet, considérez les critères suivants :  </p>
+					 <ul class="list-blog">
+                    <li><strong>Expérience et portfolio </strong> : : Examinez les réalisations passées de l'agence, en particulier dans votre secteur d'activité. </li>
+                    <li><strong>Gamme de services </strong> :: Assurez-vous que l'agence propose tous les services dont vous avez besoin. </li>
+                    <li><strong>Témoignages clients </strong> : Recherchez des avis et des témoignages d'anciens clients pour évaluer la satisfaction et les résultats obtenus. </li>
+                    <li><strong>Transparence </strong> : Optez pour une agence qui communique clairement sur ses méthodes et ses tarifs.  </li>
+                    <li><strong>Compatibilité culturelle  </strong> : O: Choisissez une agence dont l'approche et les valeurs correspondent aux vôtres.  </li>
+                    </ul>
+				</div>
+                
+				<div class="mb-5">
+					
+					<p> En conclusion, les agences de webmarketing à Marseille offrent une expertise locale précieuse pour les entreprises souhaitant développer leur présence en ligne. Avec leur connaissance approfondie du marché méditerranéen et leur maîtrise des dernières tendances digitales, elles sont idéalement positionnées pour vous aider à atteindre vos objectifs marketing dans le monde numérique en constante évolution.</p>
+				</div>
+
+			</div>
+
+
+		</div>
+	</div>
+
+{% endblock %}

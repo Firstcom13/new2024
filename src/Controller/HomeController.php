@@ -28,7 +28,7 @@ class HomeController extends AbstractController
     // gestion des pages dynamiques sauf /admin, /login /logout /contact
     // voir si possible faire autrement pour les exeptions /admin...
     // seo$ privisoire car est la même page que referencement-naturel-seo$ mais ne peut pas être supprimée via le BO pour l'instant
-    #[Route("/{chemin}", name: "dynamic_page", requirements:  ["chemin" => "^(?!admin$|login$|logout$|contact$|croissance$|conseil-et-strategie$|referencement-naturel-seo$|seo$|marketing-de-loffre$|communication-de-crise$|consulting-et-developpement$|campagnes-digitales$|mentions-legales$|gestion-des-cookies$|data-analyse$|community-management-et-rp$|creation-editoriale-et-storytelling$|agence$|ecoindex$|tech-et-digital$|tech-et-digital/sites-web$|tech-et-digital/digitalisation$|agence-data-marketing$|agence-referencement-naturel$|agence-social-media$|agence-webmarketing$).+"], methods: ["GET"])]
+    #[Route("/{chemin}", name: "dynamic_page", requirements:  ["chemin" => "^(?!admin$|login$|logout$|contact$|croissance$|conseil-et-strategie$|referencement-naturel-seo$|seo$|marketing-de-loffre$|communication-de-crise$|consulting-et-developpement$|campagnes-digitales$|mentions-legales$|gestion-des-cookies$|data-analyse$|community-management-et-rp$|creation-editoriale-et-storytelling$|agence$|ecoindex$|tech-et-digital$|tech-et-digital/sites-web$|tech-et-digital/digitalisation$|agence-data-marketing-et-web-analyse-marseille$|agence-referencement-naturel-et-contenu-marseille$|agence-social-media-marseille$|agence-webmarketing-marseille$).+"], methods: ["GET"])]
      public function loadPage(Request $request, EntityManagerInterface $entityManager, string $chemin)
     {    
         $chemin =  $request->getRequestUri();

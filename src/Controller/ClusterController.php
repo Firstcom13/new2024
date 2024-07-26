@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ClusterController extends AbstractController
 {
-    #[Route('/agence-data-marketing', name: 'app_agence_data_marketing')]
+    #[Route('/agence-data-marketing-et-web-analyse-marseille', name: 'app_agence_data_marketing')]
     public function index(): Response
     {
         return $this->render('cluster/agence-data-marketing.html.twig', [
@@ -17,7 +17,7 @@ class ClusterController extends AbstractController
         ]);
     }
 
-    #[Route('/agence-referencement-naturel', name: 'app_agence_referencement_naturel')]
+    #[Route('/agence-referencement-naturel-et-contenu-marseille', name: 'app_agence_referencement_naturel')]
     public function ref(): Response
     {
         return $this->render('cluster/agence-referencement-naturel.html.twig', [
@@ -26,7 +26,7 @@ class ClusterController extends AbstractController
         ]);
     }
 
-    #[Route('/agence-social-media', name: 'app_agence_social_media')]
+    #[Route('/agence-social-media-marseille', name: 'app_agence_social_media')]
     public function social(): Response
     {
         return $this->render('cluster/agence-social-media.html.twig', [
@@ -35,7 +35,7 @@ class ClusterController extends AbstractController
         ]);
     }
 
-    #[Route('/agence-webmarketing', name: 'app_agence_webmarketing')]
+    #[Route('/agence-webmarketing-marseille', name: 'app_agence_webmarketing')]
     public function webmarketing(): Response
     {
         return $this->render('cluster/agence-webmarketing.html.twig', [

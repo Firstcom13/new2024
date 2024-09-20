@@ -216,6 +216,28 @@ h4 {
     }
 }
 
+.h4-mini {
+    font-size: 22px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: $couleur-titres;
+
+    @media screen and (max-width: 991px) {
+        font-size: 22px;
+    }
+}
+
+.h4-micro {
+    font-size: 18px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: $couleur-titres;
+
+    @media screen and (max-width: 991px) {
+        font-size: 18px;
+    }
+}
+
 p {
     font-family: 'Open Sans', sans-serif;
     font-size: 18px;
@@ -2181,9 +2203,6 @@ td {
     margin: 0;
 }
 
-.list-blog li {
-    font-size: 14px;
-}
 /*
 ███████╗ ██████╗ ██████╗ ██╗███╗   ██╗██████╗ ███████╗██╗  ██╗
 ██╔════╝██╔════╝██╔═══██╗██║████╗  ██║██╔══██╗██╔════╝╚██╗██╔╝

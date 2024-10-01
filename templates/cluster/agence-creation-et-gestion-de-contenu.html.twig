@@ -1,0 +1,283 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Création de Contenu Optimisé pour le Web et les Marques 
+{% endblock %}
+
+{% block meta_description %}{% endblock %}
+
+{% block body %}
+    <style>
+        .background-article {
+            height: 98vh;
+            position: relative;
+        }
+
+        .background-article::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .background-article > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .article-lancement h1 {
+            font-size: 40px;
+            font-weight: 800;
+            margin: 0;
+            text-align: left;
+            width: 100%;
+        }
+
+        .article-contenu p {
+            font-size: 14px;
+        }
+
+        .article-contenu h2 {
+            font-size: 18px;
+            color: #96A596;
+            font-weight: 700;
+        }
+
+        .article-contenu h3 {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .article-img-contenu {
+            width: 100%;
+        }
+
+        .article-fleche-contact {
+            width: 20px;
+            margin-right: 10px;
+            position: relative;
+            bottom: 1px;
+        }
+
+        a.article-contact {
+            display: block;
+            width: fit-content;
+            text-decoration: none;
+            font-weight: 700;
+            color: #FFFFFF;
+            background-color: #96A596;
+            padding: 5px 12px;
+        }
+
+        .article-retour {
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        .article-retour a {
+            text-decoration: none;
+            font-weight: 700;
+            color: #FFFFFF;
+            background-color: #3C4141;
+            padding: 5px 10px;
+        }
+
+        @media screen and(max-width: 991px) {
+            .article-lancement h1 {
+                font-size: 30px;
+            }
+        }
+
+        .article-aside-img {
+            height: 15vh;
+        }
+
+        .article-aside h2 {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .article-aside h3 {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .categories-aside a {
+            display: block;
+            width: fit-content;
+            font-size: 14px;
+            font-weight: 700;
+            color: #FFFFFF;
+            text-decoration: none;
+            background-color: #96A596;
+            padding: 2px 10px;
+            margin-bottom: 6px;
+        }
+
+        .categories-aside a.toutes-categories {
+            background-color: #3C4141;
+        }
+    </style>
+
+    <div class="col-sm-12 col-md-12 p-5 background-article"
+        style="background-image: url('{{ asset('uploads/images/creation-contenus.webp') }}'); background-repeat: no-repeat; background-size: cover; background-position: center; display: flex; justify-content: center; align-items: center;">
+        <div class="container-medium">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 p-4 p-sm-5 article-lancement">
+                    <div class="fil_ariane">
+                        <a href="{{ path('app_home') }}">FIRSTCOM</a> |
+                        <span>CRÉATION ET GESTION DE CONTENU</span>
+                    </div>
+                    <h1 class="writeWhite mb-3">Création et gestion de contenu - agence Firstcom : des experts au service des marques.</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-medium">
+        <div class="row">
+            <div class="mb-5">
+                <p class="texte-courant-mini mt-5"><a href="href={{ path('app_home') }}" style="color:#000000" ><strong>La création et la gestion de contenus</strong></a>, qu'ils soient textuels ou visuels, sont devenues des éléments essentiels de toute stratégie marketing digitale percutante et efficace.</p>
+            </div>
+
+            <div class="mb-5">
+                <h2 style="font-size: 18px; color: #96A596; font-weight: 700;">Définir une stratégie de contenu cohérente</h2>
+                <p class="texte-courant-mini">
+                    Avant de nous lancer dans la création de contenu, il est crucial d'établir une stratégie claire et cohérente, alignée sur les objectifs business de la marque et tenant compte du marché ainsi que de la concurrence. 
+                </p>
+            </div>
+
+            <div class="mb-5">
+                <h2 style="font-size: 18px; color: #96A596; font-weight: 700;">Identifier les objectifs et l’audience cible</h2>
+                <p class="texte-courant-mini">
+                    Commençons par définir précisément les objectifs des contenus à créer (augmenter la notoriété, générer des leads, fidéliser les clients, etc.) et identifions les personas idéaux. Cela nous permettra de créer du contenu pertinent et engageant pour l’audience, afin de maximiser l’engagement. 
+                </p>
+            </div>
+
+            <div class="mb-5">
+                <h2 style="font-size: 18px; color: #96A596; font-weight: 700;">Choisir les formats et canaux adaptés</h2>
+                <p class="texte-courant-mini">
+                    Sélectionnez les types de contenus (articles de blog, vidéos, infographies, etc.) et les plateformes de diffusion (site web, réseaux sociaux, newsletters…) les plus appropriés pour atteindre les cibles déterminées. 
+                </p>
+            </div>
+
+            <div class="mb-5">
+                <h2 style="font-size: 18px; color: #96A596; font-weight: 700;">Planifier un calendrier éditorial</h2>
+                <p class="texte-courant-mini">
+                    Établissez un planning de publication régulier pour maintenir une présence constante auprès de votre audience. Prévoyez des contenus en lien avec l'actualité du secteur et les temps forts de l’entreprise. Soyez opportuniste en communiquant sur les grandes tendances de votre marché pour vous assurer une visibilité optimale. 
+                </p>
+            </div>
+
+            <div class="mb-5">
+                <h2 style="font-size: 18px; color: #96A596; font-weight: 700;">Créer du contenu textuel de qualité</h2>
+                <p class="texte-courant-mini">
+                    La création de contenu textuel reste un pilier fondamental de toute stratégie de content marketing. Ces contenus doivent avant tout être adaptés à la cible de la communication. Par exemple, il convient d'employer un langage technique pour des experts dans un contexte BtoB, ou un langage plus familier pour une cible jeune en BtoC. Le contenu doit être optimisé selon la cible et la nature du message. 
+                </p>
+            </div>
+
+            <div class="mb-5">
+                <h3 style="font-size: 18px; color: #96A596; font-weight: 700;">Rédiger des articles de blog optimisés SEO pour une meilleure visibilité en ligne </h3>
+                <p class="texte-courant-mini">Produisez régulièrement des articles de blog informatifs et utiles pour votre audience. Optimisez-les pour le référencement naturel en :</p>
+                <ul class="list-blog">
+                    <li>Choisissant des mots-clés pertinents et à fort potentiel.</li>
+                    <li>Structurant vos contenus avec des balises H1, H2, H3.</li>
+                    <li>Incluant des liens internes et externes de qualité.</li>
+                    <li>Rédigeant des méta-descriptions attractives.</li>
+                </ul>
+            </div>
+
+            <div class="mb-5">
+                <h3 style="font-size: 18px; color: #96A596; font-weight: 700;">Développer des contenus longs et approfondis</h3>
+                <p class="texte-courant-mini">
+                    Les contenus longs (plus de 2 000 mots) sont particulièrement appréciés par Google. Nous vous recommandons de créer des guides complets, des études de cas détaillées ou des livres blancs pour positionner votre marque comme experte dans son domaine. Cette notion d'expertise (EEAT : Expertise, Expérience, Autorité, Fiabilité) est fondamentale en SEO pour prouver à Google votre expertise et autorité dans votre secteur. 
+                </p>
+            </div>
+
+            <div class="mb-5">
+                <h2 style="font-size: 18px; color: #96A596; font-weight: 700;">Produire du contenu visuel impactant</h2>
+                <p class="texte-courant-mini">
+                    La création de contenu visuel original est essentielle pour capter l'attention et améliorer l'engagement de votre audience. Ces visuels (vidéos, images, etc.) doivent non seulement être engageants mais aussi refléter les valeurs et le positionnement de votre marque. 
+                </p>
+            </div>
+
+            <div class="mb-5">
+                <h3 style="font-size: 18px; color: #96A596; font-weight: 700;">Créer des infographies percutantes</h3>
+                <p class="texte-courant-mini">
+                    Transformer des données complexes en infographies attrayantes et faciles à comprendre est un moyen efficace de transmettre vos messages basés sur des chiffres. Utilisez des outils tels que Canva ou Piktochart pour créer des visuels professionnels. 
+                </p>
+                <p class="texte-courant-mini">
+                    Un schéma bien conçu et clair sera toujours plus consulté et compris qu’un long texte rébarbatif. 
+                </p>
+            </div>
+
+            <div class="mb-5">
+                <h3 style="font-size: 18px; color: #96A596; font-weight: 700;">Réaliser des vidéos engageantes</h3>
+                <p class="texte-courant-mini">
+                    La vidéo est un format incontournable en 2024. Qu'il s'agisse de produire des tutoriels, des interviews d'experts, des présentations de produits ou des stories en coulisses pour humaniser votre marque, la vidéo offre une flexibilité et un impact inégalés. De nombreux outils, notamment ceux basés sur l'IA, permettent aujourd'hui de créer facilement et professionnellement des vidéos engageantes. 
+                </p>
+            </div>
+
+            <div class="mb-5">
+                <h2 style="font-size: 18px; color: #96A596; font-weight: 700;">Gérer efficacement vos contenus</h2>
+                <p class="texte-courant-mini">
+                    Une bonne gestion de vos contenus est cruciale pour maximiser leur impact. 
+                </p>
+            </div>
+
+            <div class="mb-5">
+                <h3 style="font-size: 18px; color: #96A596; font-weight: 700;">Mettre en place un système de gestion de contenu (CMS)</h3>
+                <p class="texte-courant-mini">
+                    Utilisez un CMS comme WordPress ou Drupal pour centraliser et organiser tous vos contenus. Cela facilitera leur publication et leur mise à jour.  
+                </p>
+            </div>
+            
+            <div class="mb-5">
+                <h3 style="font-size: 18px; color: #96A596; font-weight: 700;">Analyser les performances de vos contenus</h3>
+                <p class="texte-courant-mini">
+                    Utilisez des outils d'analyse comme GA4 ou Matomo pour mesurer l'impact de vos contenus. Identifiez les formats et sujets qui performent le mieux pour affiner votre stratégie.  
+                </p>
+            </div>
+            
+            <div class="mb-5">
+                <h3 style="font-size: 18px; color: #96A596; font-weight: 700;">Recycler et mettre à jour vos contenus</h3>
+                <p class="texte-courant-mini">
+                    Ne laissez jamais de « vieux » contenus prendre la poussière sur votre site web. Mettez régulièrement à jour les articles les plus populaires et transformez des contenus existants en nouveaux formats (par exemple, un article de blog en infographie). 
+                </p>
+            </div>
+            
+            <div class="mb-5">
+                <h2 style="font-size: 18px; color: #96A596; font-weight: 700;">Tendances 2024 /2025  à intégrer dans une stratégie de  contenu pertinente</h2>
+                <p class="texte-courant-mini">
+                    Pour rester à la pointe, Firstcom vous conseille d’intégrer ces tendances dans votre stratégie de contenu réussie : 
+                </p>
+            </div>
+            
+            <div class="ms-2 mb-5">
+                <h3 style="font-size: 16px; color: #96A596; font-weight: 700;"><a href="https://www.firstcom.fr/article/6/contenu-humain-vs-contenu-ia-generative-avantages-inconvenients-et-impact-sur-le-seo-nbsp" style="color:#96A596" ><strong>Contenu généré par l'IA</strong></a></h3>
+                <p class="texte-courant-mini">
+                    Utilisez des outils d'IA pour générer des idées de contenu, des ébauches d'articles ou des suggestions de titres. Toutefois, veillez toujours à apporter une touche humaine et une expertise réelle à vos contenus pour éviter toute sanction de Google. 
+                </p>
+            </div>
+            
+            <div class="ms-2 mb-5">
+                <h3 style="font-size: 16px; color: #96A596; font-weight: 700;">Expériences immersives</h3>
+                <p class="texte-courant-mini">
+                    Explorez les possibilités offertes par la réalité augmentée ou la réalité virtuelle pour créer des expériences de contenu uniques et mémorables. 
+                </p>
+            </div>
+            
+            
+            <div class="ms-2 mb-5">
+                <h3 style="font-size: 16px; color: #96A596; font-weight: 700;">Contenu audio</h3>
+                <p class="texte-courant-mini">
+                    Avec la popularité croissante des podcasts et des assistants vocaux, intégrez du contenu audio dans votre stratégie. Firstcom a accompagné un client du secteur automobile dans la création et la promotion d’un podcast, avec des résultats très encourageants en termes d'écoute et de partage. 
+                </p>
+            </div>
+            
+        </div>
+    </div>
+{% endblock %}

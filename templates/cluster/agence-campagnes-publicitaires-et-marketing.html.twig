@@ -1,0 +1,199 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Les Clefs pour réussir une campagne publicitaire et marketing : Stratégie et Méthode
+{% endblock %}
+
+{% block meta_description %}{% endblock %}
+
+{% block body %}
+    <style>
+        .background-article {
+            height: 98vh;
+            position: relative;
+        }
+
+        .background-article::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .background-article > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .article-lancement h1 {
+            font-size: 40px;
+            font-weight: 800;
+            margin: 0;
+            text-align: left;
+            width: 100%;
+        }
+
+        .article-contenu p {
+            font-size: 14px;
+        }
+
+        .article-contenu h2 {
+            font-size: 18px;
+            color: #96A596;
+            font-weight: 700;
+        }
+
+        .article-contenu h3 {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .article-img-contenu {
+            width: 100%;
+        }
+
+        .article-fleche-contact {
+            width: 20px;
+            margin-right: 10px;
+            position: relative;
+            bottom: 1px;
+        }
+
+        a.article-contact {
+            display: block;
+            width: fit-content;
+            text-decoration: none;
+            font-weight: 700;
+            color: #FFFFFF;
+            background-color: #96A596;
+            padding: 5px 12px;
+        }
+
+        .article-retour {
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        .article-retour a {
+            text-decoration: none;
+            font-weight: 700;
+            color: #FFFFFF;
+            background-color: #3C4141;
+            padding: 5px 10px;
+        }
+
+        @media screen and(max-width: 991px) {
+            .article-lancement h1 {
+                font-size: 30px;
+            }
+        }
+
+        .article-aside-img {
+            height: 15vh;
+        }
+
+        .article-aside h2 {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .article-aside h3 {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .categories-aside a {
+            display: block;
+            width: fit-content;
+            font-size: 14px;
+            font-weight: 700;
+            color: #FFFFFF;
+            text-decoration: none;
+            background-color: #96A596;
+            padding: 2px 10px;
+            margin-bottom: 6px;
+        }
+
+        .categories-aside a.toutes-categories {
+            background-color: #3C4141;
+        }
+    </style>
+
+    <div class="col-sm-12 col-md-12 p-5 background-article"
+        style="background-image: url('{{ asset('uploads/images/campagnes-pub.webp') }}'); background-repeat: no-repeat; background-size: cover; background-position: center; display: flex; justify-content: center; align-items: center;">
+        <div class="container-medium">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 p-4 p-sm-5 article-lancement">
+                    <div class="fil_ariane">
+                        <a href="{{ path('app_home') }}">FIRSTCOM</a> |
+                        <span>CAMPAGNES PUBLICITAIRES ET MARKETING</span>
+                    </div>
+                    <h1 class="writeWhite mb-3">Agence conseil en création et management de campagne Firstcom</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-medium">
+        <div class="row">
+            <div class="mb-5">
+                <p class="texte-courant-mini mt-5">Dans un monde où la concurrence est féroce, <a href="href={{ path('app_home') }}" style="color:#000000" ><strong>les campagnes publicitaires et marketing publicitaire</strong></a> jouent un rôle crucial pour les entreprises cherchant à se démarquer. Que ce soit pour une start-up ou une entreprise établie, une campagne bien conçue peut transformer la visibilité d’une entreprise et booster ses ventes. Voici les principaux point clefs pour mettre en œuvre pour réaliser une campagne publicitaire et marketing efficace et performante.</p>
+            </div>
+
+            <div class="mb-5">
+                <h2 style="font-size: 18px; color: #96A596; font-weight: 700;">Définir des Objectifs Clairs</h2>
+                <p class="texte-courant-mini">
+                    La première étape pour toute campagne réussie est de définir des objectifs clairs, atteignable et mesurables. Nous utilisons par exemple la méthode SMART (Spécifique, Mesurable, Atteignable, Réaliste, Temporel) pour nous assurer que les objectifs sont bien définis. Que ce soit pour accroître la notoriété d’une marque, générer des leads ou augmenter les ventes, chaque objectif guidera les décisions stratégiques. 
+                </p>
+            </div>
+
+            <div class="mb-5">
+                <h2 style="font-size: 18px; color: #96A596; font-weight: 700;">Identifier l’audience à adresser</h2>
+                <p class="texte-courant-mini">
+                    Une compréhension approfondie de l’audience cible est essentielle. Analysez les données démographiques, les intérêts et les comportements des clients potentiels. Créer des persona pour mieux cerner les attentes et cibler de façon plus fine l’audience. Cela permettra de personnaliser les messages et de choisir les canaux de communication les plus efficaces pour atteindre le public cible.  
+                </p>
+            </div>
+
+            <div class="mb-5">
+                <h2 style="font-size: 18px; color: #96A596; font-weight: 700;">Choisir les Bons Canaux de Communication</h2>
+                <p class="texte-courant-mini">
+                    La sélection des canaux de communication est cruciale pour le succès d’une campagne. En 2024, les entreprises doivent utiliser une approche POEM (Paid, Owned, Earned Media) pour structurer leurs campagnes. Les publicités payantes sur Google Ads, Facebook, et d'autres plateformes sont efficaces pour atteindre un large public, tandis que les médias possédés, comme un site web et une newsletter, renforcent vos messages ciblés. Les médias historique ( TV, Presse, Affichage…)  ou sociaux, tels que les mentions dans la presse ou les partages sur les réseaux sociaux, augmentent la crédibilité d’une marque.  
+                </p>
+            </div>
+
+            <div class="mb-5">
+                <h2 style="font-size: 18px; color: #96A596; font-weight: 700;">Créer un Contenu Engagé</h2>
+                <p class="texte-courant-mini">
+                    Le contenu est roi. Créez du contenu qui résonne avec l’audience cible et qui est en accord avec les objectifs fixés. Qu'il s'agisse de vidéos, d'articles de blog, ou de posts sur les réseaux sociaux, il faut que le contenu soit engageant et incite à l'action. L'intégration de valeurs éthiques et de durabilité dans les messages peut également renforcer l'engagement des consommateurs.  
+                </p>
+            </div>
+
+            <div class="mb-5">
+                <h2 style="font-size: 18px; color: #96A596; font-weight: 700;">Utiliser la Publicité Payante, les Relations presse et les réseaux sociaux</h2>
+                <p class="texte-courant-mini">
+                    La publicité payante est un outil puissant pour augmenter la visibilité d’une marque. En participant efficacement aux enchères publicitaires et en ciblant précisément l’audience cible, nous pouvons générer un trafic précieux vers un site web.  
+                </p>
+                <p class="texte-courant-mini">
+					Les relations presse et la notoriété qu’elle donne à une marque sont un parfait complément au campagne payante.  
+                </p>
+                <p class="texte-courant-mini">
+					Enfin un relais incontournable pour une marque est d’utiliser le très fort levier des réseaux sociaux.   
+                </p>
+                <p class="texte-courant-mini">
+					Tous ces leviers d’actions de communication payante, de RP et de Community management doivent être parfaitement planifiées et exécutées pour maximiser leur impact. Les Experts SEA/SMA, RP et Community manager de Firstcom sont au service des marques et des entreprises pour exécuter et orchestrer ces campagnes de communication publicitaires. 
+                </p>
+            </div>
+
+			<div class="mb-5">
+                <h2 style="font-size: 18px; color: #96A596; font-weight: 700;">Mesurer et Optimiser</h2>
+                <p class="texte-courant-mini">
+                    Le suivi des performances de campagne est essentiel et capital pour comprendre ce qui fonctionne et ce qui doit être amélioré. Utilisez des KPIs (indicateurs clés de performance) tels que le taux de conversion, le CTR (taux de clics), et l'engagement sur les réseaux sociaux pour évaluer l'efficacité de votre campagne. Nous utilisons aussi des piges presse pour suivre la notoriété d’une marque dans les médias. L'analyse continue de ces données permettra d'ajuster les stratégies de communication en temps réel et d'optimiser les résultats. 
+                </p>
+            </div>
+        </div>
+    </div>
+{% endblock %}

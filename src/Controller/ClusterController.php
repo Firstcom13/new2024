@@ -43,4 +43,22 @@ class ClusterController extends AbstractController
             
         ]);
     }
+
+    #[Route('/agence-campagnes-publicitaires-et-marketing-marseille', name: 'app_agence_campagnes_publicitaires_et_marketing')]
+    public function campagnes_publicitaires(): Response
+    {
+        return $this->render('cluster/agence-campagnes-publicitaires-et-marketing.html.twig', [
+            'controller_name' => 'HomeController',
+            
+        ]);
+    }
+
+    #[Route('/agence-creation-et-gestion-de-contenu-marseille', name: 'app_agence_creation_et_gestion_de_contenu')]
+    public function creation_contenu(): Response
+    {
+        return $this->render('cluster/agence-creation-et-gestion-de-contenu.html.twig', [
+            'controller_name' => 'HomeController',
+            
+        ]);
+    }
 }

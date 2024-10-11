@@ -1,0 +1,247 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Stratégie de communication digitale : définition, outils, mise en Place et suivi 
+{% endblock %}
+
+{% block meta_description %}{% endblock %}
+
+{% block body %}
+    <style>
+        .background-article {
+            height: 98vh;
+            position: relative;
+        }
+
+        .background-article::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .background-article > * {
+            position: relative;
+            z-index: 2;
+        }
+
+        .article-lancement h1 {
+            font-size: 40px;
+            font-weight: 800;
+            margin: 0;
+            text-align: left;
+            width: 100%;
+        }
+
+        .article-contenu p {
+            font-size: 14px;
+        }
+
+        .article-contenu h2 {
+            font-size: 18px;
+            color: #96A596;
+            font-weight: 700;
+        }
+
+        .article-contenu h3 {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .article-img-contenu {
+            width: 100%;
+        }
+
+        .article-fleche-contact {
+            width: 20px;
+            margin-right: 10px;
+            position: relative;
+            bottom: 1px;
+        }
+
+        a.article-contact {
+            display: block;
+            width: fit-content;
+            text-decoration: none;
+            font-weight: 700;
+            color: #FFFFFF;
+            background-color: #96A596;
+            padding: 5px 12px;
+        }
+
+        .article-retour {
+            width: fit-content;
+            margin: 0 auto;
+        }
+
+        .article-retour a {
+            text-decoration: none;
+            font-weight: 700;
+            color: #FFFFFF;
+            background-color: #3C4141;
+            padding: 5px 10px;
+        }
+
+        @media screen and(max-width: 991px) {
+            .article-lancement h1 {
+                font-size: 30px;
+            }
+        }
+
+        .article-aside-img {
+            height: 15vh;
+        }
+
+        .article-aside h2 {
+            font-size: 18px;
+            font-weight: 700;
+        }
+
+        .article-aside h3 {
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .categories-aside a {
+            display: block;
+            width: fit-content;
+            font-size: 14px;
+            font-weight: 700;
+            color: #FFFFFF;
+            text-decoration: none;
+            background-color: #96A596;
+            padding: 2px 10px;
+            margin-bottom: 6px;
+        }
+
+        .categories-aside a.toutes-categories {
+            background-color: #3C4141;
+        }
+    </style>
+
+    <div class="col-sm-12 col-md-12 p-5 background-article"
+        style="background-image: url('{{ asset('uploads/images/strategie-com-digitale.webp') }}'); background-repeat: no-repeat; background-size: cover; background-position: center; display: flex; justify-content: center; align-items: center;">
+        <div class="container-medium">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 p-4 p-sm-5 article-lancement">
+                    <div class="fil_ariane">
+                        <a href="{{ path('app_home') }}">FIRSTCOM</a> |
+                        <span>STRATÉGIE DE COMMUNICATION DIGITALE</span>
+                    </div>
+                    <h1 class="writeWhite mb-3">Firstcom : Agence conseil en stratégie de communication digitale</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-medium">
+        <div class="row">
+            <div class="mb-5">
+                <p class="texte-courant-mini mt-5">La présence en ligne est primordiale pour toute entreprise et marque, élaborer une stratégie de communication digitale efficace est essentiel. Nous allons décrire comment mettre en place une stratégie digitale pertinente et performante.</p>
+            </div>
+
+            <div class="mb-5">
+                <h2 style="font-size: 18px; color: #96A596; font-weight: 700;">Qu'est-ce qu'une stratégie de communication digitale ?</h2>
+                <p class="texte-courant-mini">
+                    Une stratégie de communication digitale est un plan structuré qui guide une entreprise dans l'utilisation de divers canaux numériques pour atteindre ses objectifs de <a href="href={{ path('app_home') }}" style="color:#000000" ><strong>marketing et de communication</strong></a>. Elle inclut l'utilisation de réseaux sociaux, de campagnes publicitaires en ligne, de contenu optimisé pour les moteurs de recherche (SEO), de marketing automation, et plus encore. La stratégie doit être alignée avec les objectifs globaux marketing et commerciaux de l'entreprise, que ce soit pour augmenter la notoriété de la marque, générer des leads, ou améliorer l'engagement avec les clients existants. 
+                </p>
+            </div>
+
+            <div class="mb-5">
+                <h2 style="font-size: 18px; color: #96A596; font-weight: 700;">Comment définir une stratégie digitale ?</h2>
+                <ol class="list-blog">
+                    <li style="color: #000000; font-weight: 700;" class="mb-2">
+                        <h3 style="font-size: 14px; color: #000000; font-weight: 700; margin:0;">Analyse de la situation de l’entreprise</h3>
+                        <span class="texte-courant-mini black">Avant de définir une stratégie, il est crucial de comprendre où l'entreprise se situe sur son marché et dans son environnement. Cela inclut notamment une analyse SWOT (Forces, Faiblesses, Opportunités, Menaces) et une évaluation des performances actuelles sur les différents canaux digitaux. L’utilisation des Data de l’entreprise et du secteur d’activité sont essentiel à ce niveau.</span>
+                    </li>
+                    <li style="color: #000000; font-weight: 700;" class="mb-2">
+                        <h3 style="font-size: 14px; color: #000000; font-weight: 700; margin:0;">Définition des objectifs</h3>
+                        <span class="texte-courant-mini black">Les objectifs doivent être spécifiques à la marque, mesurables, atteignables, pertinents, et temporellement définis (SMART). Par exemple, augmenter le trafic du site web de 20 % en six mois ou améliorer le taux de conversion de 15 % sur une année.</span>
+                    </li>
+                    <li style="color: #000000; font-weight: 700;" class="mb-2">
+                        <h3 style="font-size: 14px; color: #000000; font-weight: 700; margin:0;">Identification des personas</h3>
+                        <span class="texte-courant-mini black">Définir les personas ou les profils types de vos clients cibles est une étape clé dans la création d’une stratégie de communication digitale. Cela inclut la compréhension de leurs comportements en ligne, leurs préférences, et leurs points de douleur. Une stratégie efficace est centrée sur la création de contenu et de messages qui résonnent avec ces personas.</span>
+                    </li>
+                    <li style="color: #000000; font-weight: 700;" class="mb-2">
+                        <h3 style="font-size: 14px; color: #000000; font-weight: 700; margin:0;">Sélection des canaux et des tactiques</h3>
+                        <span class="texte-courant-mini black">En fonction des objectifs et des personas, Firstcom accompagne ces clients dans la sélection des canaux numériques les plus appropriés (SEO, SEA, SMA, réseaux sociaux, email marketing, etc.). Pour chaque canal, il faut définir le type de message et le ton de communication à employer tout en gardant une cohérence de globale.</span>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="mb-5">
+                <h2 style="font-size: 18px; color: #96A596; font-weight: 700;">Quelques outils qui pourrai être mise en œuvre pour une stratégie digitale efficace</h2>
+                <ol class="list-blog">
+                    <li style="color: #000000; font-weight: 700;" class="mb-2">
+                        <h3 style="font-size: 14px; color: #000000; font-weight: 700; margin:0;">Outils d'analyse et de reporting</h3>
+                        <span class="texte-courant-mini black">Google Analytics, Matomo,  SEMrush, Yooda one, Moz … sont des outils indispensables pour analyser le trafic, le comportement des utilisateurs et identifier des opportunités d'optimisation.</span>
+                    </li>
+                    <li style="color: #000000; font-weight: 700;" class="mb-2">
+                        <h3 style="font-size: 14px; color: #000000; font-weight: 700; margin:0;">Gestion des réseaux sociaux</h3>
+                        <span class="texte-courant-mini black">Des plateformes comme Hootsuite, agorapulse, et Sprout Social permettent de gérer plusieurs comptes de réseaux sociaux, planifier des publications et analyser les performances.</span>
+                    </li>
+                    <li style="color: #000000; font-weight: 700;" class="mb-2">
+                        <h3 style="font-size: 14px; color: #000000; font-weight: 700; margin:0;">Automatisation du marketing</h3>
+                        <span class="texte-courant-mini black">HubSpot, Mailjet mais aussi des outils booster à L’ia comme Make.com et zapier  aident à automatiser les campagnes de marketing par courriel et à créer des workflows automatisés basés sur le comportement des utilisateurs.</span>
+                    </li>
+                    <li style="color: #000000; font-weight: 700;" class="mb-2">
+                        <h3 style="font-size: 14px; color: #000000; font-weight: 700; margin:0;">Outils pour le  SEO</h3>
+                        <span class="texte-courant-mini black">Utilisez des outils comme Yoast SEO pour l'optimisation de votre site web et Google Search Console pour surveiller l'indexation et les performances de recherche.</span>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="mb-5">
+                <h2 style="font-size: 18px; color: #96A596; font-weight: 700;">Alors Comment mettre en place une stratégie digitale robuste et performante ?</h2>
+                <p class="texte-courant-mini mb-2">La mise en place d’une telle stratégie demande de la méthode et ne laisse aucune place à l’improvisation. Une agence de communication comme Firstcom accompagne ces clients sur toutes les étapes de la mise en œuvre.</p>
+                <ol class="list-blog">
+                    <li style="color: #000000; font-weight: 700;" class="mb-2">
+                        <h3 style="font-size: 14px; color: #000000; font-weight: 700; margin:0;">Planification et création de contenu</h3>
+                        <span class="texte-courant-mini black">Créez un calendrier éditorial basé sur les besoins de votre audience et les objectifs de votre entreprise. Assurez-vous que le contenu est de haute qualité, engageant et optimisé pour le SEO.</span>
+                    </li>
+                    <li style="color: #000000; font-weight: 700;" class="mb-2">
+                        <h3 style="font-size: 14px; color: #000000; font-weight: 700; margin:0;">Déploiement des campagnes</h3>
+                        <span class="texte-courant-mini black">Lancez vos campagnes sur les canaux on et off ligne choisis. Utilisez les tests A/B pour optimiser les éléments clés tels que les titres, les images, et les appels à l'action.</span>
+                    </li>
+                    <li style="color: #000000; font-weight: 700;" class="mb-2">
+                        <h3 style="font-size: 14px; color: #000000; font-weight: 700; margin:0;">Intégration multicanal</h3>
+                        <span class="texte-courant-mini black">Assurez-vous que vos messages sont cohérents sur tous les canaux. Utilisez-le re ciblage publicitaire pour atteindre les utilisateurs qui ont déjà interagi avec votre marque.</span>
+                    </li>
+                    <li style="color: #000000; font-weight: 700;" class="mb-2">
+                        <h3 style="font-size: 14px; color: #000000; font-weight: 700; margin:0;">Suivi et optimisation Continue</h3>
+                        <span class="texte-courant-mini black">Analysez les performances de vos campagnes à l'aide des outils mentionnés. Soyez prêt à ajuster votre stratégie en fonction des données et des retours des utilisateurs.</span>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="mb-5">
+                <h2 style="font-size: 18px; color: #96A596; font-weight: 700;">Enfin, il faut suivre et mesurer l'efficacité de la stratégie mise en place</h2>
+                <p class="texte-courant-mini mb-2">Dans toutes action de communication digitale il est essentiel de mesurer et d’analyser les data issues des campagnes.</p>
+                <ol class="list-blog">
+                    <li style="color: #000000; font-weight: 700;" class="mb-2">
+                        <h3 style="font-size: 14px; color: #000000; font-weight: 700; margin:0;">KPI (Indicateurs clés de performance)</h3>
+                        <span class="texte-courant-mini black">Définissez des KPI clairs pour chaque canal et campagne. Par exemple, pour le SEO, mesurez le classement des mots clés, le trafic organique et le taux de clics (CTR). Pour un site marchand nous suivrons plutôt le ROI et le panier moyen d’achat.</span>
+                    </li>
+                    <li style="color: #000000; font-weight: 700;" class="mb-2">
+                        <h3 style="font-size: 14px; color: #000000; font-weight: 700; margin:0;">Tableaux de bord</h3>
+                        <span class="texte-courant-mini black">Créez des tableaux de bord personnalisés ou utiliser des outils comme Matomo analytics pour suivre les performances en temps réel des campagnes.</span>
+                    </li>
+                    <li style="color: #000000; font-weight: 700;" class="mb-2">
+                        <h3 style="font-size: 14px; color: #000000; font-weight: 700; margin:0;">Rapports réguliers</h3>
+                        <span class="texte-courant-mini black">Générer des rapports hebdomadaires ou mensuels pour suivre les progrès par rapport aux objectifs. Identifiez les tendances et apportez des ajustements en conséquence. Firstcom fournis des rapports dynamiques des campagne que nous pilotons pour nos clients puisse suivre le déroulement de leur stratégie digitale en temps réel.</span>
+                    </li>
+                </ol>
+            </div>    
+
+            <div class="mb-5">
+                <p class="texte-courant-mini ">Vous voulez mettre en place une stratégie de communication digitale efficace et performante, parlons-en :</p>
+
+                <a href="{{ path('app_contact') }}" class="article-contact mt-3"><img class="article-fleche-contact" src="/uploads/images/fleche-right-white.webp">Contactez-nous pour une analyse et des recommandations sur mesure</a>
+            </div>      
+        </div>
+    </div>
+{% endblock %}

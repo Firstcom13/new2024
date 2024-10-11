@@ -61,4 +61,13 @@ class ClusterController extends AbstractController
             
         ]);
     }
+
+    #[Route('/agence-strategie-de-communication-digitale-marseille', name: 'app_agence_strategie_de_communication_digitale')]
+    public function strategie_digitale(): Response
+    {
+        return $this->render('cluster/agence-strategie-de-communication-digitale.html.twig', [
+            'controller_name' => 'HomeController',
+            
+        ]);
+    }
 }

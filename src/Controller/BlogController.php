@@ -27,37 +27,45 @@ class BlogController extends AbstractController
     #[Route('/blog', name: 'app_blog')]
     public function index(ArticlesBlogRepository $articlesBlogRepository, PaginatorInterface $paginator): Response
     {
-        // Renvoie vers la fonction indexPaginated pour gérer la pagination à partir de la première page
-        return $this->indexPaginated(1, $articlesBlogRepository, $paginator);
+
+        $dernierArticle = $articlesBlogRepository->findLastArticle();
+        $articles = $articlesBlogRepository->findAll();
+        $categories = $articlesBlogRepository->findAllCategories();
+         return $this->render('blog/index.html.twig', [
+            'dernierArticle' => $dernierArticle,
+            'articles' => $articles,
+            'categories' => $categories,
+        ]);
+
     }
 
     // Route pour les pages paginées du blog
-    #[Route('/blog/{page<\d+>}', name: 'app_blog_paginated')]
-    public function indexPaginated(int $page, ArticlesBlogRepository $articlesBlogRepository, PaginatorInterface $paginator): Response
-    {
-        // Récupération du dernier article publié
-        $dernierArticle = $articlesBlogRepository->findLastArticle();
+    // #[Route('/blog/{page<\d+>}', name: 'app_blog_paginated')]
+    // public function indexPaginated(int $page, ArticlesBlogRepository $articlesBlogRepository, PaginatorInterface $paginator): Response
+    // {
+    //     // Récupération du dernier article publié
+    //     $dernierArticle = $articlesBlogRepository->findLastArticle();
 
-        // Récupération d'une requête pour tous les articles sauf le dernier
-        $queryAutresArticles = $articlesBlogRepository->findAllExceptLastQuery();
+    //     // Récupération d'une requête pour tous les articles sauf le dernier
+    //     $queryAutresArticles = $articlesBlogRepository->findAllExceptLastQuery();
 
-        // Récupération de toutes les catégories
-        $categories = $articlesBlogRepository->findAllCategories();
+    //     // Récupération de toutes les catégories
+    //     $categories = $articlesBlogRepository->findAllCategories();
 
-        // Configuration de la pagination pour les articles
-        $pagination = $paginator->paginate(
-            $queryAutresArticles, // Requête pour les autres articles
-            $page, // Numéro de la page actuelle
-            4 // Nombre d'articles par page (ajustable)
-        );
+    //     // Configuration de la pagination pour les articles
+    //     $pagination = $paginator->paginate(
+    //         $queryAutresArticles, // Requête pour les autres articles
+    //         $page, // Numéro de la page actuelle
+    //         4 // Nombre d'articles par page (ajustable)
+    //     );
 
-        // Rendu du template Twig avec les données nécessaires
-        return $this->render('blog/index.html.twig', [
-            'dernierArticle' => $dernierArticle,
-            'pagination' => $pagination,
-            'categories' => $categories,
-        ]);
-    }
+    //     // Rendu du template Twig avec les données nécessaires
+    //     return $this->render('blog/index.html.twig', [
+    //         'dernierArticle' => $dernierArticle,
+    //         'pagination' => $pagination,
+    //         'categories' => $categories,
+    //     ]);
+    // }
 
 
     // Route pour filtrer les articles par catégorie

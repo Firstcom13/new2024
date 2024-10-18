@@ -26,6 +26,8 @@ $(function () {
 });
 
 
+
+
 function initializeOwlCarousel(selector, responsiveConfig, navTextConfig) {
     $(selector).owlCarousel({
         pullDrag: true,

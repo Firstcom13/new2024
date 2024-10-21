@@ -318,7 +318,6 @@
 
 		// Script pour le filtre de catégorie
 		const filterInput = [...document.querySelectorAll(".filter")];
-
 		filterInput.map((filter) => {
 			filter.addEventListener("click",(e) => {
 				e.preventDefault()
@@ -403,6 +402,7 @@
 						const baseUrl = "{{ path('app_article_show', { 'id': '__id__', 'slug': '__slug__' }) }}";
 						const url = baseUrl.replace('__id__', article.id).replace('__slug__', article.titre)
 						const articleNode = document.createElement("div");
+
 						let categorieList = ''
 						article.categorie.forEach((categ) => {
 							categorieList += `<span class="categories">${categ}</span>`
@@ -411,10 +411,10 @@
 						articleNode.style["background-repeat"] = "no-repeat";
 						articleNode.style["background-size"] = "cover";
 						articleNode.style["background-position"] = "center" ;
-						articleNode.style["display"] = "flex" ;
 						articleNode.style["justify-content"] = "center" ;
 						articleNode.style["align-items"] = "center";
 						articleNode.classList.add(...["col-sm-12","col-md-6","p-4","p-sm-5","autres-articles-lancement"]);
+						articleNode.setAttribute("id", `article-${article.id}`)
 						articleNode.innerHTML = `
 							<div class="container-fluid">
 								<div class="inside-autres-articles row p-3 p-sm-4">

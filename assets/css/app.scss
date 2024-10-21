@@ -2203,6 +2203,54 @@ td {
     margin: 0;
 }
 
+.load-article-btn {
+    margin: 20px;
+    text-align: center;
+}
+
+.loader {
+    display: none;
+    margin: 10px;
+    align-items: center;
+    color: #3c4141;
+    text-align: center;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+}
+
+.loader::before{
+    content: "";
+    background: #3c4141;
+    height: 0.80em;
+    width: 0.80em;
+    border-radius: 50%;
+    animation: move 0.6s ease infinite;
+}
+
+button.load-article {
+    background: #3c4141;
+    color: #fff;
+    font-weight: 500;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    border:none;
+    text-transform: uppercase;
+}
+
+@keyframes move {
+    0% {
+      transform: translateX(50%);
+    }
+    50% {
+      transform: translateX(-50%);
+    }
+    100% {
+      transform: translateX(50%);
+    }
+  }
+
 /*
 ███████╗ ██████╗ ██████╗ ██╗███╗   ██╗██████╗ ███████╗██╗  ██╗
 ██╔════╝██╔════╝██╔═══██╗██║████╗  ██║██╔══██╗██╔════╝╚██╗██╔╝

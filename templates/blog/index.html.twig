@@ -35,6 +35,8 @@
 							<img src="{{ asset('uploads/images/fleche-up-white.webp') }}" alt="fleche-bas">
 						</div>
 					</div>
+
+					
 				</div>
 
 			</div>
@@ -179,6 +181,7 @@
 				font-weight: 500 !important;
 			}
 
+			
 		</style>
 		<script>
 			document.addEventListener("DOMContentLoaded", (event) => {
@@ -302,8 +305,18 @@
 			
 		</div>
 		-->
+		<div class="load-article-btn">
+			<button class="load-article">
+				Afficher plus d'articles
+			</button>
+			<div class="loader">
+				<span>Chargement</span>
+			</div>
+		</div>
 	</section>
 	<script>
+
+		// Script pour le filtre de catégorie
 		const filterInput = [...document.querySelectorAll(".filter")];
 
 		filterInput.map((filter) => {
@@ -334,8 +347,6 @@
 							article.style["display"] = "block"
 						}
 					}
-					
-
 				}) 
 
 				// Vérifier si il n'y a plus d'article après le filtre 
@@ -348,13 +359,119 @@
 					emptyRowMessage.style["margin"] = "auto";
 					document.querySelector(".row").appendChild(emptyRowMessage)
 				}
-				else{
+				else {
 					if(document.querySelector("#empty_article")){
 						document.querySelector(".row").removeChild(document.querySelector("#empty_article"))
 					}					
 				}
 
 			})
+		})
+
+		function formatDate(date) {
+			const day = String(date.getDate()).padStart(2, '0'); // Jour sur 2 chiffres
+			const month = String(date.getMonth() + 1).padStart(2, '0'); // Mois sur 2 chiffres (0-11)
+			const year = date.getFullYear(); // Année
+
+			return `${day} ${month} ${year}`; // Retourne la date au format 'd m Y'
+		}
+
+		// Script pour le chargement des articles
+		document.querySelector('.load-article-btn button').addEventListener("click", (e) => {
+			const articleNbrs = [...document.querySelectorAll("div.autres-articles-lancement")].length;
+			const articleRow = document.querySelector(".autres-articles .row");
+
+			const loadBtn = e.target;
+			const loader = document.querySelector(".loader");
+			let moreArticle = false;
+
+			loadBtn.style["display"] = "none"
+			loader.style["display"] = "flex"
+
+			fetch(`blog/get-article-from-index-${articleNbrs}`, {method:"GET"})			
+			.then(response => {
+				// Vérifie si la réponse est correcte (code 200-299)
+				if (!response.ok) {
+					throw new Error('Erreur réseau : ' + response.status);
+				}
+				// Retourne la réponse au format JSON
+				return response.json();
+			})
+			.then(data => {
+				if(data.hasOwnProperty("message") === false){
+					data.map((article) => {
+						const baseUrl = "{{ path('app_article_show', { 'id': '__id__', 'slug': '__slug__' }) }}";
+						const url = baseUrl.replace('__id__', article.id).replace('__slug__', article.titre)
+						const articleNode = document.createElement("div");
+						let categorieList = ''
+						article.categorie.forEach((categ) => {
+							categorieList += `<span class="categories">${categ}</span>`
+						})
+						articleNode.style["background-image"] = `url(/uploads/images/${article.imgS})`;
+						articleNode.style["background-repeat"] = "no-repeat";
+						articleNode.style["background-size"] = "cover";
+						articleNode.style["background-position"] = "center" ;
+						articleNode.style["display"] = "flex" ;
+						articleNode.style["justify-content"] = "center" ;
+						articleNode.style["align-items"] = "center";
+						articleNode.classList.add(...["col-sm-12","col-md-6","p-4","p-sm-5","autres-articles-lancement"]);
+						articleNode.innerHTML = `
+							<div class="container-fluid">
+								<div class="inside-autres-articles row p-3 p-sm-4">
+									<div class="col-12">
+										<div class="infos mb-3">
+											<span class="date"> ${ formatDate(new Date(article.date_creation.date)) }</span>
+											${
+												categorieList
+											}	
+										</div>
+									</div>
+									<div class="col-12">
+										<h2 class="writeWhite mb-3">${ article.titre }</h2>
+									</div>
+									<div class="col-12">
+										<div class="writeWhite texte-courant-mini">
+											${ article.description_courte.slice(0,150) }...
+										</div>
+									</div>
+									<div class="col-4 col-md-4 col-xl-3 col-xxl-2">
+										<a href="
+										${ 
+											url
+										}
+										" class="d-block mt-4">LIRE</a>
+									</div>
+								</div>
+							</div>
+						`
+						articleRow.appendChild(articleNode);	
+					})
+					moreArticle = true;
+				}
+				else {
+					moreArticle = false;
+				}
+			})
+			.catch(error => {
+				// Gère les erreurs
+				console.error('Erreur:', error);
+				document.getElementById('result').textContent = 'Une erreur est survenue : ' + error.message;
+   			 })
+			 .finally(() => {
+				if(moreArticle){
+					loader.style["display"] = "none";
+					loadBtn.style["display"] = "inline"
+				}
+				else{
+					loader.style["display"] = "none";
+					loadBtn.style["display"] = "none"
+					document.querySelector(".load-article-btn").appendChild(document.createTextNode("Vous êtes arrivé à la fin des articles."))
+				}
+				
+			 })
+
+			
+
 		})
 	</script>
 {% endblock %}

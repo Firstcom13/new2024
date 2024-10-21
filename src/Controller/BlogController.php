@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\String\Slugger\AsciiSlugger;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 // Définition de la classe BlogController qui étend AbstractController
 class BlogController extends AbstractController
@@ -25,11 +26,11 @@ class BlogController extends AbstractController
 
     // Route pour la page principale du blog
     #[Route('/blog', name: 'app_blog')]
-    public function index(ArticlesBlogRepository $articlesBlogRepository, PaginatorInterface $paginator): Response
+    public function index(ArticlesBlogRepository $articlesBlogRepository): Response
     {
 
         $dernierArticle = $articlesBlogRepository->findLastArticle();
-        $articles = $articlesBlogRepository->findAll();
+        $articles = $articlesBlogRepository->findArticlesFromIndex(0);
         $categories = $articlesBlogRepository->findAllCategories();
          return $this->render('blog/index.html.twig', [
             'dernierArticle' => $dernierArticle,
@@ -37,6 +38,41 @@ class BlogController extends AbstractController
             'categories' => $categories,
         ]);
 
+    }
+
+    #[Route('/blog/get-article-from-index-{index}', name: 'get-article')]
+    public function getArticle(ArticlesBlogRepository $articlesBlogRepository, int $index): Response
+    {
+        $articles = $articlesBlogRepository->findArticlesFromIndex($index);
+
+        if(!array_key_exists("message",$articles)){
+            /* étant donné que $articles renvoie une liste d'objet PHP ArticleBlog, le mieux est 
+            de convertir les différents objets en array avec paire clé-valeurs, afin de l'encoder en JSON
+            et que Javascript l'interprète avec les valeurs dont on a besoin*/
+            $articleArray = [];
+            foreach ($articles as &$article){
+                $categorie_array = [];
+                foreach ($article->getCategorie() as &$categorie){
+                    array_push($categorie_array, $categorie->getNom());
+                }
+                array_push($articleArray, [
+                    'id' => $article->getId(),
+                    'titre' => $article->getTitre(),
+                    'description_courte' => $article->getDescriptionCourte(),
+                    'categorie' => $categorie_array,
+                    'date_creation' => $article->getDateCreation(),
+                    'imgS' => $article->getImgS(),
+                ]);
+            };
+
+            // Créer une réponse avec le type de contenu approprié
+            return new Response(json_encode($articleArray), Response::HTTP_OK, ['Content-Type' => 'application/json']);
+        }
+
+        //Retourne ['message' => 'Il n\'y a plus d\'autres articles à générer.']
+        return new Response(json_encode($articles), Response::HTTP_OK, ['Content-Type' => 'application/json']);
+
+        
     }
 
     // Route pour les pages paginées du blog

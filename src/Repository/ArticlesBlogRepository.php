@@ -51,6 +51,32 @@ class ArticlesBlogRepository extends ServiceEntityRepository
             ->getOneOrNullResult();
     }
 
+     /**
+     * @param int $index
+     * @return Article[]
+     */
+    public function findArticlesFromIndex(int $index): array
+    {
+        // Vérifie que l'index est valide
+        if ($index < 0) {
+            throw new \InvalidArgumentException('L\'index doit être supérieur ou égal à zéro.');
+        }
+
+        // Utilise une requête pour récupérer 4 articles à partir de l'index donné
+        $articles = $this->createQueryBuilder('a')
+            ->setFirstResult($index)
+            ->setMaxResults(4)
+            ->orderBy('a.date_creation', 'DESC')
+            ->getQuery()
+            ->getResult();
+
+        if (empty($articles)){
+            return ['message' => 'Il n\'y a plus d\'autres articles à générer.'];
+        }
+
+        return $articles;
+    }
+
     /**
      * Retourne tableau de tous les articles 
      */

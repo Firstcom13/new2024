@@ -32,7 +32,7 @@ class BlogController extends AbstractController
         $dernierArticle = $articlesBlogRepository->findLastArticle();
         $articles = $articlesBlogRepository->findArticlesFromIndex(0);
         $categories = $articlesBlogRepository->findAllCategories();
-         return $this->render('blog/index.html.twig', [
+        return $this->render('blog/index.html.twig', [
             'dernierArticle' => $dernierArticle,
             'articles' => $articles,
             'categories' => $categories,
@@ -105,32 +105,46 @@ class BlogController extends AbstractController
 
 
     // Route pour filtrer les articles par catégorie
-    #[Route('/blog/categorie/{categoryName}/{page<\d+>?1}', name: 'blog_filter_by_category')]
-    public function filterByCategory(string $categoryName, int $page = 1, ArticlesBlogRepository $articlesBlogRepository, PaginatorInterface $paginator): Response
+    // #[Route('/blog/categorie/{categoryName}/{page<\d+>?1}', name: 'blog_filter_by_category')]
+    // public function filterByCategory(string $categoryName, int $page = 1, ArticlesBlogRepository $articlesBlogRepository, PaginatorInterface $paginator): Response
+    // {
+    //     // Récupération du dernier article publié dans la catégorie spécifique
+    //     $dernierArticle = $articlesBlogRepository->findLastArticleFromCategory($categoryName);
+    //     // dd($dernierArticle);
+
+    //     // Récupération d'une requête pour les articles d'une catégorie spécifique
+    //     $queryArticlesByCategory = $articlesBlogRepository->getArticlesByCategoryQuery($categoryName);
+
+    //     // Configuration de la pagination pour les articles filtrés par catégorie
+    //     $pagination = $paginator->paginate(
+    //         $queryArticlesByCategory,
+    //         $page,
+    //         4 // Nombre d'articles par page (ajustable)
+    //     );
+
+    //     // Récupération des catégories pour affichage dans le filtre
+    //     $categories = $articlesBlogRepository->findAllCategories();
+
+    //     // Rendu du template Twig avec les données filtrées
+    //     return $this->render('blog/category.html.twig', [
+    //         'pagination' => $pagination,
+    //         'currentCategory' => $categoryName,
+    //         'categories' => $categories,
+    //         'dernierArticle' => $dernierArticle,
+    //     ]);
+    // }
+
+
+    #[Route('/blog/categorie/{categoryName}', name: 'blog_filter_by_category')]
+    public function filterByCategory(ArticlesBlogRepository $articlesBlogRepository): Response
     {
-        // Récupération du dernier article publié dans la catégorie spécifique
-        $dernierArticle = $articlesBlogRepository->findLastArticleFromCategory($categoryName);
-        // dd($dernierArticle);
-
-        // Récupération d'une requête pour les articles d'une catégorie spécifique
-        $queryArticlesByCategory = $articlesBlogRepository->getArticlesByCategoryQuery($categoryName);
-
-        // Configuration de la pagination pour les articles filtrés par catégorie
-        $pagination = $paginator->paginate(
-            $queryArticlesByCategory,
-            $page,
-            4 // Nombre d'articles par page (ajustable)
-        );
-
-        // Récupération des catégories pour affichage dans le filtre
+        $dernierArticle = $articlesBlogRepository->findLastArticle();
+        $articles = $articlesBlogRepository->findArticlesFromIndex(0);
         $categories = $articlesBlogRepository->findAllCategories();
-
-        // Rendu du template Twig avec les données filtrées
-        return $this->render('blog/category.html.twig', [
-            'pagination' => $pagination,
-            'currentCategory' => $categoryName,
-            'categories' => $categories,
+        return $this->render('blog/index.html.twig', [
             'dernierArticle' => $dernierArticle,
+            'articles' => $articles,
+            'categories' => $categories,
         ]);
     }
 }

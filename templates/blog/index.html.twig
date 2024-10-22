@@ -316,56 +316,97 @@
 	</section>
 	<script>
 
+		// Récupérer l'URL actuelle
+		const url = window.location.href;
+		const urlObj = new URL(url);
+		const path = urlObj.pathname; // Exemple : "/blog/categorie/corporate" ou "/blog"
+
+		
 		// Script pour le filtre de catégorie
-		const filterInput = [...document.querySelectorAll(".filter")];
-		filterInput.map((filter) => {
-			filter.addEventListener("click",(e) => {
-				e.preventDefault()
-				const currentCategory = document.querySelector(".blog-categories .active-category")
-				const clickedCategory = e.target.id; 
+		function filterCateg(e){
+			//empêcher le rafraichissement
+			e.preventDefault()
 
-				currentCategory.classList.remove("active-category")
-				e.target.classList.add("active-category")
+			const clickedCategory = e.target.id; 
+			const currentCategory = document.querySelector(".blog-categories .active-category")
+			
+			e.target.classList.toggle("active-category")
+			currentCategory.classList.toggle("active-category")
+			
 
+			const allArticle = [...document.querySelectorAll(".autres-articles-lancement")]
+			allArticle.map((article) => {
+				const articleId = article.id;
+				const articleCategorieSpan = [...document.querySelectorAll(`#${articleId} .categories`)]
 
-				const allArticle = [...document.querySelectorAll(".autres-articles-lancement")]
-				allArticle.map((article) => {
-					const articleId = article.id;
-					const articleCategorieSpan = [...document.querySelectorAll(`#${articleId} .categories`)]
-
-					if(clickedCategory === "allCategories"){
-						article.style["display"] = "block"
-					}
-					else {
-						const checkCategoriesFilter = articleCategorieSpan.filter((category) => category.textContent === clickedCategory)
-
-						if(checkCategoriesFilter.length === 0){
-							article.style["display"] = "none"
-						}
-						else{
-							article.style["display"] = "block"
-						}
-					}
-				}) 
-
-				// Vérifier si il n'y a plus d'article après le filtre 
-				const checkAllArticle = [...document.querySelectorAll(".autres-articles-lancement")].filter((article) => article.style["display"] === "block");
-
-				if(checkAllArticle.length === 0){
-					const emptyRowMessage = document.createElement("p");
-					emptyRowMessage.setAttribute("id", "empty_article")
-					emptyRowMessage.textContent = "Aucun article trouvé";
-					emptyRowMessage.style["margin"] = "auto";
-					document.querySelector(".row").appendChild(emptyRowMessage)
+				if(clickedCategory === "allCategories"){
+					article.style["display"] = "block"
 				}
 				else {
-					if(document.querySelector("#empty_article")){
-						document.querySelector(".row").removeChild(document.querySelector("#empty_article"))
-					}					
+					const checkCategoriesFilter = articleCategorieSpan.filter((category) => category.textContent === clickedCategory)
+
+					if(checkCategoriesFilter.length === 0){
+						article.style["display"] = "none"
+					}
+					else{
+						article.style["display"] = "block"
+					}
+				}
+			}) 
+
+			// Vérifier si il n'y a plus d'article après le filtre pour afficher un message 
+			const checkAllArticle = [...document.querySelectorAll(".autres-articles-lancement")].filter((article) => article.style["display"] !== "none");
+
+			if(checkAllArticle.length === 0){
+				const textContainer = document.createElement("p") 
+				textContainer.setAttribute("id", "empty_article")
+				textContainer.appendChild(document.createTextNode("Aucun article pour ce filtre."))
+				document.querySelector(".container-fluid > .row").appendChild(textContainer);
+			}
+			else {
+				if(document.querySelector("#empty_article")){
+					document.querySelector(".container-fluid > .row").removeChild(document.querySelector("#empty_article"))
+				}					
+			}
+
+		}
+
+		// Définition de l'événement click pour chacun des boutons de filtre
+		const filterInput = [...document.querySelectorAll(".filter")];
+		filterInput.map((filter) => {
+			filter.addEventListener("click", filterCateg )
+		})
+
+		if (path !== "/blog") {
+			document.addEventListener('DOMContentLoaded', () => {
+				// Diviser le chemin en segments
+				const segments = path.split('/'); 
+				
+				// Récupérer le dernier segment
+				const lastSegment = segments.pop(); 
+
+
+				switch (lastSegment) {
+					case "conseil-strategie":
+						document.getElementById('Conseil & stratégie').click()
+						break
+					case "corporate":
+						document.getElementById('Corporate').click()
+						break
+					case "creation-de-contenu":
+						document.getElementById('Création de contenu').click()
+						break
+					case "tech-digital":
+						document.getElementById('Tech & Digital').click()
+						break
 				}
 
-			})
-		})
+
+				document.querySelector('.blog-categories').scrollIntoView({ behavior: 'smooth' });
+
+			});
+		}
+		
 
 		function formatDate(date) {
 			const day = String(date.getDate()).padStart(2, '0'); // Jour sur 2 chiffres
@@ -375,6 +416,17 @@
 			return `${day} ${month} ${year}`; // Retourne la date au format 'd m Y'
 		}
 
+		function slugify(text) {
+			return text
+				.toString()
+				.toLowerCase()
+				.replace(/\s+/g, '-')         // Remplace les espaces par des tirets
+				.replace(/[^\w\-]+/g, '')     // Supprime les caractères non-alphanumériques
+				.replace(/\-\-+/g, '-')       // Remplace plusieurs tirets par un seul
+				.replace(/^-+/, '')           // Supprime les tirets en début de chaîne
+				.replace(/-+$/, '');          // Supprime les tirets en fin de chaîne
+		}
+
 		// Script pour le chargement des articles
 		document.querySelector('.load-article-btn button').addEventListener("click", (e) => {
 			const articleNbrs = [...document.querySelectorAll("div.autres-articles-lancement")].length;
@@ -382,12 +434,18 @@
 
 			const loadBtn = e.target;
 			const loader = document.querySelector(".loader");
+
 			let moreArticle = false;
 
+			// Affichage de l'animation loader et camouflage du bouton
 			loadBtn.style["display"] = "none"
 			loader.style["display"] = "flex"
 
-			fetch(`blog/get-article-from-index-${articleNbrs}`, {method:"GET"})			
+			// Récupération de l'url avec le nom de la route
+			const baseUrlToAPI = "{{ path('get-article', { 'index': '__index__'}) }}"
+			const urlToAPI = baseUrlToAPI.replace("__index__", articleNbrs)
+
+			fetch(urlToAPI, {method:"GET"})			
 			.then(response => {
 				// Vérifie si la réponse est correcte (code 200-299)
 				if (!response.ok) {
@@ -397,16 +455,23 @@
 				return response.json();
 			})
 			.then(data => {
-				if(data.hasOwnProperty("message") === false){
+				// proprité message ['message' => 'Il n\'y a plus d\'autres articles à générer.']
+				if(!data.hasOwnProperty("message")){
+					// Création et affichage de chacun des articles récupérés dans data vers le DOM
 					data.map((article) => {
-						const baseUrl = "{{ path('app_article_show', { 'id': '__id__', 'slug': '__slug__' }) }}";
-						const url = baseUrl.replace('__id__', article.id).replace('__slug__', article.titre)
+						// Définition de l'url de article
+						const baseUrl = "{{ path('app_article_show', { 'id': '__id__', 'slug': '__slug__' }) }}"
+						let slugUrl = slugify(article.titre.replace(/<\/?[^>]+(>|$)/g, "")) 			
+						const url = baseUrl.replace('__id__', article.id).replace('__slug__', slugUrl)
+
 						const articleNode = document.createElement("div");
 
+						// Définition des catégories de article
 						let categorieList = ''
 						article.categorie.forEach((categ) => {
 							categorieList += `<span class="categories">${categ}</span>`
 						})
+
 						articleNode.style["background-image"] = `url(/uploads/images/${article.imgS})`;
 						articleNode.style["background-repeat"] = "no-repeat";
 						articleNode.style["background-size"] = "cover";
@@ -414,6 +479,7 @@
 						articleNode.style["justify-content"] = "center" ;
 						articleNode.style["align-items"] = "center";
 						articleNode.classList.add(...["col-sm-12","col-md-6","p-4","p-sm-5","autres-articles-lancement"]);
+
 						articleNode.setAttribute("id", `article-${article.id}`)
 						articleNode.innerHTML = `
 							<div class="container-fluid">
@@ -447,6 +513,10 @@
 						articleRow.appendChild(articleNode);	
 					})
 					moreArticle = true;
+					// si on obtient moins que 4 articles (limite d'article par requête)
+					if (data.length < 4) {
+						moreArticle = false
+					}	
 				}
 				else {
 					moreArticle = false;
@@ -455,18 +525,25 @@
 			.catch(error => {
 				// Gère les erreurs
 				console.error('Erreur:', error);
-				document.getElementById('result').textContent = 'Une erreur est survenue : ' + error.message;
+				loader.style["display"] = "none";
+				loadBtn.style["display"] = "none";
+				document.querySelector(".load-article-btn").appendChild(document.createTextNode("Une erreur est survenue lors de la génération des articles. Veuillez réessayez ultérieurement."))
    			 })
 			 .finally(() => {
 				if(moreArticle){
+					// Afficher encore le bouton
 					loader.style["display"] = "none";
 					loadBtn.style["display"] = "inline"
 				}
 				else{
+					// Cacher le bouton
 					loader.style["display"] = "none";
-					loadBtn.style["display"] = "none"
-					document.querySelector(".load-article-btn").appendChild(document.createTextNode("Vous êtes arrivé à la fin des articles."))
+					loadBtn.style["display"] = "none";
+					document.querySelector(".load-article-btn").appendChild(document.createTextNode("Vous êtes arrivé à la fin des articles."));
 				}
+
+				//Refiltrage
+				document.querySelector(".filter.active-category").click()
 				
 			 })
 

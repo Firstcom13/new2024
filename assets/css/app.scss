@@ -2208,6 +2208,12 @@ td {
     text-align: center;
 }
 
+.infos.mb-3 {
+    display: flex;
+    justify-content: flex-start;
+    gap: 7px;
+}
+
 .loader {
     display: none;
     margin: 10px;

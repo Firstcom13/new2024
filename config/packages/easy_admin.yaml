@@ -1,0 +1,6 @@
+easy_admin:
+    entities:
+        YourEntity:
+            form:
+                fields:
+                    - { property: 'content', type: 'textarea', type_options: { 'attr': { 'class': 'ckeditor', 'data-ckeditor-options': '{ "removePlugins": "elementspath", "resize_enabled": false, "height": 300, "disableNativeSpellChecker": true, "extraPlugins": "autolink" }' } } }

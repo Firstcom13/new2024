@@ -13,6 +13,8 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\CodeEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
+use FOS\CKEditorBundle\Form\Type\CKEditorType;
 
 
 class ArticlesBlogCrudController extends AbstractCrudController
@@ -49,15 +51,15 @@ class ArticlesBlogCrudController extends AbstractCrudController
             return [
                 FormField::addColumn('col-12 col-lg-8'),
                 TextEditorField::new('titre'),
-                CodeEditorField::new('description_courte', 'Description Courte'),
+                TextEditorField::new('description_courte', 'Description Courte')->setFormType(CKEditorType::class),
                 TextEditorField::new('meta_description')
                 ->setRequired(false),
-                CodeEditorField::new('contenu'),
+                TextEditorField::new('contenu')->setFormType(CKEditorType::class),
                 ImageField::new('img_contenu', 'Image du contenu de l\'article')
                 ->setBasePath('uploads/images')
                 ->setUploadDir('public/uploads/images'),
-                CodeEditorField::new('contenu2', 'Contenu 2')
-                ->setRequired(false),
+                TextEditorField::new('contenu2', 'Contenu 2')
+                ->setRequired(false)->setFormType(CKEditorType::class),
 
 
                 FormField::addColumn('col-12 col-lg-4'),
@@ -77,5 +79,10 @@ class ArticlesBlogCrudController extends AbstractCrudController
                 ->autocomplete(), // Si beaucoup de catégories
             ];
         }
+    }
+
+    public function configureCrud(Crud $crud): Crud
+    {
+    return $crud->addFormTheme('@FOSCKEditor/Form/ckeditor_widget.html.twig');
     }
 }

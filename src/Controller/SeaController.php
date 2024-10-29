@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class SeaController extends AbstractController
 {
-    #[Route('/campagnes-digitales', name: 'app_campagnes_digitales')]
+    #[Route('/campagnes-digitales', name: 'app_campagnes_digitales', options: ['sitemap' => ['section' => 'croissance-et-performance']])]
     public function index(): Response
     {
         return $this->render('sea/index.html.twig', [

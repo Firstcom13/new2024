@@ -9,7 +9,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class LoginController extends AbstractController
 {
-    #[Route('/login', name: 'login')]
+    #[Route('/login', name: 'login', options: ['sitemap' => ['section' => 'login']])]
     public function index(AuthenticationUtils $authenticationUtils): Response
     {
             die('login');

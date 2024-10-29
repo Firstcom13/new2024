@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class GestionCookiesController extends AbstractController
 {
-    #[Route('/gestion-des-cookies', name: 'app_gestion_cookies')]
+    #[Route('/gestion-des-cookies', name: 'app_gestion_cookies', options: ['sitemap' => ['section' => 'gestion-des-cookies']])]
     public function index(): Response
     {
         return $this->render('gestion-cookies/index.html.twig', [

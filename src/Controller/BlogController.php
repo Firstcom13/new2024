@@ -25,7 +25,7 @@ class BlogController extends AbstractController
     }
 
     // Route pour la page principale du blog
-    #[Route('/blog', name: 'app_blog')]
+    #[Route('/blog', name: 'app_blog' , options: ['sitemap' => ['section' => 'blog']])]
     public function index(ArticlesBlogRepository $articlesBlogRepository): Response
     {
 

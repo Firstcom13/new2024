@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class DataController extends AbstractController
 {
-    #[Route('/data-analyse', name: 'app_data_analyse')]
+    #[Route('/data-analyse', name: 'app_data_analyse', options: ['sitemap' => ['section' => 'croissance-et-performance']])]
     public function index(): Response
     {
         return $this->render('data-analyse/index.html.twig', [

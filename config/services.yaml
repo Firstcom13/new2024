@@ -27,6 +27,10 @@ services:
         arguments:
            $authenticator: '@security.authenticator.form_login.main'
 
+    App\EventListener\SitemapEventListener:
+        tags:
+            - { name: presta_sitemap.url_container, section: 'blog' }
+
     # App\Controller\HomeController:
     #     autowire: true
     # App\Controller\ContactController:

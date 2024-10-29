@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class CommunityManagement extends AbstractController
 {
-    #[Route('/community-management-et-rp', name: 'app_community_management')]
+    #[Route('/community-management-et-rp', name: 'app_community_management', options: ['sitemap' => ['section' => 'croissance-et-performance']])]
     public function index(): Response
     {
         return $this->render('community-management-et-rp/index.html.twig', [

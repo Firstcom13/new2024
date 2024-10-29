@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ConsultingDeveloppementController extends AbstractController
 {
-    #[Route('/consulting-et-developpement', name: 'app_consulting_et_developpement')]
+    #[Route('/consulting-et-developpement', name: 'app_consulting_et_developpement', options: ['sitemap' => ['section' => 'conseil-et-strategie']])]
     public function index(): Response
     {
         return $this->render('consulting-et-developpement/index.html.twig', [

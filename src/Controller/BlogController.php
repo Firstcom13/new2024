@@ -30,7 +30,7 @@ class BlogController extends AbstractController
     {
 
         $dernierArticle = $articlesBlogRepository->findLastArticle();
-        $articles = $articlesBlogRepository->findArticlesFromIndex(0);
+        $articles = $articlesBlogRepository->findArticlesFromIndex(1);
         $categories = $articlesBlogRepository->findAllCategories();
         return $this->render('blog/index.html.twig', [
             'dernierArticle' => $dernierArticle,

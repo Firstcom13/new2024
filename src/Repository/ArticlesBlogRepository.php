@@ -64,6 +64,8 @@ class ArticlesBlogRepository extends ServiceEntityRepository
 
         // Utilise une requête pour récupérer 4 articles à partir de l'index donné
         $articles = $this->createQueryBuilder('a')
+            ->andWhere('a.publication = :publication')
+            ->setParameter('publication', true)
             ->setFirstResult($index)
             ->setMaxResults(4)
             ->orderBy('a.date_creation', 'DESC')

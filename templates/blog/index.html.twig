@@ -443,7 +443,7 @@
 
 			// Récupération de l'url avec le nom de la route
 			const baseUrlToAPI = "{{ path('get-article', { 'index': '__index__'}) }}"
-			const urlToAPI = baseUrlToAPI.replace("__index__", articleNbrs)
+			const urlToAPI = baseUrlToAPI.replace("__index__", articleNbrs + 1)
 
 			fetch(urlToAPI, {method:"GET"})			
 			.then(response => {

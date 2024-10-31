@@ -31,9 +31,9 @@ class ArticlesBlogCrudController extends AbstractCrudController
         if (Crud::PAGE_INDEX === $pageName) {
             // Champs à afficher dans la liste (index) des entités
             return [
-                TextField::new('titre'),
-                TextEditorField::new('description_courte ', 'Description Courte'),
-                TextEditorField::new('contenu'),
+                TextField::new('titre')->stripTags(),
+                TextEditorField::new('descriptionCourteNettoyé', 'Description Courte'),
+                TextEditorField::new('contenuNettoyé', "Contenu"),
                 ImageField::new('img_contenu', 'Image Contenu')
                     ->setBasePath('uploads/images')
                     ->setUploadDir('public/uploads/images'),
@@ -45,7 +45,7 @@ class ArticlesBlogCrudController extends AbstractCrudController
                     ->setUploadDir('public/uploads/images'),
                 DateTimeField::new('date_creation', 'Date de Publication')
                     ->setFormat('dd/MM/YYYY HH:mm'),
-                BooleanField::new('publication', 'Publié'),
+                BooleanField::new('publication', "Statut de publication")->setDisabled(true),
             ];
         } else {
             return [
@@ -60,7 +60,7 @@ class ArticlesBlogCrudController extends AbstractCrudController
                 ->setUploadDir('public/uploads/images'),
                 TextEditorField::new('contenu2', 'Contenu 2')
                 ->setRequired(false)->setFormType(CKEditorType::class),
-
+               
 
                 FormField::addColumn('col-12 col-lg-4'),
                 ImageField::new('img_s', 'Petite Image')
@@ -69,12 +69,13 @@ class ArticlesBlogCrudController extends AbstractCrudController
                 ImageField::new('img_xl', 'Grande Image')
                     ->setBasePath('uploads/images')
                     ->setUploadDir('public/uploads/images'),
+                    BooleanField::new('publication', 'Publier')->setLabel('<strong>Publier</strong>'), // Ajout de l'input publication dans PAGE_EDIT sinon il ne va pas fonctionner
                 DateTimeField::new('date_creation', 'Date de Publication')
-                    ->setFormat('dd/MM/YYYY HH:mm'),
+                    ->setFormat('dd/MM/YYYY HH:mm')->setRequired(true),
                 AssociationField::new('categorie', 'Catégories')
                 ->setFormTypeOptions([
                     'by_reference' => false, // Important pour les relations ManyToMany
-                ])
+                ])->setRequired(true)
                 ->setCrudController(CategorieCrudController::class)
                 ->autocomplete(), // Si beaucoup de catégories
             ];

@@ -84,6 +84,11 @@ class ArticlesBlog
         return $this->description_courte;
     }
 
+    public function getDescriptionCourteNettoyé(): string
+    {
+        return html_entity_decode(strip_tags($this->description_courte));
+    }
+
     public function setDescriptionCourte(?string $description_courte): static
     {
         $this->description_courte = $description_courte;
@@ -94,6 +99,11 @@ class ArticlesBlog
     public function getContenu(): ?string
     {
         return $this->contenu;
+    }
+
+    public function getContenuNettoyé(): string
+    {
+        return html_entity_decode(strip_tags($this->contenu));
     }
 
     public function setContenu(?string $contenu): self

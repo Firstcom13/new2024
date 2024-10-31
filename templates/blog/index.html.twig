@@ -268,43 +268,7 @@
 					{% endfor %}
 				</div>
 			</div>
-			{# Affichage des liens de pagination #}
-			<!--
-			<style>
-				.pagination {
-					padding: 20px 0 30px 0;
-				}
-
-				.pagination .pagination-pages {
-					margin: 0 auto;
-				}
-
-				.pagination .pagination-pages a {
-					padding: 4px 12px;
-					text-decoration: none;
-					font-size: 14px;
-					color: #000000;
-					font-weight: 600;
-				}
-
-				.pagination .pagination-pages a > img {
-					width: 20px;
-					position: relative;
-					bottom: 1px;
-				}
-
-				.pagination .pagination-pages a.active {
-					color: #96A596;
-					font-weight: bold;
-					border-bottom: 1px solid #96A596;
-				}
-			</style>
-
-			
-
-			
-		</div>
-		-->
+		
 		<div class="load-article-btn">
 			<button class="load-article">
 				Afficher plus d'articles
@@ -396,9 +360,15 @@
 					case "creation-de-contenu":
 						document.getElementById('Création de contenu').click()
 						break
+					case "croissance-performance":
+						document.getElementById('Croissance & performance').click()
+						break
 					case "tech-digital":
 						document.getElementById('Tech & Digital').click()
 						break
+					default:
+						document.getElementById('allCategories').click()
+	
 				}
 
 

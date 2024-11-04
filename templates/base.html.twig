@@ -25,22 +25,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
     {{ encore_entry_script_tags('app') }}
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0fCzT3UmGa93dk_N2TtWOxvCp9N0pXGg&callback=initMap" async defer></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            CKEDITOR.replace('ArticlesBlog_contenu'); // Remplacez par l'ID de votre textarea
-        });
-    </script>
-     <script>
-        CKEDITOR.on('instanceReady', function(ev) {
-            ev.editor.on('dataReady', function() {
-                // Supprimer le message de version
-                var versionWarning = ev.editor.document.$.querySelector('.cke_version_warning');
-                if (versionWarning) {
-                    versionWarning.style.display = 'none';
-                }
-            });
-        });
-    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 {% endblock %}
 <!-- Matomo -->
 <script>

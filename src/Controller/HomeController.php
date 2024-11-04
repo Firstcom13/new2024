@@ -7,6 +7,7 @@ use App\Entity\BlocsPage;
 use App\Entity\ModelesPage;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\ArticlesBlogRepository;
+use App\Repository\ReferenceRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,13 +16,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'app_home', options: ['sitemap' => ['section' => 'home']] )]
-    public function index(ArticlesBlogRepository $articlesBlogRepository): Response
+    public function index(ArticlesBlogRepository $articlesBlogRepository, ReferenceRepository $referenceRepository): Response
     {
         $articles = $articlesBlogRepository->findAllArticles();
+        $references = $referenceRepository->findAll();
         // dd($articles);
 
         return $this->render('home/index.html.twig', [
-            'articles' => $articles
+            'articles' => $articles,
+            'references' => $references
         ]);
     }
     // gestion des pages dynamiques sauf /admin, /login /logout /contact

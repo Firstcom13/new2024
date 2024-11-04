@@ -58,58 +58,172 @@
 	</div>
 </div>
 
-<div class="container-large-plus background-basic-green py-5">
-	<div class="owl-carousel owl-carousel-1 py-4">
-		<div>
-			<img src="{{ asset('uploads/images/logos-clients/glastint.svg') }}" alt="Logo Glastint">
+<div class="container-large-plus background-basic-green" style="height:73vh;padding:1.5em">
+	<div class="carousel">
+		<div class="references-container">
+			{% if references %}
+				{% for reference in references %}
+					<div class="reference" style="background-image: url('{{ asset('uploads/images/' ~ reference.image) }}'); }}">
+						<div class="reference-text">
+							<h3 class="writeWhite" style="text-transform:none">{{ reference.titre }}</h3>
+							<div class="infos">
+								{% for categorie in reference.categorie %}
+									<span class="categories">{{ categorie.nom }}</span>
+								{% endfor %}
+							</div>	
+							<p class="writeWhite">{{ reference.descriptif | striptags | raw }}</p>
+							<a href="#" aria-label="En savoir plus">
+								<span>+</span>
+							</a>	
+						</div>
+					</div>
+				{% endfor %}
+			{% endif %}
 		</div>
-		<div>
-			<img src="{{ asset('uploads/images/logos-clients/maytronics.svg') }}" alt="Logo Maytronics">
-		</div>
-		<div>
-			<img src="{{ asset('uploads/images/logos-clients/everblue.svg') }}" alt="Logo Everblue">
-		</div>
-		<div>
-			<img src="{{ asset('uploads/images/logos-clients/Talenz.svg') }}" alt="Logo Talenz">
-		</div>
-		<div>
-			<img src="{{ asset('uploads/images/logos-clients/orange-business-ocean.svg') }}" alt="Logo Orange Business Océan">
-		</div>
-		<div>
-			<img src="{{ asset('uploads/images/logos-clients/rentokil-initial.svg') }}" alt="Logo Rentokil Initial">
-		</div>
-		<div>
-			<img src="{{ asset('uploads/images/logos-clients/ecf.svg') }}" alt="Logo ECF">
-		</div>
-		<div>
-			<img src="{{ asset('uploads/images/logos-clients/Uber-Eats.svg') }}" alt="Logo Uber Eats">
-		</div>
-		<div>
-			<img src="{{ asset('uploads/images/logos-clients/club-marseille-metropole.svg') }}" alt="Logo Club Marseille Métropole">
-		</div>
-		<div>
-			<img src="{{ asset('uploads/images/logos-clients/ambius.svg') }}" alt="Logo Ambius">
-		</div>
-		{# <div>
-			<img src="{{ asset('uploads/images/logos-clients/best-of-land.svg') }}" alt="Logo Best of Land">
-		</div> #}
-		{# <div>
-			<img src="{{ asset('uploads/images/logos-clients/d-business-design.svg') }}" alt="Logo Business Design">
-		</div>
-		<div>
-			<img src="{{ asset('uploads/images/logos-clients/la-ciotat-shipyards.svg') }}" alt="Logo La Ciotat Shipyards">
-		</div> #}
-		<div>
-			<img src="{{ asset('uploads/images/logos-clients/Lilly.svg') }}" alt="Logo Lilly">
-		</div>
-		<div>
-			<img src="{{ asset('uploads/images/logos-clients/porcher.svg') }}" alt="Logo Porcher">
-		</div>
-		<div>
-			<img src="{{ asset('uploads/images/logos-clients/SIT-Location.svg') }}" alt="Logo SIT Location">
+		<div class="filter-right">
+			<div class="dark-overlay"></div>
+
+			<div class="content-overlay">
+				<div id="right-arrow" aria-label="Bouton référence suivante">
+					<img src="{{ asset('uploads/images/axh1.png') }}">
+				</div>
+			</div>	
 		</div>
 	</div>
 </div>
+
+<style>
+
+
+	#btn_go_back{
+		background-color: #fff;
+		cursor: pointer;
+		border: none;
+		color: #3c4141;
+		display: block;
+		font-family: Open Sans, sans-serif;
+		font-weight: 600;
+		margin: 25px auto;
+		padding: 12px;
+		width: 12em;
+	}
+
+	a[aria-label="En savoir plus"] {
+		margin-top: 25px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-decoration: none;
+		/*font-size: 2rem;*/
+		color: black;
+		background-color: white;
+		width: 35px; /* Largeur du carré */
+		height: 35px; /* Hauteur du carré égale à la largeur */
+	}
+
+	a[aria-label="En savoir plus"] > span{
+		font-size: 1.5rem;
+		vertical-align: middle;
+	}
+
+	{# .filter-right {
+		width: 30%; /* Prend 30% de la largeur du carousel */
+		height: 100%;
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background-color: rgba(255, 255, 255, 0.3); /* Optionnel : ajouter un arrière-plan transparent */
+		filter: brightness(0%); /* Applique le filtre en noir */
+		display:  flex;
+		justify-content: flex-end;
+		align-items: center;
+	} #}
+
+	.filter-right {
+		width: 30%; /* Prend 30% de la largeur du carousel */
+		height: 100%;
+		position: absolute;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		background-color: transparent; /* Fond transparent pour voir les éléments en dessous */
+	}
+
+	.dark-overlay {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-color: rgba(0, 0, 0, 0.5); /* Noir avec opacité de 50% */
+		pointer-events: none; /* Désactive les interactions pour l'overlay */
+		z-index: 1;
+	}
+
+	.content-overlay {
+		display:  flex;
+		justify-content: flex-end;
+		align-items: center;
+		position: relative;
+		z-index: 2; /* S'affiche par-dessus l'overlay sombre */
+		color: white; /* Pour que le texte soit visible sur le fond sombre */
+		height:100%
+	}
+
+
+	#right-arrow{
+		cursor: pointer;
+		margin-right: 20px;
+	}
+
+
+	.carousel {
+		width: 100%; /* Width of carousel */
+  		height: 100%
+	}
+
+	.references-container {
+		width: 100%; /* Width of card container */
+		height: 100%;
+		display: flex; /* Set inline elements */
+		overflow : auto
+	}
+
+	.references-container::-webkit-scrollbar {
+		display: none; /* Hide scrollbar in Chrome, Safari and Opera */
+	}
+
+	.reference-text {
+		margin: 35px;
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	.reference {
+		min-width: 70%;
+		display: flex; 
+		flex-direction: column;
+		justify-content: flex-end;
+		background-size: cover; 
+		background-repeat: no-repeat;
+	}
+
+	.references-container {
+		/* ... */
+		overflow-x: auto; /* Set overflow in horizontal scroll */
+		overflow-y: hidden; /* Hidden overflow in vertical scroll */
+		scroll-snap-type: x mandatory; /* Force the scroll to snap to the start of a scroll-snap area */
+	}
+
+	.reference {
+		/* ... */
+		scroll-snap-align: start; /* Set the element focus position in scroll container */
+	}
+
+
+</style>
 
 
 <div class="container-medium">
@@ -224,5 +338,61 @@
 	</div>
 </div>
 
+<script>
+
+// Script pour le carousel des références
+
+
+const referenceContainer = document.querySelector(".references-container")
+const rightArrow = document.getElementById("right-arrow")
+const contentOverlay = document.querySelector(".content-overlay")
+
+
+let indexReference = 1
+
+const backToFirstRef = (e) => {
+	indexReference = 1;
+	referenceContainer.scrollTo({left: 0, behavior: "smooth"})
+	e.target.remove()
+}
+
+rightArrow.addEventListener("click", () => {
+	const scrollLeft = indexReference * document.querySelector(".reference").offsetWidth
+	referenceContainer.scrollTo({left: scrollLeft, behavior: "smooth"})
+	indexReference++
+	if (indexReference === 2){
+		const goBackButton = document.createElement("button");
+		goBackButton.setAttribute("id","btn_go_back");
+		goBackButton.textContent = "Retour en arrière";
+		goBackButton.addEventListener("click", backToFirstRef)
+		contentOverlay.prepend(goBackButton);
+	}
+} )
+
+// Désactiver le défilement horizontal (axe X) uniquement
+referenceContainer.addEventListener('wheel', (event) => {
+    if (event.deltaX !== 0) {
+        event.preventDefault(); // Empêche le défilement horizontal
+    }
+}, { passive: false });
+
+// Désactiver le défilement horizontal pour le pavé tactile et les appareils tactiles
+referenceContainer.addEventListener('touchmove', (event) => {
+	event.preventDefault()
+    const startX = event.touches[0].clientX;
+    const startY = event.touches[0].clientY;
+
+    // Détecter la direction du mouvement
+    referenceContainer.addEventListener('touchmove', (moveEvent) => {
+        const diffX = moveEvent.touches[0].clientX - startX;
+        const diffY = moveEvent.touches[0].clientY - startY;
+
+        // Empêcher le défilement si le mouvement est plus horizontal que vertical
+        if (Math.abs(diffX) > Math.abs(diffY)) {
+            moveEvent.preventDefault();
+        }
+    }, { passive: false });
+});
+</script>
 
 {% endblock %}

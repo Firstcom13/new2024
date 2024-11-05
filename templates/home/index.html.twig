@@ -58,42 +58,95 @@
 	</div>
 </div>
 
-<div class="container-large-plus background-basic-green" style="height:73vh;padding:1.5em">
+<div class="container-large-plus background-basic-green" style="height:73vh;padding: 30px;">
 	<div class="carousel">
+		<div id="left-arrow" aria-label="Bouton référence précédente" class="hide-arrow">
+			{# <img src="{{ asset('uploads/images/fleche-left-white60.svg') }}"> #}
+			<i class="icon-first-10"></i>
+		</div>
 		<div class="references-container">
 			{% if references %}
 				{% for reference in references %}
 					<div class="reference" style="background-image: url('{{ asset('uploads/images/' ~ reference.image) }}'); }}">
-						<div class="reference-text">
-							<h3 class="writeWhite" style="text-transform:none; margin:0">{{ reference.titre }}</h3>
-							<div class="infos">
-								{% for categorie in reference.categorie %}
-									<span class="categories">{{ categorie.nom }}</span>
-								{% endfor %}
-							</div>	
-							<p class="writeWhite">{{ reference.descriptif | striptags | raw }}</p>
-							<a href="#" aria-label="En savoir plus">
-								<span>+</span>
-							</a>	
-						</div>
+						<a href="#" class="overlay-link" aria-label="Accéder à l'article sur {{reference.nom_reference}}">
+							<div class="reference-text">
+								<p class="writeWhite reference-nom" style="margin:0">{{ reference.nom_reference }}</p>
+								<div class="infos">
+									{% for categorie in reference.categorie %}
+										<span class="categories">{{ categorie.nom }}</span>
+									{% endfor %}
+								</div>	
+								<h2 class="writeWhite reference-titre">{{ reference.titre }}</h2>
+								<a href="#" class="reference-button">
+									<button aria-label="En savoir plus">
+										<span>+</span>
+									</button>	
+								</a>
+							</div>
+						</a>
+					</div>
+				{% endfor %}
+				{% for reference in references %}
+					<div class="reference" style="background-image: url('{{ asset('uploads/images/' ~ reference.image) }}'); }}">
+						<a href="#" class="overlay-link" aria-label="Accéder à l'article sur {{reference.nom_reference}}">
+							<div class="reference-text">
+								<p class="writeWhite reference-nom" style="margin:0">{{ reference.nom_reference }}</p>
+								<div class="infos">
+									{% for categorie in reference.categorie %}
+										<span class="categories">{{ categorie.nom }}</span>
+									{% endfor %}
+								</div>	
+								<h2 class="writeWhite reference-titre">{{ reference.titre }}</h2>
+								<a href="#" class="reference-button">
+									<button aria-label="En savoir plus">
+										<span>+</span>
+									</button>	
+								</a>
+							</div>
+						</a>
 					</div>
 				{% endfor %}
 			{% endif %}
 		</div>
+		<div id="right-arrow" aria-label="Bouton référence suivante">
+			{# <img src="{{ asset('uploads/images/fleche-right-white60.svg') }}"> #}
+			<i class="icon-first_chevron-right"></i>
+		</div>
 		<div class="filter-right">
 			<div class="dark-overlay"></div>
-
-			<div class="content-overlay">
-				<div id="right-arrow" aria-label="Bouton référence suivante">
-					<img src="{{ asset('uploads/images/axh1.png') }}">
-				</div>
-			</div>	
 		</div>
 	</div>
 </div>
 
 <style>
 
+	.overlay-link {
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 0; 
+		text-decoration: none; 
+		color: transparent; 
+		background: transparent; 
+	}
+
+	.reference-nom{
+		font-family : "Open sans";
+		font-weight : 800;
+		line-height : 1.2em;
+		text-transform : uppercase;
+		font-size: 20px
+	}
+
+	.reference-titre{
+		font-family : "Open sans";
+		font-weight : 800;
+		line-height : 1.2em;
+		font-size: 34px;
+		text-transform: none;
+	}
 
 	#btn_go_back{
 		background-color: #fff;
@@ -108,22 +161,37 @@
 		width: 12em;
 	}
 
-	a[aria-label="En savoir plus"] {
-		margin-top: 25px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		text-decoration: none;
-		/*font-size: 2rem;*/
-		color: black;
-		background-color: white;
-		width: 35px; /* Largeur du carré */
-		height: 35px; /* Hauteur du carré égale à la largeur */
+	
+
+	button[aria-label="En savoir plus"] {
+		margin-top: 12px;
+		width: 40px; 
+		height: 40px; 
+		border: 0;
+		transition : all ease 0.2s;
+		background-color : #fff;
+		font-size: 2rem;
+		font-weight: 600;
+		color: #96a596;
 	}
 
-	a[aria-label="En savoir plus"] > span{
-		font-size: 1.5rem;
-		vertical-align: middle;
+	button[aria-label="En savoir plus"]:hover {
+		background-color : #96a596;
+		color: #fff	
+	}
+
+	a.reference-button{
+		text-decoration:none;
+	}
+
+	button[aria-label="En savoir plus"] span {
+		transition : all ease 0.2s;
+		display: block;
+		height : 100%;
+		width: 100%;
+		position: relative;
+    	bottom: 20%;
+		
 	}
 
 	.filter-right {
@@ -133,7 +201,7 @@
 		right: 0;
 		top: 0;
 		bottom: 0;
-		background-color: transparent; /* Fond transparent pour voir les éléments en dessous */
+	
 	}
 
 	.dark-overlay {
@@ -142,32 +210,19 @@
 		right: 0;
 		bottom: 0;
 		left: 0;
-		background-color: rgba(0, 0, 0, 0.5); /* Noir avec opacité de 50% */
+		background-color: rgba(60, 65, 65, 0.45);
 		pointer-events: none; /* Désactive les interactions pour l'overlay */
 		z-index: 1;
 	}
 
-	.content-overlay {
-		display:  flex;
-		justify-content: flex-end;
-		align-items: center;
-		position: relative;
-		z-index: 2; /* S'affiche par-dessus l'overlay sombre */
-		color: white; /* Pour que le texte soit visible sur le fond sombre */
-		height:100%
-	}
-
-
-	#right-arrow{
-		cursor: pointer;
-		margin-right: 20px;
-	}
+	
 
 
 	.carousel {
 		width: 100%; /* Width of carousel */
-  		height: 100%
+  		height: 100%;
 	}
+
 
 	.references-container {
 		width: 100%; /* Width of card container */
@@ -206,6 +261,33 @@
 	.reference {
 		/* ... */
 		scroll-snap-align: start; /* Set the element focus position in scroll container */
+	}
+
+	#left-arrow,
+	#right-arrow {
+    	position: absolute;
+		top: 50%;
+		z-index: 2;
+		cursor: pointer;
+		color: #fff;
+		font-size:4rem
+	}
+
+	#left-arrow{
+		left: 0;
+		margin-left: 20px;
+		transition: opacity ease 0.5s;
+	}
+
+	#left-arrow.hide-arrow {
+		opacity : 0;
+		cursor:default;
+	}
+
+	#right-arrow{
+		right: 0;
+		margin-right: 20px;
+		
 	}
 
 
@@ -331,27 +413,40 @@
 
 const referenceContainer = document.querySelector(".references-container")
 const rightArrow = document.getElementById("right-arrow")
+const leftArrow = document.getElementById("left-arrow")
 const contentOverlay = document.querySelector(".content-overlay")
+const allReferences = document.querySelectorAll(".reference")
 
+let indexReference = 0
 
-let indexReference = 1
+const goLeft = () => {
+	indexReference--; 
+    const scrollLeft = indexReference * document.querySelector(".reference").offsetWidth;
+	referenceContainer.scrollTo({ left: scrollLeft, behavior: "smooth" });
+    if(indexReference === 0){
+		leftArrow.classList.toggle("hide-arrow")
+		leftArrow.removeEventListener("click", goLeft)
+	}  
+}
 
-const backToFirstRef = (e) => {
-	indexReference = 1;
-	referenceContainer.scrollTo({left: 0, behavior: "smooth"})
-	e.target.remove()
+const isMobile = () => {
+    return window.innerWidth <= 768; 
+}
+
+const returnToFirst = () => {
+	indexReference = 0
+	referenceContainer.scrollTo({ left: 0, behavior: "smooth" });
+	leftArrow.classList.toggle("hide-arrow")
 }
 
 rightArrow.addEventListener("click", () => {
+	indexReference++
 	const scrollLeft = indexReference * document.querySelector(".reference").offsetWidth
 	referenceContainer.scrollTo({left: scrollLeft, behavior: "smooth"})
-	indexReference++
-	if (indexReference === 2){
-		const goBackButton = document.createElement("button");
-		goBackButton.setAttribute("id","btn_go_back");
-		goBackButton.textContent = "Retour en arrière";
-		goBackButton.addEventListener("click", backToFirstRef)
-		contentOverlay.prepend(goBackButton);
+
+	if(indexReference === 1){
+		leftArrow.classList.toggle("hide-arrow")
+		leftArrow.addEventListener("click", goLeft)
 	}
 } )
 
@@ -362,23 +457,38 @@ referenceContainer.addEventListener('wheel', (event) => {
     }
 }, { passive: false });
 
-// Désactiver le défilement horizontal pour le pavé tactile et les appareils tactiles
+// Désactiver le défilement horizontal pour les appareils tactiles uniquement lorsque le mouvement est plus horizontal que vertical
+referenceContainer.addEventListener('touchstart', (event) => {
+    if (isMobile()) {
+        startX = event.touches[0].clientX;
+        scrollStartX = referenceContainer.scrollLeft;
+    }
+}, { passive: false });
+
 referenceContainer.addEventListener('touchmove', (event) => {
-	event.preventDefault()
-    const startX = event.touches[0].clientX;
-    const startY = event.touches[0].clientY;
+    if (isMobile()) {
+        const currentX = event.touches[0].clientX;
+        const diffX = startX - currentX;
 
-    // Détecter la direction du mouvement
-    referenceContainer.addEventListener('touchmove', (moveEvent) => {
-        const diffX = moveEvent.touches[0].clientX - startX;
-        const diffY = moveEvent.touches[0].clientY - startY;
-
-        // Empêcher le défilement si le mouvement est plus horizontal que vertical
-        if (Math.abs(diffX) > Math.abs(diffY)) {
-            moveEvent.preventDefault();
+        // Si le mouvement est plus horizontal que vertical, empêcher le comportement par défaut et faire défiler
+        const diffY = Math.abs(event.touches[0].clientY - startY);
+        if (Math.abs(diffX) > diffY) {
+            event.preventDefault();
+            referenceContainer.scrollLeft = scrollStartX + diffX;
         }
-    }, { passive: false });
-});
+    }
+}, { passive: false });
+
+setInterval(() => {
+	rightArrow.click()
+	if(allReferences.length < indexReference + 1) {
+		returnToFirst()
+	}
+}, 4000)
+
+
+
+
 </script>
 
 {% endblock %}

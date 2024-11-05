@@ -35,6 +35,7 @@ class ReferenceCrudController extends AbstractCrudController
         if (Crud::PAGE_INDEX === $pageName) {
             // Champs à afficher dans la liste (index) des entités
             return [
+                TextField::new('nom_reference', "Nom de l'entreprise"),
                 TextField::new('titre'),
                 BooleanField::new('actif'),
                 TextField::new('url'),
@@ -46,6 +47,7 @@ class ReferenceCrudController extends AbstractCrudController
         } else {   
             return [
                 IdField::new('id')->hideOnForm(), //cache le champ à la fois dans editet dans newles pages
+                TextField::new('nom_reference', "Nom de l'entreprise"),
                 TextField::new('titre'),
                 TextEditorField::new('descriptif')->setFormType(CKEditorType::class),
                 BooleanField::new('actif'),

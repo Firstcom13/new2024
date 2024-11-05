@@ -1,0 +1,78 @@
+@font-face {
+  font-family: 'Firstcom';
+  src:  url('fonts/Firstcom.eot?5p33rl');
+  src:  url('fonts/Firstcom.eot?5p33rl#iefix') format('embedded-opentype'),
+    url('fonts/Firstcom.ttf?5p33rl') format('truetype'),
+    url('fonts/Firstcom.woff?5p33rl') format('woff'),
+    url('fonts/Firstcom.svg?5p33rl#Firstcom') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'Firstcom' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-first_chevron-down:before {
+  content: "\e900";
+}
+.icon-first_chevron-right:before {
+  content: "\e901";
+}
+.icon-first_chevron-up:before {
+  content: "\e902";
+}
+.icon-first_eco:before {
+  content: "\e903";
+}
+.icon-first_facebook:before {
+  content: "\e904";
+}
+.icon-first_fleche-down-left:before {
+  content: "\e905";
+}
+.icon-first_fleche-down-right:before {
+  content: "\e906";
+}
+.icon-first_fleche-down:before {
+  content: "\e907";
+}
+.icon-first_fleche-left:before {
+  content: "\e908";
+}
+.icon-first_fleche-right:before {
+  content: "\e909";
+}
+.icon-first_fleche-up-left:before {
+  content: "\e90a";
+}
+.icon-first_fleche-up-right:before {
+  content: "\e90b";
+}
+.icon-first_fleche-up:before {
+  content: "\e90c";
+}
+.icon-first_idea:before {
+  content: "\e90d";
+}
+.icon-first_linkedin:before {
+  content: "\e90e";
+}
+.icon-first_X:before {
+  content: "\e90f";
+}
+.icon-first-10:before {
+  content: "\e910";
+}

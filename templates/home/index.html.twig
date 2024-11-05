@@ -65,7 +65,7 @@
 				{% for reference in references %}
 					<div class="reference" style="background-image: url('{{ asset('uploads/images/' ~ reference.image) }}'); }}">
 						<div class="reference-text">
-							<h3 class="writeWhite" style="text-transform:none">{{ reference.titre }}</h3>
+							<h3 class="writeWhite" style="text-transform:none; margin:0">{{ reference.titre }}</h3>
 							<div class="infos">
 								{% for categorie in reference.categorie %}
 									<span class="categories">{{ categorie.nom }}</span>
@@ -126,20 +126,6 @@
 		vertical-align: middle;
 	}
 
-	{# .filter-right {
-		width: 30%; /* Prend 30% de la largeur du carousel */
-		height: 100%;
-		position: absolute;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		background-color: rgba(255, 255, 255, 0.3); /* Optionnel : ajouter un arrière-plan transparent */
-		filter: brightness(0%); /* Applique le filtre en noir */
-		display:  flex;
-		justify-content: flex-end;
-		align-items: center;
-	} #}
-
 	.filter-right {
 		width: 30%; /* Prend 30% de la largeur du carousel */
 		height: 100%;
@@ -198,7 +184,7 @@
 		margin: 35px;
 		display: flex;
 		flex-direction: column;
-		gap: 12px;
+		gap: 8px;
 	}
 
 	.reference {

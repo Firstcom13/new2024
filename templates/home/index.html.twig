@@ -128,6 +128,55 @@
 		text-transform: none;
 	}
 
+	/* Mobile : pour les écrans jusqu'à 768px */
+	@media (max-width: 768px) {
+		.references-container .reference-nom{
+			font-size: 16px
+		}
+
+		.references-container .reference-titre{
+			font-size: 22px;
+		}
+
+		.filter-right{
+			display: none
+		}
+
+		.references-container .reference{
+			min-width: 100%
+		}
+	}
+
+	/* Tablette : pour les écrans de 768px à 1024px */
+	@media (min-width: 768px) and (max-width: 1024px) {
+		.references-container .reference-nom{
+			font-size: 18px
+		}
+
+		.references-container .reference-titre{
+			font-size: 28px;
+		}
+	}
+
+	/* Tablette en mode portrait uniquement */
+	@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+		/* Contenu pour tablettes en orientation portrait */
+		.filter-right{
+			display:none
+		}
+
+		.references-container .reference{
+			min-width: 100%
+		}
+	}
+
+	
+	/* Tablette en mode paysage uniquement 
+	@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+		
+	} */
+
+
 	#btn_go_back{
 		background-color: #fff;
 		cursor: pointer;
@@ -412,10 +461,10 @@ const updateScroll = () => {
 const goLeft = () => {
     indexReference--;
     if (indexReference < 0) {
-        indexReference = totalReferences; // Réinitialiser à la fin
-        referenceContainer.scrollTo({ left: totalReferences * document.querySelector(".reference").offsetWidth, behavior: "smooth" });
+        indexReference = totalReferences - 1; // Réinitialiser à la fin
+        referenceContainer.scrollTo({ left: totalReferences * document.querySelector(".reference").offsetWidth, behavior: "auto" });
     }
-	clearInterval(carouselLoop)
+	clearInterval(carouselLoop);
     updateScroll();
 };
 
@@ -431,7 +480,7 @@ const goRight = () => {
 
 rightArrow.addEventListener("click", goRight);
 leftArrow.addEventListener("click", goLeft);
-const carouselLoop = setInterval(goRight, 4000);
+var carouselLoop = setInterval(goRight, 4000);
 
 //// code pour controlé défilement pavé tactile, drag sur téléphone et molette de souris ////
 

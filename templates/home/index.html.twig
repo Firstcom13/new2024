@@ -145,6 +145,11 @@
 		.references-container .reference{
 			min-width: 100%
 		}
+
+		#left-arrow,
+		#right-arrow {
+			display: none;
+		}
 	}
 
 	/* Tablette : pour les écrans de 768px à 1024px */
@@ -464,9 +469,12 @@ const goLeft = () => {
         indexReference = totalReferences - 1; // Réinitialiser à la fin
         referenceContainer.scrollTo({ left: totalReferences * document.querySelector(".reference").offsetWidth, behavior: "auto" });
     }
-	clearInterval(carouselLoop);
     updateScroll();
 };
+
+const isMobile = () => {
+	return window.innerWidth <= 768;
+}
 
 const goRight = () => {
     indexReference++;
@@ -478,19 +486,60 @@ const goRight = () => {
     updateScroll();
 };
 
-rightArrow.addEventListener("click", goRight);
-leftArrow.addEventListener("click", goLeft);
+rightArrow.addEventListener("click", () => {goRight();clearInterval(carouselLoop);});
+leftArrow.addEventListener("click", () => {goLeft();clearInterval(carouselLoop);});
 var carouselLoop = setInterval(goRight, 4000);
 
 //// code pour controlé défilement pavé tactile, drag sur téléphone et molette de souris ////
 
-// Désactiver le défilement horizontal (axe X) uniquement
+ // Désactiver le défilement horizontal (axe X) uniquement (Pour pavé tactile laptop)
 referenceContainer.addEventListener('wheel', (event) => {
 	if (event.deltaX !== 0) {
 		event.preventDefault(); // Empêche le défilement horizontal
 	}
 }, { passive: false });
 
+let startX; // Position initiale du glissement
+
+referenceContainer.addEventListener('touchstart', (event) => {
+    if (isMobile()) {
+        startX = event.touches[0].clientX; // Enregistrer la position initiale
+    }
+}, { passive: false });
+
+let isScrolling;
+let userScrolling = false; // Flag pour détecter si l'utilisateur fait défiler
+
+// Pour savoir si c'est l'utilisateur qui a scroll
+referenceContainer.addEventListener('touchstart', () => {
+    userScrolling = true; // L'utilisateur a commencé à faire défiler
+});
+
+// Détecter le défilement
+referenceContainer.addEventListener('scroll', () => {
+
+	if(userScrolling){
+		clearInterval(carouselLoop)
+	}
+    clearTimeout(isScrolling);
+    isScrolling = setTimeout(() => {
+        // Vérifier la position après le défilement
+        const scrollLeft = referenceContainer.scrollLeft;
+        const referenceWidth = document.querySelector(".reference").offsetWidth;
+        indexReference = Math.round(scrollLeft / referenceWidth);
+		console.log(indexReference)
+        // Réinitialiser l'index si nécessaire
+        if (indexReference === 0) {
+            indexReference = totalReferences ; // Dernier élément
+            referenceContainer.scrollTo({ left: (totalReferences) * referenceWidth, behavior: "auto" });
+        } else if (indexReference > totalReferences) {
+            indexReference = 0; 
+            referenceContainer.scrollTo({ left: referenceWidth, behavior: "auto" });
+        }
+    }, 150); // Délai pour attendre que le défilement se termine
+});
+
+{#
 // Désactiver le défilement horizontal pour les appareils tactiles uniquement lorsque le mouvement est plus horizontal que vertical
 referenceContainer.addEventListener('touchstart', (event) => {
 	if (isMobile()) {
@@ -511,7 +560,7 @@ referenceContainer.addEventListener('touchmove', (event) => {
 		referenceContainer.scrollLeft = scrollStartX + diffX;
 	}
 	}
-}, { passive: false });
+}, { passive: false }); #}
 
 
 </script>

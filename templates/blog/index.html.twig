@@ -324,7 +324,7 @@
 			if(checkAllArticle.length === 0){
 				const textContainer = document.createElement("p") 
 				textContainer.setAttribute("id", "empty_article")
-				textContainer.appendChild(document.createTextNode("Aucun article pour ce filtre."))
+				//textContainer.appendChild(document.createTextNode("Aucun article pour ce filtre."))
 				document.querySelector(".container-fluid > .row").appendChild(textContainer);
 			}
 			else {
@@ -509,7 +509,7 @@
 					// Cacher le bouton
 					loader.style["display"] = "none";
 					loadBtn.style["display"] = "none";
-					document.querySelector(".load-article-btn").appendChild(document.createTextNode("Vous êtes arrivé à la fin des articles."));
+					// document.querySelector(".load-article-btn").appendChild(document.createTextNode("Vous êtes arrivé à la fin des articles."));
 				}
 
 				//Refiltrage

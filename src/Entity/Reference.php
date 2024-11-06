@@ -124,12 +124,12 @@ class Reference
         return $this;
     }
 
-    public function getNom_Reference(): ?string
+    public function getNomReference(): ?string
     {
         return $this->nom_reference;
     }
 
-    public function setNom_Reference(string $nom_reference): self
+    public function setNomReference(string $nom_reference): self
     {
         $this->nom_reference = $nom_reference;
 

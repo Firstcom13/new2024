@@ -68,29 +68,9 @@
 			{% if references %}
 				{% for reference in references %}
 					<div class="reference" style="background-image: url('{{ asset('uploads/images/' ~ reference.image) }}'); }}">
-						<a href="#" class="overlay-link" aria-label="Accéder à l'article sur {{reference.nom_reference}}">
+						<a href="#" class="overlay-link" aria-label="Accéder à l'article sur {{reference.getNomReference()}}">
 							<div class="reference-text">
-								<p class="writeWhite reference-nom" style="margin:0">{{ reference.nom_reference }}</p>
-								<div class="infos">
-									{% for categorie in reference.categorie %}
-										<span class="categories">{{ categorie.nom }}</span>
-									{% endfor %}
-								</div>	
-								<h2 class="writeWhite reference-titre">{{ reference.titre }}</h2>
-								<a href="#" class="reference-button">
-									<button aria-label="En savoir plus">
-										<span>+</span>
-									</button>	
-								</a>
-							</div>
-						</a>
-					</div>
-				{% endfor %}
-				{% for reference in references %}
-					<div class="reference" style="background-image: url('{{ asset('uploads/images/' ~ reference.image) }}'); }}">
-						<a href="#" class="overlay-link" aria-label="Accéder à l'article sur {{reference.nom_reference}}">
-							<div class="reference-text">
-								<p class="writeWhite reference-nom" style="margin:0">{{ reference.nom_reference }}</p>
+								<p class="writeWhite reference-nom" style="margin:0">{{ reference.nomReference }}</p>
 								<div class="infos">
 									{% for categorie in reference.categorie %}
 										<span class="categories">{{ categorie.nom }}</span>
@@ -214,8 +194,6 @@
 		pointer-events: none; /* Désactive les interactions pour l'overlay */
 		z-index: 1;
 	}
-
-	
 
 
 	.carousel {
@@ -410,83 +388,81 @@
 
 // Script pour le carousel des références
 
+//// Code pour la logique de défilement avec les flèches, automatique et infini ////
 
-const referenceContainer = document.querySelector(".references-container")
-const rightArrow = document.getElementById("right-arrow")
-const leftArrow = document.getElementById("left-arrow")
-const contentOverlay = document.querySelector(".content-overlay")
-const allReferences = document.querySelectorAll(".reference")
+const referenceContainer = document.querySelector(".references-container");
+const rightArrow = document.getElementById("right-arrow");
+const leftArrow = document.getElementById("left-arrow");
+const allReferences = document.querySelectorAll(".reference");
 
-let indexReference = 0
+let indexReference = 0; // Commencer à 0 pour permettre le défilement
+const totalReferences = allReferences.length;
+
+// Dupliquer les références
+const firstClone = allReferences[0].cloneNode(true);
+const lastClone = allReferences[totalReferences - 1].cloneNode(true);
+referenceContainer.appendChild(firstClone);
+referenceContainer.insertBefore(lastClone, allReferences[0]);
+
+const updateScroll = () => {
+    const scrollLeft = indexReference * document.querySelector(".reference").offsetWidth;
+    referenceContainer.scrollTo({ left: scrollLeft, behavior: "smooth" });
+};
 
 const goLeft = () => {
-	indexReference--; 
-    const scrollLeft = indexReference * document.querySelector(".reference").offsetWidth;
-	referenceContainer.scrollTo({ left: scrollLeft, behavior: "smooth" });
-    if(indexReference === 0){
-		leftArrow.classList.toggle("hide-arrow")
-		leftArrow.removeEventListener("click", goLeft)
-	}  
-}
+    indexReference--;
+    if (indexReference < 0) {
+        indexReference = totalReferences; // Réinitialiser à la fin
+        referenceContainer.scrollTo({ left: totalReferences * document.querySelector(".reference").offsetWidth, behavior: "smooth" });
+    }
+	clearInterval(carouselLoop)
+    updateScroll();
+};
 
-const isMobile = () => {
-    return window.innerWidth <= 768; 
-}
+const goRight = () => {
+    indexReference++;
+	leftArrow.classList.remove("hide-arrow")
+    if (indexReference > totalReferences) {
+        indexReference = 1; // Réinitialiser au début
+        referenceContainer.scrollTo({ left: 0, behavior: "auto" });
+    }
+    updateScroll();
+};
 
-const returnToFirst = () => {
-	indexReference = 0
-	referenceContainer.scrollTo({ left: 0, behavior: "smooth" });
-	leftArrow.classList.toggle("hide-arrow")
-}
+rightArrow.addEventListener("click", goRight);
+leftArrow.addEventListener("click", goLeft);
+const carouselLoop = setInterval(goRight, 4000);
 
-rightArrow.addEventListener("click", () => {
-	indexReference++
-	const scrollLeft = indexReference * document.querySelector(".reference").offsetWidth
-	referenceContainer.scrollTo({left: scrollLeft, behavior: "smooth"})
-
-	if(indexReference === 1){
-		leftArrow.classList.toggle("hide-arrow")
-		leftArrow.addEventListener("click", goLeft)
-	}
-} )
+//// code pour controlé défilement pavé tactile, drag sur téléphone et molette de souris ////
 
 // Désactiver le défilement horizontal (axe X) uniquement
 referenceContainer.addEventListener('wheel', (event) => {
-    if (event.deltaX !== 0) {
-        event.preventDefault(); // Empêche le défilement horizontal
-    }
+	if (event.deltaX !== 0) {
+		event.preventDefault(); // Empêche le défilement horizontal
+	}
 }, { passive: false });
 
 // Désactiver le défilement horizontal pour les appareils tactiles uniquement lorsque le mouvement est plus horizontal que vertical
 referenceContainer.addEventListener('touchstart', (event) => {
-    if (isMobile()) {
-        startX = event.touches[0].clientX;
-        scrollStartX = referenceContainer.scrollLeft;
-    }
+	if (isMobile()) {
+		startX = event.touches[0].clientX;
+		scrollStartX = referenceContainer.scrollLeft;
+	}
 }, { passive: false });
 
 referenceContainer.addEventListener('touchmove', (event) => {
-    if (isMobile()) {
-        const currentX = event.touches[0].clientX;
-        const diffX = startX - currentX;
+	if (isMobile()) {
+		const currentX = event.touches[0].clientX;
+		const diffX = startX - currentX;
 
-        // Si le mouvement est plus horizontal que vertical, empêcher le comportement par défaut et faire défiler
-        const diffY = Math.abs(event.touches[0].clientY - startY);
-        if (Math.abs(diffX) > diffY) {
-            event.preventDefault();
-            referenceContainer.scrollLeft = scrollStartX + diffX;
-        }
-    }
-}, { passive: false });
-
-setInterval(() => {
-	rightArrow.click()
-	if(allReferences.length < indexReference + 1) {
-		returnToFirst()
+		// Si le mouvement est plus horizontal que vertical, empêcher le comportement par défaut et faire défiler
+		const diffY = Math.abs(event.touches[0].clientY - startY);
+		if (Math.abs(diffX) > diffY) {
+		event.preventDefault();
+		referenceContainer.scrollLeft = scrollStartX + diffX;
 	}
-}, 4000)
-
-
+	}
+}, { passive: false });
 
 
 </script>

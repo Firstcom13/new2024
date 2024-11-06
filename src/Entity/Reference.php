@@ -35,6 +35,9 @@ class Reference
     #[ORM\Column(type: Types::DATETIME_IMMUTABLE)]
     private ?\DateTimeInterface $dateCreation = null;
 
+    #[ORM\Column(length: 20, unique: true)]
+    private ?string $nom_reference;
+
     #[ORM\ManyToMany(targetEntity: Categorie::class, inversedBy: 'reference')]
     private Collection $categorie;
 
@@ -121,6 +124,18 @@ class Reference
         return $this;
     }
 
+    public function getNomReference(): ?string
+    {
+        return $this->nom_reference;
+    }
+
+    public function setNomReference(string $nom_reference): self
+    {
+        $this->nom_reference = $nom_reference;
+
+        return $this;
+    }
+
     /**
      * @return Collection<int, Categorie>
      */
@@ -144,4 +159,5 @@ class Reference
 
         return $this;
     }
+
 }

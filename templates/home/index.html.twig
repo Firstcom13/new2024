@@ -527,10 +527,10 @@ referenceContainer.addEventListener('scroll', () => {
         const scrollLeft = referenceContainer.scrollLeft;
         const referenceWidth = document.querySelector(".reference").offsetWidth;
         indexReference = Math.round(scrollLeft / referenceWidth);
-		console.log(indexReference)
+		
         // Réinitialiser l'index si nécessaire
         if (indexReference === 0) {
-            indexReference = totalReferences ; // Dernier élément
+            indexReference = totalReferences ; 
             referenceContainer.scrollTo({ left: (totalReferences) * referenceWidth, behavior: "auto" });
         } else if (indexReference > totalReferences) {
             indexReference = 0; 

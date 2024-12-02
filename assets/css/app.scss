@@ -158,11 +158,34 @@ h1 {
     }
 }
 
+.h1-mini {
+    color: #3c4141;
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.2em;
+    text-transform: uppercase;
+
+    @media screen and (max-width: 991px) {
+        font-size: 1.75rem;
+    }
+}
+
 h2 {
     font-size: 42px;
     font-weight: 800;
     line-height: 1.2em;
     text-transform: uppercase;
+    color: $couleur-titres;
+
+    @media screen and (max-width: 991px) {
+        font-size: 28px;
+    }
+}
+
+.h2-mini {
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 20px;
     color: $couleur-titres;
 
     @media screen and (max-width: 991px) {

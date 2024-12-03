@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class MarketingOffreController extends AbstractController
 {
-    #[Route('/marketing-de-loffre', name: 'app_marketing_de_loffre')]
+    #[Route('/marketing-de-loffre', name: 'app_marketing_de_loffre', options: ['sitemap' => ['section' => 'conseil-et-strategie']])]
     public function index(): Response
     {
         return $this->render('marketing-de-loffre/index.html.twig', [

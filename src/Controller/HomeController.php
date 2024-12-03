@@ -14,7 +14,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HomeController extends AbstractController
 {
-    #[Route('/', name: 'app_home')]
+    #[Route('/', name: 'app_home', options: ['sitemap' => ['section' => 'home']] )]
     public function index(ArticlesBlogRepository $articlesBlogRepository): Response
     {
 

@@ -13,7 +13,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ContactController extends AbstractController
 {
-    #[Route('/contact', name: 'app_contact')]
+    #[Route('/contact', name: 'app_contact', options: ['sitemap' => ['section' => 'contact']])]
     public function index(
         Request $request, 
         MailerInterface $mailer, 

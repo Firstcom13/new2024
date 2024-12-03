@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class CroissanceController extends AbstractController
 {
-    #[Route('/croissance-et-performance', name: 'app_croissance')]
+    #[Route('/croissance-et-performance', name: 'app_croissance' , options: ['sitemap' => ['section' => 'croissance-et-performance']])]
     public function index(): Response
     {
         return $this->render('croissance/index.html.twig', [

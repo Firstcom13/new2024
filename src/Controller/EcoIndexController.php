@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class EcoIndexController extends AbstractController
 {
-    #[Route('/ecoindex', name: 'app_ecoindex')]
+    #[Route('/ecoindex', name: 'app_ecoindex', options: ['sitemap' => ['section' => 'ecoindex']])]
     public function index(): Response
     {
         return $this->render('ecoindex/index.html.twig', [

@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class SeoController extends AbstractController
 {
-    #[Route('/referencement-naturel-seo', name: 'app_referencement_naturel_seo')]
+    #[Route('/referencement-naturel-seo', name: 'app_referencement_naturel_seo', options: ['sitemap' => ['section' => 'croissance-et-performance']])]
     public function index(): Response
     {
         return $this->render('seo/index.html.twig', [

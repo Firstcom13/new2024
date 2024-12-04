@@ -23,7 +23,7 @@ framework:
         log: true
 
     router:
-        default_uri: 'https://firstcom.new-media.fr'
+        default_uri: 'https://www.firstcom.fr'
         
 
 when@test:

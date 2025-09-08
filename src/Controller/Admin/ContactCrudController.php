@@ -10,7 +10,10 @@ use EasyCorp\Bundle\EasyAdminBundle\Field\EmailField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TelephoneField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class ContactCrudController extends AbstractCrudController
@@ -33,6 +36,9 @@ class ContactCrudController extends AbstractCrudController
                                 ->setLabel('Société'),
                         TelephoneField::new('tel'),
                         EmailField::new('email'),
+                        DateTimeField::new('dateCreation')
+                                ->setLabel('Date de demande')
+                                ->setFormat('dd/MM/Y HH:mm')
                     ];
             } else {
                     return [
@@ -48,6 +54,9 @@ class ContactCrudController extends AbstractCrudController
                         TextareaField::new('message'),
                         BooleanField::new('agree'),
                         BooleanField::new('autorisation'),
+                        DateTimeField::new('dateCreation')
+                            ->setLabel('Date de demande')
+                            ->hideOnForm()
                     ];
             }
     }
@@ -56,9 +65,15 @@ class ContactCrudController extends AbstractCrudController
     {
         return $crud
             ->setDefaultSort([
-                'name' => 'ASC',
-                'firstname' => 'ASC',
+                'dateCreation' => 'DESC',
             ]); // Remplacez 'id' par le nom du champ que vous souhaitez trier et 'ASC' par 'DESC' si vous souhaitez trier par ordre décroissant.
+    }
+
+    public function configureActions(Actions $actions): Actions
+    {
+        return $actions
+            ->add(Crud::PAGE_INDEX, Action::DETAIL)
+            ->disable(Action::EDIT, Action::NEW);
     }
 
     public function persistEntity(EntityManagerInterface $entityManager, $entityInstance): void

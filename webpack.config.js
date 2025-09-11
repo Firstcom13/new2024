@@ -25,7 +25,7 @@ Encore
     // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
     .splitEntryChunks()
 
-	.enableSassLoader() 
+    .enableSassLoader()
     // will require an extra script tag for runtime.js
     // but, you probably want this, unless you're building a single-page app
     .enableSingleRuntimeChunk()
@@ -74,6 +74,11 @@ Encore
         from: './node_modules/@fortawesome/fontawesome-free/webfonts',
         to: 'webfonts/[name].[ext]'
     })
+    .configureWatchOptions(watchOptions => {
+        watchOptions.poll = 250;
+        watchOptions.ignored = /node_modules/;
+    });
+
 ;
 
 module.exports = Encore.getWebpackConfig();

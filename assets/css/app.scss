@@ -284,7 +284,7 @@ ul > li {
 .texte-intro {
     font-size: 20px;
     font-weight: 700;
-    line-height: 1.6;
+    line-height: 1.3;
     // text-transform: uppercase;
 
     @media screen and (max-width: 991px) {
@@ -621,6 +621,26 @@ ul > li {
     }
 
 }
+
+#container7 {
+    display: flex;
+    position: relative;
+    background-color: #5d6762;
+    background-image: url('../../public/uploads/images/header-fonds-trame-creation2.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 103vh;
+    align-items: center;
+
+    @media screen and (max-width: 991px) {
+        height: auto;
+        padding: 100px 0 85px 0px;
+    }
+
+}
+
+
 
 
 #container-ecoindex {

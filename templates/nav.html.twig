@@ -70,8 +70,8 @@
 							</ul>
 						</li>
 						{# <li class="rubrique-menu">
-																									<a href="#">CASE STUDIES</a>
-																								</li> #}
+																															<a href="#">CASE STUDIES</a>
+																														</li> #}
 						<li class="rubrique-menu">
 							<a href="{{ path('app_agence') }}">L'AGENCE</a>
 						</li>
@@ -113,8 +113,8 @@ openMenu.classList.remove('sous-menu-ouvert');
 openMenu.previousElementSibling.querySelector('img').classList.remove('rotate-icon');
 openMenu.previousElementSibling.querySelector('img').classList.add('rotate-icon-initial');
 });
-
 }
+
 });
 });
 
@@ -137,7 +137,6 @@ document.querySelectorAll('.icone-plus img').forEach(function (img) {
 img.classList.remove('rotate-icon');
 img.classList.add('rotate-icon-initial');
 });
-
 }
 });
 
@@ -156,7 +155,7 @@ iconPlus.querySelector('img').classList.add('rotate-icon-initial');
 });
 });
 
-{ // Sélection de tous les éléments avec la classe '.rubrique-menu'
+// Sélection de tous les éléments avec la classe '.rubrique-menu'
 document.querySelectorAll('.rubrique-menu').forEach(function (rubriqueMenu) { // Gérer l'ouverture du sous-menu au survol
 rubriqueMenu.addEventListener('mouseover', function (event) {
 var sousMenu = rubriqueMenu.querySelector('.sous-menu');
@@ -185,6 +184,4 @@ icone.classList.remove('rotate-icon');
 icone.classList.add('rotate-icon-initial');
 });
 });
-
-}
 </script>

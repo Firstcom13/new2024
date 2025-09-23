@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% block meta_description %}
+    <meta name="description" content="L'agence Firstcom réunit toutes les compétences indispensables pour optimiser la présence des entreprises sur le web et assurer leur croissance digitale. ">
+{% endblock %}
+
+{% block title %}Méthode et process{% endblock %}
+
+{% block body %}
+
+	<section id="container1">
+		<div class="row align-items-center justify-content-center">
+			<div class="col-md-4 col-12">
+				<img class="image-principale" src="{{ asset('uploads/images/agence-methode.webp') }}">
+			</div>
+			<div class="col-md-4 col-12">
+				<div class="fil_ariane">
+					<a href="{{ path('app_home') }}">FIRSTCOM</a>
+					| 
+					<a href="{{ path('app_agence') }}">L'AGENCE</a>
+                    |
+                    <span>MÉTHODE ET PROCESS</span>
+				</div>
+
+				<h1 class="card-title sous-titre writeWhite"><br>AGILITÉ + SUR-MESURE = SUCCÈS2<br></h1>
+				<p class="texte-intro writeWhite mt-1">
+                    Dans l'arène du digital comme dans celle du business en
+                    général, mieux vaut savoir conjuguer précision et flexibilité
+                    pour répondre à des besoins souvent complexes, parfois
+                    contradictoires, toujours fluctuants et forcément
+                    particuliers.
+                </p>
+				
+			</div>
+		</div>
+	</section>
+
+	<section class="mask_contact">
+		<img src="{{ asset('uploads/images/fl23.png') }}">
+	</section>
+
+	<div class="container-medium">
+		<div class="row borderSolid">
+			<div class="row borderSolid">
+				<div class="col-12">
+					
+				</div>
+			</div>
+			<div class="col-sm-12 col-md-12 mb-5 mt-5">
+				
+			</div>
+		</div>
+	</div>
+
+	<div class="background-basic-green">
+		
+	</div>
+
+
+{% endblock %}

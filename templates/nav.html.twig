@@ -69,11 +69,22 @@
 								</li>
 							</ul>
 						</li>
-						{# <li class="rubrique-menu">
-																															<a href="#">CASE STUDIES</a>
-																														</li> #}
+						{# 
+							<li class="rubrique-menu">
+								<a href="#">CASE STUDIES</a>
+							</li> 
+						#}
 						<li class="rubrique-menu">
 							<a href="{{ path('app_agence') }}">L'AGENCE</a>
+							<span class="icone-plus cursor-pointer"><img class="fleche-sous-menu" src="{{ asset('uploads/images/chevron-down-white.svg') }}"></span>
+							<ul class="sous-menu">
+								<li>
+									<a class="rubrique-sousmenu" href="{{ path('app_methode_et_process') }}">Méthode et process</a>
+								</li>
+								<li>
+									<a class="rubrique-sousmenu" href="{{ path('app_notre_approche') }}">Notre approche</a>
+								</li>
+							</ul>
 						</li>
 						<li class="rubrique-menu">
 							<a href="{{ path('app_blog') }}">BLOG</a>

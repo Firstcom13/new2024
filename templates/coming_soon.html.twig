@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+	{# <section id="container-coming-soon">
+			<div class="row contact_page">
+				<div class="col-md-4 col-12" style="width: 100%;">
+					<h1 class="card-title sous-titre writeWhite">ENGLISH COMING SOON</h1>
+	
+					<p class="texte-intro writeWhite mt-1">Même si, à terme, le monde ne vous suffira probablement pas, il faut bien commencer quelque part.</p>
+					<p class="texte-intro writeWhite mt-1">Définir son terrain de jeu pour les prochaines années.</p>
+				</div>
+			</div>
+		</section> #}
+
+	<section id="container-coming-soon">
+
+		<video class="bg-video" autoplay muted loop playsinline>
+			<source src="{{ asset('uploads/images/under-progress-1080.mp4') }}" type="video/mp4">
+		</video>
+
+		<div class="row contact_page" style="position: relative; z-index: 1;">
+			<div class="col-md-4 col-12" style="width: 100%;">
+				<h1 class="card-title sous-titre writeWhite">ENGLISH COMING SOON</h1>
+
+				<p class="texte-intro writeWhite mt-1">
+					Même si, à terme, le monde ne vous suffira probablement pas, il faut bien commencer quelque part.
+				</p>
+				<p class="texte-intro writeWhite mt-1">
+					Définir son terrain de jeu pour les prochaines années.
+				</p>
+			</div>
+		</div>
+
+	</section>
+
+{% endblock %}

@@ -6,7 +6,7 @@
 	<div class="lang-switch-box">
 		{% set url = app.request.pathinfo %}
 		{% if url starts with '/en' %}
-			<a href="/fr" class="lang-box">FR</a>
+			<a href="/" class="lang-box">FR</a>
 		{% else %}
 			<a href="/en" class="lang-box">EN</a>
 		{% endif %}

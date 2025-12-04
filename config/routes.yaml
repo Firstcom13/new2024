@@ -1,5 +1,6 @@
 # ============================================
 # PAGE COMING SOON POUR TOUT /en/*
+# (prioritaire sur tout le reste)
 # ============================================
 
 en_coming_soon_full:
@@ -13,38 +14,20 @@ en_coming_soon_root:
     controller: App\Controller\ComingSoonController::index
 
 # ============================================
-# ROUTES MULTILINGUES (UNIQUEMENT POUR FUTUR USAGE)
+# ROUTES MULTILINGUES (pour usage futur)
+# ATTENTION : on NE préfixe PAS le français
 # ============================================
 
 localized_controllers:
     resource: ../src/Controller/
     type: attribute
     prefix:
-        fr: /fr
-        en: /en
+        en: /en # UNIQUEMENT EN
     exclude:
       - ../src/Controller/LoginController-old.php
 
 # ============================================
-# REDIRECTIONS / -> /fr  et /login -> /fr/login
-# ============================================
-
-homepage_redirect:
-    path: /
-    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
-    defaults:
-        route: app_home
-        _locale: fr
-
-login_redirect:
-    path: /login
-    controller: Symfony\Bundle\FrameworkBundle\Controller\RedirectController
-    defaults:
-        route: login
-        _locale: fr
-
-# ============================================
-# ROUTES EXISTANTES — CONTROLLERS AVEC ATTRIBUTS
+# ROUTES EXISTANTES (FR par défaut)
 # ============================================
 
 controllers:

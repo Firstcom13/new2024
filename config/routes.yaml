@@ -1,3 +1,35 @@
+# ============================================
+# PAGE COMING SOON POUR TOUT /en/*
+# (prioritaire sur tout le reste)
+# ============================================
+
+en_coming_soon_full:
+    path: /en/{any}
+    controller: App\Controller\ComingSoonController::index
+    requirements:
+        any: ".*"
+
+en_coming_soon_root:
+    path: /en
+    controller: App\Controller\ComingSoonController::index
+
+# ============================================
+# ROUTES MULTILINGUES (pour usage futur)
+# ATTENTION : on NE préfixe PAS le français
+# ============================================
+
+localized_controllers:
+    resource: ../src/Controller/
+    type: attribute
+    prefix:
+        en: /en # UNIQUEMENT EN
+    exclude:
+      - ../src/Controller/LoginController-old.php
+
+# ============================================
+# ROUTES EXISTANTES (FR par défaut)
+# ============================================
+
 controllers:
     resource:
         path: ../src/Controller/

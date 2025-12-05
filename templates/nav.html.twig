@@ -3,6 +3,15 @@
 		<a href="{{ path('app_home') }}"><img class="logo" src="{{ asset('uploads/images/bzs0.png') }}"></a>
 	</div>
 
+	<div class="lang-switch-box">
+		{% set url = app.request.pathinfo %}
+		{% if url starts with '/en' %}
+			<a href="/" class="lang-box">FR</a>
+		{% else %}
+			<a href="/en" class="lang-box">EN</a>
+		{% endif %}
+	</div>
+
 	<div class="menu-wrap">
 		<input type="checkbox" class="toggler">
 		<div class="hamburger">

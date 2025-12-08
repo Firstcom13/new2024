@@ -3,15 +3,15 @@
 # (prioritaire sur tout le reste)
 # ============================================
 
-en_coming_soon_full:
-    path: /en/{any}
-    controller: App\Controller\ComingSoonController::index
-    requirements:
-        any: ".*"
+# en_coming_soon_full:
+#     path: /en/{any}
+#     controller: App\Controller\ComingSoonController::index
+#     requirements:
+#         any: ".*"
 
-en_coming_soon_root:
-    path: /en
-    controller: App\Controller\ComingSoonController::index
+# en_coming_soon_root:
+#     path: /en
+#     controller: App\Controller\ComingSoonController::index
 
 # ============================================
 # ROUTES MULTILINGUES (pour usage futur)

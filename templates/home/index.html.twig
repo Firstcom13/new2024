@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block title %}
-	Agence de communication à Marseille et Paris : le conseil, la stratégie et le Full-Service
+	{{ "Agence de communication à Marseille et Paris : le conseil, la stratégie et le Full-Service"|trans }}
 {% endblock %}
 
 {% block body %}
@@ -94,14 +94,14 @@
 				<img src="{{ asset('uploads/images/logos-clients/ambius.svg') }}" alt="Logo Ambius">
 			</div>
 			{# <div>
-																		<img src="{{ asset('uploads/images/logos-clients/best-of-land.svg') }}" alt="Logo Best of Land">
-																	</div> #}
+																											<img src="{{ asset('uploads/images/logos-clients/best-of-land.svg') }}" alt="Logo Best of Land">
+																										</div> #}
 			{# <div>
-																		<img src="{{ asset('uploads/images/logos-clients/d-business-design.svg') }}" alt="Logo Business Design">
-																	</div>
-																	<div>
-																		<img src="{{ asset('uploads/images/logos-clients/la-ciotat-shipyards.svg') }}" alt="Logo La Ciotat Shipyards">
-																	</div> #}
+																											<img src="{{ asset('uploads/images/logos-clients/d-business-design.svg') }}" alt="Logo Business Design">
+																										</div>
+																										<div>
+																											<img src="{{ asset('uploads/images/logos-clients/la-ciotat-shipyards.svg') }}" alt="Logo La Ciotat Shipyards">
+																										</div> #}
 			<div>
 				<img src="{{ asset('uploads/images/logos-clients/Lilly.svg') }}" alt="Logo Lilly">
 			</div>
@@ -123,7 +123,7 @@
 						<h3 class="card-title-home-page">{{ "NOTRE APPROCHE"|trans }}</h3>
 						<p class="card-text-home">{{ "QUE VOUS SOYEZ UN LEADER QUI COMPTE BIEN LE RESTER, UN PETIT POUCET À L’APPÉTIT FÉROCE OU UN CHALLENGER À L’AMBITION FOLLE..."|trans }}</p>
 						<p class="card-text-mini-home">
-							Quels que soient votre secteur d’activité, votre taille, vos cibles, les produits ou services que vous développez ou distribuez, les plus géniaux ou les plus improbables, vous êtes tous (oui, vous aussi) soumis aux mêmes besoins...</p>
+							{{"Quels que soient votre secteur d’activité, votre taille, vos cibles, les produits ou services que vous développez ou distribuez, les plus géniaux ou les plus improbables, vous êtes tous (oui, vous aussi) soumis aux mêmes besoins..."|trans}}</p>
 					</div>
 					<div class="col-12 col-sm-1 fleche">
 						<img src="{{ asset('uploads/images/axh1.png') }}">
@@ -137,7 +137,7 @@
 						<h3 class="card-title-home-page">{{ "ABOUT"|trans }}</h3>
 						<p class="card-text-home">{{ "AGENCE CONSEIL, TECH ET MARKETING FULL-SERVICE, FIRSTCOM SE POSITIONNE COMME VOTRE PARTENAIRE PRIVILÉGIÉ ET VOUS ACCOMPAGNE SUR VOS PROBLÉMATIQUES DE POSITIONNEMENT ET DE CROISSANCE."|trans }}</p>
 						<p class="card-text-mini-home">
-							A la croisée des métiers du design/UX, des algorithmes qui régissent nos vies, de l’IA qui arrive en force, du e-business, des langages de programmations... notre team se forme au quotidien pour délivrer le meilleur des services, dans un monde digital en perpétuelle évolution.</p>
+							{{"A la croisée des métiers du design/UX, des algorithmes qui régissent nos vies, de l’IA qui arrive en force, du e-business, des langages de programmations... notre team se forme au quotidien pour délivrer le meilleur des services, dans un monde digital en perpétuelle évolution."|trans}}</p>
 					</div>
 					<div class="col-12 col-sm-1 fleche">
 						<img src="{{ asset('uploads/images/axh1.png') }}">
@@ -148,8 +148,8 @@
 	</div>
 
 	{# <div class="container-medium">
-					
-					</div> #}
+								
+								</div> #}
 
 	<div class="container-medium blog-home">
 		<div class="row pt-5">
@@ -192,11 +192,10 @@
 	<div class="container-medium background-basic-green pt-5">
 		<div class="row">
 			<div class="col-sm-12 col-md-12 ms-2 mb-5">
-				<h1 class="h4-mini writeWhite text-start">Firstcom, une agence de communication implantée à Marseille et Paris
-				</h1>
-				<p class="texte-courant-mini writeWhite">L'importance de travailler avec une
+				<h1 class="h4-mini writeWhite text-start">{{ "Firstcom, une agence de communication implantée à Marseille et Paris"|trans }}</h1>
+				<p class="texte-courant-mini writeWhite">{{ "L'importance de travailler avec une"|trans }}
 					<strong>{{ "agence de communication"|trans }}</strong>
-					efficace à Marseille et Paris ne peut être sous-estimée dans le monde numérique d'aujourd'hui. Quelle que soit votre activité le conseil d’une agence de communication expérimentée peut transformer votre visibilité en ligne et hors ligne. La communication est un art complexe qui comprend différents métiers qu’il faut savoir parfaitement orchestrer.</p>
+					{{ "efficace à Marseille et Paris ne peut être sous-estimée dans le monde numérique d'aujourd'hui. Quelle que soit votre activité le conseil d’une agence de communication expérimentée peut transformer votre visibilité en ligne et hors ligne. La communication est un art complexe qui comprend différents métiers qu’il faut savoir parfaitement orchestrer."|trans }}</p>
 			</div>
 			<div class="col-sm-12 col-md-12 ms-2 mb-5">
 				<h2 class="h4-micro writeWhite mb-1">
@@ -224,7 +223,7 @@
 			</div>
 			<div class="col-sm-12 col-md-12 ms-2 mb-5">
 				<h2 class="h4-micro writeWhite mb-1">
-					<a href="{{ path('app_tech_digital_sites_web') }}" class="writeWhite">Création site internet UX/UI Design et Développement Web
+					<a href="{{ path('app_tech_digital_sites_web') }}" class="writeWhite">{{ "Création site internet UX/UI Design et Développement Web"|trans }}
 					</a>
 				</h2>
 				<p class="texte-courant-mini writeWhite">{{ "Notre agence web à Marseille et Paris offre également des services de création de site internet."|trans }}</p>

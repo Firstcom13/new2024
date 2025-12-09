@@ -4,23 +4,24 @@
 	<meta name="description" content="Vous souhaitez optimiser votre présence sur le web, accroître vos performances ? Contactez-nous pour en discuter !">
 {% endblock %}
 
-{% block title %}Firstcom, votre agence dédiée à la performance digitale des entreprises
+{% block title %}
+	{{ "Firstcom, votre agence dédiée à la performance digitale des entreprises"|trans }}
 {% endblock %}
 
 {% block body %}
 
 	{# <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="successModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-dialog-centered" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					<h5 class="modal-title" id="successModalLabel">Nous vous remercions pour cette prise de contact via notre site web.</h5>
-				</div>
-				<div class="modal-body">
-					<p>Nous en accusons réception et ne manquerons pas d’y donner suite au plus vite.</p>
+			<div class="modal-dialog modal-dialog-centered" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="successModalLabel">Nous vous remercions pour cette prise de contact via notre site web.</h5>
+					</div>
+					<div class="modal-body">
+						<p>Nous en accusons réception et ne manquerons pas d’y donner suite au plus vite.</p>
+					</div>
 				</div>
 			</div>
-		</div>
-	</div> #}
+		</div> #}
 	<section id="container1">
 		<div class="row align-items-center justify-content-center">
 			<div class="col-md-4 col-12">
@@ -35,9 +36,9 @@
 
 				<h1 class="card-title sous-titre writeWhite">CALL ME</h1>
 
-				<p class="texte-intro writeWhite">Envie de parler de stratégie, de performance, de digital ou de communication ?</p>
-				<p class="texte-intro writeWhite">Envie de rejoindre la team Firstcom ?</p>
-				<p class="texte-intro writeWhite">Envie de partager un café sur notre belle terrasse ensoleillée ?</p>
+				<p class="texte-intro writeWhite">{{ "Envie de parler de stratégie, de performance, de digital ou de communication ?"|trans }}</p>
+				<p class="texte-intro writeWhite">{{ "Envie de rejoindre la team Firstcom ?"|trans }}</p>
+				<p class="texte-intro writeWhite">{{ "Envie de partager un café sur notre belle terrasse ensoleillée ?"|trans }}</p>
 			</div>
 		</div>
 	</section>
@@ -48,7 +49,7 @@
 
 
 	<div id="container" class="container">
-		<h2>NE SOYEZ PAS TIMIDE, N’HÉSITEZ PAS À PARTAGER AVEC NOUS VOS ENVIES DANS CE FORMULAIRE !</h2>
+		<h2>{{ "NE SOYEZ PAS TIMIDE, N’HÉSITEZ PAS À PARTAGER AVEC NOUS VOS ENVIES DANS CE FORMULAIRE !"|trans }}</h2>
 
 		<div class="icon_wrapper"></div>
 		{{ form_start(formulaire, {'attr': {'id': 'contact_form', 'method': 'post', 'action': path('app_contact')}}) }}
@@ -122,16 +123,16 @@
 		<script>
 			let isCaptchaValidated = false;
 
-			function onCaptchaSuccess() {
-				isCaptchaValidated = true;
-			}
+function onCaptchaSuccess() {
+isCaptchaValidated = true;
+}
 
-			document.getElementById('contact_form').addEventListener('submit', function(event) {
-				if (!isCaptchaValidated) {
-					event.preventDefault();
-					alert('Veuillez valider le captcha.');
-				}
-			});
+document.getElementById('contact_form').addEventListener('submit', function (event) {
+if (! isCaptchaValidated) {
+event.preventDefault();
+alert('Veuillez valider le captcha.');
+}
+});
 		</script>
 	</div>
 

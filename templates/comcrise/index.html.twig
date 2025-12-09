@@ -1,83 +1,86 @@
 {% extends 'base.html.twig' %}
 
 {% block meta_description %}
-    <meta name="description" content="Il suffit d'un tweet, d'un incident, d'une réglementation et votre entreprise bascule. Firstcom vous accompagne dans votre communication de crise. ">
+	<meta name="description" content="Il suffit d'un tweet, d'un incident, d'une réglementation et votre entreprise bascule. Firstcom vous accompagne dans votre communication de crise. ">
 {% endblock %}
 
 
-{% block title %}Agence communication de crise : soufflez, respirez, agissons.
+{% block title %}
+	{{"Agence communication de crise : soufflez, respirez, agissons."|trans }}
 {% endblock %}
 
 {% block body %}
 
-<section id="container3">
-	<div class="row align-items-center justify-content-center">
-		<div class="col-md-4 col-12">
-			<img class="image_blondie" src="{{ asset('uploads/images/com-crise.png') }}">
-		</div>
-		<div class="col-md-4 col-12">
-			<div class="fil_ariane">
-				<a href="{{ path('app_home') }}">FIRSTCOM</a>
-				|
-				<a href="{{ path('app_conseil') }}">CONSEIL ET STRATÉGIE</a>
-				|
-				<span>COMMUNICATION DE CRISE</span>
+	<section id="container3">
+		<div class="row align-items-center justify-content-center">
+			<div class="col-md-4 col-12">
+				<img class="image_blondie" src="{{ asset('uploads/images/com-crise.png') }}">
 			</div>
+			<div class="col-md-4 col-12">
+				<div class="fil_ariane">
+					<a href="{{ path('app_home') }}">FIRSTCOM</a>
+					|
+					<a href="{{ path('app_conseil') }}">{{ "CONSEIL ET STRATÉGIE"|trans }}</a>
+					|
+					<span>{{ "COMMUNICATION DE CRISE"|trans }}</span>
+				</div>
 
-			<h1 class="card-title sous-titre black">SOUFFLEZ, RESPIREZ, AGISSONS...</h1>
+				<h1 class="card-title sous-titre black">{{ "SOUFFLEZ, RESPIREZ, AGISSONS..."|trans }}</h1>
 
-			<p class="texte-intro black">Il suffit d’un tweet, d’une ligne dans un décret. D’une dénonciation, d’une grève inopinée, d’un incident sur une ligne de montage.</p>
-			<p class="texte-intro black">Bref, d’une action souvent anodine qui déclenche une cascade brutale de conséquences catastrophiques, souvent amplifiée à la vitesse de la lumière par les réseaux sociaux et le web en général.</p>
+				<p class="texte-intro black">{{ "Il suffit d’un tweet, d’une ligne dans un décret. D’une dénonciation, d’une grève inopinée, d’un incident sur une ligne de montage."|trans }}</p>
+				<p class="texte-intro black">{{ "Bref, d’une action souvent anodine qui déclenche une cascade brutale de conséquences catastrophiques, souvent amplifiée à la vitesse de la lumière par les réseaux sociaux et le web en général."|trans }}</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="mask_contact">
+		<img src="{{ asset('uploads/images/fl23.png') }}">
+	</section>
+
+	<div class="container-medium">
+		<div class="row">
+			<div class="col-sm-12 col-md-12 mb-4">
+				<p class="texte-intro-2 mb-2 ">
+					<strong>{{ "A moins d’évoluer dans un secteur sensible, une crise ne se prévoit pas, même si elle peut s’anticiper."|trans }}</strong>
+				</p>
+				<p class="texte-intro-2">{{ "Dans le cadre de son activité traditionnelle, Firstcom a été sollicité à plusieurs reprises pour accompagner des dirigeants dans les crises traversées par leurs entreprises. Notre parti-pris, tourné vers la transparence et l’action a permis de dégager une stratégie pro-active et d’assurer sa mise en place opérationnels online et offline, afin de proposer des réponses claires et restaurer l’image de l’entreprise."|trans }}</p>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col-sm-12 col-md-12 mb-5">
+				<h2>{{ "FIRSTCOM PEUX VOUS ACCOMPAGNER SUR DEUX TYPES DE MISSION"|trans }}</h2>
+			</div>
 		</div>
 	</div>
-</section>
 
-<section class="mask_contact">
-	<img src="{{ asset('uploads/images/fl23.png') }}">
-</section>
-
-<div class="container-medium">
-	<div class="row">
-		<div class="col-sm-12 col-md-12 mb-4">
-			<p class="texte-intro-2 mb-2 "><strong>A moins d’évoluer dans un secteur sensible, une crise ne se prévoit pas, même si elle peut s’anticiper.</strong></p>
-			<p class="texte-intro-2">Dans le cadre de son activité traditionnelle, Firstcom a été sollicité à plusieurs reprises pour accompagner des dirigeants dans les crises traversées par leurs entreprises. Notre parti-pris, tourné vers la transparence et l’action a permis de dégager une stratégie pro-active et d’assurer sa mise en place opérationnels online et offline, afin de proposer des réponses claires et restaurer l’image de l’entreprise.</p>
+	<div class="background-lgtgreen">
+		<div class="row div-part borderSolid">
+			<div class="col-xs-12 col-md-3 contact_part1">
+				<p class="gros_chiffre">01</p>
+			</div>
+			<div class="col-xs-12 col-md-8">
+				<h3 class="h3-mini">{{ "DÉFINITION D’UNE STRATÉGIE"|trans }}</h3>
+				<p class="texte-courant">{{ "En situation d’urgence, l’essentiel est de prendre du temps. Et beaucoup de hauteur. Une fois votre cellule de crise mise en place (avec à minima tous vos C-level), nous posons un regard indépendant et dénué d’affect sur votre problématique et passons au crible les différentes options activables. Privilégiant la transparence, l’humilité et le bon sens, nous vous accompagnons à travers des ateliers de travail dans la construction de votre stratégie de crise, de la mise en place de la réponse à sa tonalité, son planning, ses contre-feux éventuels, etc. Aucune recette miracle, mais du bon sens, de la rigueur, de l’expertise et une vaste connaissance du business pour ensemble sortir la tête de l’eau."|trans }}</p>
+			</div>
+		</div>
+		<div class="row div-part borderSolid">
+			<div class="col-xs-12 col-md-3 contact_part1">
+				<p class="gros_chiffre">{{ "02"|trans }}</p>
+			</div>
+			<div class="col-xs-12 col-md-8">
+				<h3 class="h3-mini">{{ "MISE EN FORME ET DÉPLOIEMENT OPÉRATIONNEL ONLINE ET OFFLINE"|trans }}</h3>
+				<p class="texte-courant">{{ "Une fois la stratégie actée, il s’agit de la mettre en forme. Vérifier que tous vos outils digitaux, site web ou réseaux sociaux, sont bien à jour. Choisir de rédiger un contenu le plus habile, technique et précis possible, ou promouvoir sa réponse par une vidéo, un motion design ou une image. Activer les leviers online et offline adéquats pour rendre la réponse la plus visible possible auprès des cibles souhaitées. Et bien sûr, gérer les commentaires, les mises à jour, les retombées, etc."|trans }}</p>
+			</div>
 		</div>
 	</div>
 
-	<div class="row">
-		<div class="col-sm-12 col-md-12 mb-5">
-			<h2>FIRSTCOM PEUX VOUS ACCOMPAGNER SUR DEUX TYPES DE MISSION</h2>
+	<div class="container-medium">
+		<div class="row contact_page borderSolid">
+			<div class="col-sm-12 col-md-12 my-5">
+				<h4>{{ "ON N'OSERAIT PAS VOUS SOUHAITER DE CONNAITRE UNE CRISE, MAIS SI JAMAIS... ON EN PARLE ?"|trans }}</h4>
+			</div>
 		</div>
 	</div>
-</div>
-
-<div class="background-lgtgreen">
-	<div class="row div-part borderSolid">
-		<div class="col-xs-12 col-md-3 contact_part1">
-			<p class="gros_chiffre">01</p>
-		</div>
-		<div class="col-xs-12 col-md-8">
-			<h3 class="h3-mini">DÉFINITION D’UNE STRATÉGIE</h3>
-			<p class="texte-courant">En situation d’urgence, l’essentiel est de prendre du temps. Et beaucoup de hauteur. Une fois votre cellule de crise mise en place (avec à minima tous vos C-level), nous posons un regard indépendant et dénué d’affect sur votre problématique et passons au crible les différentes options activables. Privilégiant la transparence, l’humilité et le bon sens, nous vous accompagnons à travers des ateliers de travail dans la construction de votre stratégie de crise, de la mise en place de la réponse à sa tonalité, son planning, ses contre-feux éventuels, etc. Aucune recette miracle, mais du bon sens, de la rigueur, de l’expertise et une vaste connaissance du business pour ensemble sortir la tête de l’eau.</p>
-		</div>
-	</div>
-	<div class="row div-part borderSolid">
-		<div class="col-xs-12 col-md-3 contact_part1">
-			<p class="gros_chiffre">02</p>
-		</div>
-		<div class="col-xs-12 col-md-8">
-			<h3 class="h3-mini">MISE EN FORME ET DÉPLOIEMENT OPÉRATIONNEL ONLINE ET OFFLINE</h3>
-			<p class="texte-courant">Une fois la stratégie actée, il s’agit de la mettre en forme. Vérifier que tous vos outils digitaux, site web ou réseaux sociaux, sont bien à jour. Choisir de rédiger un contenu le plus habile, technique et précis possible, ou promouvoir sa réponse par une vidéo, un motion design ou une image. Activer les leviers online et offline adéquats pour rendre la réponse la plus visible possible auprès des cibles souhaitées. Et bien sûr, gérer les commentaires, les mises à jour, les retombées, etc.</p>
-		</div>
-	</div>
-</div>
-
-<div class="container-medium">
-	<div class="row contact_page borderSolid">
-		<div class="col-sm-12 col-md-12 my-5">
-			<h4>ON N'OSERAIT PAS VOUS SOUHAITER DE CONNAITRE UNE CRISE, MAIS SI JAMAIS... ON EN PARLE ?</h4>
-		</div>
-	</div>
-</div>
 
 {% endblock %}

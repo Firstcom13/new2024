@@ -4,7 +4,8 @@
 	<meta name="description" content="Des interrogations sur votre positionnement, vos offres, ou votre stratégie de développement ? Firstcom (re)met votre entreprise sur la voie de la croissance.">
 {% endblock %}
 
-{% block title %}Firstcom, votre conseil en positionnement et stratégie Marketing
+{% block title %}
+	{{ "Firstcom, votre conseil en positionnement et stratégie Marketing"|trans }}
 {% endblock %}
 
 {% block body %}
@@ -18,16 +19,16 @@
 				<div class="fil_ariane">
 					<a href="{{ path('app_home') }}">FIRSTCOM</a>
 					|
-					<span>CONSEIL ET STRATÉGIE</span>
+					<span>{{ "CONSEIL ET STRATÉGIE"|trans }}</span>
 				</div>
 
-				<h1 class="card-title sous-titre black">ON A TOUS BESOIN D’UN MAZARIN À SES CÔTÉS</h1>
+				<h1 class="card-title sous-titre black">{{ "ON A TOUS BESOIN D’UN MAZARIN À SES CÔTÉS"|trans }}</h1>
 
-				<p class="texte-intro black mt-1">Faire face à une croissance trop rapide ou qui tend à s'essoufler.</p>
-				<p class="texte-intro black mt-1">À un développement par opportunité pas focément bien anticipé.</p>
-				<p class="texte-intro black mt-1 mb-2">À une crise ou une IA qui déboule l’air de rien et renverse le marché.</p>
+				<p class="texte-intro black mt-1">{{ "Faire face à une croissance trop rapide ou qui tend à s'essoufler."|trans }}</p>
+				<p class="texte-intro black mt-1">{{ "À un développement par opportunité pas focément bien anticipé."|trans }}</p>
+				<p class="texte-intro black mt-1 mb-2">{{ "À une crise ou une IA qui déboule l’air de rien et renverse le marché."|trans }}</p>
 
-				<p class="texte-intro-p black mt-2">Dirigeants et managers ont parfois besoin d’un regard extérieur sur leur business, leur structuration ou leur développement pour repartir de plus belle. Un regard impartial, dépourvu d'affect, capable d’analyser le marché et ses opportunités, l’offre proposée et la pertinence du go-to-market.</p>
+				<p class="texte-intro-p black mt-2">{{ "Dirigeants et managers ont parfois besoin d’un regard extérieur sur leur business, leur structuration ou leur développement pour repartir de plus belle. Un regard impartial, dépourvu d'affect, capable d’analyser le marché et ses opportunités, l’offre proposée et la pertinence du go-to-market."|trans }}</p>
 			</div>
 		</div>
 		<div></div>
@@ -40,7 +41,7 @@
 	<div class="container-medium">
 		<div class="row borderSolid">
 			<div class="col-sm-12 col-md-12 mb-5">
-				<h2>FIRSTCOM VOUS ACCOMPAGNE POUR DES MISSIONS DE CONSEIL STRATÉGIQUE</h2>
+				<h2>{{ "FIRSTCOM VOUS ACCOMPAGNE POUR DES MISSIONS DE CONSEIL STRATÉGIQUE"|trans }}</h2>
 			</div>
 		</div>
 	</div>
@@ -51,12 +52,12 @@
 				<img class="image-bandeau img-fluid" src="{{ asset('uploads/images/consulting.webp') }}">
 			</div>
 			<div class="col-xs-12 col-md-6">
-				<h3 class="card-title-home">CONSULTING & DÉVELOPPEMENT</h3>
-				<p class="card-text-home">COMMENT POSITIONNER SON ENTREPRISE DANS UN MARCHÉ CONCURRENTIEL ? PAR QUELLES ÉTAPES DÉBUTER OU ACCÉLÉRER SON DÉVELOPPEMENT ? À QUEL PUBLIC S'ADRESSER EN PRIORITÉ ?</p>
-				<p class="card-text-mini-home">Fous des jeux d'échecs et du jeu de Go, bref de stratégie, nos experts-conseil se jettent à corps perdu dans votre business pour vous replacer sur l’autoroute de la croissance.</p>
+				<h3 class="card-title-home">{{ "CONSULTING & DÉVELOPPEMENT"|trans }}</h3>
+				<p class="card-text-home">{{ "COMMENT POSITIONNER SON ENTREPRISE DANS UN MARCHÉ CONCURRENTIEL ? PAR QUELLES ÉTAPES DÉBUTER OU ACCÉLÉRER SON DÉVELOPPEMENT ? À QUEL PUBLIC S'ADRESSER EN PRIORITÉ ?"|trans }}</p>
+				<p class="card-text-mini-home">{{ "Fous des jeux d'échecs et du jeu de Go, bref de stratégie, nos experts-conseil se jettent à corps perdu dans votre business pour vous replacer sur l’autoroute de la croissance."|trans }}</p>
 			</div>
 			<div class="col-xs-12 col-md-3 fleche-info ">
-				<p class="cartouche_info">On discute de vos ambitions ?</p>
+				<p class="cartouche_info">{{ "On discute de vos ambitions ?"|trans }}</p>
 				<div class="fleche-info">
 					<img src="https://zupimages.net/up/23/28/vj4w.png">
 				</div>
@@ -67,13 +68,13 @@
 				<img class="image-bandeau img-fluid" src="{{ asset('uploads/images/marketing.webp') }}">
 			</div>
 			<div class="col-sm-12 col-md-6">
-				<h3 class="card-title-home">MARKETING DE L’OFFRE</h3>
+				<h3 class="card-title-home">{{ "MARKETING DE L’OFFRE"|trans }}</h3>
 				<p class="card-text-home">
-					UNE OFFRE MAL CALIBRÉE NE SERA PAS ADOPTÉE. UNE OFFRE MAL EXPRIMÉE NE SERA PAS ÉCOUTÉE. UNE OFFRE TROP FOISONNANTE VOUS FERA CHUTER.</p>
-				<p class="card-text-mini-home">Créer l’offre est loin d’être aisé, mais c’est un enjeu majeur.</p>
+					{{"UNE OFFRE MAL CALIBRÉE NE SERA PAS ADOPTÉE. UNE OFFRE MAL EXPRIMÉE NE SERA PAS ÉCOUTÉE. UNE OFFRE TROP FOISONNANTE VOUS FERA CHUTER."|trans}}</p>
+				<p class="card-text-mini-home">{{ "Créer l’offre est loin d’être aisé, mais c’est un enjeu majeur."|trans }}</p>
 			</div>
 			<div class="col-sm-12 col-md-3 fleche-info">
-				<p class="cartouche_info">On vous fait une offre ?</p>
+				<p class="cartouche_info">{{ "On vous fait une offre ?"|trans }}</p>
 				<div class="fleche-info">
 					<img src="https://zupimages.net/up/23/28/vj4w.png">
 				</div>
@@ -86,13 +87,14 @@
 				<img class="image-bandeau img-fluid" src="{{ asset('uploads/images/com-crise.webp') }}">
 			</div>
 			<div class="col-sm-12 col-md-6">
-				<h3 class="card-title-home">COMMUNICATION DE CRISE</h3>
-				<p class="card-text-home">IL SUFFIT D’UN TWEET. D’UNE LIGNE DANS UN DÉCRET. D’UNE ERREUR HUMAINE. D’UN PETIT RIEN QUI FAIT UN IMMENSE TOUT. UNE CRISE FACE À LAQUELLE IL FAUT SAVOIR GARDER LA TÊTE FROIDE ET DONNER UNE RÉPONSE ADAPTÉE.</p>
+				<h3 class="card-title-home">{{ "COMMUNICATION DE CRISE"|trans }}</h3>
+				<p class="card-text-home">{{ "IL SUFFIT D’UN TWEET. D’UNE LIGNE DANS UN DÉCRET. D’UNE ERREUR HUMAINE. D’UN PETIT RIEN QUI FAIT UN IMMENSE TOUT. UNE CRISE FACE À LAQUELLE IL FAUT SAVOIR GARDER LA TÊTE FROIDE ET DONNER UNE RÉPONSE ADAPTÉE."|trans }}</p>
 				<p class="card-text-mini-home">
-					Si l'on vous dit que pour un client, nous avons saturé et bloqué les boîtes mail des députés de l'Assemblée Nationale…</p>
+					{{ "Si l'on vous dit que pour un client, nous avons saturé et bloqué les boîtes mail des députés de l'Assemblée Nationale…"|trans }}
+				</p>
 			</div>
 			<div class="col-sm-12 col-md-3 fleche-info">
-				<p class="cartouche_info">On vous présente nos experts ?</p>
+				<p class="cartouche_info">{{ "On vous présente nos experts ?"|trans }}</p>
 				<div class="" href="{{ path('app_crise') }}">
 					<img src="https://zupimages.net/up/23/28/vj4w.png">
 				</div>

@@ -4,7 +4,8 @@
 	<meta name="description" content="Firstcom active vos campagnes d'acquisition sur Google, Méta, etc, pour aller chercher vos cibles là où elles se trouvent.">
 {% endblock %}
 
-{% block title %}Firstcom, vos campagnes d'acquisition Google et réseaux sociaux
+{% block title %}
+	{{"Firstcom, vos campagnes d'acquisition Google et réseaux sociaux"|trans}}
 {% endblock %}
 
 {% block body %}
@@ -18,15 +19,15 @@
 				<div class="fil_ariane">
 					<a href="{{ path('app_home') }}">FIRSTCOM</a>
 					|
-					<a href="{{ path('app_croissance') }}">CROISSANCE ET PERFORMANCE</a>
+					<a href="{{ path('app_croissance') }}">{{ "CROISSANCE ET PERFORMANCE"|trans }}</a>
 					|
-					<span>CAMPAGNES DIGITALES (SEA / SOCIAL MEDIA)</span>
+					<span>{{ "CAMPAGNES DIGITALES (SEA / SOCIAL MEDIA)"|trans }}</span>
 				</div>
 
-				<h1 class="card-title sous-titre black">VOTRE CROISSANCE COMMENCE ICI</h1>
+				<h1 class="card-title sous-titre black">{{ "VOTRE CROISSANCE COMMENCE ICI"|trans }}</h1>
 
-				<p class="texte-intro">Ici, c'est là où se trouvent vos cibles.<p/></p>
-				<p class="texte-intro">Nerfs de la guerre de la croissance digitale, compléments incontournables d’une stratégie SEO-GEO, les campagnes d’acquisition vous permettent d’aller chercher le business au bon endroit, au bon moment, auprès des bonnes personnes.</p>
+				<p class="texte-intro">{{ "Ici, c'est là où se trouvent vos cibles."|trans }}<p/></p>
+				<p class="texte-intro">{{ "Nerfs de la guerre de la croissance digitale, compléments incontournables d’une stratégie SEO-GEO, les campagnes d’acquisition vous permettent d’aller chercher le business au bon endroit, au bon moment, auprès des bonnes personnes."|trans }}</p>
 			</div>
 		</div>
 	</section>
@@ -38,33 +39,37 @@
 	<div class="container-medium">
 		<div class="row borderSolid">
 			<div class="col-sm-12 col-md-12 mb-4">
-				<h2>VOS CIBLES VOUS CHERCHENT-ELLES ACTIVEMENT SUR GOOGLE, AMAZON... OU CHAT GPT ? SONT-ELLES ADEPTES DE FACEBOOK (BOOMER !) OU DE TIKTOK ?
-									FLANENT-ELLES SUR PINTEREST OU SUR LINKEDIN ?
+				<h2>
+					{{"VOS CIBLES VOUS CHERCHENT-ELLES ACTIVEMENT SUR GOOGLE, AMAZON... OU CHAT GPT ? SONT-ELLES ADEPTES DE FACEBOOK (BOOMER !) OU DE TIKTOK ?
+				FLANENT-ELLES SUR PINTEREST OU SUR LINKEDIN ?"|trans }}
 				</h2>
 			</div>
 
 			<div class="row borderSolid">
 				<div class="col-12">
-					<p>Piloter des campagnes d’acquisition est :</p>
+					<p>{{ "Piloter des campagnes d’acquisition est :"|trans }}</p>
 					<ul>
 						<li>
-							<strong>une affaire sérieuse</strong>, qui ne se résume pas à communiquer son numéro d’AmEx à Google ou à Facebook.
+							<strong>{{ "une affaire sérieuse"|trans }}</strong>
+							{{", qui ne se résume pas à communiquer son numéro d’AmEx à Google ou à Facebook." |trans }}
 						</li>
 						<li>
-							<strong>une affaire d’experts</strong>, experts des médias et de leur potentiel, mais aussi fins stratèges.
+							<strong>{{ "une affaire d’experts"|trans }}</strong>
+							{{", experts des médias et de leur potentiel, mais aussi fins stratèges."|trans }}
 						</li>
 						<li>
-							<strong>une affaire rigoureuse</strong>, où un sou investi est pisté pour savoir comment il prospère et combien il rapporte.
+							<strong>{{ "une affaire rigoureuse"|trans }}</strong>
+							{{", où un sou investi est pisté pour savoir comment il prospère et combien il rapporte."|trans }}
 						</li>
 					</ul>
 					<p class="mb-3">
-						<strong>Bref, piloter des campagnes d’acquisition n’est pas chose aisée.</strong>
+						<strong>{{ "Bref, piloter des campagnes d’acquisition n’est pas chose aisée."|trans }}</strong>
 					</p>
-					<p>Concentrés sur le ROI, les experts Firstcom vous proposeront un mix-média sur-mesure et une mécanique de pointe calibrée pour atteindre vos objectifs de croissance.</p>
+					<p>{{ "Concentrés sur le ROI, les experts Firstcom vous proposeront un mix-média sur-mesure et une mécanique de pointe calibrée pour atteindre vos objectifs de croissance."|trans }}</p>
 				</div>
 			</div>
 			<div class="col-sm-12 col-md-12 mt-5 mb-4">
-				<h2>CAMPAGNES D’ACQUISITION, LA METHODE FIRSTCOM</h2>
+				<h2>{{ "CAMPAGNES D’ACQUISITION, LA METHODE FIRSTCOM"|trans }}</h2>
 			</div>
 		</div>
 	</div>
@@ -76,8 +81,8 @@
 					<p class="gros_chiffre_alt">01</p>
 				</div>
 				<div class="col-12">
-					<h3 class="h3-mini">Étudier votre pedigree</h3>
-					<p class="texte-courant">Nos experts se penchent sur votre entreprise, vos offres, vos cibles, vos canaux d’acquisition et vos outils digitaux existants.</p>
+					<h3 class="h3-mini">{{ "Étudier votre pedigree"|trans }}</h3>
+					<p class="texte-courant">{{ "Nos experts se penchent sur votre entreprise, vos offres, vos cibles, vos canaux d’acquisition et vos outils digitaux existants."|trans }}</p>
 				</div>
 			</div>
 		</div>
@@ -88,9 +93,9 @@
 					<p class="gros_chiffre_alt">02</p>
 				</div>
 				<div class="col-12 ">
-					<h3 class="h3-mini">Fixer des objectifs</h3>
-					<p class="texte-courant">Vous nous faites part de vos objectifs : s’agit-il de gagner des clients ou de gagner des fans ?</p>
-					<p class="texte-courant">Faut-il amener l’internaute dans un point de vente (web-to-store) ou le pousser à sortir sa carte bancaire sur votre site web ?</p>
+					<h3 class="h3-mini">{{ "Fixer des objectifs"|trans }}</h3>
+					<p class="texte-courant">{{ "Vous nous faites part de vos objectifs : s’agit-il de gagner des clients ou de gagner des fans ?"|trans }}</p>
+					<p class="texte-courant">{{ "Faut-il amener l’internaute dans un point de vente (web-to-store) ou le pousser à sortir sa carte bancaire sur votre site web ?"|trans }}</p>
 				</div>
 			</div>
 		</div>
@@ -101,8 +106,8 @@
 					<p class="gros_chiffre_alt">03</p>
 				</div>
 				<div class="col-12">
-					<h3 class="h3-mini">La stratégie de campagne</h3>
-					<p class="texte-courant">Une étape clé. Déterminer la campagne inclut bien sûr le choix du média : Google et Méta bien sûr, Bing pourquoi pas, mais aussi Amazon, Linkedin, Pinterest, Tik Tok...Il s’agit aussi à cette étape de prévoir la mécanique de la campagne, déterminer les messages et visuels, prévoir les outils de suivi, mais aussi d’optimiser votre page d’atterrissage : Création d’une landing page spécifique, optimisation d’un formulaire existant, refonte UI de votre site... votre page d’atterrissage de campagne doit être une véritable « pousse au clic « !</p>
+					<h3 class="h3-mini">{{ "La stratégie de campagne"|trans }}</h3>
+					<p class="texte-courant">{{ "Une étape clé. Déterminer la campagne inclut bien sûr le choix du média : Google et Méta bien sûr, Bing pourquoi pas, mais aussi Amazon, Linkedin, Pinterest, Tik Tok...Il s’agit aussi à cette étape de prévoir la mécanique de la campagne, déterminer les messages et visuels, prévoir les outils de suivi, mais aussi d’optimiser votre page d’atterrissage : Création d’une landing page spécifique, optimisation d’un formulaire existant, refonte UI de votre site... votre page d’atterrissage de campagne doit être une véritable « pousse au clic « !"|trans }}</p>
 				</div>
 			</div>
 		</div>
@@ -113,9 +118,9 @@
 					<p class="gros_chiffre_alt">04</p>
 				</div>
 				<div class="col-12">
-					<h3 class="h3-mini">La campagne</h3>
-					<p class="texte-courant">Il y a ceux qui laissent les robots faire leur job, et les autres. Chez Firstcom, nous suivons au quotidien les performances de nos campagnes, pour ajuster, optimiser, transformer si besoin, bref, être au plus près des performances promises.</p>
-					<p class="texte-courant">Et bien sûr, dans la mesure du possible, vous pouvez suivre en direct et en toute transparence vos performances de campagne grâce à un dashboard dédié.</p>
+					<h3 class="h3-mini">{{ "La campagne"|trans }}</h3>
+					<p class="texte-courant">{{ "Il y a ceux qui laissent les robots faire leur job, et les autres. Chez Firstcom, nous suivons au quotidien les performances de nos campagnes, pour ajuster, optimiser, transformer si besoin, bref, être au plus près des performances promises."|trans }}</p>
+					<p class="texte-courant">{{ "Et bien sûr, dans la mesure du possible, vous pouvez suivre en direct et en toute transparence vos performances de campagne grâce à un dashboard dédié."|trans }}</p>
 				</div>
 			</div>
 		</div>
@@ -126,8 +131,8 @@
 					<p class="gros_chiffre_alt">05</p>
 				</div>
 				<div class="col-12">
-					<h3 class="h3-mini">La fin de la campagne</h3>
-					<p class="texte-courant">L’heure du bilan, des comptes, des statistiques et des tableaux Excel. Nous faisons un point sur cette campagne et les bénéfices observés, en termes de volumes et de qualités.</p>
+					<h3 class="h3-mini">{{ "La fin de la campagne"|trans }}</h3>
+					<p class="texte-courant">{{ "L’heure du bilan, des comptes, des statistiques et des tableaux Excel. Nous faisons un point sur cette campagne et les bénéfices observés, en termes de volumes et de qualités."|trans }}</p>
 				</div>
 			</div>
 		</div>
@@ -135,8 +140,9 @@
 		<div class="col-sm-12 col-lg-6 col-xl-4 borderFull align-items-center p-5" style="text-decoration:none;">
 			<div class="row">
 				<div class="col-12 align-items-center">
-					<h3 class="h3-mini">ET APRÈS ?<br>
-						SOUVENT, COMME VOUS ÊTES CONTENTS, ON CONTINUE !</h3>
+					<h3 class="h3-mini">{{ "ET APRÈS ?"|trans }}<br>
+						{{"SOUVENT, COMME VOUS ÊTES CONTENTS, ON CONTINUE !"|trans }}
+					</h3>
 				</div>
 			</div>
 		</div>
@@ -148,9 +154,9 @@
 				<img class="image-basic" src="{{ asset('uploads/images/sea-reseaux.webp') }}">
 			</div>
 			<div class="col-md-8 col-12">
-				<h3 class="h3-mini">L’ACQUISITION POUR LES RÉSEAUX (FRANCHISE, CONCESSION, LICENCES…)</h3>
-				<p>Les directeurs Marketing d’enseigne le savent : gérer les campagnes d’acquisition de points de vente autonomes est une tannée, tant du point de vue logistique (gérer les budgets, les visuels…) que juridique (gare aux zones de chalandise !) ou pratique (comment faire quand chaque point de vente veut du sur-mesure ?).</p>
-				<p>En vieux routier des problématiques de réseaux de commerces organisés, Firstcom déploie des outils d’enrôlement, de pilotage et de suivi pratiques et intuitifs pour permettre d’automatiser un maximum les campagnes d’acquisition de vos points de vente.</p>
+				<h3 class="h3-mini">{{ "L’ACQUISITION POUR LES RÉSEAUX (FRANCHISE, CONCESSION, LICENCES…)"|trans }}</h3>
+				<p>{{ "Les directeurs Marketing d’enseigne le savent : gérer les campagnes d’acquisition de points de vente autonomes est une tannée, tant du point de vue logistique (gérer les budgets, les visuels…) que juridique (gare aux zones de chalandise !) ou pratique (comment faire quand chaque point de vente veut du sur-mesure ?)."|trans }}</p>
+				<p>{{ "En vieux routier des problématiques de réseaux de commerces organisés, Firstcom déploie des outils d’enrôlement, de pilotage et de suivi pratiques et intuitifs pour permettre d’automatiser un maximum les campagnes d’acquisition de vos points de vente."|trans }}</p>
 			</div>
 		</div>
 	</div>

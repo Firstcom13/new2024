@@ -362,3 +362,186 @@ Accueil: Welcome
 'De bons mots au service du bon story-telling permettront à votre marque d’établir une relation privilégiée avec vos clients, une relation de confiance et de long terme.': 'Good words in the service of good story-telling will allow your brand to establish a privileged relationship with your customers, a relationship of trust and long-term.'
 "Consommation d'eau rapportée à 1 000 utilisateurs": 'Water consumption reported per 1,000 users'
 'Émission de GES rapportée à 1 000 utilisateurs': 'GHG emissions reported per 1,000 users'
+'Gestion des cookies': 'Cookie management'
+'GESTION DES COOKIES': 'MANAGEMENT OF COOKIES'
+'QU’EST-CE QU’UN COOKIE ?': 'WHAT IS A COOKIE?'
+'Un cookie est un petit fichier texte enregistré et / ou lu par votre navigateur sur le disque dur de votre PC, ordinateur portable, tablette ou smartphone (ordiphone) ou tout autre objet connecté, et déposé par les sites internet que vous visitez.': 'A cookie is a small text file recorded and/or read by your browser on the hard drive of your PC, laptop, tablet or smartphone (oriphone) or any other connected object, and deposited by the websites you visit.'
+'Les cookies permettent aux sites de reconnaitre votre navigateur, lequel les conservera pendant une certaine durée et le renverra au serveur web chaque fois que vous vous y reconnecterez.': 'Cookies allow sites to recognize your browser, which will store them for a certain period of time and send them back to the web server each time you reconnect.'
+'Ils sont en général utilisés pour conserver les informations liées à vos choix, votre langue et vos préférences. Ils permettent également aux sites de bien fonctionner (et de manière sécurisée), d’optimiser leur ergonomie et leurs fonctionnalités ou enfin de personnaliser des publicités et /ou les contenus affiché(e)s sur les sites.': 'They are generally used to store information related to your choices, language and preferences. They also allow sites to function well (and securely), to optimize their ergonomics and their functionalities or finally to personalize advertisements and/or the content displayed on the sites.'
+'Il existe plusieurs types de cookies :': 'There are several types of cookies:'
+'– Des cookies de session ou persistants :': '– Session or persistent cookies:'
+'Les cookies de session permettent de suivre vos actions le temps d’une session de navigation. Ils sont par nature temporaires et supprimés une fois le navigateur fermé.': 'Session cookies allow your actions to be tracked during a browsing session. They are temporary in nature and deleted once the browser is closed.'
+'Les cookies persistants sont maintenus sur votre appareil après la fermeture de la session et ce, pour la durée prévue par chacun de ces cookies. Ils sont activés chaque fois que vous consultez un site à partir du même terminal.': 'Persistent cookies are maintained on your device after you close the session for the duration provided by each of these cookies. They are activated every time you visit a site from the same terminal.'
+'– Des cookies tiers ou propriétaires :': '– Third-party or proprietary cookies:'
+'Les cookies propriétaires sont ceux installés par nos soins.': 'First-party cookies are those installed by us.'
+'Les cookies tiers sont installés par un éditeur, un professionnel ou un autre domaine que le nôtre.': 'Third-party cookies are installed by a publisher, a professional or a domain other than ours.'
+'QUELS COOKIES SONT UTILISÉS SUR NOTRE SITE ?': 'WHAT COOKIES ARE USED ON OUR SITE?'
+'Nous déposons les cookies suivants, strictement nécessaires au site pour fonctionner de manière optimale :': 'We place the following cookies, which are strictly necessary for the site to function optimally:'
+Nom: Name
+Finalités: Purposes
+'Données collectées': 'Data collected'
+Durée: Duration
+PHPSESSID: PHPSESSID
+'Stocke des informations sur la session et est essentiel au bon fonctionnement du site Web ISL Online.': 'Stores session information and is essential for the proper functioning of the ISL Online website.'
+'Identifiant de session': 'Session ID'
+'Fin de session du navigateur': 'End of browser session'
+'Ces cookies sont activés par défaut. Vous pouvez vous y opposer en consultant les paramètres de votre navigateur. Pour autant, si vous choisissez de les refuser, il est possible que certaines fonctionnalités de notre site ne soient plus accessibles ou ne fonctionnent plus correctement.': 'These cookies are enabled by default. You can object to this by consulting your browser settings. However, if you choose to refuse them, it is possible that certain features of our site will no longer be accessible or no longer function correctly.'
+'Nous déposons également des cookies de mesure d’audience à des fins de bonne administration de notre site (mesure des performances, détection de problèmes de navigation, optimisation des performances techniques ou de son ergonomie, estimation de la puissance des serveurs nécessaires, analyse des contenus consulté).': 'We also place audience measurement cookies for the purposes of proper administration of our site (performance measurement, detection of navigation problems, optimization of technical performance or its ergonomics, estimation of the power of the necessary servers, analysis of the content consulted).'
+_pk_id: _pk_id
+'Identifier les visiteurs uniques de Matomo': 'Identify unique visitors to Matomo'
+'Adresse IP, le type de navigateur, le temps de visite sur le site, les pages visitées': 'IP address, browser type, time spent on the site, pages visited'
+'13 mois': '13 months'
+_pk_ref: _pk_ref
+"Stocker l'URL du site à partir duquel vous êtes arrivé sur le site": 'Store the URL of the site from which you arrived at the site'
+'6 mois': '6 months'
+_pk_ses: _pk_ses
+'Suivre votre session': 'Track your session'
+'Cookie de session': 'Session cookie'
+_pk_cvar: _pk_cvar
+'Retenir vos préférences pour l’utilisation de notre site': 'Remember your preferences for using our site'
+'30 minutes': '30 minutes'
+'Ces cookies ne sont pas soumis à votre consentement dès lors qu’ils sont strictement nécessaires au bon fonctionnement du site. Vous pouvez toutefois vous y opposer à tout moment en paramétrant les cookies sur votre ordinateur, à partir de l’outil de Gestion des cookies accessible en bas de notre Site.': 'These cookies are not subject to your consent since they are strictly necessary for the proper functioning of the site. However, you can object to this at any time by configuring cookies on your computer, using the Cookie Management tool accessible at the bottom of our Site.'
+'COOKIES AXEPTIO': 'AXEPTIO COOKIES'
+axeptio_all_vendors: axptio_all_vendors
+'Contient la liste des cookies acceptés par le visiteur': 'Contains the list of cookies accepted by the visitor'
+'12 mois': '12 months'
+axeptio_authorized_vendors: axeptio_authorized_vendors
+'Contient la liste de tous les cookies déclarés dans votre widget Axeptio': 'Contains the list of all cookies declared in your Axeptio widget'
+axeptio_cookies: axptio_cookies
+'Contient toutes les informations sur le consentement du visiteur, comme la date, son identifiant anonyme unique, et s’il a déjà consenti ou non': "Contains all information about the visitor's consent, such as the date, their unique anonymous identifier, and whether or not they have already consented"
+'COOKIES GOOGLE RECAPTCHA': 'GOOGLE RECAPTCHA COOKIES'
+Session: Session
+'Utilisés à des fins techniques strictement nécessaires : équilibrage de charge, routage.': 'Used for strictly necessary technical purposes: load balancing, routing.'
+'Jusqu’à 30 jours': 'Up to 30 days'
+hmt_id: hmt_id
+"Utilisées pour les statistiques anonymes strictement nécessaires liées au service et à d'autres fins techniques telles que l'assistance à l'accessibilité.": 'Used for strictly necessary anonymous service-related statistics and other technical purposes such as accessibility assistance.'
+'2 jours': '2 days'
+"Marketing de l'offre : avec Firstcom, ne soyez plus seul à vous comprendre": 'Marketing of the offer: with Firstcom, no longer be alone in understanding yourself'
+"MARKETING DE L'OFFRE": 'OFFER MARKETING'
+'NE SOYEZ PLUS SEUL À VOUS COMPRENDRE': 'NO LONGER BE ALONE IN UNDERSTANDING YOURSELF'
+"Proposer une offre fantastique c'est bien.": 'Providing a fantastic offer is good.'
+'Mais proposer une offre fantastique et lisible, c’est mieux.': 'But offering a fantastic and readable offer is better.'
+'Le nez dans le guidon, on rajoute des services, des gammes, des usages à une offre existante. On change de cible sans adapter sa proposition.': 'With our noses to the wheel, we add services, ranges and uses to an existing offer. We change the target without adapting our proposal.'
+'On crée des offres qui se ressemblent trop ou qui répondent à tellement de besoins qu’elles en deviennent suspectes.': 'We create offers that are too similar or that meet so many needs that they become suspect.'
+'On peut emballer notre offre dans les plus jolis nœuds rouges, si elle n’est pas lisible par sa cible, elle ne sera pas achetée.': 'We can wrap our offer in the prettiest red bows, if it is not readable by its target, it will not be purchased.'
+'Car une offre bien marketée, c’est une proposition claire, qui procure un bénéfice défini, adressée à une cible précise, par un canal déterminé.': 'Because a well-marketed offer is a clear proposition, which provides a defined benefit, addressed to a specific target, through a specific channel.'
+'Point barre.': 'Point bar.'
+'LE MARKETING DE L’OFFRE EST DONC A LA BASE DE LA BASE (DE LA BASE).': 'THE MARKETING OF THE OFFER IS THEREFORE THE BASIS OF THE BASIS.'
+'ÉTUDE DE VOTRE BUSINESS MODEL': 'STUDY OF YOUR BUSINESS MODEL'
+'À travers des études préalables et des ateliers de travail, les équipes consulting de Firstcom plongent dans votre ADN, étalent sur la table l’étendu de vos propositions pour obtenir une vision d’ensemble de vos promesses.': "Through preliminary studies and workshops, Firstcom's consulting teams delve into your DNA, laying out the scope of your proposals on the table to obtain an overall vision of your promises."
+'Tour à tour Marie Kondo et tailleurs de diamant, nos équipes classent, trient, réorganisent, mais aussi taillent, coupent, aiguisent et affinent vos offres pour en tirer leur quintessence. Sans pitié mais avec bon sens et expertise.': 'In turn Marie Kondo and diamond cutters, our teams classify, sort, reorganize, but also cut, cut, sharpen and refine your offers to extract their quintessence. Without pity but with common sense and expertise.'
+'MODÉLISATION DE VOTRE OFFRE MARKETING': 'MODELING YOUR MARKETING OFFER'
+'Une fois les offres définies, il s’agit de les mettre en mots et en images, et de bien savoir où et comment les vendre. De nouvelles étapes d’importances.': 'Once the offers have been defined, it is a matter of putting them into words and images, and knowing where and how to sell them. New important steps.'
+"ON ESSAYE D'Y VOIR PLUS CLAIR ?": 'ARE WE TRYING TO SEE IT CLEARER?'
+'Mentions légales': 'Legal notices'
+'MENTIONS LÉGALES': 'LEGAL NOTICES'
+'EDITEUR ET RESPONSABLE DE PUBLICATION': 'PUBLISHER AND PUBLICATION MANAGER'
+'Le site internet accessible à l’adresse www.firstcom.fr est édité par la SARL Firstcom, SARL au capital de 22 500 euros dont le siège social est situé 66 Rue Montgrand 13006 Marseille.': 'The website accessible at the address www.firstcom.fr is published by SARL Firstcom, SARL with capital of 22,500 euros whose head office is located at 66 Rue Montgrand 13006 Marseille.'
+'R.C.S. Marseille 415038975': 'R.C.S. Marseille 415038975'
+'APE : 7311Z': 'APE: 7311Z'
+'N° Identifiant Européen : FR08415038975': 'European Identifier No.: FR08415038975'
+'Numéro de déclaration de la CNIL : 1949154': 'CNIL declaration number: 1949154'
+HÉBERGEUR: HOST
+'L’hébergement du Site est réalisé par la société OVH, domiciliée au 2 rue Kellermann 59100 ROUBAIX, joignable via le formulaire de contact suivant :': 'The Site is hosted by the company OVH, domiciled at 2 rue Kellermann 59100 ROUBAIX, reachable via the following contact form:'
+'https://www.ovhcloud.com/fr/contact/': 'https://www.ovhcloud.com/fr/contact/'
+CRÉDITS: CREDITS
+'Conception technique du Site : Firstcom': 'Technical design of the Site: Firstcom'
+'Conception graphique du Site : Firstcom': 'Graphic design of the Site: Firstcom'
+'PROTECTION DES DONNÉES PERSONNELLES': 'PROTECTION OF PERSONAL DATA'
+'Conformément à la Loi Informatique et Liberté Nº 78-17 du 06 Janvier 1978, vous disposez d’un droit d’opposition, d’accès, de rectification, d’opposition et de suppression des informations nominatives vous concernant auprès de la SARL Firstcom – 66 Rue Montgrand 13006 Marseille – Tél. 04 91 09 14 00.': 'In accordance with the Data Protection Act No. 78-17 of January 6, 1978, you have the right to object, access, rectify, oppose and delete personal information concerning you from SARL Firstcom – 66 Rue Montgrand 13006 Marseille – Tel. 04 91 09 14 00.'
+'DROITS DE PROPRIÉTÉ INTELLECTUELLE ATTACHÉS AU SITE': 'INTELLECTUAL PROPERTY RIGHTS ATTACHED TO THE SITE'
+'FIRSTCOM est titulaire du nom de domaine «firstcom.fr».': 'FIRSTCOM is the holder of the domain name “firstcom.fr”.'
+'Le Site est une oeuvre protégée par la législation relative à la propriété intellectuelle. Le Site et chacun des éléments qui le composent (tels que marques, logos, photographies, images, illustrations, textes, vidéos, logiciels, etc.) sont la propriété exclusive de la société FIRSTCOM seule habilitée à utiliser les droits de propriété intellectuelle et droits de la personnalité y afférents.': 'The Site is a work protected by legislation relating to intellectual property. The Site and each of the elements that compose it (such as brands, logos, photographs, images, illustrations, texts, videos, software, etc.) are the exclusive property of the company FIRSTCOM, the only company authorized to use the intellectual property rights and personality rights relating thereto.'
+'Toute reproduction, représentation, utilisation intégrale ou partielle, du Site ou l’un des quelconques éléments qui le composent, sur quelque support que ce soit et sous quelque forme que ce soit, à d’autres fins et notamment commerciales, est expressément interdite.': 'Any reproduction, representation, use in whole or in part, of the Site or any of the elements which compose it, on any medium whatsoever and in any form whatsoever, for other purposes and in particular commercial purposes, is expressly prohibited.'
+RESPONSABILITÉ: RESPONSIBILITY
+'La société FIRSTCOM décline toute responsabilité en cas de survenance de bogues, ou de tout dommage résultant d’une intrusion frauduleuse d’un tiers ayant entraîné une modification des informations mentionnées sur le Site. La société FIRSTCOM ne peut être tenue pour responsable d’un quelconque dommage direct ou indirect quelle qu’en soit la cause, origine, nature ou conséquence qui pourrait être causé à la suite de l’accès, la consultation et / ou l’utilisation du Site.': 'The company FIRSTCOM declines all responsibility in the event of the occurrence of bugs, or any damage resulting from fraudulent intrusion by a third party leading to a modification of the information mentioned on the Site. The company FIRSTCOM cannot be held responsible for any direct or indirect damage whatever the cause, origin, nature or consequence which could be caused following access, consultation and/or use of the Site.'
+'LIENS HYPERTEXTES': 'HYPERTEXT LINKS'
+'Les liens hypertextes mis en place sur le Site en direction d’autres ressources présentes sur le réseau Internet, ne sauraient engager la responsabilité de la société FIRSTCOM.': 'The hypertext links set up on the Site towards other resources present on the Internet network cannot engage the responsibility of the company FIRSTCOM.'
+'L’Utilisateur n’est pas autorisé à mettre en place d’hyperlien en direction du Site sans l’autorisation expresse et préalable de la société FIRSTCOM.': 'The User is not authorized to set up a hyperlink to the Site without the express prior authorization of the company FIRSTCOM.'
+'DROIT APPLICABLE ET LITIGES': 'APPLICABLE LAW AND DISPUTES'
+'Le Site et les mentions légales sont soumis au droit français.': 'The Site and the legal notices are subject to French law.'
+'Tout litige relatif au Site sera soumis à la compétence exclusive des tribunaux français.': 'Any dispute relating to the Site will be subject to the exclusive jurisdiction of the French courts.'
+'Méthode et process': 'Method and process'
+'AGILITÉ + SUR-MESURE = SUCCÈS²': 'AGILITY + CUSTOMIZED = SUCCESS²'
+"Dans l'arène du digital comme dans celle du business en\n                    général, mieux vaut savoir conjuguer précision et flexibilité\n                    pour répondre à des besoins souvent complexes, parfois\n                    contradictoires, toujours fluctuants et forcément\n                    particuliers.": "In the digital arena as in that of business\n                    general, it is better to know how to combine precision and flexibility\n                    to meet often complex needs, sometimes\n                    contradictory, always fluctuating and necessarily\n                    individuals."
+"Pour chaque client, Firstcom met en place une équipe agile et réactive, menée par un(e) chef(fe) de projet senior, qui pilote et\n\t\t\t\t\t\t\t\torchestre la mission en mode orfèvrerie sur-mesure.": "For each client, Firstcom sets up an agile and responsive team, led by a senior project manager, who manages and\n\t\t\t\t\t\t\t\torchestrates the mission in tailor-made goldsmithing mode."
+'CHEZ FIRSTCOM, CHAQUE MISSION EST DRIVÉE AVEC LA MÊME EXIGENCE': 'AT FIRSTCOM, EACH MISSION IS DRIVEN WITH THE SAME REQUIREMENTS'
+'Traiter chaque projet avec autant de dévouement que 007 en charge de sauver le monde': 'Treat each project with as much dedication as 007 in charge of saving the world'
+'Constituer la meilleure des équipes, avec l’expertise la plus pointue pour répondre aux besoins exprimés.': 'Build the best teams, with the most advanced expertise to meet the needs expressed.'
+'Se challenger, avant et pendant la mission, échanger et itérer en interne, pour offrir toujours le meilleur de chacun.': 'Challenge yourself, before and during the mission, exchange and iterate internally, to always offer the best from everyone.'
+'Regarder dans le rétroviseur, pour analyser le déroulé et le rendu et en tirer des conclusions pour l’avenir.': 'Look in the rearview mirror to analyze the progress and results and draw conclusions for the future.'
+"SI LA MÉTHODE FIRSTCOM N’A PAS LA PRÉTENTION DE\n\t\t\t\t\tRÉINVENTER NI LA ROUE (MAIS PEUT-ÊTRE LE FIL À COUPER\n\t\t\t\t\tLE BEURRE), ELLE A TOUJOURS FAIT SES PREUVES.\n\t\t\t\t\tDÉROULONS :": "IF THE FIRSTCOM METHOD DOES NOT CLAIM TO\n\t\t\t\t\tREINVENT NEITHER THE WHEEL (BUT PERHAPS THE THREAD TO CUT\n\t\t\t\t\tBUTTER), IT HAS ALWAYS PROVEN IT.\n\t\t\t\t\tLET’S FOLLOW:"
+'VOUS ÉCOUTER': 'LISTEN TO YOU'
+"Chaque collaboration débute par une écoute attentive, un\nmoment privilégié durant lequel un(e) chef(fe) de projet,\nsouvent accompagné(e) d’un associé dirigeant, recueille le fil de\nvos aspirations et prend la mesure de vos ambitions. Une étape\nindispensable pour bien calibrer la mission.": "Each collaboration begins with attentive listening,\nprivileged moment during which a project manager,\noften accompanied by a managing partner, collects the thread of\nyour aspirations and takes stock of your ambitions. One step\nessential to properly calibrate the mission."
+'VOUS DÉCOUVRIR': 'DISCOVER YOU'
+"Le / la chef(fe) de projet se penche sur votre métier, votre\nmarché, votre univers. Analyses votre marque, vos outils, votre\nmanière d’adresser votre cible.\nEn chef(fe) d’orchestre, il / elle monte son équipe en fonction\ndes besoins exprimés.": "The project manager looks at your job, your\nmarket, your universe. Analyzes your brand, your tools, your\nway to address your target.\nAs conductor, he/she assembles his/her team accordingly\nexpressed needs."
+'VOUS PROPOSER': 'OFFER YOU'
+"Un plan de com, une campagne d’acquisition, un\n\t\t\t\t\t\taccompagnement SEO, un cahier des charges pour une refonte\n\t\t\t\t\t\t/ création de site, un intranet, la création d’une plateforme de\n\t\t\t\t\t\tmarque, une charte graphique, etc. Chaque expert y va de sa\n\t\t\t\t\t\trecommandation pour vous bâtir ensemble la proposition la\n\t\t\t\t\t\tplus adaptée, au budget le plus ajusté.": "A communications plan, an acquisition campaign, a\n\t\t\t\t\t\tSEO support, specifications for a redesign\n\t\t\t\t\t\t/ creation of a site, an intranet, the creation of a platform\n\t\t\t\t\t\tbrand, a graphic charter, etc. Each expert goes his own way\n\t\t\t\t\t\trecommendation for you to build the best proposal together\n\t\t\t\t\t\tmost suitable, to the most adjusted budget."
+'VOUS DÉLIVRER': 'DELIVER YOU'
+"En totale transparence et en étroite collaboration avec vos\néquipes, nous déployons les actions convenues, dans le respect\ndu planning annoncé. Chaque développement est testé,\nchaque campagne scrutée, chaque action analysée. Dans la\nmesure du possible, nous créons des outils de reporting, afin\nque vous puissiez suivre en direct les performances de nos\nactions.": "In total transparency and in close collaboration with your\nteams, we deploy the agreed actions, while respecting\nof the announced schedule. Each development is tested,\neach campaign scrutinized, each action analyzed. In the\nwherever possible, we create reporting tools, in order to\nso that you can follow the performances of our\nactions."
+'VOUS RAPPORTER': 'REPORT TO YOU'
+"Une fois la mission achevée, nous nous posons pour en tirer le\nbilan. En interne. Et avec vos équipes bien sûr, pour être\ncertains d’avoir répondu à vos attentes, mais aussi car votre\nfeed back reste le meilleur moyen de nous améliorer.": "Once the mission is completed, we sit down to take advantage of it.\nbalance sheet. Internally. And with your teams of course, to be\ncertain to have met your expectations, but also because your\nFeedback remains the best way to improve."
+'VOUS ACCOMPAGNER': 'SUPPORT YOU'
+"Puisque quand une campagne s’achève, une autre prend le\nrelais, quand un site web est en ligne, il faut le maintenir et le\nfaire grandir, quand une recommandation SEO est appliquée, il\nfaut la mettre à jour, ainsi va le monde du digital.": "Since when one campaign ends, another takes over\nrelay, when a website is online, it must be maintained and\ngrow, when an SEO recommendation is applied, it\nit must be updated, such is the digital world."
+"PAS DE RÉVOLUTION À L’HORIZON DE NOTRE PROCESS, MAIS UNE MÉTHODE\n\t\t\t\t\tCLAIRE ET SIMPLE POUR VOTRE SUCCÈS².": "NO REVOLUTION ON THE HORIZON OF OUR PROCESS, BUT A METHOD\n\t\t\t\t\tCLEAR AND SIMPLE FOR YOUR SUCCESS²."
+"Firstcom, vos campagnes d'acquisition Google et réseaux sociaux": 'Firstcom, your Google and social media acquisition campaigns'
+'CAMPAGNES DIGITALES (SEA / SOCIAL MEDIA)': 'DIGITAL CAMPAIGNS (SEA / SOCIAL MEDIA)'
+'VOTRE CROISSANCE COMMENCE ICI': 'YOUR GROWTH STARTS HERE'
+"Ici, c'est là où se trouvent vos cibles.": 'Here is where your targets are.'
+'Nerfs de la guerre de la croissance digitale, compléments incontournables d’une stratégie SEO-GEO, les campagnes d’acquisition vous permettent d’aller chercher le business au bon endroit, au bon moment, auprès des bonnes personnes.': 'Nerves of the war for digital growth, essential complements to an SEO-GEO strategy, acquisition campaigns allow you to seek business in the right place, at the right time, from the right people.'
+"VOS CIBLES VOUS CHERCHENT-ELLES ACTIVEMENT SUR GOOGLE, AMAZON... OU CHAT GPT ? SONT-ELLES ADEPTES DE FACEBOOK (BOOMER !) OU DE TIKTOK ?\n\t\t\t\tFLANENT-ELLES SUR PINTEREST OU SUR LINKEDIN ?": "ARE YOUR TARGETS ACTIVELY SEARCHING FOR YOU ON GOOGLE, AMAZON... OR GPT CHAT? ARE THEY FANS OF FACEBOOK (BOOMER!) OR TIKTOK?\n\t\t\t\tARE THEY LOOKING ON PINTEREST OR ON LINKEDIN?"
+'Piloter des campagnes d’acquisition est :': 'Managing acquisition campaigns is:'
+'une affaire sérieuse': 'a serious matter'
+', qui ne se résume pas à communiquer son numéro d’AmEx à Google ou à Facebook.': ', which is not just about communicating your AmEx number to Google or Facebook.'
+'une affaire d’experts': 'a matter of experts'
+', experts des médias et de leur potentiel, mais aussi fins stratèges.': ', media experts and their potential, but also fine strategists.'
+'une affaire rigoureuse': 'a rigorous affair'
+', où un sou investi est pisté pour savoir comment il prospère et combien il rapporte.': ', where an invested penny is tracked to find out how it prospers and how much it returns.'
+'Bref, piloter des campagnes d’acquisition n’est pas chose aisée.': 'In short, managing acquisition campaigns is not easy.'
+'Concentrés sur le ROI, les experts Firstcom vous proposeront un mix-média sur-mesure et une mécanique de pointe calibrée pour atteindre vos objectifs de croissance.': 'Focused on ROI, Firstcom experts will offer you a tailor-made media mix and cutting-edge mechanics calibrated to achieve your growth objectives.'
+'CAMPAGNES D’ACQUISITION, LA METHODE FIRSTCOM': 'ACQUISITION CAMPAIGNS, THE FIRSTCOM METHOD'
+'Étudier votre pedigree': 'Study your pedigree'
+'Nos experts se penchent sur votre entreprise, vos offres, vos cibles, vos canaux d’acquisition et vos outils digitaux existants.': 'Our experts look at your business, your offers, your targets, your acquisition channels and your existing digital tools.'
+'Fixer des objectifs': 'Set goals'
+'Vous nous faites part de vos objectifs : s’agit-il de gagner des clients ou de gagner des fans ?': 'You tell us your objectives: is it about gaining customers or gaining fans?'
+'Faut-il amener l’internaute dans un point de vente (web-to-store) ou le pousser à sortir sa carte bancaire sur votre site web ?': 'Should you bring the Internet user to a point of sale (web-to-store) or encourage them to take out their bank card on your website?'
+'La stratégie de campagne': 'The campaign strategy'
+'Une étape clé. Déterminer la campagne inclut bien sûr le choix du média : Google et Méta bien sûr, Bing pourquoi pas, mais aussi Amazon, Linkedin, Pinterest, Tik Tok...Il s’agit aussi à cette étape de prévoir la mécanique de la campagne, déterminer les messages et visuels, prévoir les outils de suivi, mais aussi d’optimiser votre page d’atterrissage : Création d’une landing page spécifique, optimisation d’un formulaire existant, refonte UI de votre site... votre page d’atterrissage de campagne doit être une véritable « pousse au clic « !': 'A key step. Determining the campaign of course includes the choice of media: Google and Meta of course, Bing why not, but also Amazon, Linkedin, Pinterest, Tik Tok... At this stage it is also about planning the mechanics of the campaign, determining the messages and visuals, planning the monitoring tools, but also optimizing your landing page: Creation of a specific landing page, optimization of an existing form, UI redesign of your site... your campaign landing page must be a real "click push" “!”'
+'La campagne': 'The campaign'
+'Il y a ceux qui laissent les robots faire leur job, et les autres. Chez Firstcom, nous suivons au quotidien les performances de nos campagnes, pour ajuster, optimiser, transformer si besoin, bref, être au plus près des performances promises.': 'There are those who let robots do their job, and others. At Firstcom, we monitor the performance of our campaigns on a daily basis, to adjust, optimize, transform if necessary, in short, to be as close as possible to the promised performance.'
+'Et bien sûr, dans la mesure du possible, vous pouvez suivre en direct et en toute transparence vos performances de campagne grâce à un dashboard dédié.': 'And of course, wherever possible, you can monitor your campaign performance live and transparently using a dedicated dashboard.'
+'La fin de la campagne': 'The end of the campaign'
+'L’heure du bilan, des comptes, des statistiques et des tableaux Excel. Nous faisons un point sur cette campagne et les bénéfices observés, en termes de volumes et de qualités.': 'Time for balance sheets, accounts, statistics and Excel tables. We take stock of this campaign and the benefits observed, in terms of volumes and qualities.'
+'ET APRÈS ?': 'WHAT AFTER?'
+'SOUVENT, COMME VOUS ÊTES CONTENTS, ON CONTINUE !': 'OFTEN, AS YOU ARE HAPPY, WE CONTINUE!'
+'L’ACQUISITION POUR LES RÉSEAUX (FRANCHISE, CONCESSION, LICENCES…)': 'ACQUISITION FOR NETWORKS (FRANCHISE, CONCESSION, LICENSES, etc.)'
+'Les directeurs Marketing d’enseigne le savent : gérer les campagnes d’acquisition de points de vente autonomes est une tannée, tant du point de vue logistique (gérer les budgets, les visuels…) que juridique (gare aux zones de chalandise !) ou pratique (comment faire quand chaque point de vente veut du sur-mesure ?).': 'Brand Marketing Directors know this: managing acquisition campaigns for independent points of sale is difficult, both from a logistical point of view (managing budgets, visuals, etc.) as well as from a legal point of view (beware of catchment areas!) or practical (what do you do when each point of sale wants tailor-made products?).'
+'En vieux routier des problématiques de réseaux de commerces organisés, Firstcom déploie des outils d’enrôlement, de pilotage et de suivi pratiques et intuitifs pour permettre d’automatiser un maximum les campagnes d’acquisition de vos points de vente.': 'As an old hand when it comes to organized retail network issues, Firstcom deploys practical and intuitive enrollment, management and monitoring tools to help automate your point of sale acquisition campaigns as much as possible.'
+"QUE VOUS SOYEZ UN LEADER\n                        BIEN ÉTABLI, UN PETIT\n                        POUCET À L’APPÉTIT FÉROCE\n                        OU UN CHALLENGER QUI\n                        VOIT GRAND…": "YOU BE A LEADER\n                        WELL ESTABLISHED, A SMALL\n                        THUMB WITH A FEROCIOUS APPETITE\n                        OR A CHALLENGER WHO\n                        THINK BIG…"
+"…vous partagez tous une même réalité : celle d’un marché\n                    qui change vite, d’un digital qui devient de plus en plus\n                    technique, et de clients qui en attendent toujours plus.": "…you all share the same reality: that of a market\n                    which changes quickly, of a digital which becomes more and more\n                    technical, and customers who always expect more."
+"CHEZ FIRSTCOM, ON NE PLAQUE JAMAIS UNE SOLUTION\n                        TOUTE FAITE SUR UN BESOIN MAL DÉFINI.": "AT FIRSTCOM, WE NEVER PLACE A SOLUTION\n                        ALL MADE ON A POORLY DEFINED NEED."
+"On commence par comprendre vraiment qui vous êtes, où vous en êtes, et où vous voulez aller. Vos enjeux business, vos moyens,\n                        vos ressources internes, votre timing.": "We start by truly understanding who you are, where you are, and where you want to go. Your business challenges, your resources,\n                        your internal resources, your timing."
+'Et ensuite, on construit. Ensemble. De manière pragmatique, ambitieuse, et surtout sur-mesure.': 'And then we build. Together. In a pragmatic, ambitious, and above all tailor-made manner.'
+'UNE ÉQUIPE RÉACTIVE, ENGAGÉE, ET FRANCHEMENT SENIOR.': 'A RESPONSIVE, COMMITTED, AND FRANKLY SENIOR TEAM.'
+"Vous cherchez une équipe qui suit ses dossiers de bout en bout, qui comprend vite, agit bien, et\n                        vous évite les allers-retours sans fin ?\n                        Bienvenue chez nous.": "You are looking for a team that follows its files from start to finish, which understands quickly, acts well, and\n                        saves you from endless back and forth?\n                        Welcome to our home."
+"Notre force, c’est notre structure : une agence à taille humaine, composée de profils expérimentés,\n                        capables d’intervenir sur des projets complexes sans mille validations.": "Our strength is our structure: an agency on a human scale, made up of experienced profiles,\n                        capable of working on complex projects without a thousand validations."
+"Résultat : des réponses rapides, des plans d’action solides, et une vraie capacité d’adaptation\n                        quand le contexte change.": "Result: rapid responses, solid action plans, and real capacity to adapt\n                        when the context changes."
+'UN PARTENAIRE (VRAIMENT) À VOS CÔTÉS': 'A PARTNER (TRULY) BY YOUR SIDE'
+"Chez certains de nos clients, nous sommes un complément de leur service marketing. Chez\n                        d’autres, nous faisons carrément office de direction digitale externalisée.": "For some of our clients, we complement their marketing department. At\n                        others, we simply act as outsourced digital management."
+'Pas parce qu’on sait tout faire, non. Parce qu’on travaille comme s’il s’agissait de notre boîte.': 'Not because we know how to do everything, no. Because we work as if it were our company.'
+'Et qu’on maîtrise ce que vous n’avez pas le temps de maîtriser :': "And let us master what you don't have time to master:"
+'les subtilités du SEO et du GEO (oui, les IA nous lisent aussi)': 'the subtleties of SEO and GEO (yes, AIs read us too)'
+'les campagnes d’acquisition dans un écosystème en constante mutation': 'acquisition campaigns in a constantly changing ecosystem'
+'le contenu qui parle à vos clients et aux algorithmes': 'content that speaks to your customers and algorithms'
+'la technique, le tracking, les dashboards, les UX qui convertissent': 'technique, tracking, dashboards, UX that converts'
+'la création de sites, backoffices, et outils sur-mesure qui soutiennent la croissance': 'the creation of tailor-made sites, back offices, and tools that support growth'
+'UN CAP CLAIR : LA PERFORMANCE': 'A CLEAR COURSE: PERFORMANCE'
+"On ne fait pas du digital pour “être dans l’air du temps”. On le fait pour générer des leads, accélérer\n                        la conversion, augmenter la vente de vos produits, affirmer votre position, construire une marque\n                        forte et visible.": "We don’t do digital to “be in tune with the times”. We do it to generate leads, accelerate\n                        conversion, increase the sale of your products, assert your position, build a brand\n                        strong and visible."
+"On ne vend pas des pages. On vend du résultat. Du concret.\n                        Et on sait vous dire quand une demande ne sert à rien, quand une tendance est un feu de paille,ou quand il vaut mieux faire simple et efficace.": "We don't sell pages. We sell results. Concrete.\n                        And we know how to tell you when a request is useless, when a trend is a flash in the pan, or when it is better to keep things simple and effective."
+'UNE RELATION DIRECTE, SAINE ET DURABLE': 'A DIRECT, HEALTHY AND SUSTAINABLE RELATIONSHIP'
+"Beaucoup de nos clients sont avec nous depuis 10, 15, parfois plus de 20 ans.\n                        Nous avons grandi ensemble, et plutôt bien grandi.": "Many of our customers have been with us for 10, 15, sometimes more than 20 years.\n                        We grew up together, and grew up pretty well."
+'Ils savent que chez Firstcom, on dit ce qu’on fait, et on fait ce qu’on dit.': 'They know that at Firstcom, we say what we do, and we do what we say.'
+'Mais avec une vraie attention portée à vos projets, vos contraintes, vos urgences.': 'But with real attention paid to your projects, your constraints, your emergencies.'
+'BREF, NOTRE APPROCHE TIENT EN UNE PHRASE :': 'IN SHORT, OUR APPROACH IS IN ONE SENTENCE:'
+"COMPRENDRE VOS ENJEUX. ACTIVER LES BONS LEVIERS. LIVRER DE LA\n                    PERFORMANCE.": "UNDERSTAND YOUR ISSUES. ACTIVATE THE RIGHT LEVERS. DELIVERY FROM THE\n                    PERFORMANCE."
+'ON EN PARLE ?': 'ARE WE TALKING ABOUT IT?'

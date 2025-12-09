@@ -1,7 +1,7 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-	Gestion des cookies
+	{{"Gestion des cookies"|trans}}
 {% endblock %}
 
 {% block body %}
@@ -14,10 +14,10 @@
 				<div class="fil_ariane">
 					<a href="{{ path('app_home') }}">FIRSTCOM</a>
 					|
-					<span>GESTION DES COOKIES</span>
+					<span>{{ "GESTION DES COOKIES"|trans }}</span>
 				</div>
 
-				<h1 class="card-title sous-titre writeWhite">GESTION DES COOKIES</h1>
+				<h1 class="card-title sous-titre writeWhite">{{ "GESTION DES COOKIES"|trans }}</h1>
 			</div>
 		</div>
 	</section>
@@ -30,153 +30,153 @@
 		<div class="row borderSolid">
 			<div class="row borderSolid">
 				<div class="col-12 mb-4">
-					<h3>QU’EST-CE QU’UN COOKIE ?</h3>
-					<p class="texte-courant">Un cookie est un petit fichier texte enregistré et / ou lu par votre navigateur sur le disque dur de votre PC, ordinateur portable, tablette ou smartphone (ordiphone) ou tout autre objet connecté, et déposé par les sites internet que vous visitez.</p>
-					<p class="texte-courant">Les cookies permettent aux sites de reconnaitre votre navigateur, lequel les conservera pendant une certaine durée et le renverra au serveur web chaque fois que vous vous y reconnecterez.</p>
+					<h3>{{ "QU’EST-CE QU’UN COOKIE ?"|trans }}</h3>
+					<p class="texte-courant">{{ "Un cookie est un petit fichier texte enregistré et / ou lu par votre navigateur sur le disque dur de votre PC, ordinateur portable, tablette ou smartphone (ordiphone) ou tout autre objet connecté, et déposé par les sites internet que vous visitez."|trans }}</p>
+					<p class="texte-courant">{{ "Les cookies permettent aux sites de reconnaitre votre navigateur, lequel les conservera pendant une certaine durée et le renverra au serveur web chaque fois que vous vous y reconnecterez."|trans }}</p>
 				</div>
 				<div class="col-12 mb-4">
-					<p class="texte-courant">Ils sont en général utilisés pour conserver les informations liées à vos choix, votre langue et vos préférences. Ils permettent également aux sites de bien fonctionner (et de manière sécurisée), d’optimiser leur ergonomie et leurs fonctionnalités ou enfin de personnaliser des publicités et /ou les contenus affiché(e)s sur les sites.</p>
-				</div>
-				<div class="col-12 mb-4">
-					<p class="texte-courant">
-						<strong>Il existe plusieurs types de cookies :</strong>
-					</p>
-					<p class="texte-courant">
-						<strong>– Des cookies de session ou persistants :</strong>
-					</p>
-					<p class="texte-courant">Les cookies de session permettent de suivre vos actions le temps d’une session de navigation. Ils sont par nature temporaires et supprimés une fois le navigateur fermé.</p>
-					<p class="texte-courant">Les cookies persistants sont maintenus sur votre appareil après la fermeture de la session et ce, pour la durée prévue par chacun de ces cookies. Ils sont activés chaque fois que vous consultez un site à partir du même terminal.</p>
+					<p class="texte-courant">{{ "Ils sont en général utilisés pour conserver les informations liées à vos choix, votre langue et vos préférences. Ils permettent également aux sites de bien fonctionner (et de manière sécurisée), d’optimiser leur ergonomie et leurs fonctionnalités ou enfin de personnaliser des publicités et /ou les contenus affiché(e)s sur les sites."|trans }}</p>
 				</div>
 				<div class="col-12 mb-4">
 					<p class="texte-courant">
-						<strong>– Des cookies tiers ou propriétaires :</strong>
+						<strong>{{ "Il existe plusieurs types de cookies :"|trans }}</strong>
 					</p>
-					<p class="texte-courant">Les cookies propriétaires sont ceux installés par nos soins.</p>
-					<p class="texte-courant">Les cookies tiers sont installés par un éditeur, un professionnel ou un autre domaine que le nôtre.</p>
+					<p class="texte-courant">
+						<strong>{{ "– Des cookies de session ou persistants :"|trans }}</strong>
+					</p>
+					<p class="texte-courant">{{ "Les cookies de session permettent de suivre vos actions le temps d’une session de navigation. Ils sont par nature temporaires et supprimés une fois le navigateur fermé."|trans }}</p>
+					<p class="texte-courant">{{ "Les cookies persistants sont maintenus sur votre appareil après la fermeture de la session et ce, pour la durée prévue par chacun de ces cookies. Ils sont activés chaque fois que vous consultez un site à partir du même terminal."|trans }}</p>
 				</div>
 				<div class="col-12 mb-4">
-					<h3>QUELS COOKIES SONT UTILISÉS SUR NOTRE SITE ?</h3>
-					<p class="texte-courant mb-4">Nous déposons les cookies suivants, strictement nécessaires au site pour fonctionner de manière optimale :</p>
+					<p class="texte-courant">
+						<strong>{{ "– Des cookies tiers ou propriétaires :"|trans }}</strong>
+					</p>
+					<p class="texte-courant">{{ "Les cookies propriétaires sont ceux installés par nos soins."|trans }}</p>
+					<p class="texte-courant">{{ "Les cookies tiers sont installés par un éditeur, un professionnel ou un autre domaine que le nôtre."|trans }}</p>
+				</div>
+				<div class="col-12 mb-4">
+					<h3>{{ "QUELS COOKIES SONT UTILISÉS SUR NOTRE SITE ?"|trans }}</h3>
+					<p class="texte-courant mb-4">{{ "Nous déposons les cookies suivants, strictement nécessaires au site pour fonctionner de manière optimale :"|trans }}</p>
 
 					<table cellspacing="0">
 						<thead>
 							<tr>
-								<th class="col1">Nom</th>
-								<th class="col2">Finalités</th>
-								<th class="col3">Données collectées</th>
-								<th class="col4">Durée</th>
+								<th class="col1">{{ "Nom"|trans }}</th>
+								<th class="col2">{{ "Finalités"|trans }}</th>
+								<th class="col3">{{ "Données collectées"|trans }}</th>
+								<th class="col4">{{ "Durée"|trans }}</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td class="col1" data-label="Nom">PHPSESSID</td>
-								<td data-label="Finalités">Stocke des informations sur la session et est essentiel au bon fonctionnement du site Web ISL Online.</td>
-								<td data-label="Données collectées">Identifiant de session</td>
-								<td data-label="Durée">Fin de session du navigateur</td>
+								<td class="col1" data-label="Nom">{{ "PHPSESSID"|trans }}</td>
+								<td data-label="Finalités">{{ "Stocke des informations sur la session et est essentiel au bon fonctionnement du site Web ISL Online."|trans }}</td>
+								<td data-label="Données collectées">{{ "Identifiant de session"|trans }}</td>
+								<td data-label="Durée">{{ "Fin de session du navigateur"|trans }}</td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 				<div class="col-12 mb-4">
-					<p class="texte-courant">Ces cookies sont activés par défaut. Vous pouvez vous y opposer en consultant les paramètres de votre navigateur. Pour autant, si vous choisissez de les refuser, il est possible que certaines fonctionnalités de notre site ne soient plus accessibles ou ne fonctionnent plus correctement.</p>
+					<p class="texte-courant">{{ "Ces cookies sont activés par défaut. Vous pouvez vous y opposer en consultant les paramètres de votre navigateur. Pour autant, si vous choisissez de les refuser, il est possible que certaines fonctionnalités de notre site ne soient plus accessibles ou ne fonctionnent plus correctement."|trans }}</p>
 				</div>
 				<div class="col-12 mb-4">
-					<p class="texte-courant mb-4">Nous déposons également des cookies de mesure d’audience à des fins de bonne administration de notre site (mesure des performances, détection de problèmes de navigation, optimisation des performances techniques ou de son ergonomie, estimation de la puissance des serveurs nécessaires, analyse des contenus consulté).</p>
+					<p class="texte-courant mb-4">{{ "Nous déposons également des cookies de mesure d’audience à des fins de bonne administration de notre site (mesure des performances, détection de problèmes de navigation, optimisation des performances techniques ou de son ergonomie, estimation de la puissance des serveurs nécessaires, analyse des contenus consulté)."|trans }}</p>
 
 					<table cellspacing="0">
 						<thead>
 							<tr>
-								<th class="col1">Nom</th>
-								<th class="col2">Finalités</th>
-								<th class="col3">Données collectées</th>
-								<th class="col4">Durée</th>
+								<th class="col1">{{ "Nom"|trans }}</th>
+								<th class="col2">{{ "Finalités"|trans }}</th>
+								<th class="col3">{{ "Données collectées"|trans }}</th>
+								<th class="col4">{{ "Durée"|trans }}</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td class="col1" data-label="Nom">_pk_id</td>
-								<td class="col2" data-label="Finalités">Identifier les visiteurs uniques de Matomo</td>
-								<td class="col3" data-label="Données collectées">Adresse IP, le type de navigateur, le temps de visite sur le site, les pages visitées</td>
-								<td class="col4" data-label="Durée">13 mois</td>
+								<td class="col1" data-label="Nom">{{ "_pk_id"|trans }}</td>
+								<td class="col2" data-label="Finalités">{{ "Identifier les visiteurs uniques de Matomo"|trans }}</td>
+								<td class="col3" data-label="Données collectées">{{ "Adresse IP, le type de navigateur, le temps de visite sur le site, les pages visitées"|trans }}</td>
+								<td class="col4" data-label="Durée">{{ "13 mois"|trans }}</td>
 							</tr>
 							<tr>
-								<td class="col1" data-label="Nom">_pk_ref</td>
-								<td class="col2" data-label="Finalités">Stocker l'URL du site à partir duquel vous êtes arrivé sur le site</td>
-								<td class="col3" data-label="Données collectées">Adresse IP, le type de navigateur, le temps de visite sur le site, les pages visitées</td>
-								<td class="col4" data-label="Durée">6 mois</td>
+								<td class="col1" data-label="Nom">{{ "_pk_ref"|trans }}</td>
+								<td class="col2" data-label="Finalités">{{ "Stocker l'URL du site à partir duquel vous êtes arrivé sur le site"|trans }}</td>
+								<td class="col3" data-label="Données collectées">{{ "Adresse IP, le type de navigateur, le temps de visite sur le site, les pages visitées"|trans }}</td>
+								<td class="col4" data-label="Durée">{{ "6 mois"|trans }}</td>
 							</tr>
 							<tr>
-								<td class="col1" data-label="Nom">_pk_ses</td>
-								<td class="col2" data-label="Finalités">Suivre votre session</td>
-								<td class="col3" data-label="Données collectées">Adresse IP, le type de navigateur, le temps de visite sur le site, les pages visitées</td>
-								<td class="col4" data-label="Durée">Cookie de session</td>
+								<td class="col1" data-label="Nom">{{ "_pk_ses"|trans }}</td>
+								<td class="col2" data-label="Finalités">{{ "Suivre votre session"|trans }}</td>
+								<td class="col3" data-label="Données collectées">{{ "Adresse IP, le type de navigateur, le temps de visite sur le site, les pages visitées"|trans }}</td>
+								<td class="col4" data-label="Durée">{{ "Cookie de session"|trans }}</td>
 							</tr>
 							<tr>
-								<td class="col1" data-label="Nom">_pk_cvar</td>
-								<td class="col2" data-label="Finalités">Retenir vos préférences pour l’utilisation de notre site</td>
-								<td class="col3" data-label="Données collectées">Adresse IP, le type de navigateur, le temps de visite sur le site, les pages visitées</td>
-								<td class="col4" data-label="Durée">30 minutes</td>
+								<td class="col1" data-label="Nom">{{ "_pk_cvar"|trans }}</td>
+								<td class="col2" data-label="Finalités">{{ "Retenir vos préférences pour l’utilisation de notre site"|trans }}</td>
+								<td class="col3" data-label="Données collectées">{{ "Adresse IP, le type de navigateur, le temps de visite sur le site, les pages visitées"|trans }}</td>
+								<td class="col4" data-label="Durée">{{ "30 minutes"|trans }}</td>
 							</tr>
 						</tbody>
 					</table>
 
-					<p class="texte-courant">Ces cookies ne sont pas soumis à votre consentement dès lors qu’ils sont strictement nécessaires au bon fonctionnement du site. Vous pouvez toutefois vous y opposer à tout moment en paramétrant les cookies sur votre ordinateur, à partir de l’outil de Gestion des cookies accessible en bas de notre Site.</p>
+					<p class="texte-courant">{{ "Ces cookies ne sont pas soumis à votre consentement dès lors qu’ils sont strictement nécessaires au bon fonctionnement du site. Vous pouvez toutefois vous y opposer à tout moment en paramétrant les cookies sur votre ordinateur, à partir de l’outil de Gestion des cookies accessible en bas de notre Site."|trans }}</p>
 				</div>
 				<div class="col-12 mb-4">
-					<h3 class="mb-4">COOKIES AXEPTIO</h3>
+					<h3 class="mb-4">{{ "COOKIES AXEPTIO"|trans }}</h3>
 
 					<table cellspacing="0">
 						<thead>
 							<tr>
-								<th class="col1">Nom</th>
-								<th class="col2">Finalités</th>
-								<th class="col3">Données collectées</th>
-								<th class="col4">Durée</th>
+								<th class="col1">{{ "Nom"|trans }}</th>
+								<th class="col2">{{ "Finalités"|trans }}</th>
+								<th class="col3">{{ "Données collectées"|trans }}</th>
+								<th class="col4">{{ "Durée"|trans }}</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td class="col1" data-label="Nom">axeptio_all_vendors</td>
-								<td class="col2" data-label="Finalités">Contient la liste des cookies acceptés par le visiteur</td>
+								<td class="col1" data-label="Nom">{{ "axeptio_all_vendors"|trans }}</td>
+								<td class="col2" data-label="Finalités">{{ "Contient la liste des cookies acceptés par le visiteur"|trans }}</td>
 								<td class="col3" rowspan="5" data-label="Données collectées"></td>
-								<td class="col4" data-label="Durée">12 mois</td>
+								<td class="col4" data-label="Durée">{{ "12 mois"|trans }}</td>
 							</tr>
 							<tr>
-								<td class="col1" data-label="Nom">axeptio_authorized_vendors</td>
-								<td class="col2" data-label="Finalités">Contient la liste de tous les cookies déclarés dans votre widget Axeptio</td>
-								<td class="col4" data-label="Durée">12 mois</td>
+								<td class="col1" data-label="Nom">{{ "axeptio_authorized_vendors"|trans }}</td>
+								<td class="col2" data-label="Finalités">{{ "Contient la liste de tous les cookies déclarés dans votre widget Axeptio"|trans }}</td>
+								<td class="col4" data-label="Durée">{{ "12 mois"|trans }}</td>
 							</tr>
 							<tr>
-								<td class="col1" data-label="Nom">axeptio_cookies</td>
-								<td class="col2" data-label="Finalités">Contient toutes les informations sur le consentement du visiteur, comme la date, son identifiant anonyme unique, et s’il a déjà consenti ou non</td>
-								<td class="col4" data-label="Durée">12 mois</td>
+								<td class="col1" data-label="Nom">{{ "axeptio_cookies"|trans }}</td>
+								<td class="col2" data-label="Finalités">{{ "Contient toutes les informations sur le consentement du visiteur, comme la date, son identifiant anonyme unique, et s’il a déjà consenti ou non"|trans }}</td>
+								<td class="col4" data-label="Durée">{{ "12 mois"|trans }}</td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
 				<div class="col-12 mb-4">
-					<h3 class="mb-4">COOKIES GOOGLE RECAPTCHA</h3>
+					<h3 class="mb-4">{{ "COOKIES GOOGLE RECAPTCHA"|trans }}</h3>
 
 					<table cellspacing="0">
 						<thead>
 							<tr>
-								<th class="col1">Nom</th>
-								<th class="col2">Finalités</th>
-								<th class="col3">Données collectées</th>
-								<th class="col4">Durée</th>
+								<th class="col1">{{ "Nom"|trans }}</th>
+								<th class="col2">{{ "Finalités"|trans }}</th>
+								<th class="col3">{{ "Données collectées"|trans }}</th>
+								<th class="col4">{{ "Durée"|trans }}</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td class="col1" data-label="Nom">Session</td>
-								<td class="col2" data-label="Finalités">Utilisés à des fins techniques strictement nécessaires : équilibrage de charge, routage.</td>
+								<td class="col1" data-label="Nom">{{ "Session"|trans }}</td>
+								<td class="col2" data-label="Finalités">{{ "Utilisés à des fins techniques strictement nécessaires : équilibrage de charge, routage."|trans }}</td>
 								<td class="col3" rowspan="5" data-label="Données collectées"></td>
-								<td class="col4" data-label="Durée">Jusqu’à 30 jours</td>
+								<td class="col4" data-label="Durée">{{ "Jusqu’à 30 jours"|trans }}</td>
 							</tr>
 							<tr>
-								<td class="col1" data-label="Nom">hmt_id</td>
-								<td class="col2" data-label="Finalités">Utilisées pour les statistiques anonymes strictement nécessaires liées au service et à d'autres fins techniques telles que l'assistance à l'accessibilité.</td>
-								<td class="col4" data-label="Durée">2 jours</td>
+								<td class="col1" data-label="Nom">{{ "hmt_id"|trans }}</td>
+								<td class="col2" data-label="Finalités">{{ "Utilisées pour les statistiques anonymes strictement nécessaires liées au service et à d'autres fins techniques telles que l'assistance à l'accessibilité."|trans }}</td>
+								<td class="col4" data-label="Durée">{{ "2 jours"|trans }}</td>
 							</tr>
 						</tbody>
 					</table>

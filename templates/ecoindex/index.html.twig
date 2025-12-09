@@ -5,11 +5,11 @@
 
 {% block body %}
 
-<style>
-.img-page-ecoindex {
-	width: 100%;
-}
-</style>
+	<style>
+		.img-page-ecoindex {
+			width: 100%;
+		}
+	</style>
 
 	<section id="container-ecoindex">
 		<div class="row contact_page">
@@ -20,10 +20,10 @@
 				<div class="fil_ariane">
 					<a href="{{ path('app_home') }}">FIRSTCOM</a>
 					|
-					<span>ECO INDEX</span>
+					<span>{{ "ECO INDEX"|trans }}</span>
 				</div>
-				<h1 class="card-title sous-titre writeWhite">ÉCO-CONCEPTION WEB</h1>
-				<p class="texte-intro writeWhite">L'éco-conception s'appuie sur une méthodologie et un ensemble de bonnes pratiques pour réduire l'impact d'un site web sur son environnement.</p>
+				<h1 class="card-title sous-titre writeWhite">{{ "ÉCO-CONCEPTION WEB"|trans }}</h1>
+				<p class="texte-intro writeWhite">{{ "L'éco-conception s'appuie sur une méthodologie et un ensemble de bonnes pratiques pour réduire l'impact d'un site web sur son environnement."|trans }}</p>
 			</div>
 		</div>
 	</section>
@@ -35,24 +35,38 @@
 	<div class="container-medium">
 		<div class="row">
 			<div class="col-xs-12 col-md-12 pb-5">
-				<h3 class="black pb-3">MÉTHODE D'ÉVALUATION</h3>
-				<p class="texte-courant black pb-3">Comme toute production numérique, ce site web a un impact environnemental que nous vous présentons sur cette page à l’aide d’indicateurs standardisés.</p>
+				<h3 class="black pb-3">{{ "MÉTHODE D'ÉVALUATION"|trans }}</h3>
+				<p class="texte-courant black pb-3">{{ "Comme toute production numérique, ce site web a un impact environnemental que nous vous présentons sur cette page à l’aide d’indicateurs standardisés."|trans }}</p>
 
-				<p class="texte-courant black">Nous utilisons le référentiel <strong><a class="black" href="https://www.ecoindex.fr/" target="_blank">EcoIndex</a></strong> proposé par le collectif <strong><a class="black" href="https://www.greenit.fr/" target="_blank">GreenIT.fr</a></strong>, pour évaluer la performance environnementale de ce site web. Celui-ci est quantifié grâce à deux types d'indicateurs :</p>
+				<p class="texte-courant black">{{ "Nous utilisons le référentiel "|trans }}
+					<strong>
+						<a class="black" href="https://www.ecoindex.fr/" target="_blank">{{ "EcoIndex"|trans }}</a>
+					</strong>
+					{{ " proposé par le collectif "|trans }}
+					<strong>
+						<a class="black" href="https://www.greenit.fr/" target="_blank">{{ "GreenIT.fr"|trans }}</a>
+					</strong>
+					{{ ", pour évaluer la performance environnementale de ce site web. Celui-ci est quantifié grâce à deux types d'indicateurs :"|trans }}</p>
 				<ul class="pt-3">
-					<li class="black"><strong>Niveau d’écoconception du site web : </strong>Cet indicateur évalue la mise en place de bonnes pratiques permettant de réduire l'impact d'une page web. Le niveau atteint est représenté par une évaluation relative de A à G (A est la meilleure note) associée à un score absolu de 0 à 100 (100 est la meilleure note).</li>
-					<li class="black"><strong>Consommation d'eau et émission de GES liées au chargement de la page :</strong> Cet indicateur quantifie la consommation d'eau douce ( cls) et l'émission de GES ( gCO2e) liées au chargement d'une page web.</li>
+					<li class="black">
+						<strong>{{ "Niveau d’écoconception du site web :"|trans }}</strong>
+						{{ "Cet indicateur évalue la mise en place de bonnes pratiques permettant de réduire l'impact d'une page web. Le niveau atteint est représenté par une évaluation relative de A à G (A est la meilleure note) associée à un score absolu de 0 à 100 (100 est la meilleure note)."|trans }}
+					</li>
+					<li class="black">
+						<strong>{{ "Consommation d'eau et émission de GES liées au chargement de la page :"|trans }}</strong>
+						{{ " Cet indicateur quantifie la consommation d'eau douce ( cls) et l'émission de GES ( gCO2e) liées au chargement d'une page web."|trans }}
+					</li>
 				</ul>
 
-				<p class="texte-courant black">À des fins de synthèse, quatre types de données sont représentées :</p>
+				<p class="texte-courant black">{{ "À des fins de synthèse, quatre types de données sont représentées :"|trans }}</p>
 				<ul class="pt-3">
-					<li class="black">Niveau d'écoconception pour les 5 pages les plus visitées du site web.</li>
-					<li class="black">Niveau d'écoconception pour 5 parcours utilisateurs type du site web.</li>
-					<li class="black">Consommation d'eau (exprimée en litres) et émission de GES (kilos CO2e) liée au chargement d'une page web pour 1 utilisateur, et rapportée à 1 000 utilisateurs.</li>
-					<li class="black">Consommation d'eau (exprimée en litres) et émission de GES (kilos CO2e) liée à l'exécution d'un parcours pour 1 utilisateur, et rapportée à 1 000 utilisateurs.</li>
+					<li class="black">{{ "Niveau d'écoconception pour les 5 pages les plus visitées du site web."|trans }}</li>
+					<li class="black">{{ "Niveau d'écoconception pour 5 parcours utilisateurs type du site web."|trans }}</li>
+					<li class="black">{{ "Consommation d'eau (exprimée en litres) et émission de GES (kilos CO2e) liée au chargement d'une page web pour 1 utilisateur, et rapportée à 1 000 utilisateurs."|trans }}</li>
+					<li class="black">{{ "Consommation d'eau (exprimée en litres) et émission de GES (kilos CO2e) liée à l'exécution d'un parcours pour 1 utilisateur, et rapportée à 1 000 utilisateurs."|trans }}</li>
 				</ul>
 
-				<p class="texte-courant black">L'analyse indiquée ci-dessous est susceptible d'évoluer : la quantification des impacts environnementaux présentée est une photographie réalisée à un instant T.</p>
+				<p class="texte-courant black">{{ "L'analyse indiquée ci-dessous est susceptible d'évoluer : la quantification des impacts environnementaux présentée est une photographie réalisée à un instant T."|trans }}</p>
 			</div>
 		</div>
 	</div>
@@ -61,78 +75,115 @@
 		<div class="row">
 
 			<div class="col-12 mb-2">
-				<h2 class="writeWhite pb-3">Déclaration environnementale de ce site</h2>
+				<h2 class="writeWhite pb-3">{{ "Déclaration environnementale de ce site"|trans }}</h2>
 			</div>
 			<div class="col-12 col-sm-4 pt-4 pb-5">
 				<img src="{{ asset('uploads/images/eco-index-B.svg') }}" alt="Note Ecoindex" class="img-page-ecoindex">
 			</div>
 			<div class="col-12 col-sm-8 mb-2">
 				<ul>
-					<li class="writeWhite"><strong>Note Ecoindex :</strong> 79</li>
-					<li class="writeWhite"><strong>Consommation d'eau moyenne rapportée à 1 000 utilisateurs :</strong> 216 litres, soit 24 packs d'eau minérale. *</li>
-					<li class="writeWhite"><strong>Émission de Gaz à Effet de Serre (GES) moyenne rapportée à 1 000 utilisateurs :</strong> 1.42 kilos CO2e , soit un trajet de 7 kms en voiture à énergie thermique. *</li>
+					<li class="writeWhite">
+						<strong>{{ "Note Ecoindex :"|trans }}</strong>
+						79
+					</li>
+					<li class="writeWhite">
+						<strong>{{ "Consommation d'eau moyenne rapportée à 1 000 utilisateurs :"|trans }}</strong>
+						{{ " 216 litres, soit 24 packs d'eau minérale. *"|trans }}
+					</li>
+					<li class="writeWhite">
+						<strong>{{ "Émission de Gaz à Effet de Serre (GES) moyenne rapportée à 1 000 utilisateurs :"|trans }}</strong>
+						{{ "1.42 kilos CO2e , soit un trajet de 7 kms en voiture à énergie thermique. *"|trans }}
+					</li>
 				</ul>
 			</div>
 		</div>
 	</div>
 
 	<div class="container-medium py-5">
-		<h3 class="mb-5">Évaluation de l'impact des 5 pages les plus visitées du site</h3>
+		<h3 class="mb-5">{{ "Évaluation de l'impact des 5 pages les plus visitées du site"|trans }}</h3>
 
 		<div class="row">
 			<div class="col-12 col-md m-2 py-3 background-gray-green">
 				<a href="{{ path('app_home') }}" class="text-decoration-none">
-					<h3 class="h3-micro black">Page 1 :<br>Accueil</h3>
+					<h3 class="h3-micro black">{{ "Page 1 :"|trans }}<br>{{ "Accueil"|trans }}</h3>
 				</a>
 				<ul>
-					<li class="texte-courant-mini">Consommation d'eau rapportée à 1 000 utilisateurs : <strong>225 litres</strong>, soit 25 packs d'eau minérale.</li>
-					<li class="texte-courant-mini">Émission de GES rapportée à 1 000 utilisateurs : <strong>1.5 kilos CO2e</strong>, soit un trajet de 7 kms en voiture à énergie thermique.</li>
+					<li class="texte-courant-mini">{{ "Consommation d'eau rapportée à 1 000 utilisateurs"|trans }}
+						:<strong>{{ "225 litres"|trans }}</strong>
+						{{ ", soit 25 packs d'eau minérale."|trans }}</li>
+					<li class="texte-courant-mini">{{ "Émission de GES rapportée à 1 000 utilisateurs"|trans }}
+						:<strong>{{ "1.5 kilos CO2e"|trans }}</strong>
+						{{ ", soit un trajet de 7 kms en voiture à énergie thermique."|trans }}</li>
 				</ul>
 			</div>
 			<div class="col-12 col-md m-2 py-3 background-gray-green">
 				<a href="{{ path('app_conseil') }}" class="text-decoration-none">
-					<h3 class="h3-micro black">Page 2 :<br>Conseil et Stratégie</h3>
+					<h3 class="h3-micro black">{{ "Page 2 :"|trans }}<br>{{ "Conseil et Stratégie"|trans }}</h3>
 				</a>
 				<ul>
-					<li class="texte-courant-mini">Consommation d'eau rapportée à 1 000 utilisateurs : <strong>210 litres</strong>, soit 25 packs d'eau minérale.</li>
-					<li class="texte-courant-mini">Émission de GES rapportée à 1 000 utilisateurs : <strong>1.4 kilos CO2e</strong>, soit un trajet de 7 kms en voiture à énergie thermique.</li>
+					<li class="texte-courant-mini">{{ "Consommation d'eau rapportée à 1 000 utilisateurs"|trans }}
+						:
+						<strong>{{ "210 litres"|trans }}</strong>
+						{{ ", soit 25 packs d'eau minérale."|trans }}</li>
+					<li class="texte-courant-mini">{{ "Émission de GES rapportée à 1 000 utilisateurs"|trans }}
+						:
+						<strong>{{ "1.4 kilos CO2e"|trans }}</strong>
+						{{ ", soit un trajet de 7 kms en voiture à énergie thermique."|trans }}</li>
 				</ul>
 			</div>
 			<div class="col-12 col-md m-2 py-3 background-gray-green">
 				<a href="{{ path('app_croissance') }}" class="text-decoration-none">
-					<h3 class="h3-micro black">Page 3 :<br>Croissance et Performance</h3>
+					<h3 class="h3-micro black">{{ "Page 3 :"|trans }}<br>{{ "Croissance et Performance"|trans }}</h3>
 				</a>
 				<ul>
-					<li class="texte-courant-mini">Consommation d'eau rapportée à 1 000 utilisateurs : <strong>220 litres</strong>, soit 25 packs d'eau minérale.</li>
-					<li class="texte-courant-mini">Émission de GES rapportée à 1 000 utilisateurs : <strong>1.44 kilos CO2e</strong>, soit un trajet de 7 kms en voiture à énergie thermique.</li>
+					<li class="texte-courant-mini">{{ "Consommation d'eau rapportée à 1 000 utilisateurs"|trans }}
+						:
+						<strong>{{ "220 litres"|trans }}</strong>
+						{{ ", soit 25 packs d'eau minérale."|trans }}</li>
+					<li class="texte-courant-mini">{{ "Émission de GES rapportée à 1 000 utilisateurs"|trans }}
+						:
+						<strong>{{ "1.44 kilos CO2e"|trans }}</strong>
+						{{ ", soit un trajet de 7 kms en voiture à énergie thermique."|trans }}</li>
 				</ul>
 			</div>
 			<div class="col-12 col-md m-2 py-3 background-gray-green">
 				<a href="{{ path('app_referencement_naturel_seo') }}" class="text-decoration-none">
-					<h3 class="h3-micro black">Page 4 :<br>Référencement naturel SEO</h3>
+					<h3 class="h3-micro black">{{ "Page 4 :"|trans }}<br>{{ "Référencement naturel SEO"|trans }}</h3>
 				</a>
 				<ul>
-					<li class="texte-courant-mini">Consommation d'eau rapportée à 1 000 utilisateurs : <strong>210 litres</strong>, soit 25 packs d'eau minérale.</li>
-					<li class="texte-courant-mini">Émission de GES rapportée à 1 000 utilisateurs : <strong>1.4 kilos CO2e</strong>, soit un trajet de 7 kms en voiture à énergie thermique.</li>
+					<li class="texte-courant-mini">{{ "Consommation d'eau rapportée à 1 000 utilisateurs"|trans }}
+						:
+						<strong>{{ "210 litres"|trans }}</strong>
+						{{ ", soit 25 packs d'eau minérale."|trans }}</li>
+					<li class="texte-courant-mini">{{ "Émission de GES rapportée à 1 000 utilisateurs"|trans }}
+						:
+						<strong>{{ "1.4 kilos CO2e"|trans }}</strong>
+						{{ ", soit un trajet de 7 kms en voiture à énergie thermique."|trans }}</li>
 				</ul>
 			</div>
 			<div class="col-12 col-md m-2 py-3 background-gray-green">
 				<a href="{{ path('app_marketing_de_loffre') }}" class="text-decoration-none">
-					<h3 class="h3-micro black">Page 5 :<br>Marketing de l'offre</h3>
+					<h3 class="h3-micro black">{{ "Page 5 :"|trans }}<br>{{ "Marketing de l'offre"|trans }}</h3>
 				</a>
 				<ul>
-					<li class="texte-courant-mini">Consommation d'eau rapportée à 1 000 utilisateurs : <strong>207 litres</strong>, soit 25 packs d'eau minérale.</li>
-					<li class="texte-courant-mini">Émission de GES rapportée à 1 000 utilisateurs : <strong>1.38 kilos CO2e</strong>, soit un trajet de 7 kms en voiture à énergie thermique.</li>
+					<li class="texte-courant-mini">{{ "Consommation d'eau rapportée à 1 000 utilisateurs"|trans }}
+						:
+						<strong>{{ "207 litres"|trans }}</strong>
+						{{ ", soit 25 packs d'eau minérale."|trans }}</li>
+					<li class="texte-courant-mini">{{ "Émission de GES rapportée à 1 000 utilisateurs"|trans }}
+						:
+						<strong>{{ "1.38 kilos CO2e"|trans }}</strong>
+						{{ ", soit un trajet de 7 kms en voiture à énergie thermique."|trans }}</li>
 				</ul>
 			</div>
 
 			<div class="col-12 mt-4">
-				<small><em>*Moyenne de l’impact environnemental des 5 pages les plus visitées sur ce site web.</em></small>
+				<small>
+					<em>{{ "*Moyenne de l’impact environnemental des 5 pages les plus visitées sur ce site web."|trans }}</em>
+				</small>
 			</div>
 		</div>
 	</div>
-
-
 
 
 {% endblock %}

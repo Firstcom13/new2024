@@ -4,7 +4,8 @@
 	<meta name="description" content="Mieux que l'IA, Firstcom s'appuie sur de vraies personnes pour créer un contenu sensible, intelligent et impactant, bref, qui vous ressemble.">
 {% endblock %}
 
-{% block title %}CRÉATION VISUELLE : QUAND L’IA RENCONTRE LE TALENT HUMAIN
+{% block title %}
+	{{ "CRÉATION VISUELLE : QUAND L’IA RENCONTRE LE TALENT HUMAIN"|trans }}
 {% endblock %}
 
 {% block body %}
@@ -17,15 +18,15 @@
 				<div class="fil_ariane">
 					<a href="{{ path('app_home') }}">FIRSTCOM</a>
 					|
-					<a href="{{ path('app_contenus') }}">CRÉATION DE CONTENUS</a>
+					<a href="{{ path('app_contenus') }}">{{ "CRÉATION DE CONTENUS"|trans }}</a>
 					|
-					<span>CRÉATION VISUELLE</span>
+					<span>{{ "CRÉATION VISUELLE"|trans }}</span>
 				</div>
 
-				<h1 class="card-title sous-titre writeWhite">CRÉATION VISUELLE : QUAND L’IA RENCONTRE LE TALENT HUMAIN</h1>
+				<h1 class="card-title sous-titre writeWhite">{{ "CRÉATION VISUELLE : QUAND L’IA RENCONTRE LE TALENT HUMAIN"|trans }}</h1>
 
-				<p class="texte-intro writeWhite">LES LOGICIELS D'IA SAVENT GÉNÉRER DES IMAGES EN QUELQUES SECONDES.</p>
-				<p class="texte-intro writeWhite">NOUS, ON SAIT SURTOUT LES RENDRE UTILES, COHÉRENTES ET BELLES.</p>
+				<p class="texte-intro writeWhite">{{ "LES LOGICIELS D'IA SAVENT GÉNÉRER DES IMAGES EN QUELQUES SECONDES."|trans }}</p>
+				<p class="texte-intro writeWhite">{{ "NOUS, ON SAIT SURTOUT LES RENDRE UTILES, COHÉRENTES ET BELLES."|trans }}</p>
 			</div>
 
 		</section>
@@ -41,35 +42,35 @@
 
 			<div class="row">
 				<div class="col-sm-12 col-md-12 mt-4 mb-3">
-					<h2>LE BON OUTIL, C’EST BIEN. LE BON OEIL, C’EST MIEUX.</h2>
+					<h2>{{ "LE BON OUTIL, C’EST BIEN. LE BON OEIL, C’EST MIEUX."|trans }}</h2>
 				</div>
 			</div>
 
 			<div class="row">
 				<div class="col-sm-12 col-md-12 mb-4">
-					<p class="texte-intro-2 mt-2">Chez Firstcom, nous utilisons les derniers logiciels de création visuelle assistée par IA (images, vidéos, animations…).</p>
-					<p class="texte-intro-2 ">Mais notre vraie valeur ajoutée, ce n’est pas l’outil : ce sont nos Directeurs Artistiques et graphistes expérimentés, capables de transformer un brief en une création qui colle à votre identité de marque, votre storytelling.</p>
-					<p class="texte-intro-2 mt-3">L’IA génère. Nos créatifs ajustent, recadrent, détournent, recomposent… pour que le résultat soit pertinent, impactant et parfaitement aligné avec vos objectifs.</p>
+					<p class="texte-intro-2 mt-2">{{ "Chez Firstcom, nous utilisons les derniers logiciels de création visuelle assistée par IA (images, vidéos, animations…)."|trans }}</p>
+					<p class="texte-intro-2 ">{{ "Mais notre vraie valeur ajoutée, ce n’est pas l’outil : ce sont nos Directeurs Artistiques et graphistes expérimentés, capables de transformer un brief en une création qui colle à votre identité de marque, votre storytelling."|trans }}</p>
+					<p class="texte-intro-2 mt-3">{{ "L’IA génère. Nos créatifs ajustent, recadrent, détournent, recomposent… pour que le résultat soit pertinent, impactant et parfaitement aligné avec vos objectifs."|trans }}</p>
 				</div>
 			</div>
 
 			<div class="row">
 				<div class="col-sm-12 col-md-12 mt-4 mb-3">
-					<h2>LA DOUBLE COMPÉTENCE : TRADITION ET INNOVATION</h2>
+					<h2>{{ "LA DOUBLE COMPÉTENCE : TRADITION ET INNOVATION"|trans }}</h2>
 				</div>
 			</div>
 
 			<div class="row">
 				<div class="col-sm-12 col-md-12 mb-4">
-					<p class="texte-intro-2 mt-2">Nous maîtrisons les outils “classiques” (Adobe, prises de vue, montage vidéo, web design…) autant que les nouveaux workflows IA (prompting, optimisation, retouche hybride).</p>
-					<p class="texte-intro-2 ">Cette approche complémentaire permet de gagner en rapidité sans perdre en qualité.</p>
-					<p class="texte-intro-2 mt-3">Résultat : des visuels qui respectent vos chartes graphiques, vos codes de marque et vos enjeux business, tout en profitant de la créativité démultipliée par l’IA.</p>
+					<p class="texte-intro-2 mt-2">{{ "Nous maîtrisons les outils “classiques” (Adobe, prises de vue, montage vidéo, web design…) autant que les nouveaux workflows IA (prompting, optimisation, retouche hybride)."|trans }}</p>
+					<p class="texte-intro-2 ">{{ "Cette approche complémentaire permet de gagner en rapidité sans perdre en qualité."|trans }}</p>
+					<p class="texte-intro-2 mt-3">{{ "Résultat : des visuels qui respectent vos chartes graphiques, vos codes de marque et vos enjeux business, tout en profitant de la créativité démultipliée par l’IA."|trans }}</p>
 				</div>
 			</div>
 
 			<div class="row">
 				<div class="col-sm-12 col-md-12 mt-4 mb-5">
-					<h2>POUR QUOI FAIRE ?</h2>
+					<h2>{{ "POUR QUOI FAIRE ?"|trans }}</h2>
 				</div>
 			</div>
 		</div>
@@ -81,8 +82,8 @@
 						<img class="" src="{{ asset('uploads/images/icon_fleche-down-white.svg') }}" alt="">
 					</div>
 					<div class="col-12">
-						<h3 class="writeWhite">DES CONTENUS POUR LES RÉSEAUX SOCIAUX</h3>
-						<p class="writeWhite">Posts, carrousels, vidéos courtes …</p>
+						<h3 class="writeWhite">{{ "DES CONTENUS POUR LES RÉSEAUX SOCIAUX"|trans }}</h3>
+						<p class="writeWhite">{{ "Posts, carrousels, vidéos courtes …"|trans }}</p>
 					</div>
 				</div>
 			</div>
@@ -92,8 +93,8 @@
 						<img class="" src="{{ asset('uploads/images/icon_fleche-down-white.svg') }}" alt="">
 					</div>
 					<div class="col-12">
-						<h3 class="writeWhite">DES VISUELS PUBLICITAIRES</h3>
-						<p class="writeWhite">Campagnes digitales, affichage, branding...</p>
+						<h3 class="writeWhite">{{ "DES VISUELS PUBLICITAIRES"|trans }}</h3>
+						<p class="writeWhite">{{ "Campagnes digitales, affichage, branding..."|trans }}</p>
 					</div>
 				</div>
 			</div>
@@ -103,8 +104,8 @@
 						<img class="" src="{{ asset('uploads/images/icon_fleche-down-white.svg') }}" alt="">
 					</div>
 					<div class="col-12">
-						<h3 class="writeWhite">DES SUPPORTS ÉDITORIAUX</h3>
-						<p class="writeWhite">Plaquettes, newsletters, magazines...</p>
+						<h3 class="writeWhite">{{ "DES SUPPORTS ÉDITORIAUX"|trans }}</h3>
+						<p class="writeWhite">{{ "Plaquettes, newsletters, magazines..."|trans }}</p>
 					</div>
 				</div>
 			</div>
@@ -114,8 +115,8 @@
 						<img class="" src="{{ asset('uploads/images/icon_fleche-down-white.svg') }}" alt="">
 					</div>
 					<div class="col-12">
-						<h3 class="writeWhite">DU WEB DESIGN ET DE L’UX/UI</h3>
-						<p class="writeWhite">pour vos sites et applis.</p>
+						<h3 class="writeWhite">{{ "DU WEB DESIGN ET DE L’UX/UI"|trans }}</h3>
+						<p class="writeWhite">{{ "pour vos sites et applis."|trans }}</p>
 					</div>
 				</div>
 			</div>
@@ -125,17 +126,17 @@
 						<img class="" src="{{ asset('uploads/images/icon_fleche-down-white.svg') }}" alt="">
 					</div>
 					<div class="col-12">
-						<h3 class="writeWhite">DES CONTENUS IA ORIGINAUX</h3>
-						<p class="writeWhite">créés et testés spécifiquement pour vos campagnes.</p>
+						<h3 class="writeWhite">{{ "DES CONTENUS IA ORIGINAUX"|trans }}</h3>
+						<p class="writeWhite">{{ "créés et testés spécifiquement pour vos campagnes."|trans }}</p>
 					</div>
 				</div>
 			</div>
 			<div class="col-xl-6 col-sm-12 borderFull p-5 bg-white">
 				<div class="row">
 					<div class="col-12">
-						<h3 class="">UNE ÉQUIPE, PAS UNE MACHINE</h3>
-						<p class="">L’IA ouvre des possibilités infinies, mais c’est l’expérience humaine qui donne du sens et de la cohérence.</p>
-						<p class="">Nos créatifs savent quand il faut prompter, quand il faut dessiner, et surtout quand il faut dire non à un visuel qui flatte l’oeil mais trahit votre marque.</p>
+						<h3 class="">{{ "UNE ÉQUIPE, PAS UNE MACHINE"|trans }}</h3>
+						<p class="">{{ "L’IA ouvre des possibilités infinies, mais c’est l’expérience humaine qui donne du sens et de la cohérence."|trans }}</p>
+						<p class="">{{ "Nos créatifs savent quand il faut prompter, quand il faut dessiner, et surtout quand il faut dire non à un visuel qui flatte l’oeil mais trahit votre marque."|trans }}</p>
 					</div>
 				</div>
 			</div>
@@ -144,7 +145,7 @@
 		<div class="container-medium">
 			<div class="row align-items-center">
 				<div class="col-sm-12 col-md-12 my-5">
-					<h2>CHEZ FIRSTCOM, NOUS CROYONS QU’UN BON VISUEL NE SE MESURE PAS AU NOMBRE DE PIXELS GÉNÉRÉS… MAIS À L’IMPACT QU’IL PRODUIT SUR VOS AUDIENCES.</h2>
+					<h2>{{ "CHEZ FIRSTCOM, NOUS CROYONS QU’UN BON VISUEL NE SE MESURE PAS AU NOMBRE DE PIXELS GÉNÉRÉS… MAIS À L’IMPACT QU’IL PRODUIT SUR VOS AUDIENCES."|trans }}</h2>
 				</div>
 			</div>
 		</div>

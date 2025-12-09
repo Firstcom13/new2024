@@ -1,10 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block meta_description %}
-    <meta name="description" content="Firstcom récolte de votre activité digitale un maximum de données qui vous permettront d'optimiser la gestion de votre business.">
+	<meta name="description" content="Firstcom récolte de votre activité digitale un maximum de données qui vous permettront d'optimiser la gestion de votre business.">
 {% endblock %}
 
-{% block title %}Firstcom : récolter et gérer de la data pour orienter votre stratégie d'entreprise
+{% block title %}
+	{{"Firstcom : récolter et gérer de la data pour orienter votre stratégie d'entreprise"|trans}}
 {% endblock %}
 
 {% block body %}
@@ -18,15 +19,15 @@
 				<div class="fil_ariane">
 					<a href="{{ path('app_home') }}">FIRSTCOM</a>
 					|
-					<a href="{{ path('app_croissance') }}">CROISSANCE ET PERFORMANCE</a>
+					<a href="{{ path('app_croissance') }}">{{ "CROISSANCE ET PERFORMANCE"|trans }}</a>
 					|
-					<span>DATA-ANALYSE</span>
+					<span>{{ "DATA-ANALYSE"|trans }}</span>
 				</div>
 
-				<h1 class="card-title sous-titre black">DRIVE BY DIGITAL DATA</h1>
+				<h1 class="card-title sous-titre black">{{ "DRIVE BY DIGITAL DATA"|trans }}</h1>
 
-				<p class="texte-intro">Optimiser la prise de décision grâce à l'analyse de données digitales.</p>
-				<p class="texte-intro">Plus simplement : s'appuyer sur des vérités chiffrées VS le doigt mouillé ?</p>
+				<p class="texte-intro">{{ "Optimiser la prise de décision grâce à l'analyse de données digitales."|trans }}</p>
+				<p class="texte-intro">{{ "Plus simplement : s'appuyer sur des vérités chiffrées VS le doigt mouillé ?"|trans }}</p>
 			</div>
 		</div>
 	</section>
@@ -38,11 +39,11 @@
 	<div class="container-medium">
 		<div class="row borderSolid">
 			<div class="col-sm-12 col-md-12 mb-4">
-				<h2>VOTRE ACTIVITÉ DIGITALE, LES OUTILS D’ANALYSE ET LES PLATEFORMES WEBMARKETING REGORGENT D’UN BIEN PRÉCIEUX : DES DONNÉES.</h2>
+				<h2>{{ "VOTRE ACTIVITÉ DIGITALE, LES OUTILS D’ANALYSE ET LES PLATEFORMES WEBMARKETING REGORGENT D’UN BIEN PRÉCIEUX : DES DONNÉES."|trans }}</h2>
 			</div>
 			<div class="col-sm-12 col-md-12 mb-5">
-				<p>Et ces données, si elles sont bien récoltées, analysées et exploitées, vous permettront non seulement d’orienter votre stratégie d’entreprise mais aussi de générer plus de leads, plus de notoriété, plus de ventes.</p>
-				<p>Un site web, une appli, une campagne SEA ou social Media, etc., ce sont des centaines, des milliers d’informations à portée de main sur vos clients, vos prospects, vos fans qu’il serait irresponsable de ne pas comprendre et exploiter, pour mieux performer.</p>
+				<p>{{ "Et ces données, si elles sont bien récoltées, analysées et exploitées, vous permettront non seulement d’orienter votre stratégie d’entreprise mais aussi de générer plus de leads, plus de notoriété, plus de ventes."|trans }}</p>
+				<p>{{ "Un site web, une appli, une campagne SEA ou social Media, etc., ce sont des centaines, des milliers d’informations à portée de main sur vos clients, vos prospects, vos fans qu’il serait irresponsable de ne pas comprendre et exploiter, pour mieux performer."|trans }}</p>
 			</div>
 		</div>
 	</div>
@@ -54,7 +55,7 @@
 					<img class="fleche-down" src="{{ asset('uploads/images/fleche-down.webp') }}">
 				</div>
 				<div class="col-12">
-					<h3 class="h3-micro">QUI SONT VOS CIBLES ET COMMENT SE COMPORTENT-ELLES ?</h3>
+					<h3 class="h3-micro">{{ "QUI SONT VOS CIBLES ET COMMENT SE COMPORTENT-ELLES ?"|trans }}</h3>
 				</div>
 			</div>
 		</div>
@@ -65,7 +66,7 @@
 					<img class="fleche-down" src="{{ asset('uploads/images/fleche-down.webp') }}">
 				</div>
 				<div class="col-12">
-					<h3 class="h3-micro">COMMENT VOUS ONT-ELLES TROUVÉ ?
+					<h3 class="h3-micro">{{"COMMENT VOUS ONT-ELLES TROUVÉ ?"|trans}}
 					</h3>
 				</div>
 			</div>
@@ -77,7 +78,7 @@
 					<img class="fleche-down" src="{{ asset('uploads/images/fleche-down.webp') }}">
 				</div>
 				<div class="col-12">
-					<h3 class="h3-micro">QUELLES SONT LEURS AUTRES CENTRES D’INTÉRÊT ?</h3>
+					<h3 class="h3-micro">{{ "QUELLES SONT LEURS AUTRES CENTRES D’INTÉRÊT ?"|trans }}</h3>
 				</div>
 			</div>
 		</div>
@@ -88,7 +89,7 @@
 					<img class="fleche-down" src="{{ asset('uploads/images/fleche-down.webp') }}">
 				</div>
 				<div class="col-12">
-					<h3 class="h3-micro">QUELS PRODUITS LES SÉDUISENT ?</h3>
+					<h3 class="h3-micro">{{ "QUELS PRODUITS LES SÉDUISENT ?"|trans }}</h3>
 				</div>
 			</div>
 		</div>
@@ -99,7 +100,7 @@
 					<img class="fleche-down" src="{{ asset('uploads/images/fleche-down.webp') }}">
 				</div>
 				<div class="col-12">
-					<h3 class="h3-micro">À QUELS MESSAGES SONT-ELLES SENSIBLES ?</h3>
+					<h3 class="h3-micro">{{ "À QUELS MESSAGES SONT-ELLES SENSIBLES ?"|trans }}</h3>
 				</div>
 			</div>
 		</div>
@@ -110,7 +111,7 @@
 					<img class="fleche-down" src="{{ asset('uploads/images/fleche-down.webp') }}">
 				</div>
 				<div class="col-12 ">
-					<h3 class="h3-micro">COMBIEN DE FOIS REVIENNENT-ELLES AVANT DE PASSER À L’ACTION ?</h3>
+					<h3 class="h3-micro">{{ "COMBIEN DE FOIS REVIENNENT-ELLES AVANT DE PASSER À L’ACTION ?"|trans }}</h3>
 				</div>
 			</div>
 		</div>
@@ -120,24 +121,23 @@
 	<div class="container-medium">
 		<div class="row">
 			<div class="col-sm-12 col-md-12 mt-5">
-				<p class="mb-4"> Sans oublier les différentes plateformes de webmarketing qui peuvent analyser les requêtes liées à votre secteur d’activité sur le web, mais aussi les performances de vos concurrents... Autant d’éléments qui facilitent et optimisent la prise de décision stratégique.</p>
-
-				<h3 class="mb-4">ANALYSER LES DONNÉES DIGITALES NÉCESSITE NÉANMOINS PLUSIEURS EXPERTISES, QUE LES CHEFS DE PROJETS FIRSTCOM MAITRISENT SUR LE BOUT DU CLAVIER :</h3>
+				<p class="mb-4">{{ "Sans oublier les différentes plateformes de webmarketing qui peuvent analyser les requêtes liées à votre secteur d’activité sur le web, mais aussi les performances de vos concurrents... Autant d’éléments qui facilitent et optimisent la prise de décision stratégique."|trans }}</p>
+				<h3 class="mb-4">{{ "ANALYSER LES DONNÉES DIGITALES NÉCESSITE NÉANMOINS PLUSIEURS EXPERTISES, QUE LES CHEFS DE PROJETS FIRSTCOM MAITRISENT SUR LE BOUT DU CLAVIER :"|trans }}</h3>
 				<ul>
 					<li>
-						La RGPD, ennemie jurée du data analyst, qui encadre le traitement des données personnelles.
+						{{"La RGPD, ennemie jurée du data analyst, qui encadre le traitement des données personnelles."|trans}}
 					</li>
 					<li>
-						Les outils et plateformes d’analyse webmarketing disponibles sur le marché.
+						{{"Les outils et plateformes d’analyse webmarketing disponibles sur le marché."|trans}}
 					</li>
 					<li>
-						La création d’un plan de taggage adéquat, et la connexion aux différentes API.
+						{{"La création d’un plan de taggage adéquat, et la connexion aux différentes API."|trans}}
 					</li>
 					<li>
-						La solidification, le tri et la mise en forme de ces données, sous la forme de tableurs Excel ou de dashboards personnalisés.
+						{{"La solidification, le tri et la mise en forme de ces données, sous la forme de tableurs Excel ou de dashboards personnalisés."|trans}}
 					</li>
 					<li>
-						L’analyse, enfin, de la data disponible et si besoin, l’aide à la décision stratégique.
+						{{"L’analyse, enfin, de la data disponible et si besoin, l’aide à la décision stratégique."|trans}}
 					</li>
 				</ul>
 			</div>
@@ -147,7 +147,7 @@
 	<div class="container-medium mt-5 mb-4">
 		<div class="row">
 			<div class="col-sm-12 col-md-12 mb-4">
-				<h4>ALORS, TEAM DOIGT MOUILLÉ OU DONNÉES CHIFFRÉES ?</h4>
+				<h4>{{ "ALORS, TEAM DOIGT MOUILLÉ OU DONNÉES CHIFFRÉES ?"|trans }}</h4>
 			</div>
 		</div>
 	</div>

@@ -14,7 +14,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class HomeController extends AbstractController
 {
-    #[Route('/', name: 'app_home', options: ['sitemap' => ['section' => 'home']] )]
+    #[Route('/', name: 'app_home', options: ['sitemap' => ['section' => 'home']])]
     public function index(ArticlesBlogRepository $articlesBlogRepository): Response
     {
 
@@ -28,12 +28,12 @@ class HomeController extends AbstractController
     // gestion des pages dynamiques sauf /admin, /login /logout /contact
     // voir si possible faire autrement pour les exeptions /admin...
     // seo$ privisoire car est la même page que referencement-naturel-seo$ mais ne peut pas être supprimée via le BO pour l'instant
-    #[Route("/{chemin}", name: "dynamic_page", requirements:  ["chemin" => "^(?!admin$|login$|logout$|contact$|croissance$|conseil-et-strategie$|referencement-naturel-seo$|seo$|marketing-de-loffre$|communication-de-crise$|consulting-et-developpement$|campagnes-digitales$|mentions-legales$|gestion-des-cookies$|data-analyse$|community-management-et-rp$|creation-editoriale-et-storytelling$|agence$|ecoindex$|tech-et-digital$|tech-et-digital/sites-web$|tech-et-digital/digitalisation$|agence-data-marketing-et-web-analyse-marseille$|agence-referencement-naturel-et-contenu-marseille$|agence-social-media-marseille$|agence-webmarketing-marseille$).+"], methods: ["GET"])]
-     public function loadPage(Request $request, EntityManagerInterface $entityManager, string $chemin)
-    {    
+    #[Route("/{chemin}", name: "dynamic_page", requirements: ["chemin" => "^(?!admin$|login$|logout$|contact$|croissance$|conseil-et-strategie$|referencement-naturel-seo$|seo$|marketing-de-loffre$|communication-de-crise$|consulting-et-developpement$|campagnes-digitales$|mentions-legales$|gestion-des-cookies$|data-analyse$|community-management-et-rp$|creation-editoriale-et-storytelling$|agence$|ecoindex$|tech-et-digital$|tech-et-digital/sites-web$|tech-et-digital/digitalisation$|agence-data-marketing-et-web-analyse-marseille$|agence-referencement-naturel-et-contenu-marseille$|agence-social-media-marseille$|agence-webmarketing-marseille$).+"], methods: ["GET"])]
+    public function loadPage(Request $request, EntityManagerInterface $entityManager, string $chemin)
+    {
         $chemin =  $request->getRequestUri();
 
-        $pageRepository = $entityManager->getRepository(Page::class);              
+        $pageRepository = $entityManager->getRepository(Page::class);
 
         $mapage = $pageRepository->findOneBy(['url' => $chemin]);
 
@@ -45,13 +45,13 @@ class HomeController extends AbstractController
         $monmodele = $modelepageRepository->findOneBy(['id' => $mapage->getModele()]);
 
         $blocspageRepository = $entityManager->getRepository(BlocsPage::class);
-        $mesblocs = $blocspageRepository->findBy(['page' => $mapage->getId()], ['datecreation' => 'ASC'] );
+        $mesblocs = $blocspageRepository->findBy(['page' => $mapage->getId()], ['datecreation' => 'ASC']);
 
-        $urlmodele = 'modeles_page/'.$monmodele->getUrl();
+        $urlmodele = 'modeles_page/' . $monmodele->getUrl();
         // dd($mesblocs);
         return $this->render($urlmodele, [
-                    'mapage' => $mapage,
-                    'mesblocs' => $mesblocs,
-        ]);       
+            'mapage' => $mapage,
+            'mesblocs' => $mesblocs,
+        ]);
     }
 }

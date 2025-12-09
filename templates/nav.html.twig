@@ -4,11 +4,16 @@
 	</div>
 
 	<div class="lang-switch-box">
-		{% set url = app.request.pathinfo %}
-		{% if url starts with '/en' %}
-			<a href="/" class="lang-box">FR</a>
+		{% set currentLocale = app.request.locale %}
+		{% set currentPath = app.request.pathInfo %}
+
+		{% if currentLocale == 'en' %}
+			{# On enlève le préfixe "/en" pour revenir au FR #}
+			{% set targetPath = currentPath|replace({'/en': ''}) %}
+			<a href="{{ targetPath }}" class="lang-box">FR</a>
 		{% else %}
-			<a href="/en" class="lang-box">EN</a>
+			{# On ajoute "/en" au début du chemin #}
+			<a href="/en{{ currentPath }}" class="lang-box">EN</a>
 		{% endif %}
 	</div>
 
@@ -80,10 +85,10 @@
 							</ul>
 						</li>
 						{# 
-													<li class="rubrique-menu">
-														<a href="#">CASE STUDIES</a>
-													</li> 
-												#}
+																			<li class="rubrique-menu">
+																				<a href="#">CASE STUDIES</a>
+																			</li> 
+																		#}
 						<li class="rubrique-menu">
 							<a href="{{ path('app_agence') }}">{{ "L'AGENCE"|trans }}</a>
 							<span class="icone-plus cursor-pointer"><img class="fleche-sous-menu" src="{{ asset('uploads/images/chevron-down-white.svg') }}"></span>

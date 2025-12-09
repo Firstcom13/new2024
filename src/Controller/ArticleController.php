@@ -13,7 +13,6 @@ class ArticleController extends AbstractController
     public function show(int $id, ArticlesBlogRepository $articlesBlogRepository): Response
     {
         $article = $articlesBlogRepository->find($id);
-        // dd($article);
 
         if (!$article) {
             throw $this->createNotFoundException('L\'article demandé n\'existe pas.');
@@ -23,7 +22,7 @@ class ArticleController extends AbstractController
         $limit = 2; // Nombre d'articles à récupérer
         $derniersArticles = $articlesBlogRepository->findLatestArticlesExceptCurrent($id, $limit);
         // dd($derniersArticles);
-        
+
         // Récupération de toutes les catégories
         $categories = $articlesBlogRepository->findAllCategories();
 

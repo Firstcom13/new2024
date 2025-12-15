@@ -75,13 +75,7 @@ $(function() {
 const typedTextSpan = document.querySelector(".typed-text");
 const cursorSpan = document.querySelector(".cursor");
 
-let textArray = ["CROISSANCE", "BUSINESS", "NOTORIÉTÉ"];
-
-if (window.location.pathname.includes('/en')) {
-    textArray = ["GROWTH", "BUSINESS", "AWARENESS"];
-}
-
-
+const textArray = ["CROISSANCE", "BUSINESS", "NOTORIÉTÉ"];
 const typingDelay = 100;
 const erasingDelay = 100;
 const newTextDelay = 3000; // Delay between current and next text

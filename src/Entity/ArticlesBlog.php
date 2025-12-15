@@ -8,10 +8,13 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
+use Gedmo\Mapping\Annotation as Gedmo;
+use Gedmo\Translatable\Translatable;
+
 #[ORM\Entity(repositoryClass: ArticlesBlogRepository::class)]
 #[ORM\HasLifecycleCallbacks]
-
-class ArticlesBlog
+#[Gedmo\TranslationEntity(class: \App\Entity\Translation::class)]
+class ArticlesBlog implements Translatable
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -19,18 +22,26 @@ class ArticlesBlog
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Gedmo\Translatable]
     private ?string $titre = null;
 
     #[ORM\Column(type: Types::TEXT, nullable: true)]
+    #[Gedmo\Translatable]
     private ?string $description_courte = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Gedmo\Translatable]
     private ?string $contenu = null;
 
+    #[Gedmo\Locale]
+    private $locale;
+
     #[ORM\Column(type: Types::TEXT)]
+    #[Gedmo\Translatable]
     private ?string $contenu2 = null;
 
     #[ORM\Column(type: Types::TEXT)]
+    #[Gedmo\Translatable]
     private ?string $meta_description = null;
 
     #[ORM\Column(length: 255, nullable: true)]
@@ -45,13 +56,13 @@ class ArticlesBlog
     #[ORM\ManyToMany(targetEntity: Categorie::class, inversedBy: 'date_creation')]
     private Collection $categorie;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE , nullable: true)]
+    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $date_creation = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE , nullable: true)]
+    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $date_update = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE , nullable: true)]
+    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
     private ?\DateTimeInterface $date_delete = null;
 
     #[ORM\Column(type: Types::BOOLEAN)]
@@ -239,5 +250,10 @@ class ArticlesBlog
         $this->publication = $publication;
 
         return $this;
+    }
+
+    public function setTranslatableLocale($locale)
+    {
+        $this->locale = $locale;
     }
 }

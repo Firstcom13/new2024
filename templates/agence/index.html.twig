@@ -1,10 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block meta_description %}
-    <meta name="description" content="L'agence Firstcom réunit toutes les compétences indispensables pour optimiser la présence des entreprises sur le web et assurer leur croissance digitale. ">
+	<meta name="description" content="L'agence Firstcom réunit toutes les compétences indispensables pour optimiser la présence des entreprises sur le web et assurer leur croissance digitale. ">
 {% endblock %}
 
-{% block title %}Firstcom, la task force born in Marseille au service de votre performance
+{% block title %}
+	{{ "Firstcom, la task force born in Marseille au service de votre performance"|trans }}
 {% endblock %}
 
 {% block body %}
@@ -16,15 +17,17 @@
 			</div>
 			<div class="col-md-4 col-12">
 				<div class="fil_ariane">
-					<a href="{{ path('app_home') }}">FIRSTCOM</a>
-					| 
-					<span>L'AGENCE</span>
+					<a href="{{ path('app_home') }}">{{ "FIRSTCOM"|trans }}</a>
+					|
+					<span>{{ "L'AGENCE"|trans }}</span>
 				</div>
 
-				<h1 class="card-title sous-titre writeWhite">FIRSTCOM : BORN IN<br> MARSEILLE, PLAYS ALL<br> OVER THE WORLD</h1>
-				<p class="texte-intro writeWhite mt-1">Firstcom est une agence born in Marseille, au temps où les fax sifflaient, les disquettes se perdaient et Séguéla portait une Rolex.</p>
-				<p class="texte-intro writeWhite">Depuis, on a rangé la boîte à archives et troqué nos IMac G3 pour grimper dans le train du digital pour ne jamais en redescendre. </p>
-				<p class="texte-intro writeWhite">Notre ADN : la performance et de la croissance.</p>
+				<h1 class="card-title sous-titre writeWhite">{{ "FIRSTCOM : BORN IN"|trans }}<br>
+					MARSEILLE, PLAYS ALL<br>
+					OVER THE WORLD</h1>
+				<p class="texte-intro writeWhite mt-1">{{ "Firstcom est une agence born in Marseille, au temps où les fax sifflaient, les disquettes se perdaient et Séguéla portait une Rolex."|trans }}</p>
+				<p class="texte-intro writeWhite">{{ "Depuis, on a rangé la boîte à archives et troqué nos IMac G3 pour grimper dans le train du digital pour ne jamais en redescendre."|trans }}</p>
+				<p class="texte-intro writeWhite">{{ "Notre ADN : la performance et de la croissance."|trans }}</p>
 			</div>
 		</div>
 	</section>
@@ -37,27 +40,41 @@
 		<div class="row borderSolid">
 			<div class="row borderSolid">
 				<div class="col-12">
-					<p class="mb-2">Stratégie de marque, acquisition digitale, création de contenus, développement web sur-mesure, SEO, GEO…: notre terrain de jeu, c’est celui de la visibilité utile, des dispositifs efficaces et des outils qui transforment vraiment.</p>
+					<p class="mb-2">{{ "Stratégie de marque, acquisition digitale, création de contenus, développement web sur-mesure, SEO, GEO…: notre terrain de jeu, c’est celui de la visibilité utile, des dispositifs efficaces et des outils qui transforment vraiment."|trans }}</p>
 
-					<p>Notre approche s’organise autour de quatre piliers, conçus pour répondre à l’ensemble des enjeux marketing et business de nos clients :</p>
+					<p>{{ "Notre approche s’organise autour de quatre piliers, conçus pour répondre à l’ensemble des enjeux marketing et business de nos clients :"|trans }}</p>
 					<ul class="mb-4">
-						<li><strong>Conseil & Stratégie</strong> : on clarifie les trajectoires, on structure les plans d'action, on challenge les modèles.</li>
-						<li><strong>Croissance & Performance</strong> : on active les bons leviers (SEO, SEA, social ads, data analyse), on mesure, on ajuste, on accélère.</li>
-						<li><strong>Contenus & Création</strong> : on rédige, on conçoit, on scénarise, on produit — du sens et du style.</li>
-						<li><strong>Tech & Digital</strong> : on développe des outils utiles, des sites robustes, des interfaces efficaces, et des dashboards qui parlent vrai.</li>
+						<li>
+							<strong>{{ "Conseil & Stratégie"|trans }}</strong>
+							:
+							{{ "on clarifie les trajectoires, on structure les plans d'action, on challenge les modèles."|trans }}</li>
+						<li>
+							<strong>{{ "Croissance & Performance"|trans }}</strong>
+							:
+							{{ "on active les bons leviers (SEO, SEA, social ads, data analyse), on mesure, on ajuste, on accélère."|trans }}</li>
+						<li>
+							<strong>{{ "Contenus & Création"|trans }}</strong>
+							:
+							{{ "on rédige, on conçoit, on scénarise, on produit — du sens et du style."|trans }}</li>
+						<li>
+							<strong>{{ "Tech & Digital"|trans }}</strong>
+							:
+							{{ "on développe des outils utiles, des sites robustes, des interfaces efficaces, et des dashboards qui parlent vrai."|trans }}</li>
 					</ul>
 
-					<p class="mb-2">Firstcom se dope à l’actualité économique, à la donnée et aux technologies émergentes. On teste, on creuse, on ajuste, et on innove sans jamais chercher la sortie de secours. Notre seule addiction : les résultats.</p>
-					<p class="mb-2">L’agence, c’est trois dirigeants associés, une équipe de maîtres Jedi qui maitrisent la nature étrange de la force et du business, et de jeunes padawans avides de devenir chevaliers. </p>
-					<p class="mb-2">Firstcom revendique fièrement son attachement à Marseille. On peut vous parler aussi bien du scintillement de l’écume, du chant des cigales, de l’odeur délicate des sardines… que de KPI, ROAS, UX, CTR et backlog technique.</p>
-					<p class="mb-2">Firstcom rayonne sur toute la France, accompagne des entreprises BtoC et BtoB dans tous les coins de l’hexagone, et s’envole régulièrement à l’international — entre Tel-Aviv, Hong-Kong et les datas centers de Google.</p>
-					<p class="mb-2">On a grandi dans une discrétion assumée, à l’ombre des sunlights mais sous le soleil de la croissance. Fidèles à Jul, fameux poète local :</p>
-					<pp><em>(** Album &laquo; Je tourne en rond &raquo; (2018)</em></pp>
+					<p class="mb-2">{{ "Firstcom se dope à l’actualité économique, à la donnée et aux technologies émergentes. On teste, on creuse, on ajuste, et on innove sans jamais chercher la sortie de secours. Notre seule addiction : les résultats."|trans }}</p>
+					<p class="mb-2">{{ "L’agence, c’est trois dirigeants associés, une équipe de maîtres Jedi qui maitrisent la nature étrange de la force et du business, et de jeunes padawans avides de devenir chevaliers."|trans }}</p>
+					<p class="mb-2">{{ "Firstcom revendique fièrement son attachement à Marseille. On peut vous parler aussi bien du scintillement de l’écume, du chant des cigales, de l’odeur délicate des sardines… que de KPI, ROAS, UX, CTR et backlog technique."|trans }}</p>
+					<p class="mb-2">{{ "Firstcom rayonne sur toute la France, accompagne des entreprises BtoC et BtoB dans tous les coins de l’hexagone, et s’envole régulièrement à l’international — entre Tel-Aviv, Hong-Kong et les datas centers de Google."|trans }}</p>
+					<p class="mb-2">{{ "On a grandi dans une discrétion assumée, à l’ombre des sunlights mais sous le soleil de la croissance. Fidèles à Jul, fameux poète local :"|trans }}</p>
+					<pp>
+						<em>(** Album &laquo; Je tourne en rond &raquo; (2018)</em>
+					</pp>
 				</div>
 			</div>
 			<div class="col-sm-12 col-md-12 mb-5 mt-5">
-				<h2>Vous cherchez une agence qui comprend vos enjeux, parle votre langage et joue la gagne à vos côtés ?</h2>
-				<p>Bienvenue chez Firstcom.</p>
+				<h2>{{ "Vous cherchez une agence qui comprend vos enjeux, parle votre langage et joue la gagne à vos côtés ?"|trans }}</h2>
+				<p>{{ "Bienvenue chez Firstcom."|trans }}</p>
 			</div>
 		</div>
 	</div>
@@ -68,11 +85,11 @@
 				<img class="image-bandeau img-fluid" src="{{ asset('uploads/images/agence-methode.webp') }}">
 			</div>
 			<div class="col-xs-12 col-md-6">
-				<h3 class="h3-mini writeWhite">MÉTHODE ET PROCESS</h3>
-				<p class="texte-courant writeWhite uppercase bold">Pour chaque projet, Firstcom monte une équipe agile, avec les compétences clés, coordonnés par un chef de projet expérimenté.</p>
+				<h3 class="h3-mini writeWhite">{{ "MÉTHODE ET PROCESS"|trans }}</h3>
+				<p class="texte-courant writeWhite uppercase bold">{{ "Pour chaque projet, Firstcom monte une équipe agile, avec les compétences clés, coordonnés par un chef de projet expérimenté."|trans }}</p>
 			</div>
 			<div class="col-xs-12 col-md-3 fleche-info ">
-				<p class="cartouche_info">On vous raconte la méthode maison ?</p>
+				<p class="cartouche_info">{{ "On vous raconte la méthode maison ?"|trans }}</p>
 				<div class="fleche-info">
 					<img src="{{ asset('uploads/images/fleche-gris60.png') }}">
 				</div>
@@ -83,11 +100,11 @@
 				<img class="image-bandeau img-fluid" src="{{ asset('uploads/images/agence-valeurs.webp') }}">
 			</div>
 			<div class="col-xs-12 col-md-6">
-				<h3 class="h3-mini writeWhite">NOTRE APPROCHE</h3>
-				<p class="texte-courant writeWhite uppercase bold">Firstcom est attaché à des valeur de fiabilité, d’intégrité et de proximité. C’est même nos clients qui le disent.</p>
+				<h3 class="h3-mini writeWhite">{{ "NOTRE APPROCHE"|trans }}</h3>
+				<p class="texte-courant writeWhite uppercase bold">{{ "Firstcom est attaché à des valeur de fiabilité, d’intégrité et de proximité. C’est même nos clients qui le disent."|trans }}</p>
 			</div>
 			<div class="col-xs-12 col-md-3 fleche-info ">
-				<p class="cartouche_info">On vous explique ?</p>
+				<p class="cartouche_info">{{ "On vous explique ?"|trans }}</p>
 				<div class="fleche-info">
 					<img src="{{ asset('uploads/images/fleche-gris60.png') }}">
 				</div>

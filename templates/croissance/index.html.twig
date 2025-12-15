@@ -5,7 +5,8 @@
 {% endblock %}
 
 
-{% block title %}Campagnes, référencement, Firstcom, au service de votre croissance
+{% block title %}
+	{{"Campagnes, référencement, Firstcom, au service de votre croissance"|trans}}
 {% endblock %}
 
 {% block body %}
@@ -19,14 +20,14 @@
 				<div class="fil_ariane">
 					<a href="{{ path('app_home') }}">FIRSTCOM</a>
 					|
-					<span>CROISSANCE ET PERFORMANCE</span>
+					<span>{{ "CROISSANCE ET PERFORMANCE"|trans }}</span>
 				</div>
 
-				<h1 class="card-title sous-titre black">L’ARGENT N’EST PAS LE PROBLÈME</h1>
+				<h1 class="card-title sous-titre black">{{ "L’ARGENT N’EST PAS LE PROBLÈME"|trans }}</h1>
 
-				<p class="texte-intro black">Ce n’est pas l’argent qui compte, mais la façon de le dépenser.</p>
-				<p class="texte-intro black mt-1">Oubliez les sommes investies pour vous concentrer sur la croissance récoltée.</p>
-				<p class="texte-intro-p black mt-2">L’avantage, avec nos actions, c’est que vous pourrez toujours les juger sur la performance. Établir de manière transparente le coût d’un clic, d’un lead, d’une vente.</p>
+				<p class="texte-intro black">{{ "Ce n’est pas l’argent qui compte, mais la façon de le dépenser."|trans }}</p>
+				<p class="texte-intro black mt-1">{{ "Oubliez les sommes investies pour vous concentrer sur la croissance récoltée."|trans }}</p>
+				<p class="texte-intro-p black mt-2">{{ "L’avantage, avec nos actions, c’est que vous pourrez toujours les juger sur la performance. Établir de manière transparente le coût d’un clic, d’un lead, d’une vente."|trans }}</p>
 			</div>
 		</div>
 		<div></div>
@@ -40,20 +41,20 @@
 		<div class="row borderSolid">
 
 			<div class="col-sm-12 col-md-12 mb-2">
-				<h2>CROISSANCE PERFORMANCE, L’ADN DE FIRSTCOM</h2>
+				<h2>{{ "CROISSANCE PERFORMANCE, L’ADN DE FIRSTCOM"|trans }}</h2>
 			</div>
 
 			<div class="row croissance_page borderSolid mb-5">
 				<div class="col-12">
-					<p>À nous...</p>
+					<p>{{ "À nous..."|trans }}</p>
 					<ul>
-						<li>D'activer les leviers les plus performants pour répondre à vos objectifs.</li>
-						<li>De suivre au quotidien vos campagnes pour les optimiser.</li>
-						<li>De mesurer les performances, analyser les actions.</li>
-						<li>D'établir des statistiques régulières, des points d'étape et de vous rendre des comptes.</li>
+						<li>{{ "D'activer les leviers les plus performants pour répondre à vos objectifs."|trans }}</li>
+						<li>{{ "De suivre au quotidien vos campagnes pour les optimiser."|trans }}</li>
+						<li>{{ "De mesurer les performances, analyser les actions."|trans }}</li>
+						<li>{{ "D'établir des statistiques régulières, des points d'étape et de vous rendre des comptes."|trans }}</li>
 					</ul>
 					<p>
-						<strong>Et au final, à vous d'empocher.</strong>
+						<strong>{{ "Et au final, à vous d'empocher."|trans }}</strong>
 					</p>
 				</div>
 			</div>
@@ -66,13 +67,13 @@
 				<img class="image-bandeau img-fluid" src="{{ asset('uploads/images/seo.webp') }}">
 			</div>
 			<div class="col-xs-12 col-md-6">
-				<h3 class="card-title-home">RÉFÉRENCEMENT MOTEURS DE RECHERCHE ET LLM (SEO + GEO)</h3>
-				<p class="card-text-home">Les outils les plus puissants pour vous assurer visibilité, citation et business — à la fois sur les moteurs de recherche, les LLM et leurs petits agents IA trop mignons qui vont bientôt régir la planète...</p>
-				<p class="card-text-home">Entre autorité, contenu, UX, technique, présence multiplateforme et protéiforme, le référencement n’a jamais été aussi complet… ni aussi tordu.</p>
-				<p class="card-text-mini-home">Mais bien maîtrisé, c’est un levier redoutable. Tellement efficace que même les robots finissent par parler de vous.</p>
+				<h3 class="card-title-home">{{ "RÉFÉRENCEMENT MOTEURS DE RECHERCHE ET LLM (SEO + GEO)"|trans }}</h3>
+				<p class="card-text-home">{{ "Les outils les plus puissants pour vous assurer visibilité, citation et business — à la fois sur les moteurs de recherche, les LLM et leurs petits agents IA trop mignons qui vont bientôt régir la planète..."|trans }}</p>
+				<p class="card-text-home">{{ "Entre autorité, contenu, UX, technique, présence multiplateforme et protéiforme, le référencement n’a jamais été aussi complet… ni aussi tordu."|trans }}</p>
+				<p class="card-text-mini-home">{{ "Mais bien maîtrisé, c’est un levier redoutable. Tellement efficace que même les robots finissent par parler de vous."|trans }}</p>
 			</div>
 			<div class="col-xs-12 col-md-3 fleche-info ">
-				<p class="cartouche_info">On vous explique ?</p>
+				<p class="cartouche_info">{{ "On vous explique ?"|trans }}</p>
 				<div class="fleche-info">
 					<img src="{{ asset('uploads/images/fleche-gris60.png') }}">
 				</div>
@@ -85,12 +86,12 @@
 				<img class="image-bandeau img-fluid" src="{{ asset('uploads/images/sea.webp') }}">
 			</div>
 			<div class="col-sm-12 col-md-6">
-				<h3 class="card-title-home">CAMPAGNES D’ACQUISITION PAYANTES (SEA / SOCIAL MÉDIA)</h3>
-				<p class="card-text-home">GOOGLE, MÉTA, LINKEDIN, TIK TOK OU AMAZON… GÉRER DES CAMPAGNES D’ACQUISITION NE SE RÉSUME PAS À COMMUNIQUER SON NUMÉRO DE CARTE BANCAIRE.</p>
-				<p class="card-text-mini-home">Une campagne performante, c’est une stratégie bien pensée en fonction de vos objectifs, votre offre et vos cibles, mais aussi des pages d’atterrissage « pousses au clic », des messages impactants et surtout des experts qui testent, surveillent,  optimisent chaque euro dépensé.</p>
+				<h3 class="card-title-home">{{ "CAMPAGNES D’ACQUISITION PAYANTES (SEA / SOCIAL MÉDIA)"|trans }}</h3>
+				<p class="card-text-home">{{ "GOOGLE, MÉTA, LINKEDIN, TIK TOK OU AMAZON… GÉRER DES CAMPAGNES D’ACQUISITION NE SE RÉSUME PAS À COMMUNIQUER SON NUMÉRO DE CARTE BANCAIRE."|trans }}</p>
+				<p class="card-text-mini-home">{{ "Une campagne performante, c’est une stratégie bien pensée en fonction de vos objectifs, votre offre et vos cibles, mais aussi des pages d’atterrissage « pousses au clic », des messages impactants et surtout des experts qui testent, surveillent,  optimisent chaque euro dépensé."|trans }}</p>
 			</div>
 			<div class="col-sm-12 col-md-3 fleche-info">
-				<p class="cartouche_info">On commence par parler de vos objectifs ?</p>
+				<p class="cartouche_info">{{ "On commence par parler de vos objectifs ?"|trans }}</p>
 				<div class="fleche-info">
 					<img src="{{ asset('uploads/images/fleche-gris60.png') }}">
 				</div>
@@ -103,13 +104,14 @@
 				<img class="image-bandeau img-fluid" src="{{ asset('uploads/images/smartphone.webp') }}">
 			</div>
 			<div class="col-sm-12 col-md-6">
-				<h3 class="card-title-home">COMMUNITY MANAGEMENT ET RP</h3>
-				<p class="card-text-home">CE N’EST PAS PARCE QU’ON SAIT POSTER UNE PHOTO D’UN PLAT DE BOLOGNAISE SUR INSTAGRAM OU FACEBOOK QU’ON DEVIENT COMMUNITY MANAGER. ET CE N’EST PAS PARCE QUE VOUS DIFFUSEZ UN COMMUNIQUÉ DE PRESSE QUE L’INFO OUVRIRA LE 20H DU LENDEMAIN.</p>
+				<h3 class="card-title-home">{{ "COMMUNITY MANAGEMENT ET RP"|trans }}</h3>
+				<p class="card-text-home">{{ "CE N’EST PAS PARCE QU’ON SAIT POSTER UNE PHOTO D’UN PLAT DE BOLOGNAISE SUR INSTAGRAM OU FACEBOOK QU’ON DEVIENT COMMUNITY MANAGER. ET CE N’EST PAS PARCE QUE VOUS DIFFUSEZ UN COMMUNIQUÉ DE PRESSE QUE L’INFO OUVRIRA LE 20H DU LENDEMAIN."|trans }}</p>
 				<p class="card-text-mini-home">
-					Le Community Manager sait choisir ses réseaux et son ton en fonction de sa cible, varier les types de contenus, analyser son audience et faire des vidéos Tiktok qui cassent le web. L’Attaché(e) de presse sait rédiger les infos qui font mouche et connait ses rédactions sur le bout de son clavier.</p>
+					{{"Le Community Manager sait choisir ses réseaux et son ton en fonction de sa cible, varier les types de contenus, analyser son audience et faire des vidéos Tiktok qui cassent le web. L’Attaché(e) de presse sait rédiger les infos qui font mouche et connait ses rédactions sur le bout de son clavier."|trans }}
+				</p>
 			</div>
 			<div class="col-sm-12 col-md-3 fleche-info">
-				<p class="cartouche_info">On vous présente nos experts ?</p>
+				<p class="cartouche_info">{{ "On vous présente nos experts ?"|trans }}</p>
 				<div class="fleche-info">
 					<img src="{{ asset('uploads/images/fleche-gris60.png') }}">
 				</div>
@@ -122,13 +124,14 @@
 				<img class="image-bandeau img-fluid" src="{{ asset('uploads/images/data-analyse.webp') }}">
 			</div>
 			<div class="col-sm-12 col-md-6">
-				<h3 class="card-title-home">DATA ANALYSE</h3>
-				<p class="card-text-home">LE NOUVEL OR NOIR SUR TOUTES LES LÈVRES. MAIS LA DATA ANALYSE NE COMMENCE PAS AVEC L’ANALYSE, CAR POUR ANALYSER DE LA DATA, ENCORE FAIT-IL SAVOIR LA RÉCUPÉRER.</p>
+				<h3 class="card-title-home">{{ "DATA ANALYSE"|trans }}</h3>
+				<p class="card-text-home">{{ "LE NOUVEL OR NOIR SUR TOUTES LES LÈVRES. MAIS LA DATA ANALYSE NE COMMENCE PAS AVEC L’ANALYSE, CAR POUR ANALYSER DE LA DATA, ENCORE FAIT-IL SAVOIR LA RÉCUPÉRER."|trans }}</p>
 				<p class="card-text-mini-home">
-					Donc fixer des objectifs clairs, connaitre sur le bout des doigts la RGPD pour mieux s’en jouer, développer un plan de taggage performant et enfin, récupérer et traiter la donnée..</p>
+					{{"Donc fixer des objectifs clairs, connaitre sur le bout des doigts la RGPD pour mieux s’en jouer, développer un plan de taggage performant et enfin, récupérer et traiter la donnée.."|trans }}
+				</p>
 			</div>
 			<div class="col-sm-12 col-md-3 fleche-info">
-				<p class="cartouche_info">On parle de vos objectifs ?</p>
+				<p class="cartouche_info">{{ "On parle de vos objectifs ?"|trans }}</p>
 				<div class="fleche-info">
 					<img src="{{ asset('uploads/images/fleche-gris60.png') }}">
 				</div>

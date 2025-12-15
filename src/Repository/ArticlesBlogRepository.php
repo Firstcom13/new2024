@@ -29,7 +29,9 @@ class ArticlesBlogRepository extends ServiceEntityRepository
     {
         // Création d'un objet QueryBuilder pour construire la requête.
         // 'a' est un alias pour l'entité ArticlesBlog dans cette requête.
-        return $this->createQueryBuilder('a')
+        $qb = $this->createQueryBuilder('a')
+            ->addSelect('c')
+            ->leftJoin('a.categorie', 'c')
             // Ajout d'un critère de tri : trier les articles par 'dateCreation'
             // en ordre décroissant ('DESC'), ce qui signifie du plus récent au plus ancien.
             ->orderBy('a.date_creation', 'DESC')
@@ -44,11 +46,26 @@ class ArticlesBlogRepository extends ServiceEntityRepository
             ->setMaxResults(1)
 
             // Convertit le QueryBuilder en une Query exécutable.
-            ->getQuery()
+            ->getQuery();
 
-            // Exécute la requête et obtient un seul résultat.
-            // Si aucun article n'est trouvé, cela retournera 'null'.
-            ->getOneOrNullResult();
+        $this->applyTranslationHints($qb);
+
+        // Exécute la requête et obtient un seul résultat.
+        // Si aucun article n'est trouvé, cela retournera 'null'.
+        return $qb->getOneOrNullResult();
+    }
+
+    public function find($id, $lockMode = null, $lockVersion = null): ?ArticlesBlog
+    {
+        $qb = $this->createQueryBuilder('a')
+            ->addSelect('c')
+            ->leftJoin('a.categorie', 'c')
+            ->where('a.id = :id')
+            ->setParameter('id', $id);
+        $query = $qb->getQuery();
+        $this->applyTranslationHints($query);
+
+        return $query->getOneOrNullResult();
     }
 
     /**
@@ -58,6 +75,8 @@ class ArticlesBlogRepository extends ServiceEntityRepository
     {
 
         $qb = $this->createQueryBuilder('a')
+            ->addSelect('c')
+            ->leftJoin('a.categorie', 'c')
             ->where('a.publication = :isPublished')
             ->setParameter('isPublished', true);
 
@@ -65,6 +84,7 @@ class ArticlesBlogRepository extends ServiceEntityRepository
         $qb->orderBy('a.date_creation', 'DESC');
 
         $query = $qb->getQuery();
+        $this->applyTranslationHints($query);
 
         return $query->getResult();
     }
@@ -77,37 +97,39 @@ class ArticlesBlogRepository extends ServiceEntityRepository
         $lastArticle = $this->findLastArticle();
 
         $qb = $this->createQueryBuilder('a')
+            ->addSelect('c')
+            ->leftJoin('a.categorie', 'c')
             ->where('a.publication = :isPublished')
             ->setParameter('isPublished', true);
 
         if ($lastArticle) {
             $qb->andWhere('a.id != :lastArticleId')
-            ->setParameter('lastArticleId', $lastArticle->getId());
+                ->setParameter('lastArticleId', $lastArticle->getId());
         }
 
         // Ajout d'un tri par date de création, dans l'ordre décroissant
         $qb->orderBy('a.date_creation', 'DESC');
 
-        return $qb->getQuery();
+        $query = $qb->getQuery();
+        $this->applyTranslationHints($query);
+
+        return $query;
     }
 
     public function findAllCategories(): array
     {
-        // Créer un objet QueryBuilder pour construire la requête.
-        // 'a' est un alias pour l'entité ArticlesBlog dans cette requête.
-        // 'c' sera un alias pour la jointure avec l'entité Catégorie.
-        $qb = $this->createQueryBuilder('a')
-            ->select('DISTINCT c.nom, c.slug') // Sélectionne les noms et slugs de catégories distincts
-            ->innerJoin('a.categorie', 'c') // Effectue une jointure avec l'entité Catégorie
+        // Construire la requête avec Categorie comme racine pour pouvoir sélectionner l'entité
+        $qb = $this->_em->createQueryBuilder()
+            ->select('DISTINCT c')
+            ->from('App\\Entity\\Categorie', 'c')
+            ->innerJoin('c.date_creation', 'a') // relation inverse ManyToMany vers ArticlesBlog
             ->where('a.publication = :isPublished')
             ->setParameter('isPublished', true)
-            ->orderBy('c.nom', 'ASC'); // Trie les catégories par nom dans l'ordre ascendant
+            ->orderBy('c.nom', 'ASC');
 
-        // Convertit le QueryBuilder en une Query exécutable.
         $query = $qb->getQuery();
+        $this->applyTranslationHints($query);
 
-        // Exécute la requête et obtient les résultats.
-        // getResult() retourne un tableau des résultats de la requête.
         return $query->getResult();
     }
 
@@ -120,48 +142,57 @@ class ArticlesBlogRepository extends ServiceEntityRepository
             ->where('subC.slug = :categoryName')
             ->setParameter('categoryName', $categoryName)
             ->getQuery();
-    
+
         $lastArticleDate = $subQueryBuilder->getSingleScalarResult();
-    
+
         // Requête principale pour obtenir tous les articles sauf le plus récent
         $qb = $this->createQueryBuilder('a')
+            ->addSelect('c')
             ->innerJoin('a.categorie', 'c')
             ->where('c.slug = :categoryName')
             ->setParameter('categoryName', $categoryName);
-    
+
         if ($lastArticleDate) {
             $qb->andWhere('a.date_creation != :lastArticleDate')
-               ->setParameter('lastArticleDate', $lastArticleDate);
+                ->setParameter('lastArticleDate', $lastArticleDate);
         }
-    
+
         $qb->orderBy('a.date_creation', 'DESC');
-    
-        return $qb->getQuery();
+
+        $query = $qb->getQuery();
+        $this->applyTranslationHints($query);
+
+        return $query;
     }
-      
+
 
     public function findLatestArticlesExceptCurrent($currentArticleId, $limit = null): array
     {
         $qb = $this->createQueryBuilder('a')
+            ->addSelect('c')
             ->innerJoin('a.categorie', 'c') // Effectue une jointure avec l'entité Catégorie
             ->where('a.publication = :isPublished')
             ->andWhere('a.id != :currentArticleId') // Exclut l'article actuel
             ->setParameter('isPublished', true)
             ->setParameter('currentArticleId', $currentArticleId)
             ->orderBy('a.date_creation', 'DESC'); // Assurez-vous que 'dateCreation' est le bon nom du champ
-    
+
 
         if ($limit) {
             $qb->setMaxResults($limit);
         }
 
-        return $qb->getQuery()->getResult();
+        $query = $qb->getQuery();
+        $this->applyTranslationHints($query);
+
+        return $query->getResult();
     }
 
 
     public function findLastArticleFromCategory($categoryName)
     {
         $qb = $this->createQueryBuilder('a')
+            ->addSelect('c')
             ->innerJoin('a.categorie', 'c')
             ->where('c.slug = :categoryName')
             ->andWhere('a.publication = :isPublished')
@@ -170,9 +201,16 @@ class ArticlesBlogRepository extends ServiceEntityRepository
             ->orderBy('a.date_creation', 'DESC')
             ->setMaxResults(1); // Pour ne récupérer que le plus récent
 
-        return $qb->getQuery()->getOneOrNullResult();
+        $query = $qb->getQuery();
+        $this->applyTranslationHints($query);
+
+        return $query->getOneOrNullResult();
     }
 
-
-
+    private function applyTranslationHints($query): void
+    {
+        // Assure le chargement des traductions Gedmo (ext_translations)
+        $query->setHint(\Doctrine\ORM\Query::HINT_CUSTOM_OUTPUT_WALKER, 'Gedmo\\Translatable\\Query\\TreeWalker\\TranslationWalker');
+        $query->setHint(\Gedmo\Translatable\TranslatableListener::HINT_FALLBACK, 1);
+    }
 }

@@ -4,7 +4,8 @@
 	<meta name="description" content="Mieux que l'IA, Firstcom s'appuie sur de vraies personnes pour créer un contenu sensible, intelligent et impactant, bref, qui vous ressemble.">
 {% endblock %}
 
-{% block title %}Firstcom, les mots et les images pour mieux vous raconter
+{% block title %}
+	{{"Firstcom, les mots et les images pour mieux vous raconter"|trans }}
 {% endblock %}
 
 {% block body %}
@@ -18,13 +19,13 @@
 				<div class="fil_ariane">
 					<a href="{{ path('app_home') }}">FIRSTCOM</a>
 					|
-					<span>CREATION DE CONTENUS</span>
+					<span>{{ "CREATION DE CONTENUS"|trans }}</span>
 				</div>
 
-				<h1 class="card-title sous-titre writeWhite">CRÉATION DE CONTENUS : ALCHIMIE D’INTELLIGENCES</h1>
+				<h1 class="card-title sous-titre writeWhite">{{ "CRÉATION DE CONTENUS : ALCHIMIE D’INTELLIGENCES"|trans }}</h1>
 
-				<p class="texte-intro writeWhite">Avez-vous réellement envie de confier à une intelligence artificielle toute la sincérité de votre marque ?</p>
-				<p class="texte-intro writeWhite mt-1">Pensez-vous vraiment que Chat GPT, Claude, Bard, Ernie ou leurs copines sachent-elles faire danser les mots pour retranscrire toutes les nuances de votre histoire ou de vos produits ? Laisseriez-vous à MidJourney le soin de dessiner vos contours ou illustrer vos valeurs ?</p>
+				<p class="texte-intro writeWhite">{{ "Avez-vous réellement envie de confier à une intelligence artificielle toute la sincérité de votre marque ?"|trans }}</p>
+				<p class="texte-intro writeWhite mt-1">{{ "Pensez-vous vraiment que Chat GPT, Claude, Bard, Ernie ou leurs copines sachent-elles faire danser les mots pour retranscrire toutes les nuances de votre histoire ou de vos produits ? Laisseriez-vous à MidJourney le soin de dessiner vos contours ou illustrer vos valeurs ?"|trans }}</p>
 			</div>
 		</section>
 
@@ -35,15 +36,15 @@
 		<div class="container-medium">
 			<div class="row">
 				<div class="col-sm-12 col-md-12 mb-4">
-					<p class="texte-intro-2 mt-2 mb-3">Malgré l’omniprésence de l’IA, faire rêver, attirer le regard, l’attention, bref, plier le game avec un mot, une image, un son ou un film reste un art complexe… et un sujet de fond, car la création de contenu s'avère vitale : les marques qui performent sont devenues de vrais médias, prenant la parole pour mieux se raconter et gagner en crédibilité.</p>
-					<p class="texte-intro-2">Chez Firstcom, on utilise l’IA. Mais on la mixe avec un bon jus de cerveau, histoire d’éviter toute platitude, mais aussi de bien coller aux besoins de nos clients, et à leurs cibles.</p>
-					<p class="texte-intro-2">Bref, on ajoute à l’intelligence artificielle une bonne dose d’intelligence humaine, de sensibilité, de connaissance des secteurs d’activité en général et de nos clients en particulier, ainsi que de toutes les nuances qui rendent un contenu attractif.</p>
+					<p class="texte-intro-2 mt-2 mb-3">{{ "Malgré l’omniprésence de l’IA, faire rêver, attirer le regard, l’attention, bref, plier le game avec un mot, une image, un son ou un film reste un art complexe… et un sujet de fond, car la création de contenu s'avère vitale : les marques qui performent sont devenues de vrais médias, prenant la parole pour mieux se raconter et gagner en crédibilité."|trans }}</p>
+					<p class="texte-intro-2">{{ "Chez Firstcom, on utilise l’IA. Mais on la mixe avec un bon jus de cerveau, histoire d’éviter toute platitude, mais aussi de bien coller aux besoins de nos clients, et à leurs cibles."|trans }}</p>
+					<p class="texte-intro-2">{{ "Bref, on ajoute à l’intelligence artificielle une bonne dose d’intelligence humaine, de sensibilité, de connaissance des secteurs d’activité en général et de nos clients en particulier, ainsi que de toutes les nuances qui rendent un contenu attractif."|trans }}</p>
 				</div>
 			</div>
 
 			<div class="row">
 				<div class="col-sm-12 col-md-12 mb-5">
-					<h2>CE MIX BIEN EQUILIBRÉ D’INTELLIGENCES, ON LE MET AU SERVICE DE 2 TYPOLOGIES DE CONTENU</h2>
+					<h2>{{ "CE MIX BIEN EQUILIBRÉ D’INTELLIGENCES, ON LE MET AU SERVICE DE 2 TYPOLOGIES DE CONTENU"|trans }}</h2>
 				</div>
 			</div>
 		</div>
@@ -55,13 +56,13 @@
 				</div>
 				<div class="col-xs-12 col-md-6">
 					<h3 class="h3-mini writeWhite">
-						La création éditoriale et le storytelling
+						{{ "La création éditoriale et le storytelling"|trans }}
 					</h3>
-					<p class="texte-courant writeWhite">Quel est le point commun des marques qui cartonnent ? Elles ont su devenir des marques média, prenant la parole sur tous les sujets liés de près ou de loin à leur secteur d’activité. Avec pertinence, intelligence (encore), humour et transparence. Elles racontent leur histoire et l’Histoire et nouent ainsi des relations privilégiées avec leur audience.</p>
-					<p class="texte-courant writeWhite mt-2">Demandez à Chat GPT ce qu’il en pense, et contactez-nous avec sa réponse.</p>
+					<p class="texte-courant writeWhite">{{ "Quel est le point commun des marques qui cartonnent ? Elles ont su devenir des marques média, prenant la parole sur tous les sujets liés de près ou de loin à leur secteur d’activité. Avec pertinence, intelligence (encore), humour et transparence. Elles racontent leur histoire et l’Histoire et nouent ainsi des relations privilégiées avec leur audience."|trans }}</p>
+					<p class="texte-courant writeWhite mt-2">{{ "Demandez à Chat GPT ce qu’il en pense, et contactez-nous avec sa réponse."|trans }}</p>
 				</div>
 				<div class="col-xs-12 col-md-3 fleche-info ">
-					<p class="cartouche_info">On raconte votre histoire ?</p>
+					<p class="cartouche_info">{{ "On raconte votre histoire ?"|trans }}</p>
 					<div class="fleche-info">
 						<img src="https://zupimages.net/up/23/28/vj4w.png">
 					</div>
@@ -73,13 +74,14 @@
 					<img class="image-bandeau img-fluid" src="{{ asset('uploads/images/crea-visuelle2.webp') }}">
 				</div>
 				<div class="col-sm-12 col-md-6">
-					<h3 class="h3-mini writeWhite">La création visuelle
+					<h3 class="h3-mini writeWhite">
+						{{ "La création visuelle"|trans }}
 					</h3>
-					<p class="texte-courant writeWhite">La création visuelle, qu’il s’agisse d’images, de vidéos, de motion designs, est affaire de curiosité, de sensibilité, d’adaptation et d’expérience. Définir une couleur, un design, une texture qui se fonde dans les tendances du moment tout en restant originale et très sexy est le leitmotiv de nos créatifs. Logos, pubs, plaquettes, vidéos Youtube ou Tik-tok, ils dessinent un nouveau langage pour votre marque.</p>
-					<p class="texte-courant writeWhite mt-2">Demandez à Midjourney ou à DALL-E d'exprimer leur créativité, et contactez-nous avec leur visuel ;-).</p>
+					<p class="texte-courant writeWhite">{{ "La création visuelle, qu’il s’agisse d’images, de vidéos, de motion designs, est affaire de curiosité, de sensibilité, d’adaptation et d’expérience. Définir une couleur, un design, une texture qui se fonde dans les tendances du moment tout en restant originale et très sexy est le leitmotiv de nos créatifs. Logos, pubs, plaquettes, vidéos Youtube ou Tik-tok, ils dessinent un nouveau langage pour votre marque."|trans }}</p>
+					<p class="texte-courant writeWhite mt-2">{{ "Demandez à Midjourney ou à DALL-E d'exprimer leur créativité, et contactez-nous avec leur visuel ;-)."|trans }}</p>
 				</div>
 				<div class="col-sm-12 col-md-3 fleche-info">
-					<p class="cartouche_info">On dessine votre histoire ?</p>
+					<p class="cartouche_info">{{ "On dessine votre histoire ?"|trans }}</p>
 					<div class="fleche-info">
 						<img src="https://zupimages.net/up/23/28/vj4w.png">
 					</div>

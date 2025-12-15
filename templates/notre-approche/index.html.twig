@@ -1,10 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block meta_description %}
-    <meta name="description" content="L'agence Firstcom réunit toutes les compétences indispensables pour optimiser la présence des entreprises sur le web et assurer leur croissance digitale. ">
+	<meta name="description" content="L'agence Firstcom réunit toutes les compétences indispensables pour optimiser la présence des entreprises sur le web et assurer leur croissance digitale. ">
 {% endblock %}
 
-{% block title %}Firstcom, la task force born in Marseille au service de votre performance
+{% block title %}
+	{{"Firstcom, la task force born in Marseille au service de votre performance"|trans}}
 {% endblock %}
 
 {% block body %}
@@ -17,25 +18,25 @@
 			<div class="col-md-4 col-12">
 				<div class="fil_ariane">
 					<a href="{{ path('app_home') }}">FIRSTCOM</a>
-					| 
-					<a href="{{ path('app_agence') }}">L'AGENCE</a>
-                    |
-                    <span>NOTRE APPROCHE</span>
+					|
+					<a href="{{ path('app_agence') }}">{{ "L'AGENCE"|trans }}</a>
+					|
+					<span>{{ "NOTRE APPROCHE"|trans }}</span>
 				</div>
 
 				<h1 class="card-title sous-titre writeWhite">
-                        QUE VOUS SOYEZ UN LEADER
+					{{"QUE VOUS SOYEZ UN LEADER
                         BIEN ÉTABLI, UN PETIT
                         POUCET À L’APPÉTIT FÉROCE
                         OU UN CHALLENGER QUI
-                        VOIT GRAND…
-                </h1>
+                        VOIT GRAND…"|trans }}
+				</h1>
 				<p class="texte-intro writeWhite mt-1">
-                    …vous partagez tous une même réalité : celle d’un marché
+					{{"…vous partagez tous une même réalité : celle d’un marché
                     qui change vite, d’un digital qui devient de plus en plus
-                    technique, et de clients qui en attendent toujours plus.
-                </p>
-				
+                    technique, et de clients qui en attendent toujours plus."|trans }}
+				</p>
+
 			</div>
 		</div>
 	</section>
@@ -49,117 +50,119 @@
 			<div class="row borderSolid">
 				<div class="col-12">
 					<h2 class="mb-4">
-                        CHEZ FIRSTCOM, ON NE PLAQUE JAMAIS UNE SOLUTION
-                        TOUTE FAITE SUR UN BESOIN MAL DÉFINI.
-                    </h2 class="mb-2">
-                    <p class="mb-2">
-                        On commence par comprendre vraiment qui vous êtes, où vous en êtes, et où vous voulez aller. Vos enjeux business, vos moyens,
-                        vos ressources internes, votre timing.
-                    </p>
-                    
-                    <p class="mb-4">Et ensuite, on construit. Ensemble. De manière pragmatique, ambitieuse, et surtout sur-mesure.</p>
-                    <br>
+						{{"CHEZ FIRSTCOM, ON NE PLAQUE JAMAIS UNE SOLUTION
+                        TOUTE FAITE SUR UN BESOIN MAL DÉFINI."|trans }}
+					</h2class="mb-2">
+					<p class="mb-2">
+						{{"On commence par comprendre vraiment qui vous êtes, où vous en êtes, et où vous voulez aller. Vos enjeux business, vos moyens,
+                        vos ressources internes, votre timing."|trans }}
+					</p>
+
+					<p class="mb-4">{{ "Et ensuite, on construit. Ensemble. De manière pragmatique, ambitieuse, et surtout sur-mesure."|trans }}</p>
+					<br>
 				</div>
 			</div>
 		</div>
 	</div>
 
 	<div class="background-basic-green row writeWhite">
-        <div class="col-sm-12 col-lg-6 col-xl-6 borderFull p-5">
-            <div class="row p-3">
-                <div class="col-12">
-                    <h3 class="writeWhite">UNE ÉQUIPE RÉACTIVE, ENGAGÉE, ET FRANCHEMENT SENIOR.</h3>
-                </div>
-                <div class="col-12">
-                    <p>Vous cherchez une équipe qui suit ses dossiers de bout en bout, qui comprend vite, agit bien, et
+		<div class="col-sm-12 col-lg-6 col-xl-6 borderFull p-5">
+			<div class="row p-3">
+				<div class="col-12">
+					<h3 class="writeWhite">{{ "UNE ÉQUIPE RÉACTIVE, ENGAGÉE, ET FRANCHEMENT SENIOR."|trans }}</h3>
+				</div>
+				<div class="col-12">
+					<p>
+						{{"Vous cherchez une équipe qui suit ses dossiers de bout en bout, qui comprend vite, agit bien, et
                         vous évite les allers-retours sans fin ?
-                        Bienvenue chez nous.
-                    </p>
-                    <br>
-                    <p>
-                        Notre force, c’est notre structure : une agence à taille humaine, composée de profils expérimentés,
-                        capables d’intervenir sur des projets complexes sans mille validations.
-                    </p>
-                    <br>
-                    <p>
-                        Résultat : des réponses rapides, des plans d’action solides, et une vraie capacité d’adaptation
-                        quand le contexte change.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-lg-6 col-xl-6 borderFull p-5">
-            <div class="row p-3">
-                <div class="col-12">
-                    <h3 class="writeWhite">UN PARTENAIRE (VRAIMENT) À VOS CÔTÉS</h3>
-                </div>
-                <div class="col-12">
-                    <p>
-                        Chez certains de nos clients, nous sommes un complément de leur service marketing. Chez
-                        d’autres, nous faisons carrément office de direction digitale externalisée.
-                    </p>
-                    <br>
-                    <p>Pas parce qu’on sait tout faire, non. Parce qu’on travaille comme s’il s’agissait de notre boîte.</p>
-                    <br>
-                    <p>Et qu’on maîtrise ce que vous n’avez pas le temps de maîtriser :</p>
-                    <ul>
-                        <li>les subtilités du SEO et du GEO (oui, les IA nous lisent aussi)</li>
-                        <li>les campagnes d’acquisition dans un écosystème en constante mutation</li>
-                        <li>le contenu qui parle à vos clients et aux algorithmes</li>
-                        <li>la technique, le tracking, les dashboards, les UX qui convertissent</li>
-                        <li>la création de sites, backoffices, et outils sur-mesure qui soutiennent la croissance</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-lg-6 col-xl-6 borderFull p-5">
-            <div class="row p-3">
-                <div class="col-12">
-                    <h3 class="writeWhite">UN CAP CLAIR : LA PERFORMANCE</h3>
-                </div>
-                <div class="col-12">
-                    <p>
-                        On ne fait pas du digital pour “être dans l’air du temps”. On le fait pour générer des leads, accélérer
+                        Bienvenue chez nous."|trans }}
+					</p>
+					<br>
+					<p>
+						{{"Notre force, c’est notre structure : une agence à taille humaine, composée de profils expérimentés,
+                        capables d’intervenir sur des projets complexes sans mille validations."|trans }}
+					</p>
+					<br>
+					<p>
+						{{"Résultat : des réponses rapides, des plans d’action solides, et une vraie capacité d’adaptation
+                        quand le contexte change."|trans }}
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-lg-6 col-xl-6 borderFull p-5">
+			<div class="row p-3">
+				<div class="col-12">
+					<h3 class="writeWhite">{{ "UN PARTENAIRE (VRAIMENT) À VOS CÔTÉS"|trans }}</h3>
+				</div>
+				<div class="col-12">
+					<p>
+						{{"Chez certains de nos clients, nous sommes un complément de leur service marketing. Chez
+                        d’autres, nous faisons carrément office de direction digitale externalisée."|trans }}
+					</p>
+					<br>
+					<p>{{ "Pas parce qu’on sait tout faire, non. Parce qu’on travaille comme s’il s’agissait de notre boîte."|trans }}</p>
+					<br>
+					<p>{{ "Et qu’on maîtrise ce que vous n’avez pas le temps de maîtriser :"|trans }}</p>
+					<ul>
+						<li>{{ "les subtilités du SEO et du GEO (oui, les IA nous lisent aussi)"|trans }}</li>
+						<li>{{ "les campagnes d’acquisition dans un écosystème en constante mutation"|trans }}</li>
+						<li>{{ "le contenu qui parle à vos clients et aux algorithmes"|trans }}</li>
+						<li>{{ "la technique, le tracking, les dashboards, les UX qui convertissent"|trans }}</li>
+						<li>{{ "la création de sites, backoffices, et outils sur-mesure qui soutiennent la croissance"|trans }}</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-lg-6 col-xl-6 borderFull p-5">
+			<div class="row p-3">
+				<div class="col-12">
+					<h3 class="writeWhite">{{ "UN CAP CLAIR : LA PERFORMANCE"|trans }}</h3>
+				</div>
+				<div class="col-12">
+					<p>
+						{{"On ne fait pas du digital pour “être dans l’air du temps”. On le fait pour générer des leads, accélérer
                         la conversion, augmenter la vente de vos produits, affirmer votre position, construire une marque
-                        forte et visible.
-                    </p>
-                    <br>
-                    <p>
-                        On ne vend pas des pages. On vend du résultat. Du concret.
-                        Et on sait vous dire quand une demande ne sert à rien, quand une tendance est un feu de paille,
-                        ou quand il vaut mieux faire simple et efficace.
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-lg-6 col-xl-6 borderFull p-5">
-            <div class="row p-3">
-                <div class="col-12">
-                    <h3 class="writeWhite">UNE RELATION DIRECTE, SAINE ET DURABLE</h3>
-                </div>
-                <div class="col-12">
-                    <p>
-                        Beaucoup de nos clients sont avec nous depuis 10, 15, parfois plus de 20 ans.
-                        Nous avons grandi ensemble, et plutôt bien grandi.
-                    </p>
-                    <p>Ils savent que chez Firstcom, on dit ce qu’on fait, et on fait ce qu’on dit.</p>
-                    <p>Mais avec une vraie attention portée à vos projets, vos contraintes, vos urgences.</p>
-                </div>
-            </div>
-        </div>
+                        forte et visible."|trans }}
+					</p>
+					<br>
+					<p>
+						{{"On ne vend pas des pages. On vend du résultat. Du concret.
+                        Et on sait vous dire quand une demande ne sert à rien, quand une tendance est un feu de paille,ou quand il vaut mieux faire simple et efficace."|trans }}
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-12 col-lg-6 col-xl-6 borderFull p-5">
+			<div class="row p-3">
+				<div class="col-12">
+					<h3 class="writeWhite">{{ "UNE RELATION DIRECTE, SAINE ET DURABLE"|trans }}</h3>
+				</div>
+				<div class="col-12">
+					<p>
+						{{"Beaucoup de nos clients sont avec nous depuis 10, 15, parfois plus de 20 ans.
+                        Nous avons grandi ensemble, et plutôt bien grandi."|trans }}
+					</p>
+					<p>{{ "Ils savent que chez Firstcom, on dit ce qu’on fait, et on fait ce qu’on dit."|trans }}</p>
+					<p>{{ "Mais avec une vraie attention portée à vos projets, vos contraintes, vos urgences."|trans }}</p>
+				</div>
+			</div>
+		</div>
 	</div>
 
-    <div class="container-medium">
+	<div class="container-medium">
 		<div class="row borderSolid">
 			<div class="col-sm-12 col-md-12 mb-5 mt-5">
 				<h2>
-					BREF, NOTRE APPROCHE TIENT EN UNE PHRASE :
-                </h2>
-                <h2>
-                    COMPRENDRE VOS ENJEUX. ACTIVER LES BONS LEVIERS. LIVRER DE LA
-                    PERFORMANCE.
-                </h2>
-                <a href="{{ path('app_contact') }}" style="text-decoration-color:#3c4141 ;"><h2>ON EN PARLE ?</h2></a>
+					{{"BREF, NOTRE APPROCHE TIENT EN UNE PHRASE :"|trans}}
+				</h2>
+				<h2>
+					{{"COMPRENDRE VOS ENJEUX. ACTIVER LES BONS LEVIERS. LIVRER DE LA
+                    PERFORMANCE."|trans}}
+				</h2>
+				<a href="{{ path('app_contact') }}" style="text-decoration-color:#3c4141 ;">
+					<h2>{{ "ON EN PARLE ?"|trans }}</h2>
+				</a>
 			</div>
 		</div>
 	</div>

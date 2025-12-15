@@ -1,17 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Merci{% endblock %}
+{% block title %}Merci
+{% endblock %}
 
 {% block body %}
-<section id="container1">
-    <div class="row align-items-center justify-content-center">
-        <div class="col-md-4 col-12">
-            <img class="image_blondie" src="{{ asset('uploads/images/fortune-cookie.webp') }}">
-        </div>
-        <div class="col-md-4 col-12">
-            <h1 class="card-title sous-titre writeWhite">MERCI !</h1>
-            <p class="texte-intro writeWhite">Nous avons bien reçu votre demande de contact et nous reviendrons vers vous prochainement.</p>
-        </div>
-    </div>
-</section>
+	<section id="container1">
+		<div class="row align-items-center justify-content-center">
+			<div class="col-md-4 col-12">
+				<img class="image_blondie" src="{{ asset('uploads/images/fortune-cookie.webp') }}">
+			</div>
+			<div class="col-md-4 col-12">
+				<h1 class="card-title sous-titre writeWhite">{{ "MERCI !"|trans }}</h1>
+				<p class="texte-intro writeWhite">{{"Nous avons bien reçu votre demande de contact et nous reviendrons vers vous prochainement."|trans}}</p>
+			</div>
+		</div>
+	</section>
 {% endblock %}

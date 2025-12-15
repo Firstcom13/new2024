@@ -5,15 +5,15 @@
 				<div class="logo_footer">
 					<img class="logo" src="{{ asset('uploads/images/bzs0.png') }}">
 				</div>
-				<p class="slogan_footer">FAISONS CONNAISSANCE, ÉCHANGEONS SUR VOTRE PROJET !</p>
-				<a href="{{ path('app_contact') }}" class="btn_footer">CONTACTEZ-NOUS</a>
+				<p class="slogan_footer">{{"FAISONS CONNAISSANCE, ÉCHANGEONS SUR VOTRE PROJET !"|trans}}</p>
+				<a href="{{ path('app_contact') }}" class="btn_footer">{{ "CONTACTEZ-NOUS"|trans }}</a>
 
 				<div class="col-12 mb-4">
 					<div class="liens_footer text-center mx-auto">
-						<a href="/contact">EXPERTISE</a>
-						<a href="/contact">CASE STUDIES</a>
-						<a href="/contact">AGENCE</a>
-						<a href="/contact">BLOG</a>
+						<a href="/contact">{{ "EXPERTISE"|trans }}</a>
+						<a href="/contact">{{ "CASE STUDIES"|trans }}</a>
+						<a href="/contact">{{ "AGENCE"|trans }}</a>
+						<a href="/contact">{{ "BLOG"|trans }}</a>
 					</div>
 				</div>
 				<div>
@@ -23,10 +23,10 @@
 						</div>
 					</a>
 					{# <a href="https://twitter.com/_firstcom_?s=11&t=BBBkwQf1BswMbM4GWaOKdg " target="_blank" class="footer-social-lien">
-						<div class="social-icon twitter">
-							<i class="fab fa-twitter"></i>
-						</div>
-					</a> #}
+											<div class="social-icon twitter">
+												<i class="fab fa-twitter"></i>
+											</div>
+										</a> #}
 					<a href="https://www.facebook.com/AgenceFirstcom/" target="_blank" class="footer-social-lien">
 						<div class="social-icon facebook">
 							<i class="fab fa-facebook-f"></i>
@@ -34,10 +34,11 @@
 					</a>
 				</div>
 				<div class="liens_footer_bas">
-					<span>© FIRSTCOM • </span>
-					<a href="{{ path('app_mentions_legales') }}">MENTIONS LÉGALES</a> 
+					<span>© FIRSTCOM •
+					</span>
+					<a href="{{ path('app_mentions_legales') }}">{{ "MENTIONS LÉGALES"|trans }}</a>
 					|
-					<a href="{{ path('app_gestion_cookies') }}">GESTION DES COOKIES</a>
+					<a href="{{ path('app_gestion_cookies') }}">{{ "GESTION DES COOKIES"|trans }}</a>
 				</div>
 			</div>
 		</div>
@@ -45,20 +46,22 @@
 	<div class="container-fluid background-basic-green px-0 py-2">
 		<div class="col-12 ecoindex-link">
 			<img src="{{ asset('uploads/images/eco-index-module.svg') }}" alt="Ecoindex">
-			<a href="{{ path('app_ecoindex') }}">En savoir +</a>
+			<a href="{{ path('app_ecoindex') }}">{{ "En savoir +"|trans }}</a>
 		</div>
 	</div>
 </section>
 
 <script>
-	window.axeptioSettings = {
-	  clientId: "651e7ec509b291d488c3e43c",
-	  cookiesVersion: "firstcom-base",
-	};
-	 
-	(function(d, s) {
-	  var t = d.getElementsByTagName(s)[0], e = d.createElement(s);
-	  e.async = true; e.src = "//static.axept.io/sdk.js";
-	  t.parentNode.insertBefore(e, t);
-	})(document, "script");
+	window.axeptioSettings = {
+clientId: "651e7ec509b291d488c3e43c",
+cookiesVersion: "firstcom-base"
+};
+
+(function (d, s) {
+var t = d.getElementsByTagName(s)[0],
+e = d.createElement(s);
+e.async = true;
+e.src = "//static.axept.io/sdk.js";
+t.parentNode.insertBefore(e, t);
+})(document, "script");
 </script>

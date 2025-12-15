@@ -9,10 +9,10 @@
 		<div class="modal-dialog modal-dialog-centered" role="document">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title" id="successModalLabel">Nous vous remercions pour cette prise de contact via notre site web.</h5>
+					<h5 class="modal-title" id="successModalLabel">{{ "Nous vous remercions pour cette prise de contact via notre site web."|trans }}</h5>
 				</div>
 				<div class="modal-body">
-					<p>Nous en accusons réception et ne manquerons pas d’y donner suite au plus vite.</p>
+					<p>{{ "Nous en accusons réception et ne manquerons pas d’y donner suite au plus vite."|trans }}</p>
 				</div>
 			</div>
 		</div>
@@ -27,8 +27,8 @@
 					AGENCE | CONTACT</h1>
 				<h2 class="card-title sous-titre">CALL ME</h2>
 				<p class="card-text contact-text">Envie de parler de stratégie, de performance, de digital ou de communication ? 
-										      Envie de rejoindre la team Firstcom ? 
-										      Envie de partager un café sur notre belle terrasse ensoleillée ?</p>
+															      Envie de rejoindre la team Firstcom ? 
+															      Envie de partager un café sur notre belle terrasse ensoleillée ?</p>
 			</div>
 		</div>
 		<div></div>
@@ -41,10 +41,10 @@
 
 	<div id="container" class="container">
 		<h1 class="contact_title">NE SOYEZ PAS TIMIDE, N’HÉSITEZ PAS À
-						PARTAGER AVEC NOUS VOS ENVIES DANS
-						CE FORMULAIRE !</h1>
+									PARTAGER AVEC NOUS VOS ENVIES DANS
+									CE FORMULAIRE !</h1>
 		{# <div class="underline">
-				  </div> #}
+						  </div> #}
 		<div class="icon_wrapper"></div>
 		{{ form_start(formulaire, {'attr': {'id': 'contact_form', 'method': 'post', 'action': path('app_contact')}}) }}
 		<div class="telephone">
@@ -107,11 +107,11 @@
 		</div>
 		{{ form_end(formulaire) }}
 
-	<!--	<script src="https://www.google.com/recaptcha/api.js" async defer></script>-->
+		<!--	<script src="https://www.google.com/recaptcha/api.js" async defer></script>-->
 
 	</div>
 	<!-- // End #container -->
 	{% include "map.html.twig" %}
-	 <div id="map" style="width: 100%; height: 400px;"></div>
+	<div id="map" style="width: 100%; height: 400px;"></div>
 
 {% endblock %}

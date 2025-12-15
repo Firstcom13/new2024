@@ -1,14 +1,16 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Le Blog de FIRSTCOM
+{% block title %}
+	{{"Le Blog de FIRSTCOM"|trans}}
 {% endblock %}
 
 {% block body %}
 
-	<section class="blog-container">
+	<section
+		class="blog-container">
 		{# Dernier article en vedette #}
 		{% if dernierArticle %}
-		
+
 			<div class="vedette-article" style="background-image: url('{{ asset('uploads/images/' ~ dernierArticle.imgXL) }}');">
 				<div class="container-medium-blog">
 					<div class="row">
@@ -20,14 +22,12 @@
 								{% endfor %}
 							</div>
 							<h1 class="writeWhite mb-3">{{ dernierArticle.titre | raw}}</h1>
-							<div class="writeWhite texte-courant">{{ dernierArticle.descriptionCourte | split(' ') | slice(0, 20) | join(' ') | raw }} ...</div>
+							<div class="writeWhite texte-courant">{{ dernierArticle.descriptionCourte | split(' ') | slice(0, 20) | join(' ') | raw }}
+								...</div>
 
 							<div class="row">
 								<div class="col-6 col-md-2 col-xl-2 col-xxl-1">
-									<a href="{{ path('app_article_show', {
-										'id': dernierArticle.id,
-										'slug': dernierArticle.titre | striptags | slug | lower
-									}) }}" class="d-block mt-4">LIRE</a>
+									<a href="{{ path('app_article_show', { 'id': dernierArticle.id, 'slug': dernierArticle.titre | striptags | slug | lower }) }}" class="d-block mt-4">{{ "LIRE"|trans }}</a>
 								</div>
 							</div>
 						</div>
@@ -54,11 +54,11 @@
 
 			.vedette-article-fleche-suite img {
 				display: block;
-				margin: 50px auto 0 auto;
+				margin: 50px auto 0;
 				transform: rotate(180deg);
 			}
 
-			@media screen and (max-width: 991px) {
+			@media screen and(max-width: 991px) {
 				.vedette-article-fleche-suite {
 					display: block;
 				}
@@ -70,7 +70,7 @@
 				padding: 6px;
 			}
 
-			@media screen and (max-width: 991px) {
+			@media screen and(max-width: 991px) {
 				.blog-categories {
 					display: none;
 				}
@@ -102,7 +102,7 @@
 				padding: 6px;
 			}
 
-			@media screen and (min-width: 991px) {
+			@media screen and(min-width: 991px) {
 				.blog-categories {
 					display: block;
 				}
@@ -133,7 +133,7 @@
 			.blog-categories-mobile img {
 				width: 20px;
 				position: relative;
-    			bottom: 2px;
+				bottom: 2px;
 			}
 
 			.target-cat-mobile {
@@ -166,7 +166,7 @@
 			}
 
 			.chevron-categories {
-			transition: transform 0.3s ease;
+				transition: transform 0.3s ease;
 			}
 
 			/* Quand la classe .chevron-up est présente, l'icône pivote */
@@ -178,34 +178,34 @@
 				color: #96A596 !important;
 				font-weight: 500 !important;
 			}
-
 		</style>
 		<script>
 			document.addEventListener("DOMContentLoaded", (event) => {
-			
-				let target = document.querySelector('.target-cat-mobile');
-				let categories_mobile = document.querySelector('.categories-mobile');
 
-				target.addEventListener('click', () => {
-					// Basculer entre les classes pour ouvrir/fermer le menu
-					categories_mobile.classList.toggle('cat-mobile-ferme');
-					categories_mobile.classList.toggle('cat-mobile-ouvert');
+let target = document.querySelector('.target-cat-mobile');
+let categories_mobile = document.querySelector('.categories-mobile');
 
-					let chevron = target.querySelector('.chevron-categories');
-					if (chevron) {
-						chevron.classList.toggle('chevron-up');
-					
-					}
-				});
-			});
+target.addEventListener('click', () => { // Basculer entre les classes pour ouvrir/fermer le menu
+categories_mobile.classList.toggle('cat-mobile-ferme');
+categories_mobile.classList.toggle('cat-mobile-ouvert');
+
+let chevron = target.querySelector('.chevron-categories');
+if (chevron) {
+chevron.classList.toggle('chevron-up');
+
+}
+});
+});
 		</script>
 		<div class="container-meduim">
 			<div class="blog-categories">
-				<span>CATÉGORIES</span>
+				<span>{{ "CATÉGORIES"|trans }}</span>
 				<span><img class="fleche-categories" src="{{ asset('uploads/images/fleche-right-white.webp') }}"></span>
-				<a href="{{ path('app_blog') }}" class="active-category">TOUT</a>
+				<a href="{{ path('app_blog') }}" class="active-category">{{ "TOUT"|trans }}</a>
 				{% for categorie in categories %}
-					<span> | </span>
+					<span>
+						|
+					</span>
 					<a href="{{ path('blog_filter_by_category', {'categoryName': categorie.slug}) }}">
 						{{ categorie.nom | upper }}
 					</a>
@@ -216,12 +216,12 @@
 		<div class="container-meduim">
 			<div class="blog-categories-mobile align-items-center justify-content-center">
 				<div class="target-cat-mobile">
-					<span>CATÉGORIES</span>
+					<span>{{ "CATÉGORIES"|trans }}</span>
 					<span><img class="chevron-categories" src="{{ asset('uploads/images/chevron-down-white.svg') }}"></span>
 				</div>
 
 				<div class="categories-mobile cat-mobile-ferme">
-					<a href="{{ path('app_blog') }}" class="active-category">TOUT</a>
+					<a href="{{ path('app_blog') }}" class="active-category">{{ "TOUT"|trans }}</a>
 					{% for categorie in categories %}
 						<a href="{{ path('blog_filter_by_category', {'categoryName': categorie.slug}) }}">
 							{{ categorie.nom | upper }}
@@ -251,13 +251,11 @@
 										<h2 class="writeWhite mb-3">{{ article.titre | raw }}</h2>
 									</div>
 									<div class="col-12">
-										<div class="writeWhite texte-courant-mini">{{ article.descriptionCourte | split(' ') | slice(0, 20) | join(' ') | raw }} ...</div>
+										<div class="writeWhite texte-courant-mini">{{ article.descriptionCourte | split(' ') | slice(0, 20) | join(' ') | raw }}
+											...</div>
 									</div>
 									<div class="col-4 col-md-4 col-xl-3 col-xxl-2">
-										<a href="{{ path('app_article_show', {
-											'id': article.id,
-											'slug': article.titre | striptags | slug | lower
-										}) }}" class="d-block mt-4">LIRE</a>
+										<a href="{{ path('app_article_show', { 'id': article.id, 'slug': article.titre | striptags | slug | lower }) }}" class="d-block mt-4">{{ "LIRE"|trans }}</a>
 									</div>
 								</div>
 							</div>
@@ -269,7 +267,7 @@
 
 			<style>
 				.pagination {
-					padding: 20px 0 30px 0;
+					padding: 20px 0 30px;
 				}
 
 				.pagination .pagination-pages {
@@ -297,26 +295,26 @@
 				}
 			</style>
 			<div class="pagination">
-				<div class="pagination-pages">
+				<div
+					class="pagination-pages">
 					{# Flèche pour aller à la page précédente #}
 					{% if pagination.currentPageNumber > 1 %}
-						<a href="{{ path('app_blog_paginated', {'page': pagination.currentPageNumber - 1}) }}"><img src="{{ asset('uploads/images/fleche-left.svg') }}" alt="Flèche à gauche"></a></a>
-					{% endif %}
+						<a href="{{ path('app_blog_paginated', {'page': pagination.currentPageNumber - 1}) }}"><img src="{{ asset('uploads/images/fleche-left.svg') }}" alt="Flèche à gauche"></a>
+					</a>
+				{% endif %}
 
-					{# Lien vers les pages #}
-					{% for i in 1..pagination.pageCount %}
-						{# Application d'une classe différente si c'est la page actuelle #}
-						<a href="{{ path('app_blog_paginated', {'page': i}) }}" class="{{ i == pagination.currentPageNumber ? 'active' : '' }}">{{ i }}</a>
-					{% endfor %}
+				{# Lien vers les pages #}
+				{% for i in 1..pagination.pageCount %}
+					{# Application d'une classe différente si c'est la page actuelle #}
+					<a href="{{ path('app_blog_paginated', {'page': i}) }}" class="{{ i == pagination.currentPageNumber ? 'active' : '' }}">{{ i }}</a>
+				{% endfor %}
 
-					{# Flèche pour aller à la page suivante #}
-					{% if pagination.currentPageNumber < pagination.pageCount %}
-						<a href="{{ path('app_blog_paginated', {'page': pagination.currentPageNumber + 1}) }}"><img src="{{ asset('uploads/images/fleche-right.svg') }}" alt="Flèche à droite"></a>
-					{% endif %}
-				</div>
+				{# Flèche pour aller à la page suivante #}
+				{% if pagination.currentPageNumber < pagination.pageCount %}
+					<a href="{{ path('app_blog_paginated', {'page': pagination.currentPageNumber + 1}) }}"><img src="{{ asset('uploads/images/fleche-right.svg') }}" alt="Flèche à droite"></a>
+				{% endif %}
 			</div>
 		</div>
+	</div>
 
-	</section>
-
-{% endblock %}
+</section>{% endblock %}

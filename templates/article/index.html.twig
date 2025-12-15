@@ -81,7 +81,7 @@
 
 		a.article-contact {
 			display: block;
-    		width: fit-content;
+			width: fit-content;
 			text-decoration: none;
 			font-weight: 700;
 			color: #FFFFFF;
@@ -102,7 +102,7 @@
 			padding: 5px 10px;
 		}
 
-		@media screen and (max-width: 991px) {
+		@media screen and(max-width: 991px) {
 			.article-lancement h1 {
 				font-size: 30px;
 			}
@@ -178,23 +178,23 @@
 									<img class="article-img-contenu" src="{{ asset('uploads/images/' ~ article.ImgContenu) }}">
 								</div>
 							{% endif %}
-							
+
 							{% if article.Contenu2 %}
 								<div class="col-12">
 									{{ article.Contenu2 | raw}}
 								</div>
 							{% endif %}
 						</div>
-						
+
 					</div>
 
 					<div class="col-12 mb-4">
-						<a href="{{ path('app_contact') }}" class="article-contact"><img class="article-fleche-contact" src="{{ asset('uploads/images/fleche-right-white.webp') }}">Contactez-nous pour une analyse et des recommandations sur mesure</a>
+						<a href="{{ path('app_contact') }}" class="article-contact"><img class="article-fleche-contact" src="{{ asset('uploads/images/fleche-right-white.webp') }}">{{ "Contactez-nous pour une analyse et des recommandations sur mesure"|trans }}</a>
 					</div>
 					<div class="col-12 mt-5 mb-5">
 						<div class="article-retour">
 							<img class="article-fleche-contact" src="{{ asset('uploads/images/fleche-left.webp') }}">
-							<a href="{{ path('app_blog') }}" class="article-retour">TOUS LES ARTICLES</a>
+							<a href="{{ path('app_blog') }}" class="article-retour">{{ "TOUS LES ARTICLES"|trans }}</a>
 						</div>
 					</div>
 				</div>
@@ -204,13 +204,10 @@
 				<div class="row">
 
 					<div class="col-12">
-						<h2>ARTICLES RECENTS</h2>
+						<h2>{{ "ARTICLES RECENTS"|trans }}</h2>
 
 						{% for dernierArticle in derniersArticles %}
-							<a href="{{ path('app_article_show', {
-												'id': dernierArticle.id,
-												'slug': dernierArticle.titre | striptags | slug | lower
-											}) }}" class="text-decoration-none">
+							<a href="{{ path('app_article_show', { 'id': dernierArticle.id, 'slug': dernierArticle.titre | striptags | slug | lower }) }}" class="text-decoration-none">
 								<div class="col-12 mt-3 mb-4">
 									<div class="article-aside-img" style="background-image: url('{{ asset('uploads/images/' ~ dernierArticle.imgS) }}'); background-repeat: no-repeat; background-size: cover; background-position: center; display: flex; justify-content: center; align-items: center;"></div>
 									<div class="infos mt-2">
@@ -230,16 +227,16 @@
 					<div class="col-12 border-top border-secondary"></div>
 
 					<div class="col-12">
-						<h2 class="mt-4 mb-3">CATÉGORIES</h2>
+						<h2 class="mt-4 mb-3">{{ "CATÉGORIES"|trans }}</h2>
 						<div class="categories-aside">
-							<a href="{{ path('app_blog') }}" class="toutes-categories">TOUTES LES CATÉGORIES</a>
+							<a href="{{ path('app_blog') }}" class="toutes-categories">{{ "TOUTES LES CATÉGORIES"|trans }}</a>
 
 							{% for categorie in categories %}
 								<a href="{{ path('blog_filter_by_category', {'categoryName': categorie.slug}) }}">{{ categorie.nom | upper }}</a>
 							{% endfor %}
 						</div>
 					</div>
-					
+
 				</div>
 			</div>
 		</div>

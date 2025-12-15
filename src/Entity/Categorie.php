@@ -10,8 +10,12 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
 use Symfony\Component\String\Slugger\AsciiSlugger;
 
+use Gedmo\Mapping\Annotation as Gedmo;
+use Gedmo\Translatable\Translatable;
+
 #[ORM\Entity(repositoryClass: CategorieRepository::class)]
-class Categorie
+#[Gedmo\TranslationEntity(class: \App\Entity\Translation::class)]
+class Categorie implements Translatable
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -19,7 +23,11 @@ class Categorie
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
+    #[Gedmo\Translatable]
     private ?string $nom = null;
+
+    #[Gedmo\Locale]
+    private $locale;
 
     #[ORM\Column]
     private ?bool $active = null;
@@ -67,7 +75,9 @@ class Categorie
         $this->nom = $nom;
 
         // Mettre à jour le slug chaque fois que le nom est modifié.
-        $this->updateSlug();
+        if ($this->locale === null || $this->locale === 'fr') {
+            $this->updateSlug();
+        }
 
         return $this;
     }
@@ -158,5 +168,9 @@ class Categorie
 
         return $this;
     }
-    
+
+    public function setTranslatableLocale($locale)
+    {
+        $this->locale = $locale;
+    }
 }

@@ -2,7 +2,7 @@
 // ========================================
 // MODE MAINTENANCE TEMPORAIRE
 // ========================================
-$maintenance = false;
+$maintenance = true;
 
 // IP autorisées (accès au site même en maintenance)
 $allowedIps = [

@@ -81,9 +81,9 @@ let textArray = [
 
 if (window.location.pathname.includes("/en")) {
   textArray = [
-    ["ACCELERATING", "GROWTH."],
-    ["ACCELERATING", "BUSINESS."],
-    ["ACCELERATING", "AWARENESS."]
+    ["GROWTH."],
+    ["BUSINESS."],
+    ["AWARENESS."]
   ];
 }
 

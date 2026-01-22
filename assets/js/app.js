@@ -71,47 +71,55 @@ $(function() {
 });
 
   
-
 const typedTextSpan = document.querySelector(".typed-text");
 const cursorSpan = document.querySelector(".cursor");
 
 let textArray = ["CROISSANCE", "BUSINESS", "NOTORIÉTÉ"];
 
-if (window.location.pathname.includes('/en')) {
-    textArray = ["ACCELERATING <br>GROWTH.", "ACCELERATING BUSINESS.", "ACCELERATING AWARENESS."];
+if (window.location.pathname.includes("/en")) {
+  textArray = [
+    "ACCELERATING<br>GROWTH.",
+    "ACCELERATING<br>BUSINESS.",
+    "ACCELERATING<br>AWARENESS.",
+  ];
 }
-
 
 const typingDelay = 100;
 const erasingDelay = 100;
 const newTextDelay = 3000; // Delay between current and next text
+
 let textArrayIndex = 0;
 let charIndex = 0;
 
 function type() {
-    if (charIndex < textArray[textArrayIndex].length) {
-        typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
-        charIndex++;
-        setTimeout(type, typingDelay);
-    } else {
-        setTimeout(erase, newTextDelay);
-    }
+  const currentText = textArray[textArrayIndex];
+
+  if (charIndex < currentText.length) {
+    // innerHTML pour interpréter <br>
+    typedTextSpan.innerHTML = currentText.substring(0, charIndex + 1);
+    charIndex++;
+    setTimeout(type, typingDelay);
+  } else {
+    setTimeout(erase, newTextDelay);
+  }
 }
 
 function erase() {
-    if (charIndex > 0) {
-        typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
-        charIndex--;
-        setTimeout(erase, erasingDelay);
-    } else {
-        textArrayIndex++;
-        if (textArrayIndex >= textArray.length) textArrayIndex = 0;
-        setTimeout(type, typingDelay + 1100);
-    }
+  const currentText = textArray[textArrayIndex];
+
+  if (charIndex > 0) {
+    typedTextSpan.innerHTML = currentText.substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(erase, erasingDelay);
+  } else {
+    textArrayIndex++;
+    if (textArrayIndex >= textArray.length) textArrayIndex = 0;
+    setTimeout(type, typingDelay + 1100);
+  }
 }
 
-document.addEventListener("DOMContentLoaded", function () { // On DOM Load initiate the effect
-    if (textArray.length) setTimeout(type, 300);
+document.addEventListener("DOMContentLoaded", function () {
+  if (textArray.length) setTimeout(type, 300);
 });
 
 

@@ -75,43 +75,94 @@ $(function() {
 const typedTextSpan = document.querySelector(".typed-text");
 const cursorSpan = document.querySelector(".cursor");
 
-let textArray = ["CROISSANCE", "BUSINESS", "NOTORIÉTÉ"];
+let textArray = [
+  ["CROISSANCE"],
+  ["BUSINESS"],
+  ["NOTORIÉTÉ"]
+];
 
-if (window.location.pathname.includes('/en')) {
-    textArray = ["GROWTH", "BUSINESS", "AWARENESS"];
+if (window.location.pathname.includes("/en")) {
+  textArray = [
+    ["GROWTH."],
+    ["BUSINESS."],
+    ["AWARENESS."]
+  ];
 }
-
 
 const typingDelay = 100;
 const erasingDelay = 100;
-const newTextDelay = 3000; // Delay between current and next text
-let textArrayIndex = 0;
-let charIndex = 0;
+const newTextDelay = 3000; // pause après le texte complet
+
+let textArrayIndex = 0; // quel “mot/phrase”
+let lineIndex = 0;      // quelle ligne dans la phrase (0, 1, 2...)
+let charIndex = 0;      // quel caractère dans la ligne
+
+function render() {
+  const lines = textArray[textArrayIndex];
+  const html = lines
+    .map((line, i) => {
+      if (i < lineIndex) return line;             
+      if (i === lineIndex) return line.substring(0, charIndex); 
+      return "";      
+    })
+    .filter(Boolean)
+    .join("<br>");
+
+  typedTextSpan.innerHTML = html;
+}
 
 function type() {
-    if (charIndex < textArray[textArrayIndex].length) {
-        typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
-        charIndex++;
-        setTimeout(type, typingDelay);
-    } else {
-        setTimeout(erase, newTextDelay);
-    }
+  const lines = textArray[textArrayIndex];
+  const currentLine = lines[lineIndex];
+
+  if (charIndex < currentLine.length) {
+    charIndex++;
+    render();
+    setTimeout(type, typingDelay);
+    return;
+  }
+
+  // ligne terminée -> passer à la suivante si elle existe
+  if (lineIndex < lines.length - 1) {
+    lineIndex++;
+    charIndex = 0;
+    setTimeout(type, typingDelay);
+    return;
+  }
+
+  // tout est terminé -> pause puis effacement
+  setTimeout(erase, newTextDelay);
 }
 
 function erase() {
-    if (charIndex > 0) {
-        typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
-        charIndex--;
-        setTimeout(erase, erasingDelay);
-    } else {
-        textArrayIndex++;
-        if (textArrayIndex >= textArray.length) textArrayIndex = 0;
-        setTimeout(type, typingDelay + 1100);
-    }
+  const lines = textArray[textArrayIndex];
+
+  if (charIndex > 0) {
+    charIndex--;
+    render();
+    setTimeout(erase, erasingDelay);
+    return;
+  }
+
+  // ligne vide -> revenir à la ligne précédente si elle existe
+  if (lineIndex > 0) {
+    lineIndex--;
+    charIndex = lines[lineIndex].length;
+    render();
+    setTimeout(erase, erasingDelay);
+    return;
+  }
+
+  // tout est effacé -> phrase suivante
+  textArrayIndex = (textArrayIndex + 1) % textArray.length;
+  lineIndex = 0;
+  charIndex = 0;
+
+  setTimeout(type, typingDelay + 500);
 }
 
-document.addEventListener("DOMContentLoaded", function () { // On DOM Load initiate the effect
-    if (textArray.length) setTimeout(type, 300);
+document.addEventListener("DOMContentLoaded", () => {
+  if (textArray.length) setTimeout(type, 300);
 });
 
 

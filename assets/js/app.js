@@ -78,7 +78,7 @@ const cursorSpan = document.querySelector(".cursor");
 let textArray = ["CROISSANCE", "BUSINESS", "NOTORIÉTÉ"];
 
 if (window.location.pathname.includes('/en')) {
-    textArray = ["GROWTH", "BUSINESS", "AWARENESS"];
+    textArray = ["ACCELERATING GROWTH.", "ACCELERATING BUSINESS.", "ACCELERATING AWARENESS."];
 }
 
 

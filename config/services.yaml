@@ -27,6 +27,12 @@ services:
         arguments:
            $authenticator: '@security.authenticator.form_login.main'
 
+    App\EventSubscriber\LocaleSubscriber:
+        arguments:
+            $translatableListener: '@stof_doctrine_extensions.listener.translatable'
+        tags:
+            - { name: kernel.event_subscriber }
+
     # App\Controller\HomeController:
     #     autowire: true
     # App\Controller\ContactController:
@@ -42,4 +48,3 @@ services:
   
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
-
